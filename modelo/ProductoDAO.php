@@ -4,18 +4,11 @@
 
     class ProductoDAO {
         public static function getAllProducts() {
-            /*$con = dataBase::connect();
+            $con = dataBase::connect();
             
             if($result = $con->query("SELECT * FROM productos")) {
                 return $result->fetch_object('Producto');
-            }*/
-            $con = dataBase::connect();
-            $result = $con->query("SELECT * FROM productos");
-            $productos = array();
-            while ($producto = $result->fetch_object('Producto')) {
-                $productos[] = $producto;
             }
-            return $productos;
         }
     }
 ?>
