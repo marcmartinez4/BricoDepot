@@ -2,13 +2,13 @@
     include_once 'modelo/ProductoDAO.php';
     include_once 'controlador/productoControlador.php';
     $accion = "";
-            if(isset($_POST['Modificar'])) {
-                $accion = "<h2>"."Se ha modificado un producto"."</h2>";
-                echo $accion;
-            } else if(isset($_POST['Eliminar'])) {
-                $accion = "<h2>"."Se ha eliminado un producto"."</h2>";
-                echo $accion;
-            }
+        if(isset($_POST['Modificar'])) {
+            $accion = "<h2>"."Se ha modificado un producto"."</h2>";
+            echo $accion;
+        } else if(isset($_POST['Eliminar'])) {
+            $accion = "<h2>"."Se ha eliminado un producto"."</h2>";
+            echo $accion;
+        }
 ?>
 <!DOCTYPE html>
 <html lang="en">
