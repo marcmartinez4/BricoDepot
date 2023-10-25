@@ -13,12 +13,15 @@
                 echo "<td>".$nombres_productos[] = $producto->getDescripcion()."</td>";
                 echo "<td>".$nombres_productos[] = $producto->getPrecio_unidad()." €</td>";
                 echo "<td>".$nombres_productos[] = $producto->getCategoria_id()."</td>";
-                echo "<td><input type='submit' name='Añadir' value='Añadir'></td>";
+                echo "<td><input type='submit' name='Modificar' value='Modificar'></td>";
                 echo "<td><input type='submit' name='Eliminar' value='Eliminar'></td>";
                 echo "</tr>";
             }
             echo "</table>";
             return $nombres_productos;
+        }
+        public function eliminar() {
+            echo 'Producto a eliminar.';
         }
     }
 ?>

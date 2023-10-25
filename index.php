@@ -16,8 +16,8 @@
         <?php
             productoControlador::index();
             $accion = "";
-            if(isset($_POST['Añadir'])) {
-                $accion = "<h2>"."Se ha añadido un producto"."</h2>";
+            if(isset($_POST['Modificar'])) {
+                $accion = "<h2>"."Se ha modificado un producto"."</h2>";
                 echo $accion;
             } else if(isset($_POST['Eliminar'])) {
                 $accion = "<h2>"."Se ha eliminado un producto"."</h2>";
