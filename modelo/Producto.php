@@ -1,5 +1,5 @@
 <?php
-    abstract class Producto {
+     class Producto {
         protected $producto_id;
         protected $nombre_producto;
         protected $descripcion;
