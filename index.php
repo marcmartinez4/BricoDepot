@@ -35,11 +35,11 @@
             foreach ($productos as $producto) {
         ?>
         <tr>
-            <td><?php echo $nombres_productos[] = $producto->getProducto_id() ?></td>
-            <td><?php echo $nombres_productos[] = $producto->getNombre_producto() ?></td>
-            <td><?php echo $nombres_productos[] = $producto->getDescripcion() ?></td>
-            <td><?php echo $nombres_productos[] = $producto->getPrecio_unidad() ?> €</td>
-            <td><?php echo $nombres_productos[] = $producto->getCategoria_id() ?></td>
+            <td><?php $producto->getProducto_id() ?></td>
+            <td><?php $producto->getNombre_producto() ?></td>
+            <td><?php $producto->getDescripcion() ?></td>
+            <td><?php $producto->getPrecio_unidad() ?> €</td>
+            <td><?php $producto->getCategoria_id() ?></td>
             <td><input type='submit' name='Modificar' value='Modificar'></td>
             <td><input type='submit' name='Eliminar' value='Eliminar'></td>
         </tr>
