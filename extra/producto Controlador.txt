@@ -1,4 +1,5 @@
-echo "<table>";
+        $productos = ProductoDAO::getAllProducts();
+        echo "<table>";
             echo "<tr><th>ID</th><th>Nombre del Producto</th><th>Descripción</th><th>Precio por Unidad</th><th>Categoría</th><th></th><th></th></tr>";
             foreach ($productos as $producto) {
                 echo "<tr>";
@@ -11,5 +12,5 @@ echo "<table>";
                 echo "<td><input type='submit' name='Eliminar' value='Eliminar'></td>";
                 echo "</tr>";
             }
-            echo "</table>";
-            return $nombres_productos;
+        echo "</table>";
+        return $nombres_productos;

@@ -17,5 +17,13 @@
                 return $productos;
             }
         }
+
+        public static function deleteProducts() {
+            
+            $con = dataBase::connect();
+
+            $id_eliminar = $_POST['producto_id'];
+            $con->query("DELETE FROM `productos` WHERE `producto_id` = $id_eliminar");
+        }
     }
 ?>

@@ -3,11 +3,7 @@
     
     class productoControlador {
         public static function index() {
-            $productos = ProductoDAO::getAllProducts();
             
-        }
-        public function eliminar() {
-            echo 'Producto a eliminar.';
         }
     }
 ?>
