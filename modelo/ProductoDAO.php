@@ -26,4 +26,5 @@
             $con->query("DELETE FROM `productos` WHERE `producto_id` = $id_eliminar");
         }
     }
+    //commit
 ?>

@@ -28,4 +28,5 @@
     }
 
     $conexión->close();
+    //commit
 ?>
