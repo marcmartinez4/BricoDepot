@@ -25,6 +25,16 @@
             $id_eliminar = $_POST['producto_id'];
             $con->query("DELETE FROM `productos` WHERE `producto_id` = $id_eliminar");
         }
+
+        public static function añadirProducto() {
+            $con = dataBase::connect();
+            $con->query("INSERT INTO productos(`nombre_producto`, `descripcion`, `precio_unidad`, `categoria_id`) VALUES ('$nombre_producto', '$descripcion', '$precio_unidad', '$categoria_id');");
+        }
+        
+        public static function modificarProducto() {
+            $con = dataBase::connect();
+            $con->query("UPDATE productos SET `nombre_producto`='$nombre_producto',`descripcion`='$descripcion',`precio_unidad`='precio_unidad',`categoria_id`='$categoria_id' WHERE 1");
+        }
     }
     //commit
 ?>

@@ -12,6 +12,8 @@
 </head>
 <body>
     <h1>Tabla de productos</h1>
+    <a href="controlador/añadirProducto.php">Añadir</a>
+    <a href="controlador/modificarProducto.php">Modificar</a>
     <table>
         <tr>
             <th>ID</th>
