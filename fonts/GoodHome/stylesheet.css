@@ -1,0 +1,39 @@
+@font-face {
+    font-family: 'GoodHome';
+    src: url('GoodHome-Light.eot');
+    src: local('GoodHome Light'), local('GoodHome-Light'),
+        url('GoodHome-Light.eot?#iefix') format('embedded-opentype'),
+        url('GoodHome-Light.woff2') format('woff2'),
+        url('GoodHome-Light.woff') format('woff'),
+        url('GoodHome-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GoodHome';
+    src: url('GoodHome-Bold.eot');
+    src: local('GoodHome Bold'), local('GoodHome-Bold'),
+        url('GoodHome-Bold.eot?#iefix') format('embedded-opentype'),
+        url('GoodHome-Bold.woff2') format('woff2'),
+        url('GoodHome-Bold.woff') format('woff'),
+        url('GoodHome-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GoodHome';
+    src: url('GoodHome-Regular.eot');
+    src: local('GoodHome Regular'), local('GoodHome-Regular'),
+        url('GoodHome-Regular.eot?#iefix') format('embedded-opentype'),
+        url('GoodHome-Regular.woff2') format('woff2'),
+        url('GoodHome-Regular.woff') format('woff'),
+        url('GoodHome-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

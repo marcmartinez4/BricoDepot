@@ -5,6 +5,7 @@
         protected $descripcion;
         protected $precio_unidad;
         protected $categoria_id;
+        protected $img;
 
         public function __construct() {
             
@@ -106,6 +107,26 @@
         public function setCategoria_id($categoria_id)
         {
                 $this->categoria_id = $categoria_id;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of img
+         */ 
+        public function getImg()
+        {
+                return $this->img;
+        }
+
+        /**
+         * Set the value of img
+         *
+         * @return  self
+         */ 
+        public function setImg($img)
+        {
+                $this->img = $img;
 
                 return $this;
         }

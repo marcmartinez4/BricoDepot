@@ -1,5 +1,6 @@
 <?php
-    include_once 'producto.php';
+    include_once '../modelo/Producto.php';
+    include_once '../config/dataBase.php';
 
     class productoDAO {
         public static function getAllProducts() {
