@@ -1,9 +1,11 @@
 <?php
-    include_once 'modelo/ProductoDAO.php';
-    include_once 'controlador/productoControlador.php';
+    include ("../config/dataBase.php");
+    include ("../config/parametros.php");
+    include ("../modelo/ProductoDAO.php");
+    include ("../controlador/productoControlador.php");
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,8 +14,8 @@
 </head>
 <body>
     <h1>Tabla de productos</h1>
-    <a href="controlador/añadirProducto.php">Añadir</a>
-    <a href="controlador/modificarProducto.php">Modificar</a>
+    <a href="../controlador/añadirProducto.php">Añadir</a>
+    <a href="../controlador/modificarProducto.php">Modificar</a>
     <table>
         <tr>
             <th>ID</th>

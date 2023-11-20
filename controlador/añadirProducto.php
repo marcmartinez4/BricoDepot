@@ -1,92 +1,38 @@
 <?php
-    //include_once 'modelo/ProductoDAO.php'
+    include ("../config/dataBase.php");
+    include ('../modelo/productoDAO.php');
+    include ('../controlador/productoControlador.php');
 ?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estiloAñadir.css">
     <title>Añadir Productos</title>
-    <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            display: flex;
-            justify-content: center;
-        }
-        h1 {
-            font-size: 40px;
-        }
-        div {
-            width: 400px;
-            margin-top: 10%;
-            text-align: center;
-            border: 1px solid transparent;
-            border-radius: 10px;
-            background-color: white;
-            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;  
-        }
-        div label {
-            font-size: 20px;
-        }
-        input {
-            background-color: transparent;
-            border: none;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.152);
-            outline: none;
-            text-align: center;
-            margin-top: 10px;
-            padding-bottom: 5px;
-        }
-        .enviar {
-            color: #4CAF50;
-            background-color: white;
-            padding: 15px 50px 15px 50px;
-            font-size: 20px;
-            border: 2px solid #4CAF50;
-            border-radius: 10px;
-            margin-bottom: 10px;
-
-        }
-        .enviar:hover {
-            color: white;
-            border: 2px solid #72e277;
-            background-color: #72e277;
-            transition: background-color 0.3s;
-        }
-    </style>
 </head>
 <body>
-    <div>
-        <h1>Añadir Productos</h1>
-        <form action="" method="post">
-            <label>Nombre del producto </label><br>
-            <input type="text" name="nombre_producto">
-            <br><br>
+    <h1>Añadir Productos</h1>
+    <form action="" method="post">
+        <input type="text" name="nombre" placeholder="Nombre"><br><br>
 
-            <label>Descripción </label><br>
-            <input type="text" name="descripcion">
-            <br><br>
+        <input type="text" name="descripcion" placeholder="Descripción"><br><br>
 
-            <label>Precio </label><br>
-            <input type="text" name="precio_unidad">
-            <br><br>
+        <input type="text" name="precioUnitario" placeholder="Precio unitario"><br><br>
 
-            <label>ID de la categoría </label><br>
-            <input type="text" name="categoria_id">
-            <br><br>
+        <input type="text" name="categoria" placeholder="Categoría"><br><br>
 
-            <input class="enviar" type="submit" value="Enviar">
-        </form>
-    </div>
+        <input type="submit" name="btnEnviar" value="Enviar">
+    </form>
     <?php
-        if(isset($_POST['nombre_producto'], $_POST['descripcion'], $_POST['precio_unidad'], $_POST['categoria_id'])) {
-            
-            $nombre_producto = $_POST['nombre_producto'];
-            $descripcion = $_POST['descripcion'];
-            $precio_unidad = $_POST['precio_unidad']; 
-            $categoria_id = $_POST['categoria_id'];
+        if(isset($_POST["nombre"]) && isset($_POST["descripcion"]) && isset($_POST["precioUnitario"]) && isset($_POST["categoria"]) && isset($_POST["btnEnviar"])){
+            $nombre = $_POST['nombre'];
+            $descripcion = $_POST['descripcion']; 
+            $precio = $_POST['precioUnitario']; 
+            $categoria = $_POST['categoria'];
 
-            ProductoDAO::añadirProducto($nombre_producto, $descripcion, $precio_unidad, $categoria_id);
+            productoControlador::añadirProducto($nombre_producto, $descripcion, $precio_unidad, $categoria_id);
         }
     ?>
 </body>
