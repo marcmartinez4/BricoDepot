@@ -16,9 +16,9 @@
             }
         }
 
-        public static function añadir($nombre_producto, $descripcion, $precio_unidad, $categoria_id) {
+        public static function añadirProducto($nombre_producto, $descripcion, $precio_unidad, $categoria_id) {
             $con = dataBase::connect();
-            $con->query("INSERT INTO productos (`nombre_producto`, `descripcion`, `precio_unidad`, `categoria_id`) VALUES ('$nombre', '$descripcion', '$precio', '$categoria')");
+            $con->query("INSERT INTO productos (`nombre_producto`, `descripcion`, `precio_unidad`, `categoria_id`) VALUES ('$nombre_producto', '$descripcion', '$precio_unidad', '$categoria_id')");
         }
 
         public static function eliminar($id){
@@ -28,7 +28,7 @@
 
         public static function modificar($nombre_producto, $descripcion, $precio_unidad, $categoria_id, $id){
             $con = dataBase::connect();
-            $con->query("UPDATE productos SET `nombre_producto` = $nombre, `descripcion` = $descripcion, `precio_unidad` = $precio,`categoria_id` = $categoria WHERE producto_id = $id");
+            $con->query("UPDATE productos SET `nombre_producto` = $nombre_producto, `descripcion` = $descripcion, `precio_unidad` = $precio_unidad,`categoria_id` = $categoria_id WHERE producto_id = $id");
         }
 
         /* include ("../modelo/Producto.php");

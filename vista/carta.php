@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="#">
     <title>Brico Depôt | Bricolaje, jardín, construcción y climatización</title>
     <style>
+        body {
+            overflow-x: hidden;
+        }
         .h2 {
             text-align: center;
             font-family: 'Barlow';
@@ -68,21 +71,21 @@
     <p class="h2">DESTACADOS</p>
     
     <div class="d-flex justify-content-center">
-    <div class="row justify-content-center">
-        <?php
-            foreach ($productos as $producto) {
-                /*if ($producto->getCategoria_ID() == 1) {*/
-        ?>
-            <div class="col-3 col-sm-3 col-md-3 col-lg-3 productos">
-                <img class="imagen-producto" src="<?php echo $producto->getImg() ?>">
-                <a><?php echo $producto->getNombre_producto(); ?></a>
-                <span><?php echo $producto->getPrecio_unidad(); ?><p>€</p></span>
-            </div>
-        <?php
-                /*}*/
-            }
-        ?>
-    </div>
+        <div class="row justify-content-center">
+            <?php
+                foreach ($productos as $producto) {
+                    if ($producto->getCategoria_ID() == 1) {
+            ?>
+                <div class="col-3 col-sm-3 col-md-3 col-lg-3 productos">
+                    <img class="imagen-producto" src="<?php echo $producto->getImg() ?>">
+                    <a><?php echo $producto->getNombre_producto(); ?></a>
+                    <span><?php echo $producto->getPrecio_unidad(); ?><p>€</p></span>
+                </div>
+            <?php
+                    }
+                }
+            ?>
+        </div>
     </div>
 
     <div class="container-fluid">
@@ -95,6 +98,24 @@
 
     <p class="h2">HAMBURGUESAS</p>
 
+    <div class="d-flex justify-content-center">
+        <div class="row justify-content-center">
+            <?php
+                foreach ($productos as $producto) {
+                    if ($producto->getCategoria_ID() == 5) {
+            ?>
+                <div class="col-3 col-sm-3 col-md-3 col-lg-3 productos">
+                    <img class="imagen-producto" src="<?php echo $producto->getImg() ?>">
+                    <a><?php echo $producto->getNombre_producto(); ?></a>
+                    <span><?php echo $producto->getPrecio_unidad(); ?><p>€</p></span>
+                </div>
+            <?php
+                    }
+                }
+            ?>
+        </div>
+    </div>
+
     <div class="container-fluid">
         <div class="row">
             <div class="col col-hr">
@@ -104,6 +125,24 @@
     </div>
 
     <p class="h2">COMPLEMENTOS</p>
+    
+    <div class="d-flex justify-content-center">
+        <div class="row justify-content-center">
+            <?php
+                foreach ($productos as $producto) {
+                    if ($producto->getCategoria_ID() == 1) {
+            ?>
+                <div class="col-3 col-sm-3 col-md-3 col-lg-3 productos">
+                    <img class="imagen-producto" src="<?php echo $producto->getImg() ?>">
+                    <a><?php echo $producto->getNombre_producto(); ?></a>
+                    <span><?php echo $producto->getPrecio_unidad(); ?><p>€</p></span>
+                </div>
+            <?php
+                    }
+                }
+            ?>
+        </div>
+    </div>
 
     <div class="container-fluid">
         <div class="row">

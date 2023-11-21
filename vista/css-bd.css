@@ -29,4 +29,14 @@ table td input {
 table td input:hover {
     background-color: #72e277;
 }
-/*commit
+.btnAñadir {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.btnAñadir:hover {
+    background-color: #72e277;
+}

@@ -7,15 +7,15 @@
         }
 
         public static function añadirProducto($nombre_producto, $descripcion, $precio_unidad, $categoria_id){
-            productoDAO::añadir($nombre_producto, $descripcion, $precio_unidad, $categoria_id);
+            productoDAO::añadirProducto($nombre_producto, $descripcion, $precio_unidad, $categoria_id);
         }
 
         public static function eliminarProducto($id){
-            productoDAO::eliminar($id);
+            productoDAO::eliminarProducto($id);
         }
 
         public static function modificarProducto($nombre_producto, $descripcion, $precio_unidad, $categoria_id, $id){
-            productoDAO::modificar($nombre_producto, $descripcion, $precio_unidad, $categoria_id, $id);
+            productoDAO::modificarProducto($nombre_producto, $descripcion, $precio_unidad, $categoria_id, $id);
         }     
     }
 ?>

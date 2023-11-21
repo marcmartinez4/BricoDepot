@@ -24,8 +24,8 @@
         <input type="submit" name="Enviar" value="Enviar">
     </form>
     <?php
-        /* $id = $_POST['producto_id'];
-        echo "El ID del producto seleccionado es: " . $id; */
+        $id = $_POST['producto_id'];
+        echo "Estas editando el producto con el ID: " . $id;
 
         if (!empty($_POST['nombre_producto']) && !empty($_POST['descripcion']) && !empty($_POST['precio_unidad']) && !empty($_POST['categoria_id'])){
             $nombre_producto = $_POST['nombre_producto'];
@@ -35,8 +35,8 @@
         } else {
             echo 'Campos vacíos!';
         }
-        /* echo $id; */ 
-        productoControlador::modificarProducto($nombre_producto, $descripcion, $precio_unidad, $categoria_id, /*$id*/);    
+        echo $id; 
+        productoControlador::modificarProducto($nombre_producto, $descripcion, $precio_unidad, $categoria_id, $id);    
     ?>
 </body>
 </html>
