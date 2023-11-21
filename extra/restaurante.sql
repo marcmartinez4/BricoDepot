@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Temps de generació: 25-10-2023 a les 17:57:29
+-- Temps de generació: 21-11-2023 a les 19:36:31
 -- Versió del servidor: 10.4.28-MariaDB
 -- Versió de PHP: 8.2.4
 
@@ -37,10 +37,11 @@ CREATE TABLE `categorias` (
 --
 
 INSERT INTO `categorias` (`categoria_id`, `nombre_categoria`) VALUES
-(1, 'Pequeños'),
-(5, 'Hamburguesas'),
-(9, 'Hamburguesas'),
-(10, 'Pequeños');
+(1, 'Complementos'),
+(2, 'Postres'),
+(3, 'Bebidas'),
+(4, 'Destacados'),
+(5, 'Hamburguesas');
 
 -- --------------------------------------------------------
 
@@ -93,19 +94,34 @@ CREATE TABLE `productos` (
   `nombre_producto` varchar(255) NOT NULL,
   `descripcion` varchar(255) NOT NULL,
   `precio_unidad` double NOT NULL,
-  `categoria_id` int(11) DEFAULT NULL
+  `categoria_id` int(11) DEFAULT NULL,
+  `img` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Bolcament de dades per a la taula `productos`
 --
 
-INSERT INTO `productos` (`producto_id`, `nombre_producto`, `descripcion`, `precio_unidad`, `categoria_id`) VALUES
-(1, 'Fingers de queso Mozzarella', 'descripcion', 5.5, 1),
-(2, 'Hamburguesa de queso cheddar', 'descripcion', 9, 5),
-(3, 'Hamburguesa crispy chicken', 'descripcion', 11.99, 5),
-(4, 'Nachos con guacamole', 'descripcion', 7.99, 1),
-(5, 'Alitas de pollo', 'descripcion', 7.5, 1);
+INSERT INTO `productos` (`producto_id`, `nombre_producto`, `descripcion`, `precio_unidad`, `categoria_id`, `img`) VALUES
+(1, 'Fingers de queso Mozzarella', 'descripcion', 5.5, 1, 'https://gps.burgerkingencasa.es/images/products/1637070524080_donuts_goudax8.png'),
+(2, 'Hamburguesa de queso cheddar', 'descripcion', 9, 5, 'https://gps.burgerkingencasa.es/images/products/1697713438134_HOMERIA-BRUTAL-BACON-CRISPY-1-PATTY-NUEVO.png'),
+(3, 'Hamburguesa crispy chicken', 'descripcion', 11.99, 5, 'https://gps.burgerkingencasa.es/images/products/1660736572217_crispy-chicken-new.png'),
+(5, 'Alitas de pollo', 'descripcion', 7.5, 1, 'https://gps.burgerkingencasa.es/images/products/1667459875822_Homeria_Alitas_6UDS_600X411.png'),
+(19, 'Brutal Bacon (2 Carnes)', 'descripción', 10, 5, 'https://gps.burgerkingencasa.es/images/products/1667472596663_BRUTAL-BACON_2carnes.png'),
+(20, 'Brutal Bacon (1 Carne)', 'descripción', 10, 5, 'https://gps.burgerkingencasa.es/images/products/1667472538034_BRUTAL-BACON_1carne.png'),
+(21, 'Brutal Bacon Crispy Chicken', 'descripción', 10, 5, 'https://gps.burgerkingencasa.es/images/products/1697713438134_HOMERIA-BRUTAL-BACON-CRISPY-1-PATTY-NUEVO.png'),
+(22, 'Brutal Bacon Doble Crispy Chicken', 'descripción', 10, 5, 'https://gps.burgerkingencasa.es/images/products/1667472396703_BRUTAL-BACON_pollo.png'),
+(23, 'CBK Doble', 'descripción', 10, 5, 'https://gps.burgerkingencasa.es/images/products/1693829714306_homeria_MB_CBK.png'),
+(24, 'CBK', 'descripcion', 10, 5, 'https://gps.burgerkingencasa.es/images/products/1693829825827_homeria_CCB_sin_semillas_copia.png'),
+(25, 'Duo Bacon Cheddar (2 Carnes)', 'descripcion', 10, 5, 'https://gps.burgerkingencasa.es/images/products/1693909322303_homeria_duo-bacon-cheddar-menu_doble-carne_SS.png'),
+(26, 'Duo Bacon Cheddar (1 Carne)', 'descripcion', 10, 5, 'https://gps.burgerkingencasa.es/images/products/1693909356532_homeria_duo-bacon-cheddar-menu_carne_SS.png'),
+(27, 'Duo Bacon Cheddar - Doble Crispy Chicken', 'descripcion', 10, 5, 'https://gps.burgerkingencasa.es/images/products/1693909391714_homeria_duo-bacon-cheddar-menu_crispy_SS.png'),
+(28, 'Angus Grill (2 Carnes)', 'descripcion', 10, 5, 'https://gps.burgerkingencasa.es/images/products/1693830049665_angus_SS_2c.png'),
+(29, 'Chicken Nuggets', 'descripcion', 10, 1, 'https://gps.burgerkingencasa.es/images/products/1697203591617_nuggets_x6.png'),
+(30, 'Patatas Clásicas', 'descripcion', 10, 1, 'https://gps.burgerkingencasa.es/images/products/1515751854847_Supreme_Sour.png'),
+(31, 'Chili Cheese Bites', 'descripcion', 10, 1, 'https://gps.burgerkingencasa.es/images/products/1660726160893_Chili-Cheese-Bites-x9-new.png'),
+(32, 'Aros de Cebolla', 'descripcion', 10, 1, 'https://gps.burgerkingencasa.es/images/products/1660727204063_AROS-DE-CEBOLLA-x10-NEW.png'),
+(33, 'Nuggets vegetales', 'descripcion', 10, 1, 'https://gps.burgerkingencasa.es/images/products/1675841765115_bodegones-app-600x411_4_nuggets-vegetales.png');
 
 --
 -- Índexs per a les taules bolcades
@@ -171,7 +187,7 @@ ALTER TABLE `pedidos`
 -- AUTO_INCREMENT per la taula `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `producto_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `producto_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- Restriccions per a les taules bolcades
