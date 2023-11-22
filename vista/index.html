@@ -127,8 +127,8 @@
         }
         .header {
             height: 92px;
-            padding: 16px 0!important;
-            margin: 0 24px!important;
+            padding: 16px 24px!important;
+            background-color: white!important;
             /* margin: 0 36.4px 0 36.4px;
             padding: 0 32px 0 32px; */
         }
@@ -181,16 +181,23 @@
         .tool-bar2 {
             width: 100%;
             height: 38px;
-            padding: 8px 0;
+            padding: 8px 56px;
             background-color: #EBEBEB;
             display: flex;
+            justify-content: end;
         }
         .botones-toolbar2 {
             font-family: 'Barlow', serif;
             font-size: 12px;
             font-weight: 700;
             color: #323C41;
-            margin-right: 16px;
+            margin-right: 15px;
+        }
+        .botones-toolbar2-derecha {
+            font-family: 'Barlow', serif;
+            font-size: 12px;
+            font-weight: 700;
+            color: #323C41;
         }
         .btn-ubicacion {
             margin-bottom: 2px;
@@ -201,11 +208,13 @@
         .btn-a-toolbar2 {
             text-decoration: none;
             color: #323C41;
-            margin: 0 8px 8px 0;
-            padding: 0 9px 0 0;
         }
         .c-fluid {
             padding: 0;
+        }
+        .navbar-derecha {
+            display: flex;
+            justify-content: end;
         }
     </style>
 </head>
@@ -252,7 +261,7 @@
 
                 <a class="services icon-align icon-align--right u-font-xsmall u-ml-small btn-a-toolbar2" href="/servicios" onclick="bd_datalayerEvent('headerClick', 'Navigation', 'Click: Header', 'Servicios')">
                     <span class="services">
-                      <strong class="botones-toolbar2">Servicios</strong>
+                      <strong class="botones-toolbar2-derecha">Servicios</strong>
                     </span>
                 </a>
             </div>

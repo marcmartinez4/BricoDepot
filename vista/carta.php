@@ -132,11 +132,18 @@
                 foreach ($productos as $producto) {
                     if ($producto->getCategoria_ID() == 1) {
             ?>
-                <div class="col-3 col-sm-3 col-md-3 col-lg-3 productos">
-                    <img class="imagen-producto" src="<?php echo $producto->getImg() ?>">
-                    <a><?php echo $producto->getNombre_producto(); ?></a>
-                    <span><?php echo $producto->getPrecio_unidad(); ?><p>€</p></span>
-                </div>
+                <form action="../vista/informacion-producto.php" method="post">
+                    <div class="col-3 col-sm-3 col-md-3 col-lg-3 productos">
+                        <img class="imagen-producto" src="<?php echo $producto->getImg() ?>">
+                        <a><?php echo $producto->getNombre_producto(); ?></a>
+                        <span><?php echo $producto->getPrecio_unidad(); ?><p>€</p></span>
+                    </div>
+                    
+                    <a href="..vista/informacion-producto.php">
+                        <input type="hidden" name="producto_id" value="<?php echo $producto->getProducto_id(); ?>">
+                        <input type="submit" name="Modificar" value="Añadir al carrito">
+                    </a>
+                </form>
             <?php
                     }
                 }
