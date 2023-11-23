@@ -78,9 +78,6 @@ h3 {
     font-size: 18px;
     color: black;
 }
-.antes-footer1 {
-    height: 171px;
-}
 .hr-marcas {
     margin: 0!important;
 }
@@ -101,10 +98,15 @@ h3 {
     padding: 0;
     max-width: 260px;
 }
+
+
 .antes-footer2 {
-    background-color: #EBEBEB;
-    height: 262.76px;
     padding: 26px 0 16px 0;
+    background-color: #EBEBEB;
+    width: 100%;
+}
+.col-footer2 {
+    padding: 0;
 }
 .h2-servicios {
     text-align: center;
@@ -114,7 +116,62 @@ h3 {
     padding-bottom: 18px;
     margin: 0;
     height: 64.76px;
+    width: 100%;
 }
+.servicio {
+    max-width: 130px;
+    max-height: 156px;
+    margin: 0 49.6625px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+.servicio a {
+    text-decoration: none;
+}
+.h3-footer {
+    padding: 0;
+    width: 100%;
+    height: 55px;
+    margin: 12px 0;
+    font-family: 'Barlow';
+    font-size: 16px;
+    text-align: center;
+}
+
+
+.footer-final {
+    padding: 16px 0;
+    background-color: black;
+    fill: white;
+}
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.footer li {
+    width: 32px;
+    height: 32px;
+    margin: 0 8px;
+    color: white;
+}
+.footer li span{
+    display: none;
+}
+.p-footer-final {
+    color: white;
+    margin: 0;
+    margin-top: 10px;
+}
+
+
+
 .header {
     height: 92px;
     padding: 16px 24px!important;
