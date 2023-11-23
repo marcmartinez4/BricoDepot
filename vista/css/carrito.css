@@ -1,0 +1,74 @@
+body {
+    background-color: #EFF0F0;
+}
+.panel-carrito {
+    background-color: white;
+    width: 900.66px;
+    height: 242px;
+    margin: 0 0 32px;
+    padding: 8px 32px 24px;
+}
+.panel-finalizar {
+    background-color: white;
+    width: 438.33px;
+    padding: 32px 32px 24px;
+    margin: 0 0 24px 24px;
+}
+.txt-resumen {
+    height: 24px;
+    margin: 0 0 24px;
+    font-family: 'Goodhome', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+hr {
+    margin: 0;
+}
+.txt-estimacion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.txt-estimacion p {
+    margin: 0;
+    padding: 14px 24px 14px 0;
+}
+.txt-estimacion svg{
+    width: 24px;
+    height: 24px;
+    transform: rotate(270deg);
+}
+.numeros {
+    padding-top: 10px;
+    height: 157px;
+}
+.p-arriba {
+    padding: 6px 0;
+    margin: 0;
+    font-family: 'Goodhome', sans-serif;
+    font-size: 16px;
+}
+.total {
+    padding: 11px 10px 11px 0;
+    font-family: 'Goodhome', sans-serif;
+    font-size: 18px;
+    margin: 0;
+}
+.total-iva {
+    margin: 0 0 10px 0;
+    padding: 0 10px 11px 0;
+    font-family: 'Goodhome', sans-serif;
+    font-size: 14px;
+}
+.boton-carrito {
+    width: 374.33px;
+    height: 34px;
+    border: none;
+    border-radius: 4px;
+    background-color: #E20811;
+    color: white;
+    font-family: 'Goodhome', sans-serif;
+    font-size: 16px;
+    font-weight: 900;
+    padding: 0;
+}
