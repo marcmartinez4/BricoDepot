@@ -1,8 +1,18 @@
 <?php
     include_once '../modelo/ProductoDAO.php';
     include_once '../controlador/productoControlador.php';
+    include_once '../config/functions.php';
+    
     $productos = productoDAO::getAllProducts();
-    $producto_id = $_POST['producto_id'];
+    $producto_id = $_GET['producto_id'];
+            
+    if (isset($_POST['AñadirCarrito'])) {
+        $id = $_POST['producto_id'];
+        echo $id;
+        productoControlador::añadirCarrito($id);
+        header('Location: ../vista/informacion-producto.php?producto_id='.$producto_id);
+    }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,7 +21,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="https://www.bricodepot.es/media/favicon/default/favicon-32x32.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <title>Document</title>
+    <title></title>
     <style>
         .col-hr {
             padding: 0;
@@ -131,6 +141,13 @@
             padding: 24px;
             margin: 0 56px;
         }
+        .titulo-descripcion {
+            font-family: 'Goodhome', sans-serif;
+            font-size: 20px;
+        }
+        .hr-descripcion {
+            margin: 0;
+        }
     </style>
 </head>
 <body>
@@ -174,7 +191,10 @@
                         </div>
 
                         <div>
-                            <button class="boton-carrito">Añadir al carrito</button>
+                            <form action="" method="post">
+                                <input type="hidden" name="producto_id" value="<?php echo $producto->getProducto_id(); ?>">
+                                <input class="boton-carrito" type="submit" name="AñadirCarrito" value="Añadir al carrito">
+                            </form>    
                         </div>
                     </div>
                         
@@ -225,21 +245,17 @@
     <div class="d-flex justify-content-center descripcion">
         <div class="row justify-content-center">
             <div class="col-6 col-md-6 col-lg-10">
-                <h3><strong>¿Que ofrecemos en nuestro restaurante?</strong></h3>
+                <h3 class="titulo-descripcion"><strong>Información del producto</strong></h3>
+                <hr class="hr-descripcion">
                 <div>
-                    <p>En nuestro establecimiento, ofrecemos una deliciosa variedad de comidas rápidas
-                        que satisfarán todos tus antojos. Desde hamburguesas y hot dogs sabrosos hasta
-                        tacos auténticos y nachos cargados de sabor, te garantizamos una experiencia
-                        gastronómica inolvidable. Nuestros ingredientes frescos y de alta calidad se
-                        combinan con un servicio amable para brindarte una comida rápida que realmente
-                        vale la pena. ¡Ven y disfruta de la mejor comida rápida en nuestro restaurante!</p>
+                    <p> <?php echo $producto->getDescripcion() ?> </p>
                 </div>
             </div>
         </div> 
     </div>
     <?php
             }
-        } 
+        }
     ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>

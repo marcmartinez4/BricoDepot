@@ -1,5 +1,6 @@
 <?php
     include_once '../modelo/productoDAO.php';
+    include_once '../config/functions.php';
     
     class productoControlador {
         public static function index() {
@@ -16,6 +17,10 @@
 
         public static function modificarProducto($nombre_producto, $descripcion, $precio_unidad, $categoria_id, $id){
             productoDAO::modificarProducto($nombre_producto, $descripcion, $precio_unidad, $categoria_id, $id);
-        }     
+        }
+        
+        public static function añadirCarrito($id) {
+            productoDAO::añadirCarrito($id);
+        }
     }
 ?>
