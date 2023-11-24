@@ -9,7 +9,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css-bd.css">
+    <link rel="stylesheet" href="../vista/css/css-bd.css">
     <title>Productos</title>
 </head>
 <body>

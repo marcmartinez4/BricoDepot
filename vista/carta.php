@@ -19,8 +19,8 @@
         include ('../vista/header.html');
     ?>
 
-    <p class="h2">LA CARTA</p>
-
+    <p class="h2-principal">LA CARTA</p>
+    
     <div class="container-fluid">
         <div class="row">
             <div class="col col-hr">
@@ -37,11 +37,19 @@
                 foreach ($productos as $producto) {
                     if ($producto->getCategoria_ID() == 1) {
             ?>
-                <div class="col-3 col-sm-3 col-md-3 col-lg-3 productos">
-                    <img class="imagen-producto" src="<?php echo $producto->getImg() ?>">
-                    <a><?php echo $producto->getNombre_producto(); ?></a>
-                    <span><?php echo $producto->getPrecio_unidad(); ?><p>€</p></span>
-                </div>
+                <form class="form-productos" action="../vista/informacion-producto.php" method="get">
+                    <div class="col-3 col-sm-3 col-md-3 col-lg-3 productos">
+                        <img class="imagen-producto-carta" src="<?php echo $producto->getImg() ?>">
+                        <a><?php echo $producto->getNombre_producto(); ?></a>
+                        <div class="precio-añadir">
+                            <p><?php echo $producto->getPrecio_unidad(); ?><span>€</span></p>
+                            <a class="a-input" href="..vista/informacion-producto.php">
+                                <input type="hidden" name="producto_id" value="<?php echo $producto->getProducto_id(); ?>">
+                                <input type="image" value="" src="../img/carrito.png">
+                            </a>
+                        </div>
+                    </div>
+                </form>
             <?php
                     }
                 }
@@ -63,13 +71,21 @@
         <div class="row justify-content-center">
             <?php
                 foreach ($productos as $producto) {
-                    if ($producto->getCategoria_ID() == 5) {
+                    if ($producto->getCategoria_ID() == 1) {
             ?>
-                <div class="col-3 col-sm-3 col-md-3 col-lg-3 productos">
-                    <img class="imagen-producto" src="<?php echo $producto->getImg() ?>">
-                    <a><?php echo $producto->getNombre_producto(); ?></a>
-                    <span><?php echo $producto->getPrecio_unidad(); ?><p>€</p></span>
-                </div>
+                <form class="form-productos" action="../vista/informacion-producto.php" method="get">
+                    <div class="col-3 col-sm-3 col-md-3 col-lg-3 productos">
+                        <img class="imagen-producto-carta" src="<?php echo $producto->getImg() ?>">
+                        <a><?php echo $producto->getNombre_producto(); ?></a>
+                        <div class="precio-añadir">
+                            <p><?php echo $producto->getPrecio_unidad(); ?><span>€</span></p>
+                            <a class="a-input" href="..vista/informacion-producto.php">
+                                <input type="hidden" name="producto_id" value="<?php echo $producto->getProducto_id(); ?>">
+                                <input type="image" value="" src="../img/carrito.png">
+                            </a>
+                        </div>
+                    </div>
+                </form>
             <?php
                     }
                 }
@@ -93,17 +109,18 @@
                 foreach ($productos as $producto) {
                     if ($producto->getCategoria_ID() == 1) {
             ?>
-                <form action="../vista/informacion-producto.php" method="get">
+                <form class="form-productos" action="../vista/informacion-producto.php" method="get">
                     <div class="col-3 col-sm-3 col-md-3 col-lg-3 productos">
-                        <img class="imagen-producto" src="<?php echo $producto->getImg() ?>">
+                        <img class="imagen-producto-carta" src="<?php echo $producto->getImg() ?>">
                         <a><?php echo $producto->getNombre_producto(); ?></a>
-                        <span><?php echo $producto->getPrecio_unidad(); ?><p>€</p></span>
+                        <div class="precio-añadir">
+                            <p><?php echo $producto->getPrecio_unidad(); ?><span>€</span></p>
+                            <a class="a-input" href="..vista/informacion-producto.php">
+                                <input type="hidden" name="producto_id" value="<?php echo $producto->getProducto_id(); ?>">
+                                <input type="image" value="" src="../img/carrito.png">
+                            </a>
+                        </div>
                     </div>
-                    
-                    <a href="..vista/informacion-producto.php">
-                        <input type="hidden" name="producto_id" value="<?php echo $producto->getProducto_id(); ?>">
-                        <input type="submit" name="AñadirCarrito" value="Añadir al carrito">
-                    </a>
                 </form>
             <?php
                     }
@@ -126,13 +143,21 @@
         <div class="row justify-content-center">
             <?php
                 foreach ($productos as $producto) {
-                    if ($producto->getCategoria_ID() == 3) {
+                    if ($producto->getCategoria_ID() == 1) {
             ?>
-                <div class="col-3 col-sm-3 col-md-3 col-lg-3 productos">
-                    <img class="imagen-producto" src="<?php echo $producto->getImg() ?>">
-                    <a><?php echo $producto->getNombre_producto(); ?></a>
-                    <span><?php echo $producto->getPrecio_unidad(); ?><p>€</p></span>
-                </div>
+                <form class="form-productos" action="../vista/informacion-producto.php" method="get">
+                    <div class="col-3 col-sm-3 col-md-3 col-lg-3 productos">
+                        <img class="imagen-producto-carta" src="<?php echo $producto->getImg() ?>">
+                        <a><?php echo $producto->getNombre_producto(); ?></a>
+                        <div class="precio-añadir">
+                            <p><?php echo $producto->getPrecio_unidad(); ?><span>€</span></p>
+                            <a class="a-input" href="..vista/informacion-producto.php">
+                                <input type="hidden" name="producto_id" value="<?php echo $producto->getProducto_id(); ?>">
+                                <input type="image" value="" src="../img/carrito.png">
+                            </a>
+                        </div>
+                    </div>
+                </form>
             <?php
                     }
                 }

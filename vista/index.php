@@ -1,3 +1,9 @@
+<?php
+    include_once '../modelo/ProductoDAO.php';
+    include_once '../controlador/productoControlador.php';
+    $productos = productoDAO::getAllProducts();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,64 +51,29 @@
             </div> 
         </div>
 
-        <div class="d-flex justify-content-center bloque-productos">
+        <div class="d-flex justify-content-center">
             <div class="row justify-content-center">
-                <div class="col-12 col-md-12 col-lg-12 producto">
-                    <div class="informacion-producto">
-                        <div class="imagen-producto">
-
-                        </div>
-                        <div class="datos-producto">
-
-                        </div>
+                <?php
+                    $contador = 0;
+                    foreach ($productos as $producto) {
+                        if ($producto->getCategoria_ID() == 1) {
+                ?>
+                    <div class="col-3 col-sm-3 col-md-3 col-lg-3 productos">
+                        <img class="imagen-producto" src="<?php echo $producto->getImg() ?>">
+                        <a><?php echo $producto->getNombre_producto(); ?></a>
+                        <p><?php echo $producto->getPrecio_unidad(); ?><span>€</span></p>
                     </div>
-                </div>
-
-                <div class="col-12 col-md-12 col-lg-12 producto">
-                    <div class="informacion-producto">
-                        <div class="imagen-producto">
-
-                        </div>
-                        <div class="datos-producto">
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 col-md-12 col-lg-12 producto">
-                    <div class="informacion-producto">
-                        <div class="imagen-producto">
-
-                        </div>
-                        <div class="datos-producto">
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 col-md-12 col-lg-12 producto">
-                    <div class="informacion-producto">
-                        <div class="imagen-producto">
-
-                        </div>
-                        <div class="datos-producto">
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 col-md-12 col-lg-12 producto">
-                    <div class="informacion-producto">
-                        <div class="imagen-producto">
-
-                        </div>
-                        <div class="datos-producto">
-
-                        </div>
-                    </div>
-                </div>
+                <?php
+                        $contador++;
+                        if ($contador == 5) {
+                            break; // Sale del bucle después de mostrar 5 productos
+                        }
+                        }
+                    }
+                ?>
             </div>
         </div>
+
 
         <div class="container-fluid">
             <div class="row">

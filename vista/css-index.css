@@ -9,7 +9,7 @@ body {
 .Bocata {
     width: 100%;
     height: 250px;
-    padding: 10px 12px 10px 0;
+    padding: 10px 12px 10px 0!important;
 }
 .h2 {
     text-align: center;
@@ -28,30 +28,34 @@ body {
     height: 100%;
     padding: 10px 12px 10px 12px;
 }
-.bloque-productos {
-    padding: 10px 12px 10px 12px;
-}
-.producto {
-    width: 272px;
-    height: 368px;
-    background-color: black;
-    padding: 0 12px;
-    margin: 5px;
-}
-.informacion-producto {
-    background-color: red;
-    width: 100%;
-    height: 100%;
-}
 .imagen-producto {
-    width: 100%;
-    height: 50%;
-    background-color: green;
+    min-width: 272px;
+    min-height: 205px;
+    background-color: white;
 }
-.datos-producto {
-    width: 100%;
-    height: 50%;
-    background-color: blue;
+.productos {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 272px;
+    height: 380px;
+}
+.productos a {
+    font-family: 'Goodhome', sans-serif;
+    font-size: 14px;
+    padding: 6px 0;
+    width: 272px;
+}
+.productos p {
+    font-family: 'Barlow';
+    font-size: 37px;
+    font-weight: 900;
+    margin: 0;
+}
+.productos span {
+    font-size: 14.8px;
+    margin: 0 0 0 4px;
+    width: 14.35px
 }
 .imagenes-verticales {
     padding: 10px;
@@ -260,9 +264,42 @@ h3 {
     color: #323C41;
 }
 .c-fluid {
+    padding: 0!important;
+}
+.nav-item {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 38.4px;
+}
+.juntar-derecha {
+    display: flex!important;
+    justify-content: end!important;
+    align-items: end!important;
+    margin: 0!important;
+}
+
+
+
+.menu-navegacion {
+    display: flex;
+    justify-content: center;
+    width: 100%;
     padding: 0;
 }
-.navbar-derecha {
-    display: flex;
-    justify-content: end;
+.fondo-menu-navegacion {
+    background-color: #222221;
+    padding: 0 84px;
+}
+.boton-menu-navegacion {
+    padding: 16px 8px;
+    width: 136px;
+    text-align: center;
+    align-items: center!important;
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+    font-family: 'Barlow', serif;
+    font-weight: 900;
 }

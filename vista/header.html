@@ -23,26 +23,26 @@
                     <svg class="u-mr-xsmall" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
                         <path d="M3.5 10a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm8 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zM9 3c.889 0 1.687.386 2.236 1H12a4 4 0 0 1 4 4v3a1 1 0 0 1-1 1l-1.563.001A2.004 2.004 0 0 0 11.5 9.5a2 2 0 0 0-1.937 2.501H5.437A2.004 2.004 0 0 0 3.5 9.5a2 2 0 0 0-1.937 2.501L1 12a1 1 0 0 1-1-1V5a2 2 0 0 1 2-2h7zm3.5 2H11v3h4v-.5A2.5 2.5 0 0 0 12.5 5z" fill="#222221" fill-rule="evenodd"></path>
                     </svg>
-                    <span class="icon-align__content u-font-weight-bold botones-toolbar2" data-bind="text: getRegionOrCp()">España península</span>
+                    <span class="botones-toolbar2"">España península</span>
                 </div>
 
                 <div class="store u-mr-medium icon-align icon-align--left icon-align--center">
-                    <svg class="u-mr-xsmall" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                    <svg  class="u-mr-xsmall" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
                         <path d="M2 7h12v7h-4v-2.909H5.995V14H2V7zM1 4.406l1.026 2.061 6.133-2.902 5.746 2.98L15 4.52 8.212 1 1 4.406z" fill="#222221" fill-rule="evenodd"></path>
                     </svg>
-                    <span class="icon-align__content u-font-weight-bold botones-toolbar2" data-bind="text: getPreferredStore()">Seleccionar tienda</span>
+                    <span class="botones-toolbar2">Seleccionar tienda</span>
                 </div>
 
-                <a class="stores icon-align icon-align--right u-font-xsmall u-ml-small btn-a-toolbar2" href="/tiendas" onclick="bd_datalayerEvent('headerClick', 'Navigation', 'Click: Header', 'Ver todas las tiendas')">
-                    <svg class="icon icon--primary btn-ubicacion" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 20 20" focusable="false">
+                <a class="stores icon-align icon-align--right u-font-xsmall u-ml-small btn-a-toolbar2">
+                    <svg class="btn-ubicacion" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 20 20" focusable="false">
                         <path fill-rule="evenodd" d="M10,1.375c-3.17,0-5.75,2.548-5.75,5.682c0,6.685,5.259,11.276,5.483,11.469c0.152,0.132,0.382,0.132,0.534,0c0.224-0.193,5.481-4.784,5.483-11.469C15.75,3.923,13.171,1.375,10,1.375 M10,17.653c-1.064-1.024-4.929-5.127-4.929-10.596c0-2.68,2.212-4.861,4.929-4.861s4.929,2.181,4.929,4.861C14.927,12.518,11.063,16.627,10,17.653 M10,3.839c-1.815,0-3.286,1.47-3.286,3.286s1.47,3.286,3.286,3.286s3.286-1.47,3.286-3.286S11.815,3.839,10,3.839 M10,9.589c-1.359,0-2.464-1.105-2.464-2.464S8.641,4.661,10,4.661s2.464,1.105,2.464,2.464S11.359,9.589,10,9.589"></path>
                     </svg>
-                    <span class="stores icon-align__content">
+                    <span>
                       <strong class="botones-toolbar2">Ver todas las tiendas</strong>
                     </span>
                 </a>
 
-                <a class="blog icon-align icon-align--right u-font-xsmall u-ml-small btn-a-toolbar2" href="/blog" onclick="bd_datalayerEvent('headerClick', 'Navigation', 'Click: Header', 'Ideas &amp; Inspiración')">
+                <a class="blog icon-align icon-align--right u-font-xsmall u-ml-small btn-a-toolbar2">
                     <span class="blog">
                       <strong class="botones-toolbar2">Ideas & Inspiración</strong>
                     </span>
@@ -211,29 +211,40 @@
                 </button>
             </div>
           
-            <div class="collapse navbar-collapse navbar-derecha" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <div class="collapse navbar-collapse juntar-derecha" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 juntar-derecha">
                     <li class="nav-item">
-                        <svg class="header__main-link-icon icon icon--size-36 u-is-hidden-max-large iconos-header" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 36 36" focusable="false">
-                        <path fill-rule="evenodd" d="M24.3695651,20 C28.4597917,20 31.7983532,23.1331215 31.9912009,27.0686505 L32,27.4285715 L32,30.2857143 C32,31.2324881 31.2116318,32 30.2391304,32 C29.3360934,32 28.5918244,31.3382168 28.4901075,30.4856362 L28.4782609,30.2857143 L28.4782609,27.4285715 C28.4782609,25.3114799 26.7888354,23.578536 24.6508717,23.4377995 L24.3695651,23.4285714 L12.6304348,23.4285714 C10.4558136,23.4285714 8.67577883,25.0733032 8.53121799,27.1547069 L8.52173912,27.4285715 L8.52173912,30.2857143 C8.52173912,31.2324881 7.73337096,32 6.76086956,32 C5.85783254,32 5.11356348,31.3382168 5.01184666,30.4856362 L5,30.2857143 L5,27.4285715 C5,23.446552 8.21826067,20.1963123 12.2607333,20.0085663 L12.6304348,20 L24.3695651,20 Z M18.5,3 C22.6421356,3 26,6.35786438 26,10.5 C26,14.6421356 22.6421356,18 18.5,18 C14.3578644,18 11,14.6421356 11,10.5 C11,6.35786438 14.3578644,3 18.5,3 Z M18.5,6.46153845 C16.2696193,6.46153845 14.4615384,8.26961927 14.4615384,10.5 C14.4615384,12.7303807 16.2696193,14.5384616 18.5,14.5384616 C20.7303807,14.5384616 22.5384616,12.7303807 22.5384616,10.5 C22.5384616,8.26961927 20.7303807,6.46153845 18.5,6.46153845 Z"></path>
+                        <svg class="iconos-header" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 36 36" focusable="false">
+                            <path fill-rule="evenodd" d="M24.3695651,20 C28.4597917,20 31.7983532,23.1331215 31.9912009,27.0686505 L32,27.4285715 L32,30.2857143 C32,31.2324881 31.2116318,32 30.2391304,32 C29.3360934,32 28.5918244,31.3382168 28.4901075,30.4856362 L28.4782609,30.2857143 L28.4782609,27.4285715 C28.4782609,25.3114799 26.7888354,23.578536 24.6508717,23.4377995 L24.3695651,23.4285714 L12.6304348,23.4285714 C10.4558136,23.4285714 8.67577883,25.0733032 8.53121799,27.1547069 L8.52173912,27.4285715 L8.52173912,30.2857143 C8.52173912,31.2324881 7.73337096,32 6.76086956,32 C5.85783254,32 5.11356348,31.3382168 5.01184666,30.4856362 L5,30.2857143 L5,27.4285715 C5,23.446552 8.21826067,20.1963123 12.2607333,20.0085663 L12.6304348,20 L24.3695651,20 Z M18.5,3 C22.6421356,3 26,6.35786438 26,10.5 C26,14.6421356 22.6421356,18 18.5,18 C14.3578644,18 11,14.6421356 11,10.5 C11,6.35786438 14.3578644,3 18.5,3 Z M18.5,6.46153845 C16.2696193,6.46153845 14.4615384,8.26961927 14.4615384,10.5 C14.4615384,12.7303807 16.2696193,14.5384616 18.5,14.5384616 C20.7303807,14.5384616 22.5384616,12.7303807 22.5384616,10.5 C22.5384616,8.26961927 20.7303807,6.46153845 18.5,6.46153845 Z"></path>
                         </svg>
+                            
+                        <a class="nav-link active boton-cuenta" aria-current="page" href="#">Mi cuenta</a>        
                         
-                        <a class="nav-link active boton-cuenta" aria-current="page" href="#">Mi cuenta</a>
                     </li>
                     
                     <li class="nav-item">
-                        <svg class="header__main-link-icon icon icon--size-36 u-is-hidden-max-large iconos-header" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 36 36" focusable="false">
+                        <svg class="iconos-header" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 36 36" focusable="false">
                             <path fill-rule="evenodd" d="M13.5,26 C14.8807119,26 16,27.1192881 16,28.5 C16,29.8807119 14.8807119,31 13.5,31 C12.1192881,31 11,29.8807119 11,28.5 C11,27.1192881 12.1192881,26 13.5,26 Z M26.5,26 C27.8807119,26 29,27.1192881 29,28.5 C29,29.8807119 27.8807119,31 26.5,31 C25.1192881,31 24,29.8807119 24,28.5 C24,27.1192881 25.1192881,26 26.5,26 Z M9.75400975,5 C10.3341575,5 10.8403939,5.37037019 11.0164102,5.90379226 L11.0560348,6.05315786 L11.9493858,10.4583423 L29.6717358,10.4596526 C30.4527555,10.4596526 31.05292,11.1172849 30.9963002,11.8648775 L30.9760781,12.0154273 L29.2036777,21.1865373 C28.8840541,22.7744964 27.5051889,23.9278301 25.9073553,23.9969472 L25.6881906,23.9995909 L14.9580606,23.9993504 C13.317721,24.0303706 11.8814335,22.9474274 11.467539,21.4019742 L11.4175128,21.188425 L8.66561672,7.62019652 L5.3278484,7.62063323 C4.64688015,7.62063323 4.08563671,7.11479835 4.00893341,6.46312721 L4,6.31031661 C4,5.63833929 4.51260285,5.08450604 5.17299322,5.00881546 L5.3278484,5 L9.75400975,5 Z M28.0668097,13.0789755 L12.4805252,13.0789755 L14.0219443,20.6759951 C14.0962003,21.0449148 14.3991426,21.3200005 14.7845225,21.370713 L14.9326185,21.3789577 L25.7136327,21.3791982 C26.0947216,21.3864049 26.4317564,21.1531111 26.55926,20.8165789 L26.5969289,20.6858082 L28.0668097,13.0789755 Z"></path>
                         </svg>
                         
                         <a class="nav-link active boton-cuenta" href="#">Carrito</a>
+
                     </li>
                 </ul>
             </div>
-          
         </div>
       </nav>
 
+
+
+      <div class="d-flex justify-content-center fondo-menu-navegacion">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-6 col-lg-12 menu-navegacion">
+                <a class="boton-menu-navegacion" href="index.php">Home</a>
+                <a class="boton-menu-navegacion" href="carta.php">Carta</a>
+            </div>
+        </div> 
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>

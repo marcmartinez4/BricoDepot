@@ -1,0 +1,128 @@
+.main {
+    padding: 24px 0 32px;
+}
+.col-hr {
+    padding: 0;
+    margin: 16px 0;
+}
+.my-4 {
+    margin: 0!important;
+}
+.div-producto {
+    display: flex;
+    justify-content: center;
+}
+.toda-info {
+    padding: 0 0 24px 24px;
+    display: flex;
+    flex-direction: column;
+}
+.nombre-producto {
+    font-family: 'Goodhome', sans-serif;
+    font-size: 25.5px;
+    padding: 3px 55px 10px 0;
+    margin: 0;
+}
+.info-productos {
+    height: 82px;
+    margin-bottom: 15px;
+}
+.precio {
+    font-family: 'Barlow';
+    font-weight: 900;
+    font-size: 57px;
+    margin: 0;
+}
+.euro {
+    font-size: 22.8px;
+    margin-left: 4px;
+    margin: 0;
+}
+.opciones-producto {
+    height: 137px;
+}
+.arriba {
+    display: flex;
+}
+.boton-cantidad {
+    width: 44px;
+    height: 44px;
+}
+.boton-carrito {
+    width: 425px;
+    height: 44px;
+    margin-left: 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #E20811;
+    color: white;
+    font-family: 'Goodhome', sans-serif;
+    font-size: 16px;
+    font-weight: 900;
+    padding: 0;
+}
+.texto-mini-logo {
+    font-family: 'Goodhome', sans-serif;
+    font-size: 16px;
+
+}
+.mini-logo {
+    height: 13px;
+}
+.div-imagen {
+    min-width: 630px;
+    min-height: 630px;
+    display: flex;
+    justify-content: center;
+}
+.imagen-producto {
+    width: 100%;
+    height: 400px;
+}
+.div-envio {
+    height: 74px;
+    display: flex;
+    font-family: 'Goodhome', sans-serif;
+    font-size: 16px;
+}
+.imagen-furgo {
+    margin-right: 8px;
+}
+.texto-envios1 {
+    margin: 0;
+    padding-top: 2px;
+    font-size: 16px;
+}
+.texto-envios2 {
+    margin: 0px;
+    margin-top: 8px;
+}
+.texto-envios3 {
+    margin: 0;
+    margin-top: 4px;
+    color: #6F767A;
+}
+.icono-recogida {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}
+.div-recogida {
+    min-height: 46px;
+    margin-top: 30.4px;
+    display: flex;
+    font-family: 'Goodhome', sans-serif;
+    font-size: 16px;
+}
+.descripcion {
+    background-color: #F7F7F7;
+    padding: 24px;
+    margin: 0 56px 15px;
+}
+.titulo-descripcion {
+    font-family: 'Goodhome', sans-serif;
+    font-size: 20px;
+}
+.hr-descripcion {
+    margin: 0;
+}

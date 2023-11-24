@@ -1,6 +1,16 @@
 body {
     overflow-x: hidden;
 }
+.h2-principal {
+    text-align: center;
+    font-family: 'Barlow';
+    font-size: 38px;
+    font-weight: 900;
+    margin: 0;
+    padding: 10px 12px 10px 12px;
+    margin-top: 20px;
+}
+
 .h2 {
     text-align: center;
     font-family: 'Barlow';
@@ -14,8 +24,9 @@ body {
     padding: 10px 12px 10px 12px;
 }
 .imagen-producto {
-    width: 100%;
-    height: 205px;
+    min-width: 272px;
+    min-height: 205px;
+    background-color: white;
 }
 .productos {
     display: flex;
@@ -28,15 +39,37 @@ body {
     font-family: 'Goodhome', sans-serif;
     font-size: 14px;
     padding: 6px 0;
+    width: 272px;
 }
-.productos span {
+.productos p {
     font-family: 'Barlow';
     font-size: 37px;
     font-weight: 900;
-    margin: 23px 0 0 0;
+    margin: 0;
 }
-.productos p {
+.productos span {
     font-size: 14.8px;
     margin: 0 0 0 4px;
     width: 14.35px
+}
+.precio-añadir {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.precio-añadir {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 10px;
+}
+.form-productos {
+    max-width: 272px!important;
+    max-height: 380px!important;
+}
+.a-input {
+    padding: 0!important;
+    max-width: 36px;
+    max-height: 36px;
 }
