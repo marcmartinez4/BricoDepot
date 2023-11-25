@@ -21,12 +21,12 @@
     ?>
 
     <main class="container-fluid">
-        <div class="d-flex justify-content-center">
+        <div class="d-flex justify-content-center banner">
             <div class="row justify-content-center">
-                <div class="col-12 col-md-6 col-lg-6">
+                <div class="col-12 col-md-6 col-lg-5">
                     <img src="../img/Hamburguesa queso fundido.png" class="img-fluid Hamburguesa" alt="...">
                 </div>
-                <div class="col-12 col-md-6 col-lg-5">
+                <div class="col-12 col-md-6 col-lg-4">
                     <img src="../img/Bocata1.png" class="img-fluid Bocata" alt="...">
                     <img src="../img/Bocata2.png" class="img-fluid Bocata" alt="...">
                 </div>
@@ -45,7 +45,7 @@
 
         <div class="d-flex justify-content-center img-destacado">
             <div class="row justify-content-center">
-                <div class="col-12 col-md-6 col-lg-12">
+                <div class="col-12 col-md-6 col-lg-9">
                     <img src="../img/DESTACADO.png" class="img-fluid" alt="...">
                 </div>
             </div> 
@@ -109,8 +109,8 @@
 
         <div class="d-flex justify-content-center">
             <div class="row justify-content-center">
-                <div class="col-12 col-md-6 col-lg-6">
-                    <h3><strong>¿Que ofrecemos en nuestro restaurante?</strong></h3>
+                <div class="col-12 col-md-6 col-lg-5">
+                    <h3 class="h3-paneles"><strong>¿Que ofrecemos en nuestro restaurante?</strong></h3>
                     <div class="izquierda">
                         <p>En nuestro establecimiento, ofrecemos una deliciosa variedad de comidas rápidas
                             que satisfarán todos tus antojos. Desde hamburguesas y hot dogs sabrosos hasta
@@ -120,8 +120,8 @@
                             vale la pena. ¡Ven y disfruta de la mejor comida rápida en nuestro restaurante!</p>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 col-lg-6">
-                    <h3><strong>Opiniones de nuestros clientes</strong></h3>
+                <div class="col-12 col-md-6 col-lg-5">
+                    <h3 class="h3-paneles"><strong>Opiniones de nuestros clientes</strong></h3>
                     <div class="derecha">
                         <h4><strong>Alfonso Gutiérrez</strong></h4>
                         <p>Me encantó la amplia variedad de opciones en el menú. Las hamburguesas

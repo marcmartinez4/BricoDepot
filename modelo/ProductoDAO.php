@@ -19,7 +19,7 @@
 
         public static function getProductById($id) {
             $con = database::connect();
-            $result = $con->query("SELECT * FROM productos WHERE producto_id = $id;");
+            $result = $con->query("SELECT * FROM `productos` WHERE `producto_id` = $id;");
             $productoCarrito = $result->fetch_object('producto');
             return $productoCarrito;
         }
@@ -38,12 +38,6 @@
             $con = dataBase::connect();
             $con->query("UPDATE productos SET `nombre_producto` = $nombre_producto, `descripcion` = $descripcion, `precio_unidad` = $precio_unidad,`categoria_id` = $categoria_id WHERE producto_id = $id");
         }
-
-        public static function añadirCarrito($id) {
-            array_push($_SESSION['array_carrito'], $id);
-            print_r($_SESSION['array_carrito']); 
-        }
-
 
         /* include ("../modelo/Producto.php");
         class ProductoDAO {

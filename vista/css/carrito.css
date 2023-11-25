@@ -1,6 +1,17 @@
 body {
     background-color: #EFF0F0;
 }
+.container-fluid {
+    padding: 32px 0;
+}
+h1 {
+    font-family: 'Goodhome', sans-serif;
+    font-size: 32px;
+}
+.span-h1 {
+    font-family: 'Goodhome', sans-serif;
+    font-size: 16px;
+}
 .panel-carrito {
     background-color: white;
     width: 900.66px;
@@ -71,4 +82,17 @@ hr {
     font-size: 16px;
     font-weight: 900;
     padding: 0;
+}
+.texto-mini-logo {
+    font-family: 'Goodhome', sans-serif;
+    font-size: 16px;
+
+}
+.mini-logo {
+    height: 13px;
+    margin-bottom: 10px;
+}
+.item-carrito {
+    height: 153px;
+    padding: 20px 0 24px;
 }

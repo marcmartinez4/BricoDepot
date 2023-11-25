@@ -2,6 +2,7 @@
     include_once '../modelo/ProductoDAO.php';
     include_once '../controlador/productoControlador.php';
     include_once '../config/functions.php';
+    include_once '../modelo/PedidoDAO.php';
     
     $productos = productoDAO::getAllProducts();
     $producto_id = $_GET['producto_id'];
@@ -9,7 +10,7 @@
     if (isset($_POST['AñadirCarrito'])) {
         $id = $_POST['producto_id'];
         echo $id;
-        productoControlador::añadirCarrito($id);
+        PedidoDAO::añadirCarrito($id);
         header('Location: ../vista/informacion-producto.php?producto_id='.$producto_id);
     }
 
@@ -26,6 +27,9 @@
 </head>
 <body>
     <?php
+        include ('../vista/header.html');
+
+
         foreach ($productos as $producto) {
             if ($producto->getProducto_ID() == $producto_id) {
     ?>
@@ -72,13 +76,7 @@
                         </div>
                     </div>
                         
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col col-hr hr-info">
-                                <hr class="my-4">
-                            </div>
-                        </div>
-                    </div>
+                    <hr>
 
                     <span class="texto-mini-logo">Vendido por <img class="mini-logo" src="https://www.bricodepot.es/media/favicon/default/favicon-32x32.png"> <strong>Brico Depôt</strong></span>
                 </div>
@@ -130,7 +128,7 @@
     <?php
             }
         }
-        /*include ('../vista/footer.html');*/
+        include ('../vista/footer.html');
     ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>

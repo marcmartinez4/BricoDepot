@@ -71,7 +71,7 @@
         <div class="row justify-content-center">
             <?php
                 foreach ($productos as $producto) {
-                    if ($producto->getCategoria_ID() == 1) {
+                    if ($producto->getCategoria_ID() == 5) {
             ?>
                 <form class="form-productos" action="../vista/informacion-producto.php" method="get">
                     <div class="col-3 col-sm-3 col-md-3 col-lg-3 productos">
@@ -143,7 +143,7 @@
         <div class="row justify-content-center">
             <?php
                 foreach ($productos as $producto) {
-                    if ($producto->getCategoria_ID() == 1) {
+                    if ($producto->getCategoria_ID() == 3) {
             ?>
                 <form class="form-productos" action="../vista/informacion-producto.php" method="get">
                     <div class="col-3 col-sm-3 col-md-3 col-lg-3 productos">

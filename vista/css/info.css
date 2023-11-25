@@ -68,6 +68,7 @@
 }
 .mini-logo {
     height: 13px;
+    margin-bottom: 10px;
 }
 .div-imagen {
     min-width: 630px;
@@ -125,4 +126,7 @@
 }
 .hr-descripcion {
     margin: 0;
+}
+h3 {
+    padding: 0!important;
 }
