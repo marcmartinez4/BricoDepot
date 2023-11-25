@@ -62,6 +62,7 @@
                                 if ($_SESSION['pedido'] != null) {
                                     
                                     print_r($_SESSION['pedido'][$i]);
+                                    /*--COMMIT-- */
                                 }
                             }
                         ?>
