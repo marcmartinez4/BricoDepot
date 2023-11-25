@@ -63,7 +63,7 @@
                                     
                                     print_r($_SESSION['pedido'][$i]);
                                 }
-                            } 
+                            }
                         ?>
                     </div>
                     <hr>
