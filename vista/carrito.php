@@ -62,13 +62,31 @@
                                 if ($_SESSION['pedido'] != null) {
                                     
                                     print_r($_SESSION['pedido'][$i]);
-                                    /*--COMMIT-- */
                                 }
                             }
+                            foreach ($_SESSION['pedido'] as $item) {
+                                echo '<br>';
+                                /*echo 'Producto ID: '.$item[0].'<br>';
+                                echo 'Cantidad: '.$item[1];*/
+
+                                $producto_id = $item[0];
+                                $cantidad = $item[1];
+
+                                echo 'Producto ID: '.$producto_id.'<br>';
+                                echo 'Cantidad: '.$cantidad;
+
+                            }
+
+                            foreach ($productos as $producto) {
+                                if ($producto->getProductById($producto_id) == $producto_id) {
+                                    echo $producto->getNombre_producto();
+                                }
+                            }
+                                
                         ?>
                     </div>
                     <hr>
-                    <span class="texto-mini-logo">Vendido por <img class="mini-logo" src="https://www.bricodepot.es/media/favicon/default/favicon-32x32.png"> <strong>Brico Depôt</strong></span>
+                    <span class="texto-mini-logo">Vendido por <img class="mini-logo" src="https://www.bricodepot.es/media/favicon/default/favicon-32x32.png"><strong>Brico Depôt</strong></span>
                 </div>
                 
                 <div class="col-12 col-md-6 col-lg-5 panel-finalizar">
