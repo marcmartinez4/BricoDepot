@@ -47,6 +47,13 @@
 .boton-cantidad {
     width: 44px;
     height: 44px;
+    border: 1px solid #AEB2B4;
+    border-radius: 4px;
+    background-color: transparent;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .boton-carrito {
     width: 425px;

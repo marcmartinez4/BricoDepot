@@ -12,6 +12,16 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="../vista/css/carta.css">
     <title>Brico Depôt | Bricolaje, jardín, construcción y climatización</title>
+    <style>
+        .h2 {
+            text-align: center;
+            font-family: 'Barlow';
+            font-size: 38px;
+            font-weight: 900!important;
+            margin: 0!important;
+            padding: 10px 12px 10px 12px;
+        }
+    </style>
 </head>
 <body>
 
@@ -39,7 +49,7 @@
             ?>
                 <form class="form-productos" action="../vista/informacion-producto.php" method="get">
                     <div class="col-3 col-sm-3 col-md-3 col-lg-3 productos">
-                        <img class="imagen-producto-carta" src="<?php echo $producto->getImg() ?>">
+                        <img class="imagen-producto" src="<?php echo $producto->getImg() ?>">
                         <a><?php echo $producto->getNombre_producto(); ?></a>
                         <div class="precio-añadir">
                             <p><?php echo $producto->getPrecio_unidad(); ?><span>€</span></p>
@@ -75,7 +85,7 @@
             ?>
                 <form class="form-productos" action="../vista/informacion-producto.php" method="get">
                     <div class="col-3 col-sm-3 col-md-3 col-lg-3 productos">
-                        <img class="imagen-producto-carta" src="<?php echo $producto->getImg() ?>">
+                        <img class="imagen-producto" src="<?php echo $producto->getImg() ?>">
                         <a><?php echo $producto->getNombre_producto(); ?></a>
                         <div class="precio-añadir">
                             <p><?php echo $producto->getPrecio_unidad(); ?><span>€</span></p>
@@ -111,7 +121,7 @@
             ?>
                 <form class="form-productos" action="../vista/informacion-producto.php" method="get">
                     <div class="col-3 col-sm-3 col-md-3 col-lg-3 productos">
-                        <img class="imagen-producto-carta" src="<?php echo $producto->getImg() ?>">
+                        <img class="imagen-producto" src="<?php echo $producto->getImg() ?>">
                         <a><?php echo $producto->getNombre_producto(); ?></a>
                         <div class="precio-añadir">
                             <p><?php echo $producto->getPrecio_unidad(); ?><span>€</span></p>
@@ -147,10 +157,12 @@
             ?>
                 <form class="form-productos" action="../vista/informacion-producto.php" method="get">
                     <div class="col-3 col-sm-3 col-md-3 col-lg-3 productos">
-                        <img class="imagen-producto-carta" src="<?php echo $producto->getImg() ?>">
+                        <img class="imagen-producto" src="<?php echo $producto->getImg() ?>">
                         <a><?php echo $producto->getNombre_producto(); ?></a>
+                        
                         <div class="precio-añadir">
                             <p><?php echo $producto->getPrecio_unidad(); ?><span>€</span></p>
+                            
                             <a class="a-input" href="..vista/informacion-producto.php">
                                 <input type="hidden" name="producto_id" value="<?php echo $producto->getProducto_id(); ?>">
                                 <input type="image" value="" src="../img/carrito.png">

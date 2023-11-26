@@ -14,6 +14,8 @@
         header('Location: ../vista/informacion-producto.php?producto_id='.$producto_id);
     }
 
+    $cantidad_añadir = 1;
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,6 +26,32 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="../vista/css/info.css">
     <title></title>
+    <style>
+        .botones {
+            display: flex;
+        }
+        .boton-cantidad {
+            width: 44px;
+            height: 44px;
+            border: 1px solid #AEB2B4;
+            border-radius: 4px;
+            background-color: transparent;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .precio-boton {
+            margin: 0;
+            font-family: 'Goodhome', sans-serif;
+            font-size: 16px;
+
+        }
+        .boton-svg {
+            width: 24px;
+            height: 24px;
+        }
+    </style>
 </head>
 <body>
     <?php
@@ -45,24 +73,22 @@
                 <div>
                     <p class="precio"> <?php echo $producto->getPrecio_unidad(); ?> <span>€</span></p>
                 </div>
-
+                
                 <div class="opciones-producto">
                     <div class="arriba">
                         <div class="botones">
                             <button class="boton-cantidad" type="button" data-input-id="qty-cart-8435483843882">
-                                <svg class="icon icon--size-24 icon--dark" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+                                <svg class="boton-svg" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 24 24" focusable="false">
                                     <rect width="16" height="2" x="4" y="11" fill-rule="evenodd"></rect>
                                 </svg>
                             </button>
                             
                             <button class="boton-cantidad" type="button" data-input-id="qty-cart-8435483843882">
-                                <svg class="icon icon--size-24 icon--dark" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 24 24" focusable="false">
-                                    <rect width="16" height="2" x="4" y="11" fill-rule="evenodd"></rect>
-                                </svg>
+                                <p class="precio-boton"><?php echo $cantidad_añadir; ?></p>
                             </button>
 
                             <button class="boton-cantidad" type="button" data-input-id="qty-cart-8435483843882">
-                                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+                                <svg class="boton-svg" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 24 24" focusable="false">
                                     <path fill-rule="evenodd" d="M13,4 L13,11 L20,11 L20,13 L13,13 L13,20 L11,20 L11,13 L4,13 L4,11 L11,11 L11,4 L13,4 Z"></path>
                                 </svg>
                             </button>

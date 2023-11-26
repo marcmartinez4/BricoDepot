@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="css-index.css">
+    <link rel="stylesheet" href="../vista/css/header.css">
     <title>Document</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary c-fluid">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary c-fluid container-fluid">
         <div class="container-fluid c-fluid">
             <div class="tool-bar1">
                 <p>Envios gratis en miles de productos</p>
@@ -16,24 +16,24 @@
         </div>
     </nav>
 
-    <nav class="navbar navbar-expand-lg bg-body-tertiary c-fluid">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary c-fluid content-fluid">
         <div class="container-fluid c-fluid">
             <div class="tool-bar2">
                 <div class="region u-mr-medium icon-align icon-align--left icon-align--center">
-                    <svg class="u-mr-xsmall" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
                         <path d="M3.5 10a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm8 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zM9 3c.889 0 1.687.386 2.236 1H12a4 4 0 0 1 4 4v3a1 1 0 0 1-1 1l-1.563.001A2.004 2.004 0 0 0 11.5 9.5a2 2 0 0 0-1.937 2.501H5.437A2.004 2.004 0 0 0 3.5 9.5a2 2 0 0 0-1.937 2.501L1 12a1 1 0 0 1-1-1V5a2 2 0 0 1 2-2h7zm3.5 2H11v3h4v-.5A2.5 2.5 0 0 0 12.5 5z" fill="#222221" fill-rule="evenodd"></path>
                     </svg>
-                    <span class="botones-toolbar2"">España península</span>
+                    <span class="botones-toolbar2">España península</span>
                 </div>
 
-                <div class="store u-mr-medium icon-align icon-align--left icon-align--center">
-                    <svg  class="u-mr-xsmall" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                <div>
+                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
                         <path d="M2 7h12v7h-4v-2.909H5.995V14H2V7zM1 4.406l1.026 2.061 6.133-2.902 5.746 2.98L15 4.52 8.212 1 1 4.406z" fill="#222221" fill-rule="evenodd"></path>
                     </svg>
                     <span class="botones-toolbar2">Seleccionar tienda</span>
                 </div>
 
-                <a class="stores icon-align icon-align--right u-font-xsmall u-ml-small btn-a-toolbar2">
+                <a class="btn-a-toolbar2">
                     <svg class="btn-ubicacion" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 20 20" focusable="false">
                         <path fill-rule="evenodd" d="M10,1.375c-3.17,0-5.75,2.548-5.75,5.682c0,6.685,5.259,11.276,5.483,11.469c0.152,0.132,0.382,0.132,0.534,0c0.224-0.193,5.481-4.784,5.483-11.469C15.75,3.923,13.171,1.375,10,1.375 M10,17.653c-1.064-1.024-4.929-5.127-4.929-10.596c0-2.68,2.212-4.861,4.929-4.861s4.929,2.181,4.929,4.861C14.927,12.518,11.063,16.627,10,17.653 M10,3.839c-1.815,0-3.286,1.47-3.286,3.286s1.47,3.286,3.286,3.286s3.286-1.47,3.286-3.286S11.815,3.839,10,3.839 M10,9.589c-1.359,0-2.464-1.105-2.464-2.464S8.641,4.661,10,4.661s2.464,1.105,2.464,2.464S11.359,9.589,10,9.589"></path>
                     </svg>
@@ -42,14 +42,14 @@
                     </span>
                 </a>
 
-                <a class="blog icon-align icon-align--right u-font-xsmall u-ml-small btn-a-toolbar2">
-                    <span class="blog">
+                <a class="btn-a-toolbar2">
+                    <span>
                       <strong class="botones-toolbar2">Ideas & Inspiración</strong>
                     </span>
                 </a>
 
-                <a class="services icon-align icon-align--right u-font-xsmall u-ml-small btn-a-toolbar2" href="/servicios" onclick="bd_datalayerEvent('headerClick', 'Navigation', 'Click: Header', 'Servicios')">
-                    <span class="services">
+                <a class="btn-a-toolbar2" href="/servicios">
+                    <span>
                       <strong class="botones-toolbar2-derecha">Servicios</strong>
                     </span>
                 </a>
@@ -60,7 +60,7 @@
     <nav class="navbar navbar-expand-lg bg-body-tertiary header">
         <div class="container-fluid div-header">
             <div class="logo-busqueda">
-                <svg class="header__main-logo u-is-hidden-max-large" xmlns="http://www.w3.org/2000/svg" width="118" height="48" viewBox="0 0 775.2 337.65" aria-label="BricoDepot" role="img" onclick="bd_datalayerEvent('headerClick', 'Navigation', 'Click: Header', 'Logo')">
+                <svg xmlns="http://www.w3.org/2000/svg" width="118" height="48" viewBox="0 0 775.2 337.65" aria-label="BricoDepot" role="img">
                     <title>BricoDepot</title>
                     <style type="text/css">
                         .st0Logo{fill:#FFFFFF;}

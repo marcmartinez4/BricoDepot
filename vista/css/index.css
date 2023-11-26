@@ -1,0 +1,90 @@
+body {
+    overflow-x: hidden;
+}
+.banner {
+    margin-top: 20px!important;
+}
+.Hamburguesa {
+    width: 100%;
+    min-height: 500px;
+    padding: 10px 0 10px 12px;
+}
+.Bocata {
+    width: 100%;
+    max-height: 250px;
+    padding: 10px 12px 10px 0!important;
+}
+.col-hr {
+    height: 70px;
+    padding: 10px 12px 10px 12px;
+}
+.img-destacado {
+    width: 100%;
+    height: 100%;
+    padding: 10px 12px 10px 12px;
+}
+.productos {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 272px!important;
+    height: 380px;
+}
+.productos a {
+    font-family: 'Goodhome', sans-serif;
+    font-size: 14px;
+    padding: 6px 0;
+    width: 272px;
+}
+.productos p {
+    font-family: 'Barlow';
+    font-size: 37px;
+    font-weight: 900;
+    margin: 0;
+}
+.productos span {
+    font-size: 14.8px;
+    margin: 0 0 0 4px;
+    width: 14.35px
+}
+.imagen-producto {
+    min-width: 272px;
+    min-height: 205px;
+    background-color: white;
+}
+.h2 {
+    text-align: center;
+    font-family: 'Barlow';
+    font-size: 38px;
+    font-weight: 900!important;
+    margin: 0!important;
+    padding: 10px 12px 10px 12px;
+}
+.imagenes-verticales {
+    padding: 10px;
+}
+.h3-paneles {
+    padding: 20px 40px 20px 20px;
+    margin: 0;
+    font-family: 'Barlow';
+    font-size: 18px;
+    color: black;
+}
+.izquierda {
+    background-color: #F7F7F7;
+    font-family: 'Barlow', sans-serif;
+    font-size: 18px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+.izquierda p {
+    margin: 0;
+}
+.derecha {
+    font-family: 'Barlow', sans-serif;
+    font-size: 18px;
+    padding: 20px;
+}
+.derecha p {
+    margin: 0;
+}
