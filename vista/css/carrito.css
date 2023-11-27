@@ -184,3 +184,37 @@ hr {
 .div-centro {
     width: 100%!important;
 }
+.precios {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Goodhome', sans-serif;
+    font-size: 16px;
+}
+.precios-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Goodhome', sans-serif;
+    font-size: 18px;
+    padding: 11px 0;
+}
+.precios-2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Goodhome', sans-serif;
+    font-size: 14px;
+}
+.total {
+    padding: 3px 0 0;
+    font-family: 'Goodhome', sans-serif;
+    font-size: 18px;
+    margin: 0;
+}
+.total-iva {
+    margin: 0 0 10px 0;
+    padding: 0 10px 11px 0;
+    font-family: 'Goodhome', sans-serif;
+    font-size: 14px;
+}
