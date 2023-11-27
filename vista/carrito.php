@@ -100,7 +100,7 @@
                 <div class="d-flex justify-content-start div-titulo">
                     <div class="row justify-content-start">
                         <div class="col-12 col-md-6 col-lg-12">
-                            <h1>Mi carrito <span class="span-h1"><?php echo $count_array.' '.$top?></span></h1>
+                            <h1 class="h1">Mi carrito <span class="span-h1"><?php echo $count_array.' '.$top?></span></h1>
                         </div>
                     </div>
                 </div>
