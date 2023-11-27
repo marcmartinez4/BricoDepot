@@ -1,3 +1,6 @@
+body {
+    overflow-x: hidden!important;
+}
 .hr-marcas {
     margin: 0!important;
 }
