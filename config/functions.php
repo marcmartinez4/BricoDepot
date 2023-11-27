@@ -1,7 +1,7 @@
 <?php
     session_start();
-    if (!isset($_SESSION['pedido'])) {
-        $_SESSION['pedido']  = array(array());
-        array_pop($_SESSION['pedido']);
+    if (!isset($_SESSION['carrito'])) {
+        $_SESSION['carrito']  = array(array());
+        array_pop($_SESSION['carrito']);
     }
 ?>

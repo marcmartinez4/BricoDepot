@@ -24,6 +24,11 @@
             text-align: center;
             color: black;
         }
+        .Bocata {
+            width: 100%;
+            min-height: 250px!important;
+            padding: 10px 12px 10px 0!important;
+        }
     </style>
 </head>
 <body>
@@ -35,7 +40,7 @@
     <main class="container-fluid">
         <div class="d-flex justify-content-center banner">
             <div class="row justify-content-center">
-                <div class="col-12 col-md-6 col-lg-5">
+                <div class="col-12 col-md-6 col-lg-6">
                     <img src="../img/Hamburguesa queso fundido.png" class="img-fluid Hamburguesa" alt="...">
                 </div>
                 <div class="col-12 col-md-6 col-lg-4">
@@ -57,7 +62,7 @@
 
         <div class="d-flex justify-content-center img-destacado">
             <div class="row justify-content-center">
-                <div class="col-12 col-md-6 col-lg-9">
+                <div class="col-12 col-md-6 col-lg-10">
                     <img src="../img/DESTACADO.png" class="img-fluid" alt="...">
                 </div>
             </div> 
@@ -70,7 +75,7 @@
                     foreach ($productos as $producto) {
                         if ($producto->getCategoria_ID() == 1) {
                 ?>
-                    <div class="col-3 col-sm-3 col-md-3 col-lg-3 productos">
+                    <div class="col-3 col-sm-3 col-md-3 col-lg-2 productos">
                         <img class="imagen-producto" src="<?php echo $producto->getImg() ?>">
                         <a><?php echo $producto->getNombre_producto(); ?></a>
                         <p><?php echo $producto->getPrecio_unidad(); ?><span>€</span></p>

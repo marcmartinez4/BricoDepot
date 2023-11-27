@@ -1,6 +1,9 @@
 body {
     overflow-x: hidden!important;
 }
+.footer-marcas {
+    min-height: 171px;
+}
 .hr-marcas {
     margin: 0!important;
 }

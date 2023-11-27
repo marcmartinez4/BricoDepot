@@ -3,19 +3,33 @@
     include_once '../controlador/productoControlador.php';
     include_once '../config/functions.php';
     include_once '../modelo/PedidoDAO.php';
-    
+
     $productos = productoDAO::getAllProducts();
     $producto_id = $_GET['producto_id'];
-            
+
     if (isset($_POST['AñadirCarrito'])) {
         $id = $_POST['producto_id'];
         echo $id;
-        PedidoDAO::añadirCarrito($id);
-        header('Location: ../vista/informacion-producto.php?producto_id='.$producto_id);
+        PedidoDAO::añadirCarrito($id, $_SESSION['cantidad_añadir']);
+        header('Location: ../vista/informacion-producto.php?producto_id=' . $producto_id);
     }
 
-    $cantidad_añadir = 1;
+    
+    if (!isset($_SESSION['cantidad_añadir'])) {
+        $_SESSION['cantidad_añadir'] = 1; 
+    }
 
+    if (isset($_POST["reducirCantidad"])) {
+        if ($_SESSION['cantidad_añadir'] > 1) {
+            $_SESSION['cantidad_añadir']--;
+            header('Location: ../vista/informacion-producto.php?producto_id=' . $producto_id);
+        }
+    }
+
+    if (isset($_POST["añadirCantidad"])) {
+        $_SESSION['cantidad_añadir']++;
+        header('Location: ../vista/informacion-producto.php?producto_id=' . $producto_id);
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -77,21 +91,22 @@
                 <div class="opciones-producto">
                     <div class="arriba">
                         <div class="botones">
-                            <button class="boton-cantidad" type="button" data-input-id="qty-cart-8435483843882">
-                                <svg class="boton-svg" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 24 24" focusable="false">
-                                    <rect width="16" height="2" x="4" y="11" fill-rule="evenodd"></rect>
-                                </svg>
-                            </button>
+                            <form class="boton-cantidad" action="" method="post">
+                                <input type="hidden" name="reducirCantidad">
+                                <input class="boton-svg" type="image" src="../img/menos-cantidad.png">
+                                
+                            </form>
+
                             
-                            <button class="boton-cantidad" type="button" data-input-id="qty-cart-8435483843882">
-                                <p class="precio-boton"><?php echo $cantidad_añadir; ?></p>
+                            <button class="boton-cantidad" type="button">
+                                <p class="precio-boton"><?php echo $_SESSION['cantidad_añadir'] ?></p>
                             </button>
 
-                            <button class="boton-cantidad" type="button" data-input-id="qty-cart-8435483843882">
-                                <svg class="boton-svg" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 24 24" focusable="false">
-                                    <path fill-rule="evenodd" d="M13,4 L13,11 L20,11 L20,13 L13,13 L13,20 L11,20 L11,13 L4,13 L4,11 L11,11 L11,4 L13,4 Z"></path>
-                                </svg>
-                            </button>
+                            <form class="boton-cantidad" action="" method="post">
+                                <input type="hidden" name="añadirCantidad">
+                                <input class="boton-svg" type="image" src="../img/aumentar-cantidad.png">
+                                
+                            </form>
                         </div>
 
                         <div>
@@ -113,8 +128,7 @@
                     </svg>
                     <span>
                         <h3 class="texto-envios1"><strong>Envío a domicilio</strong></h3>
-                        <p class="texto-envios2">65 unidades online</p>
-                        <p class="texto-envios3">Envío de 4 a 8 días hábiles.</p>
+                        <p class="texto-envios3">65 unidades online</p>
                     </span>
                 </div>
                 
@@ -128,13 +142,7 @@
                     </span>
                 </div>
 
-                <div class="container-fluid hr">
-                    <div class="row">
-                        <div class="col col-hr">
-                            <hr class="my-4">
-                        </div>
-                    </div>
-                </div>
+                <hr>
             </div>
         </div> 
     </div>
@@ -154,7 +162,6 @@
     <?php
             }
         }
-        include ('../vista/footer.html');
     ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>

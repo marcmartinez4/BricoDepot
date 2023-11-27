@@ -20,8 +20,8 @@
         public static function getProductById($id) {
             $con = database::connect();
             $result = $con->query("SELECT * FROM `productos` WHERE `producto_id` = $id;");
-            $productoCarro = $result->fetch_object('Producto');
-            return $productoCarro;
+            $prodCarrito = $result->fetch_object('Producto');
+            return $prodCarrito;
         }
 
         public static function añadirProducto($nombre_producto, $descripcion, $precio_unidad, $categoria_id) {

@@ -3,10 +3,12 @@ body {
 }
 .container-fluid {
     padding: 32px 0!important;
+    height: 100%;
 }
 h1 {
     font-family: 'Goodhome', sans-serif;
     font-size: 32px;
+    font-weight: 900;
 }
 .span-h1 {
     font-family: 'Goodhome', sans-serif;
@@ -15,13 +17,13 @@ h1 {
 .panel-carrito {
     background-color: white;
     width: 900.66px;
-    height: 242px;
     margin: 0 0 32px;
     padding: 8px 32px 24px;
 }
 .panel-finalizar {
     background-color: white;
     width: 438.33px;
+    height: 365px;
     padding: 32px 32px 24px;
     margin: 0 0 24px 24px;
 }
@@ -60,7 +62,7 @@ hr {
     font-size: 16px;
 }
 .total {
-    padding: 11px 10px 11px 0;
+    padding: 3px 0 0;
     font-family: 'Goodhome', sans-serif;
     font-size: 18px;
     margin: 0;
@@ -82,6 +84,17 @@ hr {
     font-size: 16px;
     font-weight: 900;
     padding: 0;
+    margin-top: 16px;
+}
+.precio {
+    margin: 0;
+    font-family: 'Goodhome', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+}
+.boton-svg {
+    width: 24px;
+    height: 24px;
 }
 .texto-mini-logo {
     font-family: 'Goodhome', sans-serif;
@@ -89,10 +102,85 @@ hr {
 }
 .mini-logo {
     height: 13px;
-    margin-bottom: 10px;
+    margin-bottom: 9px;
 }
 .item-carrito {
     height: 153px;
     padding: 20px 0 24px;
     display: flex;
+}
+.div-titulo {
+    max-width: 1363px;
+    padding: 0;
+}
+.imagen-pedido {
+    width: 108px;
+    height: 108px;
+}
+.item-carrito {
+    height: 153px;
+    padding: 20px 0 24px;
+    display: flex;
+}
+.imagen-item-carrito {
+    width: 128px;
+    height: 108px;
+    margin-right: 25.6px;
+}
+.nombre-producto {
+    width: 100%;
+    height: 36px;
+    font-family: 'Goodhome', sans-serif;
+    font-size: 16px;
+    margin: 0 0 28px;
+    padding: 0 0 8px;
+}
+.botones {
+    display: flex;
+    justify-content: space-between;
+    width: 683.06px;
+}
+.botones-cantidad {
+    display: flex;
+    align-items: center;
+}
+.boton-cantidad {
+    width: 44px;
+    height: 44px;
+    border: 1px solid #AEB2B4;
+    border-radius: 4px;
+    background-color: transparent;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.boton-eliminar {
+    width: 44px;
+    height: 44px;
+    border: none;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.icon-eliminar {
+    width: 24px;
+    height: 24px;
+}
+.div-precio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hr-panel {
+    margin-bottom: 15px;
+}
+.precio-boton {
+    font-family: 'Goodhome', sans-serif;
+    font-size: 16px;
+    margin: 0;
+}
+.div-centro {
+    width: 100%!important;
 }

@@ -10,7 +10,6 @@ body {
     padding: 10px 12px 10px 12px;
     margin-top: 20px;
 }
-
 .h2 {
     text-align: center;
     font-family: 'Barlow';
@@ -23,23 +22,19 @@ body {
     height: 70px;
     padding: 10px 12px 10px 12px;
 }
-.imagen-producto {
-    min-width: 272px;
-    min-height: 205px;
-    background-color: white;
-}
 .productos {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    width: 272px;
+    max-width: 260px!important;
+    min-width: 260px!important;
     height: 380px;
 }
 .productos a {
     font-family: 'Goodhome', sans-serif;
     font-size: 14px;
     padding: 6px 0;
-    width: 272px;
+    max-width: 260px!important;
 }
 .productos p {
     font-family: 'Barlow';
@@ -52,6 +47,16 @@ body {
     margin: 0 0 0 4px;
     width: 14.35px
 }
+.imagen-producto {
+    max-width: 205px!important;
+    min-height: 205px;
+    background-color: white;
+}
+.imagen-producto-bebidas {
+    max-width: 205px!important;
+    min-height: 180px;
+    background-color: white;
+}
 .precio-añadir {
     display: flex;
     align-items: center;
@@ -59,7 +64,7 @@ body {
     padding-right: 10px;
 }
 .form-productos {
-    max-width: 272px!important;
+    max-width: 260px!important;
     max-height: 380px!important;
 }
 .a-input {
@@ -74,4 +79,17 @@ body {
     font-weight: 900!important;
     margin: 0!important;
     padding: 10px 12px 10px 12px;
+}
+.boton-carrito {
+    width: 425px;
+    height: 44px;
+    margin-top: 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #E20811;
+    color: white;
+    font-family: 'Goodhome', sans-serif;
+    font-size: 16px;
+    font-weight: 900;
+    padding: 0;
 }

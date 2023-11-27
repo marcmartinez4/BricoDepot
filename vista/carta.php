@@ -13,13 +13,35 @@
     <link rel="stylesheet" href="../vista/css/carta.css">
     <title>Brico Depôt | Bricolaje, jardín, construcción y climatización</title>
     <style>
-        .h2 {
-            text-align: center;
+        .productos {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            max-width: 260px!important;
+            min-width: 260px!important;
+            height: 380px;
+        }
+        .productos a {
+            font-family: 'Goodhome', sans-serif;
+            font-size: 14px;
+            padding: 6px 0;
+            max-width: 260px!important;
+        }
+        .productos p {
             font-family: 'Barlow';
-            font-size: 38px;
-            font-weight: 900!important;
-            margin: 0!important;
-            padding: 10px 12px 10px 12px;
+            font-size: 37px;
+            font-weight: 900;
+            margin: 0;
+        }
+        .productos span {
+            font-size: 14.8px;
+            margin: 0 0 0 4px;
+            width: 14.35px
+        }
+        .imagen-producto {
+            max-width: 205px!important;
+            min-height: 205px;
+            background-color: white;
         }
     </style>
 </head>
@@ -34,7 +56,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col col-hr">
-                <hr class="my-4">
+                <hr class="my-4 hr-carta">
             </div>
         </div>
     </div>
@@ -157,7 +179,7 @@
             ?>
                 <form class="form-productos" action="../vista/informacion-producto.php" method="get">
                     <div class="col-3 col-sm-3 col-md-3 col-lg-3 productos">
-                        <img class="imagen-producto" src="<?php echo $producto->getImg() ?>">
+                        <img class="imagen-producto-bebidas" src="<?php echo $producto->getImg() ?>">
                         <a><?php echo $producto->getNombre_producto(); ?></a>
                         
                         <div class="precio-añadir">

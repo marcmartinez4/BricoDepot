@@ -3,43 +3,53 @@
     include_once ('../config/functions.php');
 
     class PedidoDAO {
-        public static function añadirCarrito($id) {
+        public static function añadirCarrito($id, $cantidad_añadir) {
             $found = false;
             $position = -1;
-
-            if(count($_SESSION['pedido']) > 0) {
-                for ($i = 0; $i < count($_SESSION['pedido']); $i++) {
-                    if ($_SESSION['pedido'][$i][0] == $id) {
+        
+            if (count($_SESSION['carrito']) > 0) {
+                for ($i = 0; $i < count($_SESSION['carrito']); $i++) {
+                    if ($_SESSION['carrito'][$i][0] == $id) {
                         $found = true;
                         $position = $i;
                     }
                 }
             }
-
+        
             if ($found == false) {
-                $p = array($id, 1);
-                array_push($_SESSION['pedido'], $p);
+                $p = array($id, $cantidad_añadir);
+                array_push($_SESSION['carrito'], $p);
             } else {
-                $_SESSION['pedido'][$position][1]++;
+                $_SESSION['carrito'][$position][1] += $cantidad_añadir;
+            }
+        }
+        
+
+        public static function sumarCantidad($id) {
+            for ($i = 0; $i < count($_SESSION['carrito']); $i++) {
+                if ($_SESSION['carrito'][$i][0] == $id) {
+                    $_SESSION['carrito'][$i][1]++;
+                }
             }
         }
 
-        public static function sumarCantidad($id) {
-            for ($i = 0; $i < count($_SESSION['pedido']); $i++) {
-                if ($_SESSION['pedido'][$i][0] == $id) {
-                    $_SESSION['pedido'][$i][1]++;
+        public static function eliminarProducto($id) {
+            for ($i = 0; $i < count($_SESSION['carrito']); $i++) {
+                if ($_SESSION['carrito'][$i][0] == $id) {
+                    unset($_SESSION['carrito'][$i]);
+                    $_SESSION['carrito'] = array_values($_SESSION['carrito']);
                 }
             }
         }
 
         public static function restarCantidad($id) {
-            for ($i = 0; $i < count($_SESSION['pedido']); $i++) {
-                if ($_SESSION['pedido'][$i][0] == $id) {
-                    if ($_SESSION['pedido'][$i][1] <= 1) {
-                        unset($_SESSION['pedido'][$i]);
-                        $_SESSION['pedido'] = array_values($_SESSION['pedido']);
+            for ($i = 0; $i < count($_SESSION['carrito']); $i++) {
+                if ($_SESSION['carrito'][$i][0] == $id) {
+                    if ($_SESSION['carrito'][$i][1] <= 1) {
+                        unset($_SESSION['carrito'][$i]);
+                        $_SESSION['carrito'] = array_values($_SESSION['carrito']);
                     } else {
-                        $_SESSION['pedido'][$i][1]--; // Restar 1 a la cantidad si es mayor que 1
+                        $_SESSION['carrito'][$i][1]--;
                     }
                 }
             }
