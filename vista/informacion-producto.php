@@ -112,7 +112,7 @@
                         <div>
                             <form action="" method="post">
                                 <input type="hidden" name="producto_id" value="<?php echo $producto->getProducto_id(); ?>">
-                                <input class="boton-carrito" type="submit" name="AñadirCarrito" value="Añadir al carrito">
+                                <input class="boton-carrito1" type="submit" name="AñadirCarrito" value="Añadir al carrito">
                             </form>    
                         </div>
                     </div>

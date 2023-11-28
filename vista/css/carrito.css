@@ -68,12 +68,6 @@ hr {
     font-size: 18px;
     margin: 0;
 }
-.total-iva {
-    margin: 0 0 10px 0;
-    padding: 0 10px 11px 0;
-    font-family: 'Goodhome', sans-serif;
-    font-size: 14px;
-}
 .boton-carrito1 {
     width: 374.33px!important;
     height: 34px!important;
@@ -105,12 +99,6 @@ hr {
     height: 13px;
     margin-bottom: 9px;
 }
-.item-carrito {
-    max-width: 552px;
-    height: 153px;
-    padding: 20px 0 24px;
-    display: flex;
-}
 .div-carrito-principal {
     max-width: 552px!important;
 }
@@ -123,6 +111,7 @@ hr {
     height: 108px;
 }
 .item-carrito {
+    max-width: 552px;
     height: 153px;
     padding: 20px 0 24px;
     display: flex;
@@ -142,8 +131,9 @@ hr {
 }
 .botones {
     display: flex;
-    justify-content: space-between;
-    width: 552px!important;
+    justify-content: space-between!important;
+    align-items: center;
+    width: 552px;
 }
 .botones-cantidad {
     display: flex;
@@ -205,7 +195,7 @@ hr {
 .precios-2 {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center!important;
     font-family: 'Goodhome', sans-serif;
     height: 34.5px;
 }
@@ -216,9 +206,9 @@ hr {
     margin: 0;
 }
 .total-iva {
-    padding: 0 10px 11px 0;
     font-family: 'Goodhome', sans-serif;
     font-size: 14px;
+    margin: 0;
 }
 .div-vacio {
     padding: 32px 0 72px;
