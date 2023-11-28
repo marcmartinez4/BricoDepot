@@ -1,0 +1,81 @@
+body {
+    background-color: #EFF0F0;
+}
+.fondo-panel-sesion {
+    padding: 32px 0;
+}
+.panel-inicio-sesion {
+    width: 656px;
+    height: 508px;
+    background-color: white;
+    padding: 24px;
+}
+.h1-sesion {
+    font-family: 'Goodhome', sans-serif;
+    font-size: 26px;
+    font-weight: bold;
+    margin: 0 0 8px;
+    text-align: center;
+    height: 32px;
+    margin-top: 17px;
+}
+.div-pestañas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+    margin-bottom: 16px;
+}
+.pestaña-activa {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+    box-shadow: inset 0 -4px 0 0 #f51120 !important;
+    color: #323C41;
+}
+.pestaña-no-activa {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+    color: #6F767A;
+}
+.pestañas {
+    font-family: 'Goodhome', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+    width: 304px;
+    text-decoration: none;
+}
+.primer-div-form {
+    margin-bottom: 40px;
+}
+.segundo-div-form {
+    margin-bottom: 20px;
+}
+h3 {
+    font-family: 'Goodhome', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 0 8px;
+}
+.input-sesion {
+    height: 44px;
+    padding: 0 9px;
+    background-color: white;
+    border: 1px solid #ADB1B3;
+    border-radius: 5px;
+    width: 608px;
+}
+.a-olv-contra {
+    font-family: 'Goodhome', sans-serif;
+    font-size: 16px;
+    color: black;
+    text-decoration: none;
+    margin-bottom: 16px;
+}
