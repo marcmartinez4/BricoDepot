@@ -24,18 +24,11 @@ body {
     display: flex;
     justify-content: end;
 }
-.botones-toolbar2 {
-    font-family: 'Barlow', serif;
-    font-size: 12px;
-    font-weight: 700;
-    color: #323C41;
-    margin-right: 15px;
-}
 .btn-ubicacion {
     margin-bottom: 2px;
     width: 20px;
     height: 20px;
-    color: red;
+    fill: #e20811;
 }
 .botones-toolbar2-derecha {
     font-family: 'Barlow', serif;
@@ -45,12 +38,6 @@ body {
 }
 .btn-a-toolbar2 {
     text-decoration: none;
-}
-.header {
-    height: 92px;
-    padding: 16px 24px!important;
-    background-color: white!important;
-    height: 100%;
 }
 .div-header {
     padding: 0 40px;

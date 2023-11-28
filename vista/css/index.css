@@ -49,9 +49,8 @@ body {
     width: 14.35px
 }
 .imagen-producto {
-    max-width: 205px!important;
+    width: 100%!important;
     min-height: 205px;
-    background-color: white;
 }
 .h2 {
     text-align: center;

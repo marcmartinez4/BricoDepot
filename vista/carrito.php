@@ -138,7 +138,7 @@
                                             <input class="boton-svg" type="image" src="../img/menos-cantidad.png">        
                                         </form>
                                         
-                                        <button class="boton-cantidad" type="button" data-input-id="qty-cart-8435483843882">
+                                        <button class="boton-cantidad" type="button">
                                             <p class="precio-boton"><?php echo $cantidad; ?></p>
                                         </button>
 
@@ -203,7 +203,7 @@
                             <?php echo '<strong>'.$precioConIVA.' €</strong>';?>
                         </div>
                         <div class="precios-2">
-                            <p class="total">Total sin IVA</p>
+                            <p class="total-iva">Total sin IVA</p>
                             <?php echo $total.' €';?>
                         </div>
                     </div>
@@ -237,7 +237,7 @@
                         </svg>
                             <h1 class="h1-vacio">Tu carrito está vacío</h1>
                             <p class="p-vacio">Loguéese para recuperar sus productos guardados.</p>
-                            <a class="boton-vacio" href="#">
+                            <a class="boton-vacio" href="../vista/inicio-sesion.php">
                                 <p>Inicio de sesión</p>
                             </a>
                         </div>
