@@ -48,20 +48,16 @@ body {
     width: 14.35px
 }
 .imagen-producto {
-    max-width: 205px!important;
+    max-width: 250px!important;
     min-height: 205px;
-    background-color: white;
 }
 .imagen-producto-bebidas {
-    max-width: 205px!important;
+    max-width: 250px!important;
     min-height: 180px;
-    background-color: white;
 }
 .precio-añadir {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding-right: 10px;
 }
 .form-productos {
     max-width: 260px!important;

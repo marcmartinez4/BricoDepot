@@ -17,7 +17,7 @@
 <body>
 
     <?php
-        include ('../vista/header.html');
+        include ('../vista/header.php');
     ?>
 
     <main class="container-fluid">

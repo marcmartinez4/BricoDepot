@@ -10,7 +10,7 @@
 </head>
 <body>
 
-    <?php include ('../vista/header.html'); ?>
+    <?php include ('../vista/header.php'); ?>
 
     <div class="container-fluid">
         <div class="d-flex justify-content-center fondo-panel-sesion">

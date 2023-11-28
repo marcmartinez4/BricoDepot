@@ -13,42 +13,13 @@
     <link rel="stylesheet" href="../vista/css/carta.css">
     <title>Brico Depôt | Bricolaje, jardín, construcción y climatización</title>
     <style>
-        .productos {
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            max-width: 260px!important;
-            min-width: 260px!important;
-            height: 380px;
-        }
-        .productos a {
-            font-family: 'Goodhome', sans-serif;
-            font-size: 14px;
-            padding: 6px 0;
-            max-width: 260px!important;
-        }
-        .productos p {
-            font-family: 'Barlow';
-            font-size: 37px;
-            font-weight: 900;
-            margin: 0;
-        }
-        .productos span {
-            font-size: 14.8px;
-            margin: 0 0 0 4px;
-            width: 14.35px
-        }
-        .imagen-producto {
-            max-width: 205px!important;
-            min-height: 205px;
-            background-color: white;
-        }
+        
     </style>
 </head>
 <body>
 
     <?php
-        include ('../vista/header.html');
+        include ('../vista/header.php');
     ?>
 
     <p class="h2-principal">LA CARTA</p>

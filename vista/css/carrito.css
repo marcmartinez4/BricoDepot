@@ -30,6 +30,10 @@ body {
     font-family: 'Goodhome', sans-serif;
     font-size: 20px;
     font-weight: bold;
+
+}
+.div-hr {
+    margin-top: 15px!important;
 }
 hr {
     margin: 0!important;
@@ -70,9 +74,9 @@ hr {
     font-family: 'Goodhome', sans-serif;
     font-size: 14px;
 }
-.boton-carrito {
+.boton-carrito1 {
     width: 374.33px!important;
-    height: 34px;
+    height: 34px!important;
     border: none;
     border-radius: 4px;
     background-color: #E20811;
@@ -111,7 +115,7 @@ hr {
     max-width: 552px!important;
 }
 .div-titulo {
-    max-width: 1363px!important;
+    max-width: 1206px!important;
     padding: 0!important;
 }
 .imagen-pedido {
@@ -174,9 +178,6 @@ hr {
     justify-content: center;
     align-items: center;
 }
-.hr-panel {
-    margin-bottom: 15px;
-}
 .precio-boton {
     font-family: 'Goodhome', sans-serif;
     font-size: 16px;
@@ -218,4 +219,46 @@ hr {
     padding: 0 10px 11px 0;
     font-family: 'Goodhome', sans-serif;
     font-size: 14px;
+}
+.div-vacio {
+    padding: 32px 0 72px;
+}
+.carrito-vacio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.svg-vacio {
+    margin-bottom: 32px;
+}
+.h1-vacio {
+    font-family: 'Goodhome', sans-serif;
+    font-size: 16px;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+.p-vacio {
+    font-family: 'Goodhome', sans-serif;
+    font-size: 16px;
+    margin-bottom: 24px;
+}
+.boton-vacio {
+    width: 196px;
+    height: 44px;
+    padding: 0 16px;
+    color: white;
+    background-color: #E20811;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+}
+.boton-vacio p {
+    font-family: 'Goodhome', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
 }

@@ -69,7 +69,7 @@
 </head>
 <body>
     <?php
-        include ('../vista/header.html');
+        include ('../vista/header.php');
 
 
         foreach ($productos as $producto) {

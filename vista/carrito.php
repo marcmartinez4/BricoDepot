@@ -41,54 +41,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="../vista/css/carrito.css">
     <title>Cesta Brico Depôt</title>
-    <style>
-        .div-vacio {
-            padding: 32px 0 72px;
-        }
-        .carrito-vacio {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-        .svg-vacio {
-            margin-bottom: 32px;
-        }
-        .h1-vacio {
-            font-family: 'Goodhome', sans-serif;
-            font-size: 16px;
-            margin-bottom: 8px;
-            font-weight: bold;
-        }
-        .p-vacio {
-            font-family: 'Goodhome', sans-serif;
-            font-size: 16px;
-            margin-bottom: 24px;
-        }
-        .boton-vacio {
-            width: 196px;
-            height: 44px;
-            padding: 0 16px;
-            color: white;
-            background-color: #E20811;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            text-decoration: none;
-            border-radius: 4px;
-        }
-        .boton-vacio p {
-            font-family: 'Goodhome', sans-serif;
-            font-size: 16px;
-            font-weight: bold;
-            margin: 0;
-        }
-    </style>
 </head>
 <body> 
     <?php
-        include('../vista/header.html');
+        include('../vista/header.php');
     ?>
 
     <div class="container-fluid">
@@ -161,13 +117,15 @@
                         </div>
                     </div>
                     
-                    <hr class="hr-panel">
+                    <hr>
                     
                     <?php
                             }
                         }
                     ?>
-                    <span class="texto-mini-logo">Vendido por <img class="mini-logo" src="https://www.bricodepot.es/media/favicon/default/favicon-32x32.png"><strong>Brico Depôt</strong></span>
+                    <div class="div-hr">
+                        <span class="texto-mini-logo">Vendido por <img class="mini-logo" src="https://www.bricodepot.es/media/favicon/default/favicon-32x32.png"><strong>Brico Depôt</strong></span>
+                    </div>
                     
                 </div>
 
@@ -210,7 +168,7 @@
 
                     <form class="" action="" method="post">
                         <input type="hidden" name="producto_id" value="">
-                        <input class="boton-carrito" type="submit" name="AñadirCarrito" value="Añadir al carrito">
+                        <input class="boton-carrito1" type="submit" name="AñadirCarrito" value="Añadir al carrito">
                     </form>
                 </div>
             </div> 

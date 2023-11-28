@@ -78,9 +78,20 @@ body {
     height: 36px;
 }
 .boton-cuenta {
-    font-family: 'Barlow';
+    font-family: 'Barlow', serif;
     font-size: 16px;
+    color: #323c41!important;
     padding: 0 0 0 10px!important;
+}
+.boton-carrito {
+    font-family: 'Barlow', serif;
+    font-size: 16px;
+    color: #323c41!important;
+    font-weight: 900!important;
+    margin: 0;
+    padding: 0 0 0 15px!important;
+    width: 58.05px!important;
+    height: 24px!important;
 }
 .fondo-menu-navegacion {
     background-color: #222221;
@@ -103,6 +114,10 @@ body {
     font-family: 'Barlow', serif;
     font-weight: 900;
 }
+.boton-menu-navegacion:hover {
+    background-color: #3c3c3a;
+    box-shadow: 0 -2px 0 #c20e1a inset;
+}
 .container-fluid {
     padding: 0!important;
 }
@@ -118,4 +133,40 @@ body {
 }
 .col-hr {
     padding: 0 100px!important;
+}
+.div-header {
+    padding: 0 32px!important;
+    margin: 0 32px!important;
+    height: 100%;
+}
+.peninsula {
+    font-family: 'Barlow', serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: #323C41;
+    margin-right: 16px;
+}
+.tienda {
+    font-family: 'Barlow', serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: #323C41;
+    padding-right: 24px;
+    margin-right: 8px;
+    border-right: 1px solid black;
+}
+.dos-ultimos {
+    font-family: 'Barlow', serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: #323C41;
+    padding-right: 8px;
+    margin-right: 8px;
+    border-right: 1px solid black;
+}        
+.header {
+    height: 92px;
+    padding: 16px 0!important;
+    background-color: white!important;
+    height: 100%;
 }
