@@ -13,7 +13,6 @@ body {
 .panel-carrito {
     background-color: white;
     max-width: 900.66px!important;
-    height: auto!important;
     margin: 0 0 32px!important;
     padding: 8px 32px 24px!important;
 }
@@ -100,7 +99,7 @@ hr {
     margin-bottom: 9px;
 }
 .div-carrito-principal {
-    max-width: 552px!important;
+    width: 552px!important;
 }
 .div-titulo {
     max-width: 1206px!important;
@@ -111,7 +110,6 @@ hr {
     height: 108px;
 }
 .item-carrito {
-    max-width: 552px;
     height: 153px;
     padding: 20px 0 24px;
     display: flex;
@@ -133,7 +131,7 @@ hr {
     display: flex;
     justify-content: space-between!important;
     align-items: center;
-    width: 552px;
+    width: auto;
 }
 .botones-cantidad {
     display: flex;

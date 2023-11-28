@@ -36,6 +36,10 @@ body {
     font-size: 57px;
     margin: 0;
 }
+.precio span {
+    font-size: 22px;
+    padding-left: 4px;
+}
 .euro {
     font-size: 22.8px;
     margin-left: 4px;
@@ -70,6 +74,9 @@ body {
     font-size: 16px;
     font-weight: 900;
     padding: 0;
+}
+.boton-carrito1:hover {
+    background-color: #fb4652;
 }
 .texto-mini-logo {
     font-family: 'Goodhome', sans-serif;
@@ -135,4 +142,28 @@ body {
 }
 h3 {
     padding: 0!important;
+}
+.botones {
+    display: flex;
+}
+.boton-cantidad {
+    width: 44px;
+    height: 44px;
+    border: 1px solid #AEB2B4;
+    border-radius: 4px;
+    background-color: transparent;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.precio-boton {
+    margin: 0;
+    font-family: 'Goodhome', sans-serif;
+    font-size: 16px;
+
+}
+.boton-svg {
+    width: 24px;
+    height: 24px;
 }

@@ -40,32 +40,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="../vista/css/info.css">
     <title></title>
-    <style>
-        .botones {
-            display: flex;
-        }
-        .boton-cantidad {
-            width: 44px;
-            height: 44px;
-            border: 1px solid #AEB2B4;
-            border-radius: 4px;
-            background-color: transparent;
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .precio-boton {
-            margin: 0;
-            font-family: 'Goodhome', sans-serif;
-            font-size: 16px;
-
-        }
-        .boton-svg {
-            width: 24px;
-            height: 24px;
-        }
-    </style>
 </head>
 <body>
     <?php
@@ -85,7 +59,7 @@
             <div class="col-md-6 col-lg-6 toda-info">
                 <h1 class="nombre-producto"> <?php echo $producto->getNombre_producto(); ?> </h1>
                 <div>
-                    <p class="precio"> <?php echo $producto->getPrecio_unidad(); ?> <span>€</span></p>
+                    <p class="precio"> <?php echo $producto->getPrecio_unidad(); ?><span>€</span></p>
                 </div>
                 
                 <div class="opciones-producto">
