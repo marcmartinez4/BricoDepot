@@ -1,3 +1,15 @@
+<?php
+    include ('../modelo/UsuarioDAO.php');
+
+    if (isset($_POST['correoElectronico'])) {
+        if (isset($_POST['contraseña'])) {
+            $mail = $_POST['correoElectronico'];
+            $contra = $_POST['contraseña'];
+            
+            UsuarioDAO::iniciarSesion($mail, $contra);
+        }
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,16 +44,16 @@
                         </a>
                     </div>
 
-                    <form class="form-inicio-sesion">
+                    <form action="" method="post" class="form-inicio-sesion">
                         <div class="primer-div-form">
                             <div class="segundo-div-form">
                                 <h3>Email</h3>
-                                <input class="input-sesion">
+                                <input class="input-sesion" name="correoElectronico" value="">
                             </div>
                             
                             <div>
                                 <h3>Contraseña</h3>
-                                <input class="input-sesion">
+                                <input class="input-sesion" name="contraseña" value="">
                             </div>
                         </div>
 

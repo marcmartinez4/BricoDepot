@@ -1,3 +1,31 @@
+<?php
+    include ('../modelo/UsuarioDAO.php');
+
+    $contraseña_incorrecta = false;
+
+    if (isset($_POST['nombre'])) {
+        if (isset($_POST['apellido'])) {
+            if (isset($_POST['correo'])) {
+                if (isset($_POST['contraseña1'])) {
+                    if (isset($_POST['contraseña2'])) {
+                        
+                        $nombre = $_POST['nombre'];
+                        $apellido = $_POST['apellido'];
+                        $mail = $_POST['correo'];
+                        $contra1 = $_POST['contraseña1'];
+                        $contra2 = $_POST['contraseña2'];
+
+                        if ($contra1 == $contra2) {
+                            UsuarioDAO::crearCuenta($nombre, $apellido, $mail, $contra1);
+                        } else {
+                            $contraseña_incorrecta = true;
+                        }
+                    }
+                }
+            }
+        }
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,22 +61,45 @@
                         </a>
                     </div>
 
-                    <form class="form-inicio-sesion">
+                    <form class="form-inicio-sesion" action="" method="post">
                         <div class="primer-div-form">
                             <div class="segundo-div-form">
                                 <h3>Email</h3>
-                                <input class="input-sesion">
+                                <input class="input-sesion" type="email" name="correo">
                             </div>
                             
                             <div>
                                 <h3>Contraseña</h3>
-                                <input class="input-sesion">
+                                <input class="input-sesion" type="password" name="contraseña1">
+                                <div class="panel-contraseña">
+                                    <p>Contraseña segura: <span>Sin contraseña</span></p>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h3>Confirmar contraseña</h3>
+                                <input class="input-sesion" type="password" name="contraseña2">
+                                <?php
+                                    if ($contraseña_incorrecta) {
+                                        echo '<p class="coinciden">Las contraseñas no coinciden</p>';
+                                    }
+                                ?>
+                            </div>
+
+                            <div class="div-datos">
+                                <div class="nombre">
+                                    <h3>Nombre</h3>
+                                    <input class="input-sesion-datos" type="text" name="nombre">
+                                </div>
+
+                                <div class="apellido">
+                                    <h3>Apellido</h3>
+                                    <input class="input-sesion-datos" type="text" name="apellido">
+                                </div>
                             </div>
                         </div>
 
                         <div class="boton-inicio">
-                            <a class="a-olv-contra" href="">¿Olvidaste tu contraseña?</a>
-
                             <input type="submit" class="input-boton-sesion" value="Entrar">
                         </div>
                     </form>

@@ -7,14 +7,18 @@
     $productos = productoDAO::getAllProducts();
     $producto_id = $_GET['producto_id'];
 
+    // Verificar si la página se ha recargado mediante POST
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['recargar'])) {
+        
+    }
+
     if (isset($_POST['AñadirCarrito'])) {
         $id = $_POST['producto_id'];
-        echo $id;
         PedidoDAO::añadirCarrito($id, $_SESSION['cantidad_añadir']);
+        $_SESSION['cantidad_añadir'] = 1;
         header('Location: ../vista/informacion-producto.php?producto_id=' . $producto_id);
     }
 
-    
     if (!isset($_SESSION['cantidad_añadir'])) {
         $_SESSION['cantidad_añadir'] = 1; 
     }
@@ -70,7 +74,6 @@
                                 <input class="boton-svg" type="image" src="../img/menos-cantidad.png">
                                 
                             </form>
-
                             
                             <button class="boton-cantidad" type="button">
                                 <p class="precio-boton"><?php echo $_SESSION['cantidad_añadir'] ?></p>
@@ -79,7 +82,6 @@
                             <form class="boton-cantidad" action="" method="post">
                                 <input type="hidden" name="añadirCantidad">
                                 <input class="boton-svg" type="image" src="../img/aumentar-cantidad.png">
-                                
                             </form>
                         </div>
 
