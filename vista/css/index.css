@@ -12,11 +12,12 @@ body {
 .Bocata {
     width: 100%;
     min-height: 250px!important;
+    max-height: 250px!important;
     padding: 10px 12px 10px 0!important;
 }
 .col-hr {
     height: 70px;
-    padding: 10px 12px 10px 12px;
+    padding: 10px 90px!important;
 }
 .img-destacado {
     width: 100%;

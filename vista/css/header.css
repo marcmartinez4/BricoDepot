@@ -57,7 +57,6 @@ body {
     font-weight: normal;
 }
 .barra-busqueda {
-    width: 640px!important;
     height: 48px;
     padding: 0 48px 0 12px;
     margin: 0!important;
@@ -160,9 +159,6 @@ body {
 }
 .content-fluid {
     padding: 0!important;
-}
-.col-hr {
-    padding: 0 100px!important;
 }
 .div-header {
     padding: 0 32px!important;

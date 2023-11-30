@@ -23,10 +23,10 @@
     <main class="container-fluid">
         <div class="d-flex justify-content-center banner">
             <div class="row justify-content-center">
-                <div class="col-12 col-md-6 col-lg-6">
+                <div class="col-12 col-md-6 col-lg-6"> 
                     <img src="../img/Hamburguesa queso fundido.png" class="img-fluid Hamburguesa" alt="...">
                 </div>
-                <div class="col-12 col-md-6 col-lg-4">
+                <div class="col-12 col-md-6 col-lg-5">
                     <img src="../img/Bocata1.png" class="img-fluid Bocata" alt="...">
                     <img src="../img/Bocata2.png" class="img-fluid Bocata" alt="...">
                 </div>
@@ -45,7 +45,7 @@
 
         <div class="d-flex justify-content-center img-destacado">
             <div class="row justify-content-center">
-                <div class="col-12 col-md-6 col-lg-10">
+                <div class="col-12 col-md-6 col-lg-11">
                     <img src="../img/DESTACADO.png" class="img-fluid" alt="...">
                 </div>
             </div> 
@@ -109,7 +109,7 @@
 
         <div class="d-flex justify-content-center">
             <div class="row justify-content-center">
-                <div class="col-12 col-md-6 col-lg-5">
+                <div class="col-12 col-md-6 col-lg-6">
                     <h3 class="h3-paneles"><strong>¿Que ofrecemos en nuestro restaurante?</strong></h3>
                     <div class="izquierda">
                         <p>En nuestro establecimiento, ofrecemos una deliciosa variedad de comidas rápidas
