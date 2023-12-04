@@ -2,18 +2,16 @@
     include ('../modelo/ClienteDAO.php');
     include ('../config/functions.php');
     include ('../modelo/Cliente.php');
+    include ('../controlador/clienteControlador.php');
 
-    if (isset($_POST['correoElectronico'])) {
-        if (isset($_POST['contraseña'])) {
-            $mail = $_POST['correoElectronico'];
+    if (isset($_POST['iniciarSesion'])) {
+        if(isset($_POST['mail'], $_POST['contraseña'])) {
+            $mail = $_POST['mail'];
             $contra = $_POST['contraseña'];
-            
-            UsuarioDAO::iniciarSesion($mail, $contra);
-        }
-    }
 
-    if (isset($_POST['cerrarSesion'])) {
-        UsuarioDAO::cerrarSesion();
+            $inicio = clienteControlador::iniciarSesion($mail, $contraseña);
+            header('Location: ../vista/index.php');
+        }
     }
 ?>
 <!DOCTYPE html>
@@ -54,20 +52,18 @@
                         <div class="primer-div-form">
                             <div class="segundo-div-form">
                                 <h3>Email</h3>
-                                <input class="input-sesion" name="correoElectronico" value="">
+                                <input class="input-sesion" name="mail">
                             </div>
                             
                             <div>
                                 <h3>Contraseña</h3>
-                                <input class="input-sesion" name="contraseña" value="">
+                                <input class="input-sesion" name="contraseña">
                             </div>
                         </div>
 
                         <div class="boton-inicio">
-                            <form action="" method="post">
-                                <input class="a-olv-contra" type="submit" name="cerrarSesion" value="¿Olvidaste tu contraseña?">    
-                            </form>
-                            <input type="submit" class="input-boton-sesion" value="Entrar">
+                            <a class="a-olv-contra" type="submit" name="cerrarSesion" value="¿Olvidaste tu contraseña?"></a>
+                            <input class="input-boton-sesion" type="submit" name="iniciarSesion" value="Entrar">
                         </div>
                     </form>
                 </div>

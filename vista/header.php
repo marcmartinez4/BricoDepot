@@ -3,6 +3,7 @@
     include_once '../modelo/ProductoDAO.php';
     include_once '../controlador/productoControlador.php';
     include_once '../modelo/PedidoDAO.php';
+    include ('../controlador/clienteControlador.php');
 
     $prodCarrito = productoDAO::getAllProducts();
 
@@ -18,6 +19,11 @@
             $precioTotalProducto = $prodCarrito->getPrecio_unidad() * $cantidad;
             $total += $precioTotalProducto;
         }
+    }
+
+    if (isset($_POST['cerrarSesion'])) {
+        clienteControlador::cerrarSesion();
+        header('Location: ../vista/index.php');
     }
 ?>
 <!DOCTYPE html>
@@ -147,6 +153,16 @@
                 </a>
                 <form class="d-flex" role="search">
                     <input class="form-control me-2 barra-busqueda" type="search" placeholder="¿Qué estas buscando? " aria-label="Search">
+                    <?php
+                        if (isset($_SESSION['Cliente'])) {
+                    ?>
+                    <p><?php echo 'Bienvenido, usuario!' ?></p>
+                    <form action="" method="post">
+                        <input type="submit" name="cerrarSesion" value="cerrarSesion">
+                    </form>  
+                    <?php
+                        }
+                    ?>
                 </form>
             </div>
           

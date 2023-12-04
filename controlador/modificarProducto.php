@@ -1,5 +1,5 @@
 <?php
-    include ("../config/dataBase.php");
+    include ('../config/dataBase.php');
     include ('../controlador/productoControlador.php');
 ?>
 

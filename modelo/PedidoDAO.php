@@ -54,6 +54,28 @@
                 }
             }
         }
+
+        public static function finalizarPedido()  {
+            $con = database::connect();
+            
+            $id_cliente = $_SESSION['Cliente']->getCliente_id();
+            $fecha = date('Y-m-d H:i:s');
+            
+            $result = $con->query("INSERT INTO pedidos (estado, fecha_pedido, cliente_id) VALUES ('Pendiente', '$fecha', '$id_cliente');");
+            $result = $con->query("SELECT pedido_id FROM pedidos WHERE cliente_id = '$id_cliente' AND fecha_pedido = '$fecha' LIMIT 1;");
+            $row = mysqli_fetch_assoc($result);
+            $pedido_id = $row['pedido_id'];
+
+            foreach($_SESSION['carrito'] as $producto) {
+                $producto_id = $producto[0];
+                $cantidad = $producto[1];
+
+                $result = $con->query("SELECT precio_unidad FROM productos WHERE producto_id = '$producto_id' LIMIT 1;");
+                $row = mysqli_fetch_assoc($result);
+                $precio_unidad = $row['precio_unidad'];
+                $result = $con->query("INSERT INTO `pedido_productos` (pedido_id, producto_id, cantidad, precio_unidad) VALUES ('$pedido_id', '$producto_id', '$cantidad', '$precio_unidad');");
+            }
+        }        
     }
 
 ?>

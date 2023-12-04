@@ -23,6 +23,10 @@
         PedidoDAO::eliminarProducto($id);
         header('Location: ../vista/carrito.php');
     }
+
+    if (isset($_POST['finalizarPedido'])) {
+        PedidoDAO::finalizarPedido();
+    }
     
     $count_array = count($_SESSION['carrito']);
     
@@ -168,7 +172,7 @@
 
                     <form class="" action="" method="post">
                         <input type="hidden" name="producto_id" value="">
-                        <input class="boton-carrito1" type="submit" name="AñadirCarrito" value="Continuar con el pedido">
+                        <input class="boton-carrito1" type="submit" name="finalizarPedido" value="Continuar con el pedido">
                     </form>
                 </div>
             </div> 

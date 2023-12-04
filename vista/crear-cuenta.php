@@ -1,22 +1,23 @@
 <?php
-    include ('../modelo/UsuarioDAO.php');
+    include ('../modelo/ClienteDAO.php');
+    include ('../controlador/clienteControlador.php');
 
     $contraseña_incorrecta = false;
 
     if (isset($_POST['nombre'])) {
         if (isset($_POST['apellido'])) {
             if (isset($_POST['correo'])) {
-                if (isset($_POST['contraseña1'])) {
+                if (isset($_POST['contraseña'])) {
                     if (isset($_POST['contraseña2'])) {
-                        
-                        $nombre = $_POST['nombre'];
-                        $apellido = $_POST['apellido'];
-                        $mail = $_POST['correo'];
-                        $contra1 = $_POST['contraseña1'];
-                        $contra2 = $_POST['contraseña2'];
+                        if (isset($_POST['contraseña']) == isset($_POST['contraseña2'])) {
+                            $nombre = $_POST['nombre'];
+                            $apellido = $_POST['apellido'];
+                            $mail = $_POST['correo'];
+                            $contra = $_POST['contraseña'];
 
-                        if ($contra1 == $contra2) {
-                            UsuarioDAO::crearCuenta($nombre, $apellido, $mail, $contra1);
+                            clienteControlador::crearCuenta($nombre, $apellido, $mail, $contra);
+
+                            header('Location: ../vista/inicio-sesion.php');
                         } else {
                             $contraseña_incorrecta = true;
                         }
@@ -70,7 +71,7 @@
                             
                             <div>
                                 <h3>Contraseña</h3>
-                                <input class="input-sesion" type="password" name="contraseña1">
+                                <input class="input-sesion" type="password" name="contraseña">
                                 <div class="panel-contraseña">
                                     <p>Contraseña segura: <span>Sin contraseña</span></p>
                                 </div>

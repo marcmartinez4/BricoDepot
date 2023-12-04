@@ -1,5 +1,5 @@
 <?php
-    include_once '../modelo/usuarioDAO.php';
+    include_once '../modelo/ClienteDAO.php';
     
     class clienteControlador {
         public static function iniciarSesion($mail, $contra) {
@@ -14,6 +14,4 @@
             ClienteDAO::cerrarSesion();
         }
     }
-
-
-    ?>
+?>

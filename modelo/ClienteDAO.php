@@ -13,7 +13,7 @@
             if ($cantidad == 1) {
                 $result = $con->query("SELECT * FROM usuarios WHERE mail = '$mail' AND contra = '$contra' LIMIT 1;");
                 $cliente = $result->fetch_object('Cliente');
-                $_SESSION['cliente'] = $cliente;
+                $_SESSION['Cliente'] = $cliente;
             }
         }   
 
