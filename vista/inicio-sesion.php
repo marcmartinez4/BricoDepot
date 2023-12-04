@@ -1,7 +1,5 @@
 <?php
-    include ('../modelo/ClienteDAO.php');
     include ('../config/functions.php');
-    include ('../modelo/Cliente.php');
     include ('../controlador/clienteControlador.php');
 
     if (isset($_POST['iniciarSesion'])) {

@@ -3,7 +3,6 @@
     include_once '../modelo/ProductoDAO.php';
     include_once '../controlador/productoControlador.php';
     include_once '../modelo/PedidoDAO.php';
-    include ('../controlador/clienteControlador.php');
 
     $prodCarrito = productoDAO::getAllProducts();
 
