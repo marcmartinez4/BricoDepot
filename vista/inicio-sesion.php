@@ -3,11 +3,11 @@
     include ('../controlador/clienteControlador.php');
 
     if (isset($_POST['iniciarSesion'])) {
-        if(isset($_POST['mail'], $_POST['contraseña'])) {
+        if (isset($_POST['mail'], $_POST['contraseña'])) {
             $mail = $_POST['mail'];
             $contra = $_POST['contraseña'];
 
-            $inicio = clienteControlador::iniciarSesion($mail, $contraseña);
+            $inicio = clienteControlador::iniciarSesion($mail, $contra);
             header('Location: ../vista/index.php');
         }
     }

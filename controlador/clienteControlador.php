@@ -6,8 +6,8 @@
             ClienteDAO::iniciarSesion($mail, $contra);
         }
         
-        public static function crearCuenta($nombre, $apellido, $mail, $contra1) {
-            ClienteDAO::crearCuenta($nombre, $apellido, $mail, $contra1);
+        public static function crearCuenta($nombre, $apellido, $mail, $contra) {
+            ClienteDAO::crearCuenta($nombre, $apellido, $mail, $contra);
         }
 
         public static function cerrarSesion(){

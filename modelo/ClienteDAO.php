@@ -1,5 +1,6 @@
 <?php
     include_once '../config/dataBase.php';
+    include ('../modelo/Cliente.php');
 
     class ClienteDAO {
         public static function iniciarSesion($mail, $contra) {
@@ -8,6 +9,7 @@
             $result = $con->query("SELECT count(*) as cantidad FROM usuarios WHERE mail = '$mail' AND contra = '$contra' LIMIT 1;");
             $row = mysqli_fetch_assoc($result);
             $cantidad = $row['cantidad'];
+            $_SESSION['cantidad'] = $cantidad;
 
             if ($cantidad == 1) {
                 $result = $con->query("SELECT * FROM usuarios WHERE mail = '$mail' AND contra = '$contra' LIMIT 1;");
@@ -16,10 +18,10 @@
             }
         }   
 
-        public static function crearCuenta($nombre, $apellido, $mail, $contra1) {
+        public static function crearCuenta($nombre, $apellido, $mail, $contra) {
             $con = dataBase::connect();
 
-            $result = $con->query("INSERT INTO `usuarios`(`nombre`, `apellido`, `mail`, `rol`, `contra`) VALUES ('$nombre','$apellido','$mail','Cliente','$contra1')");
+            $result = $con->query("INSERT INTO `usuarios`(`nombre`, `apellido`, `mail`, `rol`, `contra`) VALUES ('$nombre','$apellido','$mail','Cliente','$contra')");
         }
 
         public static function cerrarSesion() {

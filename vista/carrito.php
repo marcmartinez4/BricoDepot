@@ -1,8 +1,10 @@
 <?php
+    include ('../modelo/Cliente.php');
+    include_once '../modelo/PedidoDAO.php';
+    include_once '../controlador/pedidoControlador.php';
     include_once '../config/functions.php';
     include_once '../modelo/ProductoDAO.php';
     include_once '../controlador/productoControlador.php';
-    include_once '../modelo/PedidoDAO.php';
 
     $prodCarrito = productoDAO::getAllProducts();
 

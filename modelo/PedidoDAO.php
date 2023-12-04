@@ -1,7 +1,7 @@
 <?php
     include_once ('../config/dataBase.php');
     include_once ('../config/functions.php');
-
+    
     class PedidoDAO {
         public static function añadirCarrito($id, $cantidad_añadir) {
             $found = false;
