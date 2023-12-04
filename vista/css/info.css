@@ -139,6 +139,7 @@ body {
 }
 .hr-descripcion {
     margin: 0;
+    margin-bottom: 8px;
 }
 h3 {
     padding: 0!important;

@@ -2,15 +2,20 @@
 
     include_once '../config/dataBase.php';
 
-    class UsuarioDAO {
+    class ClienteDAO {
         public static function iniciarSesion($mail, $contra) {
-            $con = dataBase::connect();
+            $con = database::connect();
 
-            $result = $con->query("SELECT nombre, mail, contra FROM usuarios WHERE mail = '$mail' AND contra = '$contra' LIMIT 1");
+            $result = $con->query("SELECT count(*) as cantidad FROM usuarios WHERE mail = '$mail' AND contra = '$contra' LIMIT 1;");
             $row = mysqli_fetch_assoc($result);
-            $nombre = $row['nombre']; 
-            $_SESSION['nombre_usuario'] = $nombre;
-        }
+            $cantidad = $row['cantidad'];
+
+            if ($cantidad == 1) {
+                $result = $con->query("SELECT * FROM usuarios WHERE mail = '$mail' AND contra = '$contra' LIMIT 1;");
+                $cliente = $result->fetch_object('Cliente');
+                $_SESSION['cliente'] = $cliente;
+            }
+        }   
 
         public static function crearCuenta($nombre, $apellido, $mail, $contra1) {
             $con = dataBase::connect();

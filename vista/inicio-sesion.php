@@ -1,5 +1,7 @@
 <?php
-    include ('../modelo/UsuarioDAO.php');
+    include ('../modelo/ClienteDAO.php');
+    include ('../config/functions.php');
+    include ('../modelo/Cliente.php');
 
     if (isset($_POST['correoElectronico'])) {
         if (isset($_POST['contraseña'])) {
@@ -65,8 +67,6 @@
                             <form action="" method="post">
                                 <input class="a-olv-contra" type="submit" name="cerrarSesion" value="¿Olvidaste tu contraseña?">    
                             </form>
-                            <!--<a  href=""></a>-->
-                            <?php echo $_SESSION['nombre_usuario'] ?>
                             <input type="submit" class="input-boton-sesion" value="Entrar">
                         </div>
                     </form>

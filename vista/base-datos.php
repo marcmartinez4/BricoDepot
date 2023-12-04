@@ -3,14 +3,16 @@
     include ("../config/parametros.php");
     include ("../modelo/ProductoDAO.php");
     include ("../controlador/productoControlador.php");
+    include ('../vista/header.php');
 ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://www.bricodepot.es/media/favicon/default/favicon-32x32.png">
     <link rel="stylesheet" href="../vista/css/css-bd.css">
-    <title>Productos</title>
+    <title>Base de Datos Productos</title>
 </head>
 <body>
     <h1>Tabla de productos</h1>
@@ -61,8 +63,9 @@
             $id = $_POST['producto_id'];
             productoControlador::eliminarProducto($id);
             header("Location: menu-admin.php");
-        } 
+        }
+
+        include ('../vista/footer.html');
     ?>
-    
 </body>
 </html>
