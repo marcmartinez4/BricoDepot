@@ -44,6 +44,9 @@ body {
     height: 48px;
     color: #6F767A;
 }
+.pestaña-no-activa:hover {
+    box-shadow: inset 0 -4px 0 0 #f51120 !important;
+}
 .pestañas {
     font-family: 'Goodhome', sans-serif;
     font-size: 16px;

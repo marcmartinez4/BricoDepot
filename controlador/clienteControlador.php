@@ -9,9 +9,5 @@
         public static function crearCuenta($nombre, $apellido, $mail, $contra) {
             ClienteDAO::crearCuenta($nombre, $apellido, $mail, $contra);
         }
-
-        public static function cerrarSesion(){
-            ClienteDAO::cerrarSesion();
-        }
     }
 ?>

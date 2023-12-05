@@ -3,6 +3,7 @@
     include_once '../modelo/ProductoDAO.php';
     include_once '../controlador/productoControlador.php';
     include_once '../modelo/PedidoDAO.php';
+    include ('../controlador/botonSesion.php');
 
     $prodCarrito = productoDAO::getAllProducts();
 
@@ -18,11 +19,6 @@
             $precioTotalProducto = $prodCarrito->getPrecio_unidad() * $cantidad;
             $total += $precioTotalProducto;
         }
-    }
-
-    if(isset($_POST['cerrarSesion'])){
-        clienteControlador::cerrarSesion();
-        header('Location: ../vista/index.php');
     }
 ?>
 <!DOCTYPE html>
@@ -152,34 +148,19 @@
                 </a>
                 <form class="d-flex" role="search">
                     <input class="form-control me-2 barra-busqueda" type="search" placeholder="¿Qué estas buscando? " aria-label="Search">
-                    <?php
-                        echo $_SESSION['cantidad'];
-                        
-                        if (isset($_SESSION['Cliente'])) {
-                    ?>
-                    <p><?php echo 'Bienvenido, usuario!' ?></p>
-                    <form method="post">
-                        <input type="submit" name="cerrarSesion" value="X">
-                    </form>  
-                    <?php
-                        } else {
-                        ?>
-                            <a href="inicio-sesion.php">Iniciar Sesión</a>
-                        <?php
-                        }
-                    ?>
                 </form>
             </div>
           
             <div class="collapse navbar-collapse juntar-derecha" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ul-juntar-derecha">
                     <li class="nav-item">
-                        <a href="inicio-sesion.php">
+                        <a>
                             <svg class="iconos-header" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 36 36" focusable="false">
                                 <path fill-rule="evenodd" d="M24.3695651,20 C28.4597917,20 31.7983532,23.1331215 31.9912009,27.0686505 L32,27.4285715 L32,30.2857143 C32,31.2324881 31.2116318,32 30.2391304,32 C29.3360934,32 28.5918244,31.3382168 28.4901075,30.4856362 L28.4782609,30.2857143 L28.4782609,27.4285715 C28.4782609,25.3114799 26.7888354,23.578536 24.6508717,23.4377995 L24.3695651,23.4285714 L12.6304348,23.4285714 C10.4558136,23.4285714 8.67577883,25.0733032 8.53121799,27.1547069 L8.52173912,27.4285715 L8.52173912,30.2857143 C8.52173912,31.2324881 7.73337096,32 6.76086956,32 C5.85783254,32 5.11356348,31.3382168 5.01184666,30.4856362 L5,30.2857143 L5,27.4285715 C5,23.446552 8.21826067,20.1963123 12.2607333,20.0085663 L12.6304348,20 L24.3695651,20 Z M18.5,3 C22.6421356,3 26,6.35786438 26,10.5 C26,14.6421356 22.6421356,18 18.5,18 C14.3578644,18 11,14.6421356 11,10.5 C11,6.35786438 14.3578644,3 18.5,3 Z M18.5,6.46153845 C16.2696193,6.46153845 14.4615384,8.26961927 14.4615384,10.5 C14.4615384,12.7303807 16.2696193,14.5384616 18.5,14.5384616 C20.7303807,14.5384616 22.5384616,12.7303807 22.5384616,10.5 C22.5384616,8.26961927 20.7303807,6.46153845 18.5,6.46153845 Z"></path>
                             </svg>    
-                        
-                            <a class="nav-link active boton-cuenta">Mi cuenta</a>        
+                    
+                            <?php botonSesion::botonSesion();?>
+                            <!--<a class="nav-link active boton-cuenta">Mi cuenta</a>-->   
                         </a>
                     </li>
                     

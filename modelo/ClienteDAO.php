@@ -23,9 +23,5 @@
 
             $result = $con->query("INSERT INTO `usuarios`(`nombre`, `apellido`, `mail`, `rol`, `contra`) VALUES ('$nombre','$apellido','$mail','Cliente','$contra')");
         }
-
-        public static function cerrarSesion() {
-            session_destroy();
-        }
     }
 ?>
