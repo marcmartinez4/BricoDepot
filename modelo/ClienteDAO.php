@@ -6,16 +6,10 @@
         public static function iniciarSesion($mail, $contra) {
             $con = database::connect();
 
-            $result = $con->query("SELECT count(*) as cantidad FROM usuarios WHERE mail = '$mail' AND contra = '$contra' LIMIT 1;");
-            $row = mysqli_fetch_assoc($result);
-            $cantidad = $row['cantidad'];
-            $_SESSION['cantidad'] = $cantidad;
-
-            if ($cantidad == 1) {
-                $result = $con->query("SELECT * FROM usuarios WHERE mail = '$mail' AND contra = '$contra' LIMIT 1;");
-                $cliente = $result->fetch_object('Cliente');
-                $_SESSION['Cliente'] = $cliente;
-            }
+            $result = $con->query("SELECT * FROM usuarios WHERE mail = '$mail' AND contra = '$contra' LIMIT 1;");
+            $cliente = $result->fetch_object('Cliente');
+            $_SESSION['Cliente'] = $cliente;
+            $_SESSION['nombreCliente'] = $_SESSION['Cliente']->getNombre();          
         }   
 
         public static function crearCuenta($nombre, $apellido, $mail, $contra) {
