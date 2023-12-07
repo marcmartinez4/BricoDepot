@@ -17,8 +17,7 @@
 <body>
 
     <?php
-        include ('../vista/header.php');
-        /*commit */
+        include ('../vista/header.php');    
     ?>
 
     <main class="container-fluid">

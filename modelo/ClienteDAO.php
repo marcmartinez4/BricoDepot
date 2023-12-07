@@ -9,7 +9,10 @@
             $result = $con->query("SELECT * FROM usuarios WHERE mail = '$mail' AND contra = '$contra' LIMIT 1;");
             $cliente = $result->fetch_object('Cliente');
             $_SESSION['Cliente'] = $cliente;
-            $_SESSION['nombreCliente'] = $_SESSION['Cliente']->getNombre();          
+
+            $result = $con->query("SELECT rol FROM usuarios WHERE mail = '$mail' AND contra = '$contra' LIMIT 1;");
+            $row = $result->fetch_assoc();
+            $_SESSION['rolUsuario'] = $row['rol'];
         }   
 
         public static function crearCuenta($nombre, $apellido, $mail, $contra) {

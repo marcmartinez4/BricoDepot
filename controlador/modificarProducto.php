@@ -27,7 +27,7 @@
         $id = $_POST['producto_id'];
         echo "Estas editando el producto con el ID: " . $id;
 
-        if (!empty($_POST['nombre_producto']) && !empty($_POST['descripcion']) && !empty($_POST['precio_unidad']) && !empty($_POST['categoria_id'])){
+        if (!empty($_POST['nombre_producto']) && !empty($_POST['descripcion']) && !empty($_POST['precio_unidad']) && !empty($_POST['categoria_id'])) {
             $nombre_producto = $_POST['nombre_producto'];
             $descripcion = $_POST['descripcion']; 
             $precio_unidad = $_POST['precio_unidad']; 

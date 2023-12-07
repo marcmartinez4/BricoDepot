@@ -155,6 +155,7 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ul-juntar-derecha">
                     <?php
                         if (isset($_SESSION['Cliente'])) {
+                            if ($_SESSION['rolUsuario'] == 'Administrador') {
                     ?>
                         <li class="nav-item">
                             <a href="../vista/base-datos.php">
@@ -164,6 +165,7 @@
                             </a>
                         </li>
                     <?php
+                            }
                         }
                     ?>
                     

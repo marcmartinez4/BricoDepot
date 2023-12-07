@@ -3,6 +3,7 @@ body {
 }
 .container-marcas {
     background-color: white;
+    margin-bottom: 10px;
 }
 .footer-marcas {
     min-height: 171px;
@@ -24,11 +25,11 @@ body {
 }
 .img-marca {
     width: 260px;
-    min-width: 260px;
+    min-width: 260px; 
     height: 70px;
 }
 .antes-footer2 {
-    padding: 26px 0 16px 0;
+    padding: 15px 0 16px 0!important;
     background-color: #EBEBEB;
     width: 100%;
 }
@@ -56,6 +57,10 @@ body {
 }
 .servicio a {
     text-decoration: none;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 .h3-footer {
     padding: 0;
