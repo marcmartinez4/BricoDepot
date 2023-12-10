@@ -29,9 +29,9 @@
             $con->query("INSERT INTO productos (`nombre_producto`, `descripcion`, `precio_unidad`, `categoria_id`) VALUES ('$nombre_producto', '$descripcion', '$precio_unidad', '$categoria_id')");
         }
 
-        public static function eliminar($id){
+        public static function eliminarProducto($id){
             $con = dataBase::connect();
-            $con->query("DELETE FROM `productos` WHERE `producto`.`producto_id` = $id");
+            $con->query("DELETE FROM `productos` WHERE producto_id = $id;");
         }
 
         public static function modificar($nombre_producto, $descripcion, $precio_unidad, $categoria_id, $id){

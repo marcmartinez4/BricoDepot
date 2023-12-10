@@ -49,7 +49,7 @@
                 </td>
         
                 <td>
-                    <form>
+                    <form action="" method="post">
                         <input type="hidden" name="producto_id" value="<?php echo $producto->getProducto_id(); ?>">
                         <input type="submit" name="Eliminar" value="Eliminar">
                     </form>
@@ -62,7 +62,6 @@
         if(isset($_POST['Eliminar'])) {
             $id = $_POST['producto_id'];
             productoControlador::eliminarProducto($id);
-            header("Location: menu-admin.php");
         }
 
         include ('../vista/footer.html');
