@@ -50,12 +50,12 @@
                         <div class="primer-div-form">
                             <div class="segundo-div-form">
                                 <h3>Email</h3>
-                                <input class="input-sesion" name="mail">
+                                <input class="input-sesion" type="text" name="mail">
                             </div>
                             
                             <div>
                                 <h3>Contraseña</h3>
-                                <input class="input-sesion" name="contraseña">
+                                <input class="input-sesion" type="password" name="contraseña">
                             </div>
                         </div>
 

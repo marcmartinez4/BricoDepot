@@ -19,8 +19,9 @@ body {
     padding: 10px 12px 10px 12px;
 }    
 .col-hr {
+    max-width: 1488px!important;
     height: 70px;
-    padding: 10px 12px 10px 12px;
+    padding: 10px 90px!important;
 }
 .productos {
     display: flex;

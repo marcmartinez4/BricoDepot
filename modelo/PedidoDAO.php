@@ -58,10 +58,14 @@
         public static function finalizarPedido()  {
             $con = database::connect();
             
-            $id_cliente = $_SESSION['Cliente']->getCliente_id();
-            $fecha = date('Y-m-d H:i:s');
-            
-            $result = $con->query("INSERT INTO pedidos (estado, fecha_pedido, cliente_id) VALUES ('Pendiente', '$fecha', '$id_cliente');");
+            if (isset($_SESSION['Cliente'])) {
+                $id_cliente = $_SESSION['Cliente']->getCliente_id();
+                $fecha = date('Y-m-d H:i:s');
+                
+                $result = $con->query("INSERT INTO pedidos (estado, fecha_pedido, cliente_id) VALUES ('Pendiente', '$fecha', '$id_cliente');");
+            } else {
+                header('Location: ../vista/inicio-sesion.php');
+            }
             /*$result = $con->query("SELECT pedido_id FROM pedidos WHERE cliente_id = '$id_cliente' AND fecha_pedido = '$fecha' LIMIT 1;");
             $row = mysqli_fetch_assoc($result);
             $pedido_id = $row['pedido_id'];
