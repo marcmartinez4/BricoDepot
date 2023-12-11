@@ -24,11 +24,13 @@
         <div class="d-flex justify-content-center banner">
             <div class="row justify-content-center">
                 <div class="col-12 col-md-6 col-lg-6"> 
-                    <img src="../img/Hamburguesa queso fundido.png" class="img-fluid Hamburguesa" alt="...">
+                    <a href="../vista/carta.php" >    
+                        <img src="../img/Hamburguesa queso fundido.png" class="img-fluid Hamburguesa" alt="...">
+                    </a>
                 </div>
                 <div class="col-12 col-md-6 col-lg-5">
-                    <img src="../img/Bocata1.png" class="img-fluid Bocata" alt="...">
-                    <img src="../img/Bocata2.png" class="img-fluid Bocata" alt="...">
+                    <img href="../vista/carta.php" src="../img/Bocata1.png" class="img-fluid Bocata" alt="...">
+                    <img href="../vista/carta.php" src="../img/Bocata2.png" class="img-fluid Bocata" alt="...">
                 </div>
             </div> 
         </div>
