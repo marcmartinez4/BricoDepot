@@ -161,7 +161,7 @@
                             <a href="../vista/base-datos.php">
                                 <img class="iconos-header" src="../img/base-datos.png">
 
-                                <a class="nav-link active boton-cuenta">Productos</a>
+                                <a href="../vista/base-datos.php" class="nav-link active boton-cuenta">Productos</a>
                             </a>
                         </li>
                     <?php
