@@ -43,6 +43,7 @@
             $categoria_id = $_POST['categoria_id'];
 
             productoControlador::añadirProducto($nombre_producto, $descripcion, $precio_unidad, $categoria_id);
+            header('Location: ../vista/base-datos.php');
         }
 
         include ('../vista/footer.html');

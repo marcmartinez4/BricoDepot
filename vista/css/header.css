@@ -19,7 +19,7 @@ body {
 .tool-bar2 {
     width: 100%;
     height: 38px;
-    padding: 8px 56px;
+    padding: 8px 64px;
     background-color: #EBEBEB;
     display: flex;
     justify-content: end;

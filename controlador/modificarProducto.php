@@ -28,15 +28,10 @@
         echo "Estas editando el producto con el ID: " . $id;
 
         if (!empty($_POST['nombre_producto']) && !empty($_POST['descripcion']) && !empty($_POST['precio_unidad']) && !empty($_POST['categoria_id'])) {
-            $nombre_producto = $_POST['nombre_producto'];
-            $descripcion = $_POST['descripcion']; 
-            $precio_unidad = $_POST['precio_unidad']; 
-            $categoria_id = $_POST['categoria_id'];
+            productoControlador::modificarProducto($_POST['nombre_producto'], $_POST['descripcion'], $_POST['precio_unidad'], $_POST['categoria_id']);
         } else {
             echo 'Campos vacíos!';
-        }
-        echo $id; 
-        productoControlador::modificarProducto($nombre_producto, $descripcion, $precio_unidad, $categoria_id, $id);    
+        }     
     ?>
 </body>
 </html>
