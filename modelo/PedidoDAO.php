@@ -63,10 +63,7 @@
                 $fecha = date('Y-m-d H:i:s');
                 
                 $result = $con->query("INSERT INTO pedidos (estado, fecha_pedido, cliente_id) VALUES ('Pendiente', '$fecha', '$id_cliente');");
-            
-                /*$result = $con->query("SELECT pedido_id FROM pedidos WHERE cliente_id = '$id_cliente' AND fecha_pedido = '$fecha' LIMIT 1;");
-                $row = mysqli_fetch_assoc($result);
-                $pedido_id = $row['pedido_id'];
+                $pedido_id = mysqli_insert_id($con);
 
                 foreach($_SESSION['carrito'] as $producto) {
                     $producto_id = $producto[0];
@@ -75,8 +72,9 @@
                     $result = $con->query("SELECT precio_unidad FROM productos WHERE producto_id = '$producto_id' LIMIT 1;");
                     $row = mysqli_fetch_assoc($result);
                     $precio_unidad = $row['precio_unidad'];
-                    $result = $con->query("INSERT INTO `pedido_productos` (pedido_id, producto_id, cantidad, precio_unidad) VALUES ('$pedido_id', '$producto_id', '$cantidad', '$precio_unidad');");
-                }*/
+
+                    $result = $con->query("INSERT INTO `pedido_productos` (pedido_id, producto_id, cantidad, precio_unidad) VALUES ('$pedido_id', '$producto_id', '$cantidad','$precio_unidad');");
+                }
 
             } else {
                 header('Location: ../vista/inicio-sesion.php');

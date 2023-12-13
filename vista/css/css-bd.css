@@ -7,7 +7,7 @@ h1 {
 table {
     border-collapse: collapse;
     margin: 20px 20px 40px 20px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Goodhome', sans-serif;
 }
 table th, table td {
     border: 1px solid #dddddd;
@@ -39,6 +39,7 @@ table td input:hover {
     cursor: pointer;
     transition: background-color 0.3s;
     margin-left: 20px;
+    font-family: 'Goodhome', sans-serif;
 }
 .btnAñadir:hover {
     background-color: #72e277;

@@ -16,7 +16,7 @@
 </head>
 <body>
     <h1>Tabla de productos</h1>
-    <form action="../controlador/añadirProducto.php" method="post">
+    <form action="../vista/añadirProducto.php" method="post">
         <input class="btnAñadir" type="submit" value="Añadir Productos">
     </form>
     
