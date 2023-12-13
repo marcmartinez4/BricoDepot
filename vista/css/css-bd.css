@@ -16,7 +16,8 @@ table th, table td {
 } 
 table th {
     background-color: #f2f2f2;
-} 
+    height: 40.8px;
+}
 table tr:hover {
     background-color: #ddd;
 } 
@@ -31,6 +32,9 @@ table td input {
 table td input:hover {
     background-color: #72e277;
 }
+.div-navegacion {
+    display: flex;
+}
 .btnAñadir {
     background-color: #4CAF50;
     color: white;
@@ -43,4 +47,21 @@ table td input:hover {
 }
 .btnAñadir:hover {
     background-color: #72e277;
+}
+.btnPedidos {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-left: 20px;
+    font-family: 'Goodhome', sans-serif;
+    text-decoration: none;
+}
+.btnPedidos:hover {
+    background-color: #72e277;
+}
+.div-tablas {
+    display: flex;
 }

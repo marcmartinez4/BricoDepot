@@ -16,9 +16,13 @@
 </head>
 <body>
     <h1>Tabla de productos</h1>
-    <form action="../vista/añadirProducto.php" method="post">
-        <input class="btnAñadir" type="submit" value="Añadir Productos">
-    </form>
+    
+    <div class="div-navegacion">
+        <form action="../vista/añadirProducto.php" method="post">
+            <input class="btnAñadir" type="submit" value="Añadir Productos">
+        </form>
+        <a href="../vista/mostrarPedidos.php" class="btnPedidos">Pedidos</a>
+    </div>
     
     <table>
         <tr>
@@ -42,7 +46,7 @@
             <td><?php echo $producto->getCategoria_id() ?></td>
             <form action="" method="post">
                 <td>
-                    <form action="../controlador/modificarProducto.php" method="post">
+                    <form action="../vista/modificarProducto.php" method="post">
                         <input type="hidden" name="producto_id" value="<?php echo $producto->getProducto_id(); ?>">
                         <input type="submit" name="Modificar" value="Modificar">
                     </form>
