@@ -1,6 +1,6 @@
 <?php
-    include_once '../config/dataBase.php';
-    include ('../modelo/Cliente.php');
+    include_once 'config/dataBase.php';
+    include_once 'modelo/Cliente.php';
 
     class ClienteDAO {
         public static function iniciarSesion($mail, $contra) {

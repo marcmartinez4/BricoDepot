@@ -47,9 +47,6 @@
 </head>
 <body>
     <?php
-        include ('../vista/header.php');
-
-
         foreach ($productos as $producto) {
             if ($producto->getProducto_ID() == $producto_id) {
     ?>

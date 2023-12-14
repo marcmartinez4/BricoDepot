@@ -5,6 +5,4 @@
         $_SESSION['carrito']  = array(array());
         array_pop($_SESSION['carrito']);
     }
-
-    setcookie('carrito', json_encode($_SESSION['carrito']), time() + 3600, '/');
 ?>

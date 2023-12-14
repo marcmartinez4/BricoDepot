@@ -38,9 +38,6 @@
     <title>Customer Login Brico Depôt</title>
 </head>
 <body>
-
-    <?php include ('../vista/header.php'); ?>
-
     <div class="container-fluid">
         <div class="d-flex justify-content-center fondo-panel-sesion">
             <div class="row justify-content-center">

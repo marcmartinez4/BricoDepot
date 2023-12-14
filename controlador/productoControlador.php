@@ -1,10 +1,15 @@
 <?php
-    include_once '../modelo/productoDAO.php';
-    include_once '../config/functions.php';
+    include_once 'modelo/productoDAO.php';
+    include_once 'config/functions.php';
     
     class productoControlador {
         public static function index() {
-            productoDAO::getAllProducts();
+            if(!isset($_GET['controller'])) {
+                include_once '../vista/home.php';
+            } else {
+                $productos = productoDAO::getAllProducts();
+                include_once 'vista/carta.php';
+            }
         }
 
         public static function añadirProducto($nombre_producto, $descripcion, $precio_unidad, $categoria_id){

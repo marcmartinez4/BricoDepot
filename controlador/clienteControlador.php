@@ -1,5 +1,5 @@
 <?php
-    include_once '../modelo/ClienteDAO.php';
+    include_once 'modelo/ClienteDAO.php';
     
     class clienteControlador {
         public static function iniciarSesion($mail, $contra) {

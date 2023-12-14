@@ -2,7 +2,6 @@
     include ('../config/dataBase.php');
     include ('../modelo/productoDAO.php');
     include ('../controlador/productoControlador.php');
-    include ('../vista/header.php');
 ?>
 <!DOCTYPE html>
 <html lang="es">

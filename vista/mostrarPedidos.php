@@ -3,7 +3,6 @@
     include ("../config/parametros.php");
     include ("../modelo/ProductoDAO.php");
     include ("../controlador/productoControlador.php");
-    include ('../vista/header.php');
 ?>
 <!DOCTYPE html>
 <html lang="es">

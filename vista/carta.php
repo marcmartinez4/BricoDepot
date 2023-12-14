@@ -17,11 +17,6 @@
     </style>
 </head>
 <body>
-
-    <?php
-        include ('../vista/header.php');
-    ?>
-
     <p class="h2-principal">LA CARTA</p>
     
     <div class="container-fluid">

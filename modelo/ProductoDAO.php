@@ -1,9 +1,9 @@
 <?php
-    include_once '../modelo/Producto.php';
-    include_once '../config/dataBase.php';
-    include_once '../config/functions.php';
-    include_once '../modelo/Pedido.php';
-    include_once '../modelo/PedidoProductos.php';
+    include_once 'modelo/Producto.php';
+    include_once 'config/dataBase.php';
+    include_once 'config/functions.php';
+    include_once 'modelo/Pedido.php';
+    include_once 'modelo/PedidoProductos.php';
 
     class productoDAO {
         public static function getAllProducts() {

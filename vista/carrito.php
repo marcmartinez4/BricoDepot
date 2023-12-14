@@ -48,11 +48,7 @@
     <link rel="stylesheet" href="../vista/css/carrito.css">
     <title>Cesta Brico Depôt</title>
 </head>
-<body> 
-    <?php
-        include('../vista/header.php');
-    ?>
-
+<body>
     <div class="container-fluid">
         <?php
             if ($count_array > 0) {
