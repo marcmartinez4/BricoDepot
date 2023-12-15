@@ -1,7 +1,7 @@
 <?php
-    include ('../config/dataBase.php');
-    include ('../modelo/productoDAO.php');
-    include ('../controlador/productoControlador.php');
+    include 'config/dataBase.php';
+    include 'modelo/productoDAO.php';
+    include 'controlador/productoControlador.php';
 ?>
 <!DOCTYPE html>
 <html lang="es">

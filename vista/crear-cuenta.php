@@ -1,29 +1,19 @@
 <?php
-    include ('../modelo/ClienteDAO.php');
-    include ('../controlador/clienteControlador.php');
+    include 'modelo/ClienteDAO.php';
+    include 'controlador/clienteControlador.php';
 
     $contraseña_incorrecta = false;
 
-    if (isset($_POST['nombre'])) {
-        if (isset($_POST['apellido'])) {
-            if (isset($_POST['correo'])) {
-                if (isset($_POST['contraseña'])) {
-                    if (isset($_POST['contraseña2'])) {
-                        if (isset($_POST['contraseña']) == isset($_POST['contraseña2'])) {
-                            $nombre = $_POST['nombre'];
-                            $apellido = $_POST['apellido'];
-                            $mail = $_POST['correo'];
-                            $contra = $_POST['contraseña'];
+    if (isset($_POST['nombre'], $_POST['apellido'], $_POST['correo'], $_POST['contraseña'], $_POST['contraseña2'])) {
+        if (isset($_POST['contraseña']) == isset($_POST['contraseña2'])) {
+            $nombre = $_POST['nombre'];
+            $apellido = $_POST['apellido'];
+            $mail = $_POST['correo'];
+            $contra = $_POST['contraseña'];
 
-                            clienteControlador::crearCuenta($nombre, $apellido, $mail, $contra);
-
-                            header('Location: ../vista/inicio-sesion.php');
-                        } else {
-                            $contraseña_incorrecta = true;
-                        }
-                    }
-                }
-            }
+            clienteControlador::crearCuenta($nombre, $apellido, $mail, $contra);
+        } else {
+            $contraseña_incorrecta = true;
         }
     }
 ?>
@@ -34,7 +24,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="https://www.bricodepot.es/media/favicon/default/favicon-32x32.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="../vista/css/crear-cuenta.css">
+    <link rel="stylesheet" href="vista/css/crear-cuenta.css">
     <title>Customer Login Brico Depôt</title>
 </head>
 <body>
@@ -105,8 +95,6 @@
             </div> 
         </div>
     </div>
-
-    <?php include ('../vista/footer.html'); ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>

@@ -8,13 +8,13 @@
     include_once 'controlador/homeControlador.php';
     include_once 'controlador/botonSesion.php';
 
-    if(!isset($_GET['controller'])) {
-        header("Location:" . url . "?controller=home");
+    if(!isset($_GET['controlador'])) {
+        header("Location:" . url . "?controlador=home");
     } else {
-        $nombre_controller = $_GET['controller'] . "Controller";
+        $nombre_controlador = $_GET['controlador'] . "Controlador";
 
-        if(class_exists($nombre_controller)) {
-            $controller = new $nombre_controller;
+        if(class_exists($nombre_controlador)) {
+            $controlador = new $nombre_controlador;
 
             if(isset($_GET['action'])) {
                 $action = $_GET['action'];
@@ -22,11 +22,12 @@
                 $action = action_default;
             }
 
-            $controller->$action();
+            $controlador->$action();
 
         } else {
-            header("Location:" . url . "?controller=home");
+            header("Location:" . url . "?controlador=home");
         }
     }
 
+    include_once 'vista/footer.html';
 ?>

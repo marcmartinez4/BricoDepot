@@ -1,6 +1,6 @@
 <?php
-    include_once '../modelo/ProductoDAO.php';
-    include_once '../controlador/productoControlador.php';
+    include_once 'modelo/ProductoDAO.php';
+    include_once 'controlador/productoControlador.php';
     $productos = productoDAO::getAllProducts();
 ?>
 
@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="https://www.bricodepot.es/media/favicon/default/favicon-32x32.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="../vista/css/index.css">
+    <link rel="stylesheet" href="vista/css/index.css">
     <title>Brico Depôt | Bricolaje, jardín, construcción y climatización</title>
 </head>
 <body>
@@ -19,16 +19,16 @@
         <div class="d-flex justify-content-center banner">
             <div class="row justify-content-center">
                 <div class="col-12 col-md-6 col-lg-6"> 
-                    <a href="../vista/carta.php">    
-                        <img src="../img/Hamburguesa queso fundido.png" class="img-fluid Hamburguesa" alt="Imagen hamburguesa queso fundido">
+                    <a href="vista/carta.php">    
+                        <img src="img/Hamburguesa queso fundido.png" class="img-fluid Hamburguesa" alt="Imagen hamburguesa queso fundido">
                     </a>
                 </div>
                 <div class="col-12 col-md-6 col-lg-5">
-                    <a href="../vista/carta.php">
-                        <img href="../vista/carta.php" src="../img/Bocata1.png" class="img-fluid Bocata" alt="Imagen bocadillo vegetal">
+                    <a href="vista/carta.php">
+                        <img src="img/Bocata1.png" class="img-fluid Bocata" alt="Imagen bocadillo vegetal">
                     </a>    
-                    <a href="../vista/carta.php">
-                        <img href="../vista/carta.php" src="../img/Bocata2.png" class="img-fluid Bocata" alt="Imagen bocadillo vegetal">
+                    <a href="vista/carta.php">
+                        <img src="img/Bocata2.png" class="img-fluid Bocata" alt="Imagen bocadillo vegetal">
                     </a>
                 </div>
             </div> 
@@ -48,7 +48,7 @@
             <div class="row justify-content-center">
                 <div class="col-12 col-md-6 col-lg-11">
                     <a href="../vista/carta.php">
-                        <img src="../img/DESTACADO.png" class="img-fluid" alt="Imagen banner destacado">
+                        <img src="img/DESTACADO.png" class="img-fluid" alt="Imagen banner destacado">
                     </a>
                 </div>
             </div> 
@@ -94,17 +94,17 @@
             <div class="row justify-content-center">
                 <div class="col-12 col-md-6 col-lg-4 imagenes-verticales">
                     <a href="../vista/carta.php">
-                        <img src="../img/Hot Dog.png" class="img-fluid" alt="...">
+                        <img src="img/Hot Dog.png" class="img-fluid" alt="...">
                     </a>
                 </div>
                 <div class="col-12 col-md-6 col-lg-4 imagenes-verticales">
                     <a href="../vista/carta.php">    
-                        <img src="../img/Tacos.png" class="img-fluid" alt="...">
+                        <img src="img/Tacos.png" class="img-fluid" alt="...">
                     </a>
                 </div>
                 <div class="col-12 col-md-6 col-lg-4 imagenes-verticales">
                     <a href="../vista/carta.php">
-                        <img src="../img/Cola.png" class="img-fluid" alt="...">
+                        <img src="img/Cola.png" class="img-fluid" alt="...">
                     </a>
                 </div>
             </div> 

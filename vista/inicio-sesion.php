@@ -1,14 +1,12 @@
 <?php
-    include ('../config/functions.php');
-    include ('../controlador/clienteControlador.php');
-
+    include 'config/functions.php';
+    
     if (isset($_POST['iniciarSesion'])) {
         if (isset($_POST['mail'], $_POST['contraseña'])) {
             $mail = $_POST['mail'];
             $contra = $_POST['contraseña'];
 
             $inicio = clienteControlador::iniciarSesion($mail, $contra);
-            header('Location: ../vista/index.php');
         }
     }
 ?>
@@ -19,7 +17,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="https://www.bricodepot.es/media/favicon/default/favicon-32x32.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="../vista/css/inicio-sesion.css">
+    <link rel="stylesheet" href="vista/css/inicio-sesion.css">
     <title>Customer Login Brico Depôt</title>
 </head>
 <body>
@@ -31,13 +29,13 @@
                     <h1 class="h1-sesion">Mi cuenta</h1>
                     
                     <div class="div-pestañas">
-                        <a class="pestaña-activa" href="../vista/inicio-sesion.php">
+                        <a class="pestaña-activa" href="<?= url ?>?controlador=cliente">
                             <div>
                                 <p class="pestañas">Identificación</p>
                             </div>
                         </a>
                         
-                        <a class="pestaña-no-activa" href="../vista/crear-cuenta.php">
+                        <a class="pestaña-no-activa" href="<?= url ?>?controlador=vistaCrear">
                             <div>
                                 <p class="pestañas">Crear una cuenta</p>
                             </div>
@@ -66,8 +64,6 @@
             </div> 
         </div>
     </div>
-
-    <?php include ('../vista/footer.html'); ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>

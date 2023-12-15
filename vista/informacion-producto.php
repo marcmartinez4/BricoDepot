@@ -1,22 +1,16 @@
 <?php
-    include_once '../modelo/ProductoDAO.php';
-    include_once '../controlador/productoControlador.php';
-    include_once '../config/functions.php';
-    include_once '../modelo/PedidoDAO.php';
+    include_once 'modelo/ProductoDAO.php';
+    include_once 'controlador/productoControlador.php';
+    include_once 'config/functions.php';
+    include_once 'modelo/PedidoDAO.php';
 
     $productos = productoDAO::getAllProducts();
     $producto_id = $_GET['producto_id'];
-
-    // Verificar si la página se ha recargado mediante POST
-    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['recargar'])) {
-        
-    }
 
     if (isset($_POST['AñadirCarrito'])) {
         $id = $_POST['producto_id'];
         PedidoDAO::añadirCarrito($id, $_SESSION['cantidad_añadir']);
         $_SESSION['cantidad_añadir'] = 1;
-        header('Location: ../vista/informacion-producto.php?producto_id=' . $producto_id);
     }
 
     if (!isset($_SESSION['cantidad_añadir'])) {
@@ -26,13 +20,11 @@
     if (isset($_POST["reducirCantidad"])) {
         if ($_SESSION['cantidad_añadir'] > 1) {
             $_SESSION['cantidad_añadir']--;
-            header('Location: ../vista/informacion-producto.php?producto_id=' . $producto_id);
         }
     }
 
     if (isset($_POST["añadirCantidad"])) {
         $_SESSION['cantidad_añadir']++;
-        header('Location: ../vista/informacion-producto.php?producto_id=' . $producto_id);
     }
 ?>
 <!DOCTYPE html>
@@ -42,7 +34,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="https://www.bricodepot.es/media/favicon/default/favicon-32x32.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="../vista/css/info.css">
+    <link rel="stylesheet" href="vista/css/info.css">
     <title></title>
 </head>
 <body>

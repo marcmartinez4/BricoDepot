@@ -4,11 +4,19 @@
     
     class productoControlador {
         public static function index() {
-            if(!isset($_GET['controller'])) {
-                include_once '../vista/home.php';
+            if(!isset($_GET['controlador'])) {
+                include_once 'vista/home.php';
             } else {
                 $productos = productoDAO::getAllProducts();
                 include_once 'vista/carta.php';
+            }
+        }
+
+        public static function info() {
+            if(!isset($_GET['controlador'])) {
+                include_once 'vista/home.php';
+            } else {
+                include_once 'vista/informacion-producto.php';
             }
         }
 

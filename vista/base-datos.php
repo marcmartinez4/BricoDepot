@@ -1,8 +1,8 @@
 <?php
-    include ('../config/dataBase.php');
-    include ("../config/parametros.php");
-    include ("../modelo/ProductoDAO.php");
-    include ("../controlador/productoControlador.php");
+    include 'config/dataBase.php';
+    include "config/parametros.php";
+    include "modelo/ProductoDAO.php";
+    include "controlador/productoControlador.php";
 ?>
 <!DOCTYPE html>
 <html lang="es">
