@@ -83,7 +83,7 @@
     <nav class="navbar navbar-expand-lg bg-body-tertiary header">
         <div class="container-fluid div-header">
             <div class="logo-busqueda">
-                <a href="../vista/index.php">
+                <a href="<?= url ?>?controlador=home">
                     <svg xmlns="http://www.w3.org/2000/svg" width="118" height="48" viewBox="0 0 775.2 337.65" aria-label="BricoDepot" role="img">
                         <title>BricoDepot</title>
                         <style type="text/css">
