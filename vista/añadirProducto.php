@@ -1,15 +1,14 @@
 <?php
-    include 'config/dataBase.php';
-    include 'modelo/productoDAO.php';
-    include 'controlador/productoControlador.php';
+    include_once 'config/dataBase.php';
+    include_once 'modelo/productoDAO.php';
+    include_once 'controlador/productoControlador.php';
 ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../vista/css/añadirProducto.css">
-    <link rel="icon" href="https://www.bricodepot.es/media/favicon/default/favicon-32x32.png">
+    <link rel="stylesheet" href="vista/css/añadirProducto.css">
     <title>Añadir Productos</title>
 </head>
 <body>
@@ -42,10 +41,7 @@
             $categoria_id = $_POST['categoria_id'];
 
             productoControlador::añadirProducto($nombre_producto, $descripcion, $precio_unidad, $categoria_id);
-            header('Location: ../vista/base-datos.php');
         }
-
-        include ('../vista/footer.html');
     ?>
 </body>
 </html>

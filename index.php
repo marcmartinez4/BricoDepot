@@ -1,4 +1,5 @@
 <?php
+    include_once 'config/dataBase.php';
     include_once 'config/functions.php';
     include_once 'config/parametros.php';
     include_once 'vista/header.php';
@@ -6,7 +7,12 @@
     include_once 'controlador/productoControlador.php';
     include_once 'controlador/clienteControlador.php';
     include_once 'controlador/homeControlador.php';
-    include_once 'controlador/botonSesion.php';
+    include_once 'modelo/ProductoDAO.php';
+    include_once 'modelo/PedidoDAO.php';
+    include_once 'controlador/tablaProductosControlador.php';
+    include_once 'controlador/registroControlador.php';
+    include_once 'controlador/infoControlador.php';
+    include_once 'controlador/pedidosAdminControlador.php';
 
     if(!isset($_GET['controlador'])) {
         header("Location:" . url . "?controlador=home");

@@ -1,12 +1,10 @@
 <?php
-    include 'config/functions.php';
-    
     if (isset($_POST['iniciarSesion'])) {
         if (isset($_POST['mail'], $_POST['contraseña'])) {
             $mail = $_POST['mail'];
             $contra = $_POST['contraseña'];
 
-            $inicio = clienteControlador::iniciarSesion($mail, $contra);
+            clienteControlador::iniciarSesion($mail, $contra);
         }
     }
 ?>
@@ -35,7 +33,7 @@
                             </div>
                         </a>
                         
-                        <a class="pestaña-no-activa" href="<?= url ?>?controlador=vistaCrear">
+                        <a class="pestaña-no-activa" href="<?= url ?>?controlador=registro">
                             <div>
                                 <p class="pestañas">Crear una cuenta</p>
                             </div>

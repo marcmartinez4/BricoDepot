@@ -1,7 +1,4 @@
 <?php
-    include 'modelo/ClienteDAO.php';
-    include 'controlador/clienteControlador.php';
-
     $contraseña_incorrecta = false;
 
     if (isset($_POST['nombre'], $_POST['apellido'], $_POST['correo'], $_POST['contraseña'], $_POST['contraseña2'])) {
@@ -11,7 +8,7 @@
             $mail = $_POST['correo'];
             $contra = $_POST['contraseña'];
 
-            clienteControlador::crearCuenta($nombre, $apellido, $mail, $contra);
+            registroControlador::crearCuenta($nombre, $apellido, $mail, $contra);
         } else {
             $contraseña_incorrecta = true;
         }

@@ -1,4 +1,4 @@
 <?php
-    define('url','http://localhost/dashboard/Base%20de%20datos/');
+    define('url','http://localhost:51387');
     define('action_default','index');
 ?>

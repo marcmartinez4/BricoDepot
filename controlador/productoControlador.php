@@ -12,14 +12,6 @@
             }
         }
 
-        public static function info() {
-            if(!isset($_GET['controlador'])) {
-                include_once 'vista/home.php';
-            } else {
-                include_once 'vista/informacion-producto.php';
-            }
-        }
-
         public static function añadirProducto($nombre_producto, $descripcion, $precio_unidad, $categoria_id){
             productoDAO::añadirProducto($nombre_producto, $descripcion, $precio_unidad, $categoria_id);
         }

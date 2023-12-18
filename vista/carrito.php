@@ -194,7 +194,7 @@
                         </svg>
                             <h1 class="h1-vacio">Tu carrito está vacío</h1>
                             <p class="p-vacio">Loguéese para recuperar sus productos guardados.</p>
-                            <a class="boton-vacio" href="../vista/inicio-sesion.php">
+                            <a class="boton-vacio" href="?controlador=cliente">
                                 <p>Inicio de sesión</p>
                             </a>
                         </div>

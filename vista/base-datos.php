@@ -1,26 +1,25 @@
 <?php
-    include 'config/dataBase.php';
-    include "config/parametros.php";
-    include "modelo/ProductoDAO.php";
-    include "controlador/productoControlador.php";
+    if(isset($_POST['Eliminar'])) {
+        $id = $_POST['producto_id'];
+        productoControlador::eliminarProducto($id);
+    }
 ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="https://www.bricodepot.es/media/favicon/default/favicon-32x32.png">
-    <link rel="stylesheet" href="../vista/css/css-bd.css">
+    <link rel="stylesheet" href="vista/css/css-bd.css">
     <title>Base de Datos Productos</title>
 </head>
 <body>
     <h1>Tabla de productos</h1>
     
     <div class="div-navegacion">
-        <form action="../vista/añadirProducto.php" method="post">
+        <form action="<?php url ?>?controlador=tablaProductos&action=añadir" method="post">
             <input class="btnAñadir" type="submit" value="Añadir Productos">
         </form>
-        <a href="../vista/mostrarPedidos.php" class="btnPedidos">Pedidos</a>
+        <a href="<?= url ?>?controlador=pedidosAdmin" class="btnPedidos">Pedidos</a>
     </div>
     
     <table>
@@ -43,31 +42,23 @@
             <td><?php echo $producto->getDescripcion() ?></td>
             <td><?php echo $producto->getPrecio_unidad() ?> €</td>
             <td><?php echo $producto->getCategoria_id() ?></td>
-            <form action="" method="post">
-                <td>
-                    <form action="../vista/modificarProducto.php" method="post">
-                        <input type="hidden" name="producto_id" value="<?php echo $producto->getProducto_id(); ?>">
-                        <input type="submit" name="Modificar" value="Modificar">
-                    </form>
-                </td>
+            <td>
+                <form action="<?php url ?>?controlador=tablaProductos&action=modificar" method="post">
+                    <input type="hidden" name="producto_id" value="<?php echo $producto->getProducto_id(); ?>">
+                    <input type="submit" name="Modificar" value="Modificar">
+                </form>
+            </td>
         
-                <td>
-                    <form action="" method="post">
-                        <input type="hidden" name="producto_id" value="<?php echo $producto->getProducto_id(); ?>">
-                        <input type="submit" name="Eliminar" value="Eliminar">
-                    </form>
-                </td>
-            </form>
+            <td>
+                <form action="" method="post">
+                    <input type="hidden" name="producto_id" value="<?php echo $producto->getProducto_id(); ?>">
+                    <input type="submit" name="Eliminar" value="Eliminar">
+                </form>
+            </td>
         </tr>
-        <?php } ?>
+        <?php 
+            } 
+        ?>
     </table>
-    <?php
-        if(isset($_POST['Eliminar'])) {
-            $id = $_POST['producto_id'];
-            productoControlador::eliminarProducto($id);
-        }
-
-        include ('../vista/footer.html');
-    ?>
 </body>
 </html>

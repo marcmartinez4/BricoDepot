@@ -1,9 +1,3 @@
-<?php
-    include ('../config/dataBase.php');
-    include ("../config/parametros.php");
-    include ("../modelo/ProductoDAO.php");
-    include ("../controlador/productoControlador.php");
-?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -20,7 +14,7 @@
         <form action="../vista/añadirProducto.php" method="post">
             <input class="btnAñadir" type="submit" value="Añadir Productos">
         </form>
-        <a href="../vista/base-datos.php" class="btnPedidos">Productos</a>
+        <a href="<?= url ?>?controlador=tablaProductos" class="btnPedidos">Productos</a>
     </div>
     
     <div class="div-tablas">
@@ -106,8 +100,6 @@
             $id = $_POST['producto_id'];
             productoControlador::eliminarProducto($id);
         }
-
-        include ('../vista/footer.html');
     ?>
 </body>
 </html>

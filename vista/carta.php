@@ -1,6 +1,4 @@
 <?php
-    include_once 'modelo/ProductoDAO.php';
-    include_once 'controlador/productoControlador.php';
     $productos = productoDAO::getAllProducts();
 ?>
 <!DOCTYPE html>
