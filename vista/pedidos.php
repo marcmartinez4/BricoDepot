@@ -62,7 +62,6 @@
                 <th>Cantidad</th>
                 <th>Precio por unidad</th>
                 <th></th>
-                <th></th>
             </tr>
             <?php 
                 $pedido_productos = PedidoProductosDAO::getAllPedidoProductos();
@@ -79,13 +78,6 @@
                         <form action="../controlador/modificarProducto.php" method="post">
                             <input type="hidden" name="producto_id" value="<?php echo $pedido_producto->getPedido_id(); ?>">
                             <input type="submit" name="Modificar" value="Modificar">
-                        </form>
-                    </td>
-            
-                    <td>
-                        <form action="" method="post">
-                            <input type="hidden" name="producto_id" value="<?php echo $pedido_producto->getPedido_id (); ?>">
-                            <input type="submit" name="Eliminar" value="Eliminar">
                         </form>
                     </td>
                 </form>
