@@ -1,4 +1,4 @@
 <?php
-    define('url','http://localhost:52136');
+    define('url','');
     define('action_default','index');
 ?>

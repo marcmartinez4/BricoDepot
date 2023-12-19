@@ -1,13 +1,3 @@
-<?php
-    if (isset($_POST['iniciarSesion'])) {
-        if (isset($_POST['mail'], $_POST['contraseña'])) {
-            $mail = $_POST['mail'];
-            $contra = $_POST['contraseña'];
-
-            clienteControlador::iniciarSesion($mail, $contra);
-        }
-    }
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,7 +30,7 @@
                         </a>
                     </div>
 
-                    <form action="" method="post" class="form-inicio-sesion">
+                    <form action="?controlador=cliente&action=iniciarSesion" method="post" class="form-inicio-sesion">
                         <div class="primer-div-form">
                             <div class="segundo-div-form">
                                 <h3>Email</h3>

@@ -1,17 +1,8 @@
 <?php
 
     $productos = productoDAO::getAllProducts();
-    $producto_id = $_GET['producto_id'];
 
-    if (isset($_POST['AñadirCarrito'])) {
-        $id = $_POST['producto_id'];
-        PedidoDAO::añadirCarrito($id, $_SESSION['cantidad_añadir']);
-        $_SESSION['cantidad_añadir'] = 1;
-    }
 
-    if (!isset($_SESSION['cantidad_añadir'])) {
-        $_SESSION['cantidad_añadir'] = 1; 
-    }
 
     if (isset($_POST["reducirCantidad"])) {
         if ($_SESSION['cantidad_añadir'] > 1) {
@@ -70,7 +61,7 @@
                         </div>
 
                         <div>
-                            <form action="" method="post">
+                            <form action="<?php url ?>?controlador=info&action=añadirCarrito" method="post">
                                 <input type="hidden" name="producto_id" value="<?php echo $producto->getProducto_id(); ?>">
                                 <input class="boton-carrito1" type="submit" name="AñadirCarrito" value="Añadir al carrito">
                             </form>    

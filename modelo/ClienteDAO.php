@@ -1,6 +1,6 @@
 <?php
-    include_once 'C:\xampp\htdocs\dashboard\Base de datos\config\dataBase.php';
-    include_once 'C:\xampp\htdocs\dashboard\Base de datos\modelo\Cliente.php';
+    include_once 'config/dataBase.php';
+    include_once 'modelo/Cliente.php';
 
     class ClienteDAO {
         public static function iniciarSesion($mail, $contra) {
@@ -15,10 +15,10 @@
             $_SESSION['rolUsuario'] = $row['rol'];
         }   
 
-        public static function crearCuenta($nombre, $apellido, $mail, $contra) {
+        public static function crearCuenta($nombre, $apellido, $correo, $contraseña) {
             $con = dataBase::connect();
 
-            $result = $con->query("INSERT INTO `usuarios`(`nombre`, `apellido`, `mail`, `rol`, `contra`) VALUES ('$nombre','$apellido','$mail','Cliente','$contra')");
+            $result = $con->query("INSERT INTO `usuarios`(`nombre`, `apellido`, `mail`, `rol`, `contra`) VALUES ('$nombre','$apellido','$correo','Cliente','$contraseña')");
         }
     }
 ?>

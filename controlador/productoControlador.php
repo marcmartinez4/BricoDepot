@@ -16,10 +16,6 @@
             productoDAO::añadirProducto($nombre_producto, $descripcion, $precio_unidad, $categoria_id);
         }
 
-        public static function eliminarProducto($id){
-            productoDAO::eliminarProducto($id);
-        }
-
         public static function modificarProducto($nombre_producto, $descripcion, $precio_unidad, $categoria_id, $id){
             productoDAO::modificarProducto($nombre_producto, $descripcion, $precio_unidad, $categoria_id, $id);
         }

@@ -1,32 +1,5 @@
 <?php
-    include_once 'modelo/Cliente.php';
-    include_once 'modelo/PedidoDAO.php';
-    include_once 'controlador/pedidoControlador.php';
-    include_once 'config/functions.php';
-    include_once 'modelo/ProductoDAO.php';
-    include_once 'controlador/productoControlador.php';
-
     $prodCarrito = productoDAO::getAllProducts();
-
-    if (isset($_POST['sumarCantidad'])) {
-        $id = $_POST['sumarCantidad'];
-        PedidoDAO::sumarCantidad($id);
-    }
-
-    if (isset($_POST['restarCantidad'])) {
-        $id = $_POST['restarCantidad'];
-        PedidoDAO::restarCantidad($id);
-    }
-    
-    if (isset($_POST['eliminarProducto'])) {
-        $id = $_POST['eliminarProducto'];
-        PedidoDAO::eliminarProducto($id);
-    }
-
-    if (isset($_POST['finalizarPedido'])) {
-        PedidoDAO::finalizarPedido();
-    }
-    
     $count_array = count($_SESSION['carrito']);
     
     if ($count_array > 1) {
@@ -88,7 +61,7 @@
                             <div class="modificar-cantidad">
                                 <div class="botones">
                                     <div class="botones-cantidad">
-                                        <form class="boton-cantidad" action="" method="post">
+                                        <form class="boton-cantidad" action="<?php url ?>?controlador=pedido&action=restarCantidad" method="post">
                                             <input type="hidden" name="restarCantidad" value="<?php echo $prodCarrito->getProducto_id(); ?>">
                                             <input class="boton-svg" type="image" src="../img/menos-cantidad.png">        
                                         </form>
@@ -97,12 +70,12 @@
                                             <p class="precio-boton"><?php echo $cantidad; ?></p>
                                         </button>
 
-                                        <form class="boton-cantidad" action="" method="post">
+                                        <form class="boton-cantidad" action="<?php url ?>?controlador=pedido&action=sumarCantidad" method="post">
                                             <input type="hidden" name="sumarCantidad" value="<?php echo $prodCarrito->getProducto_id(); ?>">
                                             <input class="boton-svg" type="image" src="../img/aumentar-cantidad.png">    
                                         </form>
 
-                                        <form class="boton-eliminar" action="" method="post">
+                                        <form class="boton-eliminar" action="<?php url ?>?controlador=pedido&action=eliminarProducto" method="post">
                                             <input type="hidden" name="eliminarProducto" value="<?php echo $prodCarrito->getProducto_id(); ?>">
                                             <input class="icon-eliminar" type="image" src="../img/eliminar-cantidad.png">
                                         </form>
@@ -165,7 +138,7 @@
                         </div>
                     </div>
 
-                    <form class="" action="" method="post">
+                    <form class="" action="<?php url ?>?controlador=pedido&action=finalizarPedido" method="post">
                         <input type="hidden" name="producto_id" value="">
                         <input class="boton-carrito1" type="submit" name="finalizarPedido" value="Continuar con el pedido">
                     </form>

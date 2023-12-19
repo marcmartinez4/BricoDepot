@@ -1,19 +1,3 @@
-<?php
-    $contraseña_incorrecta = false;
-
-    if (isset($_POST['nombre'], $_POST['apellido'], $_POST['correo'], $_POST['contraseña'], $_POST['contraseña2'])) {
-        if (isset($_POST['contraseña']) == isset($_POST['contraseña2'])) {
-            $nombre = $_POST['nombre'];
-            $apellido = $_POST['apellido'];
-            $mail = $_POST['correo'];
-            $contra = $_POST['contraseña'];
-
-            registroControlador::crearCuenta($nombre, $apellido, $mail, $contra);
-        } else {
-            $contraseña_incorrecta = true;
-        }
-    }
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,20 +17,20 @@
                     <h1 class="h1-sesion">Mi cuenta</h1>
                     
                     <div class="div-pestañas">
-                        <a class="pestaña-no-activa" href="../vista/inicio-sesion.php">
+                        <a class="pestaña-no-activa" href="<?= url ?>?controlador=cliente">
                             <div>
                                 <p class="pestañas">Identificación</p>
                             </div>
                         </a>
                         
-                        <a class="pestaña-activa" href="../vista/crear-cuenta.php">
+                        <a class="pestaña-activa" href="<?= url ?>?controlador=registro">
                             <div>
                                 <p class="pestañas">Crear una cuenta</p>
                             </div>
                         </a>
                     </div>
 
-                    <form class="form-inicio-sesion" action="" method="post">
+                    <form class="form-inicio-sesion" action="<?php url ?>?controlador=registro&action=crearCuenta" method="post">
                         <div class="primer-div-form">
                             <div class="segundo-div-form">
                                 <h3>Email</h3>
@@ -59,16 +43,6 @@
                                 <div class="panel-contraseña">
                                     <p>Contraseña segura: <span>Sin contraseña</span></p>
                                 </div>
-                            </div>
-
-                            <div>
-                                <h3>Confirmar contraseña</h3>
-                                <input class="input-sesion" type="password" name="contraseña2">
-                                <?php
-                                    if ($contraseña_incorrecta) {
-                                        echo '<p class="coinciden">Las contraseñas no coinciden</p>';
-                                    }
-                                ?>
                             </div>
 
                             <div class="div-datos">

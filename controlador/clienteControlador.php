@@ -1,5 +1,5 @@
 <?php
-    include_once 'C:\xampp\htdocs\dashboard\Base de datos\modelo\ClienteDAO.php';
+    include_once 'modelo/ClienteDAO.php';
     
     class clienteControlador {
         public static function index() {
@@ -10,8 +10,15 @@
             }
         }
 
-        public static function iniciarSesion($mail, $contra) {
-            ClienteDAO::iniciarSesion($mail, $contra);
+        public static function iniciarSesion() {
+            if (isset($_POST['mail'], $_POST['contraseña'])) {
+                $mail = $_POST['mail'];
+                $contra = $_POST['contraseña'];
+
+                ClienteDAO::iniciarSesion($mail, $contra);
+                include_once 'vista/home.php';
+                // header('Location:'.url.'?controlador=home');
+            }
         }
     }
 ?>

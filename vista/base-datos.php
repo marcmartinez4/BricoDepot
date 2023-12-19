@@ -1,9 +1,3 @@
-<?php
-    if(isset($_POST['Eliminar'])) {
-        $id = $_POST['producto_id'];
-        productoControlador::eliminarProducto($id);
-    }
-?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -50,7 +44,7 @@
             </td>
         
             <td>
-                <form action="" method="post">
+                <form action="<?php url ?>?controlador=tablaProductos&action=eliminar" method="post">
                     <input type="hidden" name="producto_id" value="<?php echo $producto->getProducto_id(); ?>">
                     <input type="submit" name="Eliminar" value="Eliminar">
                 </form>

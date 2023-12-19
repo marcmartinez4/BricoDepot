@@ -8,8 +8,18 @@
             }
         }
         
-        public static function crearCuenta($nombre, $apellido, $mail, $contra) {
-            ClienteDAO::crearCuenta($nombre, $apellido, $mail, $contra);
+        public static function crearCuenta() {
+            $nombre = $_POST['nombre'];
+            $apellido = $_POST['apellido'];
+            $correo = $_POST['correo'];
+            $contraseña = $_POST['contraseña'];
+
+            if(!isset($_GET['controlador'])) {
+                include_once 'vista/crear-cuenta.php';
+            } else if (isset($nombre, $apellido, $correo, $contraseña)) {
+                ClienteDAO::crearCuenta($nombre, $apellido, $correo, $contraseña);
+                include_once 'vista/inicio-sesion.php';
+            }
         }
     }
 ?>
