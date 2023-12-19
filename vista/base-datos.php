@@ -17,7 +17,7 @@
     
     <div class="div-navegacion">
         <form action="<?php url ?>?controlador=tablaProductos&action=añadir" method="post">
-            <input class="btnAñadir" type="submit" value="Añadir Productos">
+            <input class="btnAñadir" type="submit" value="Añadir Producto">
         </form>
         <a href="<?= url ?>?controlador=pedidosAdmin" class="btnPedidos">Pedidos</a>
     </div>

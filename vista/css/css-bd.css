@@ -22,7 +22,7 @@ table tr:hover {
     background-color: #ddd;
 } 
 table td input {
-    background-color: #4CAF50;
+    background-color: #222221;
     color: white;
     border: none;
     padding: 5px 10px;
@@ -30,13 +30,13 @@ table td input {
     transition: background-color 0.3s;
 } 
 table td input:hover {
-    background-color: #72e277;
+    background-color: #222221af;
 }
 .div-navegacion {
     display: flex;
 }
 .btnAñadir {
-    background-color: #4CAF50;
+    background-color: #222221;
     color: white;
     border: none;
     padding: 5px 10px;
@@ -46,10 +46,10 @@ table td input:hover {
     font-family: 'Goodhome', sans-serif;
 }
 .btnAñadir:hover {
-    background-color: #72e277;
+    background-color: #222221af;
 }
 .btnPedidos {
-    background-color: #4CAF50;
+    background-color: #222221;
     color: white;
     border: none;
     padding: 5px 10px;
@@ -60,7 +60,7 @@ table td input:hover {
     text-decoration: none;
 }
 .btnPedidos:hover {
-    background-color: #72e277;
+    background-color: #222221af;
 }
 .div-tablas {
     display: flex;

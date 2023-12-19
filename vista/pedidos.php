@@ -8,11 +8,11 @@
     <title>Base de Datos Productos</title>
 </head>
 <body>
-    <h1>Tabla de productos</h1>
+    <h1>Tabla de pedidos</h1>
     
     <div class="div-navegacion">
-        <form action="../vista/añadirProducto.php" method="post">
-            <input class="btnAñadir" type="submit" value="Añadir Productos">
+        <form action="<?= url ?>?controlador=pedidosAdmin&action=añadir" method="post">
+            <input class="btnAñadir" type="submit" value="Añadir Pedido">
         </form>
         <a href="<?= url ?>?controlador=tablaProductos" class="btnPedidos">Productos</a>
     </div>
@@ -45,7 +45,7 @@
                     </td>
             
                     <td>
-                        <form action="" method="post">
+                        <form action="<?php url ?>?controlador=pedidosAdmin&action=eliminar" method="post">
                             <input type="hidden" name="producto_id" value="<?php echo $pedido->getPedido_id (); ?>">
                             <input type="submit" name="Eliminar" value="Eliminar">
                         </form>
@@ -65,7 +65,7 @@
                 <th></th>
             </tr>
             <?php 
-                $pedido_productos = ProductoDAO::getAllPedidoProductos();
+                $pedido_productos = PedidoProductosDAO::getAllPedidoProductos();
                 foreach ($pedido_productos as $pedido_producto) {
             ?>
 
@@ -90,16 +90,8 @@
                     </td>
                 </form>
             </tr>
-
             <?php } ?>
         </table>
     </div>
-    
-    <?php
-        if(isset($_POST['Eliminar'])) {
-            $id = $_POST['producto_id'];
-            productoControlador::eliminarProducto($id);
-        }
-    ?>
 </body>
 </html>

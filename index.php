@@ -13,6 +13,8 @@
     include_once 'controlador/registroControlador.php';
     include_once 'controlador/infoControlador.php';
     include_once 'controlador/pedidosAdminControlador.php';
+    include_once 'modelo/Cliente.php';
+    include_once 'modelo/PedidoProductosDAO.php';
 
     if(!isset($_GET['controlador'])) {
         header("Location:" . url . "?controlador=home");
