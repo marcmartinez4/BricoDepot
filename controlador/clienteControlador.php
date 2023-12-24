@@ -10,6 +10,14 @@
             }
         }
 
+        public static function cuenta() {
+            if(!isset($_GET['controlador'])) {
+                include_once 'vista/home.php';
+            } else {
+                include_once 'vista/cliente.php';
+            }
+        }
+
         public static function iniciarSesion() {
             if (isset($_POST['mail'], $_POST['contraseña'])) {
                 $mail = $_POST['mail'];

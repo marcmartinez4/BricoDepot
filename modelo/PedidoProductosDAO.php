@@ -15,6 +15,23 @@
                 return $pedido_productos;
             }
         } 
+
+        public static function añadirPedido($Producto, $Cantidad, $IDCliente) {
+            $con = dataBase::connect();
+            $fecha = date('Y-m-d H:i:s');
+            if ($Cantidad < 1) {
+                $Cantidad = 1;
+            }
+
+            $con->query("INSERT INTO `pedidos`(`estado`, `fecha_pedido`, `cliente_id`) VALUES ('Pendiente','$fecha','$IDCliente')");
+            $pedido_id = mysqli_insert_id($con);
+
+            $result = $con->query("SELECT precio_unidad FROM productos WHERE producto_id = '$Producto' LIMIT 1;");
+            $row = mysqli_fetch_assoc($result);
+            $precio_unidad = $row['precio_unidad'];
+
+            $con->query("INSERT INTO `pedido_productos` (pedido_id, producto_id, cantidad, precio_unidad) VALUES ('$pedido_id', '$Producto', '$Cantidad','$precio_unidad');");
+        }
         
         public static function eliminar($id){
             $con = dataBase::connect();

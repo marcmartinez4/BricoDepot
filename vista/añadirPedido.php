@@ -1,44 +1,47 @@
-<?php
-    include_once 'config/dataBase.php';
-    include_once 'modelo/productoDAO.php';
-    include_once 'controlador/productoControlador.php';
-?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="vista/css/añadirProducto.css">
-    <title>Añadir Productos</title>
+    <title>Añadir Pedido</title>
 </head>
 <body>
     <div class="panel">
         <div class="div-panel">
             <h1 class="h1-sesion">Añadir Pedido</h1>    
-            <form action="" method="post">
-                <h3>Estado</h3>
-                <input class="input" type="text" name="nombre_producto">
+            <form action="<?php url ?>?controlador=pedidosAdmin&action=añadirPedido" method="post">
+                <h3>Producto</h3>
+                <select class="input" name="Producto">
+                    <?php
+                        $productos = ProductoDAO::getAllProducts();
+                        foreach ($productos as $producto) {
+                    ?>
+                        <option value="<?php echo $producto->getProducto_id() ?>"><?php echo $producto->getNombre_producto() ?></option>
+                    <?php
+                        }
+                    ?>
+                </select>
 
-                <h3>Fecha Pedido</h3>
-                <input class="input" type="text" name="descripcion">
+                <h3>Cantidad</h3>
+                <input class="input" type="number" name="Cantidad" placeholder="1">
 
                 <h3>ID Cliente</h3>
-                <input class="input" type="text" name="precio_unidad">
+                <select class="input" name="IDCliente">
+                    <?php
+                        $clientes = ClienteDAO::getAllClientes();
+                        foreach ($clientes as $cliente) {
+                    ?>
+                        <option value="<?php echo $cliente->getCliente_id() ?>"><?php echo $cliente->getNombre() ?></option>
+                    <?php
+                        }
+                    ?>
+                </select>
+                <!-- <input class="input" type="number" name="IDCliente"> -->
 
-                <input class="input-boton-sesion" type="submit" value="Añadir Producto">
+                <input class="input-boton-sesion" type="submit" name="Añadir" value="Añadir Producto">
             </form>
         </div>
     </div>
-    <?php
-        if(isset($_POST['nombre_producto'], $_POST['descripcion'], $_POST['precio_unidad'], $_POST['categoria_id'])) {
-            
-            $nombre_producto = $_POST['nombre_producto'];
-            $descripcion = $_POST['descripcion'];
-            $precio_unidad = $_POST['precio_unidad']; 
-            $categoria_id = $_POST['categoria_id'];
-
-            productoControlador::añadirProducto($nombre_producto, $descripcion, $precio_unidad, $categoria_id);
-        }
-    ?>
 </body>
 </html>

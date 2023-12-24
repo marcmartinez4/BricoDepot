@@ -3,6 +3,19 @@
     include_once 'modelo/Cliente.php';
 
     class ClienteDAO {
+        public static function getAllClientes() {
+            $con = dataBase::connect();
+                
+            if ($result = $con->query("SELECT * FROM usuarios")) {    
+                $clientes = array();
+                    
+                while ($cliente = $result->fetch_object('Cliente')) {
+                    $clientes[] = $cliente;
+                }
+                return $clientes;
+            }
+        }
+
         public static function iniciarSesion($mail, $contra) {
             $con = database::connect();
 

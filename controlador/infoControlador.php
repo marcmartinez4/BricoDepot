@@ -1,5 +1,5 @@
 <?php
-    $producto_id = $_GET['producto_id'];
+    // $producto_id = $_GET['producto_id'];
 
     class infoControlador {
         public static function index() {

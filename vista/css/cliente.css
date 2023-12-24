@@ -1,0 +1,110 @@
+.main {
+    padding: 52px 32px 32px!important;
+    background-color: #EFF0F0;
+}
+h1 {
+    padding: 0 40px;
+    font-family: 'Goodhome', sans-serif;
+    font-weight: 700!important;
+    font-size: 48px!important;
+    margin-bottom: 32px!important;
+}
+.izquierda {
+    padding: 0 26.625px 24px 20px!important;
+}
+.derecha {
+    padding: 0!important;
+}
+.saludo {
+    padding: 16px!important;
+    background-color: #FFFFFF;
+    margin-bottom: 16px;
+    width: 286.38px!important;
+}
+.pestañas {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    background-color: #FFFFFF;
+    margin: 0!important;
+    height: auto;
+}
+.activa {
+    box-shadow: inset 8px 0 0 0 #e20811;
+}
+.pestañas li {
+    padding: 8px 16px;
+    border-bottom: 1px solid #3b3d3d4f;
+    display: flex;
+    align-items: center;
+    height: 48px;
+}
+.imagen-izquierda {
+    width: 24px;
+    height: 24px;
+    margin-right: 16px;
+}
+.flecha {
+    margin-left: auto;
+    width: 24px;
+    height: 24px;
+}
+.pestañas li a {
+    font-family: 'Goodhome', sans-serif;
+    font-size: 14px;
+    padding-right: 16px;
+    color: #3b3d3da1!important;
+    text-decoration: none;
+}
+h2 {
+    margin: 0!important;
+    margin-bottom: 22px;
+    font-family: 'Goodhome', sans-serif;
+    font-size: 26px!important;
+}
+.panel {
+    background-color: #FFFFFF;
+    width: 999px;
+    height: 482px;
+    padding: 24px;
+}
+.txt-info {
+    font-weight: 700;
+    margin-bottom: 22px!important;
+}
+.informacion {
+    width: 456.47px;
+    margin-bottom: 40px;
+}
+.informacion span {
+    font-family: 'Goodhome', sans-serif;
+    font-weight: 900;
+}
+.hr-info {
+    margin: 0!important;
+    margin-top: 4px!important;
+    margin-bottom: 16px!important;
+}
+.informacion p {
+    font-family: 'Goodhome', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+}
+.div-acciones {
+    margin-top: 5px;
+    padding-top: 15px;
+    height: 43px;
+}
+.div-acciones a {
+    border: 1px solid black;
+    padding: 4px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    font-family: 'Goodhome', sans-serif;
+}
+.boton-derecho {
+    margin-left: 10px;
+}
