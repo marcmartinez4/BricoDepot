@@ -1,18 +1,6 @@
 <?php
-
+    $producto_id = $_GET['producto_id'];
     $productos = productoDAO::getAllProducts();
-
-
-
-    if (isset($_POST["reducirCantidad"])) {
-        if ($_SESSION['cantidad_añadir'] > 1) {
-            $_SESSION['cantidad_añadir']--;
-        }
-    }
-
-    if (isset($_POST["añadirCantidad"])) {
-        $_SESSION['cantidad_añadir']++;
-    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,24 +32,23 @@
                 <div class="opciones-producto">
                     <div class="arriba">
                         <div class="botones">
-                            <form class="boton-cantidad" action="" method="post">
+                            <form class="boton-cantidad" action="<?php url ?>?controlador=info&action=reducirCantidad&producto_id=<?php echo $producto->getProducto_id();?>" method="post">
                                 <input type="hidden" name="reducirCantidad">
-                                <input class="boton-svg" type="image" src="../img/menos-cantidad.png">
-                                
+                                <input class="boton-svg" type="image" src="img/menos-cantidad.png">
                             </form>
                             
                             <button class="boton-cantidad" type="button">
                                 <p class="precio-boton"><?php echo $_SESSION['cantidad_añadir'] ?></p>
                             </button>
 
-                            <form class="boton-cantidad" action="" method="post">
+                            <form class="boton-cantidad" action="<?php url ?>?controlador=info&action=añadirCantidad&producto_id=<?php echo $producto->getProducto_id();?>" method="post">
                                 <input type="hidden" name="añadirCantidad">
-                                <input class="boton-svg" type="image" src="../img/aumentar-cantidad.png">
+                                <input class="boton-svg" type="image" src="img/aumentar-cantidad.png">
                             </form>
                         </div>
 
                         <div>
-                            <form action="<?php url ?>?controlador=info&action=añadirCarrito" method="post">
+                            <form action="<?php url ?>?controlador=info&action=añadirAlCarrito&producto_id=<?php echo $producto->getProducto_id();?>" method="post">
                                 <input type="hidden" name="producto_id" value="<?php echo $producto->getProducto_id(); ?>">
                                 <input class="boton-carrito1" type="submit" name="AñadirCarrito" value="Añadir al carrito">
                             </form>    

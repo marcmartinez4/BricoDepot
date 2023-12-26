@@ -66,7 +66,7 @@ h2 {
 .panel {
     background-color: #FFFFFF;
     width: 999px;
-    height: 482px;
+    height: auto;
     padding: 24px;
 }
 .txt-info {
@@ -107,4 +107,14 @@ h2 {
 }
 .boton-derecho {
     margin-left: 10px;
+}
+.mensaje-vacio {
+    background-color: #FDF0D5;
+    padding: 12px 20px 12px 20px;
+    margin-bottom: 10px;
+}
+.mensaje-vacio p {
+    font-family: 'Goodhome', sans-serif;
+    font-size: 13px;
+    margin: 0!important;
 }

@@ -26,26 +26,34 @@
                         <h2>Hola <?php echo $cliente->getNombre() ?></h2>
                     </div>
                     <ul class="pestañas">
-                        <li class="activa">
-                            <img class="imagen-izquierda" src="img/panel-control.svg">
-                            <a>Panel de control</a>
-                            <img class="flecha" src="img/flecha-derecha.svg">
-                        </li>
-                        <li>
-                            <img class="imagen-izquierda" src="img/carrito.svg">
-                            <a>Mis pedidos</a>
-                            <img class="flecha" src="img/flecha-derecha.svg">
-                        </li>
-                        <li>
-                            <img class="imagen-izquierda" src="img/informacion.svg">
-                            <a>Información personal</a>
-                            <img class="flecha" src="img/flecha-derecha.svg">
-                        </li>
-                        <li>
-                            <img class="imagen-izquierda" src="img/cerrar-sesion.svg">
-                            <a href="controlador/cerrarSesion.php">Cerrar sesión</a>
-                            <img class="flecha" src="img/flecha-derecha.svg">
-                        </li>
+                        <a href="?controlador=cliente&action=cuenta">
+                            <li class="activa">
+                                <img class="imagen-izquierda" src="img/panel-control.svg">
+                                <a href="#">Panel de control</a>
+                                <img class="flecha" src="img/flecha-derecha.svg">
+                            </li>
+                        </a>
+                        <a href="?controlador=pedidosUsuario">
+                            <li>
+                                <img class="imagen-izquierda" src="img/carrito.svg">
+                                <a href="?controlador=pedidosUsuario">Mis pedidos</a>
+                                <img class="flecha" src="img/flecha-derecha.svg">
+                            </li>
+                        </a>
+                        <a href="?controlador=cliente&action=modificar">
+                            <li>
+                                <img class="imagen-izquierda" src="img/informacion.svg">
+                                <a href="?controlador=cliente&action=modificar">Información personal</a>
+                                <img class="flecha" src="img/flecha-derecha.svg">
+                            </li>
+                        </a>
+                        <a href="#">
+                            <li>
+                                <img class="imagen-izquierda" src="img/cerrar-sesion.svg">
+                                <a href="controlador/cerrarSesion.php">Cerrar sesión</a>
+                                <img class="flecha" src="img/flecha-derecha.svg">
+                            </li>
+                        </a>
                     </ul>
                 </div>
                 <div class="col-12 col-md-6 col-lg-9 derecha">
@@ -63,8 +71,8 @@
                             </p>
                             
                             <div class="div-acciones">
-                                <a>Editar</a>
-                                <a class="boton-derecho">Cambiar contraseña</a>
+                                <a href="?controlador=cliente&action=modificar">Editar</a>
+                                <a href="?controlador=cliente&action=modificar" class="boton-derecho">Cambiar contraseña</a>
                             </div>
                         </div>
                     </div>
