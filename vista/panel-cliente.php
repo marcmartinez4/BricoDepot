@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="https://www.bricodepot.es/media/favicon/default/favicon-32x32.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="../vista/css/cliente.css">
+    <link rel="stylesheet" href="vista/css/cliente.css">
     <title>Cesta Brico Depôt</title>
 </head>
 <body>
@@ -72,7 +72,6 @@
                             
                             <div class="div-acciones">
                                 <a href="?controlador=cliente&action=modificar">Editar</a>
-                                <a href="?controlador=cliente&action=modificar" class="boton-derecho">Cambiar contraseña</a>
                             </div>
                         </div>
                     </div>

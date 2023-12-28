@@ -25,10 +25,6 @@
         }
     
         public static function añadirCantidad() {
-            if (!isset($_SESSION['cantidad_añadir'])) {
-                $_SESSION['cantidad_añadir'] = 1;
-            }
-            
             if(!isset($_GET['controlador'])) {
                 include_once 'vista/home.php';
             } else {

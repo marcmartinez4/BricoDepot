@@ -63,7 +63,7 @@
                                     <div class="botones-cantidad">
                                         <form class="boton-cantidad" action="<?php url ?>?controlador=pedido&action=restarCantidad" method="post">
                                             <input type="hidden" name="restarCantidad" value="<?php echo $prodCarrito->getProducto_id(); ?>">
-                                            <input class="boton-svg" type="image" src="../img/menos-cantidad.png">        
+                                            <input class="boton-svg" type="image" src="img/menos-cantidad.png">        
                                         </form>
                                         
                                         <button class="boton-cantidad" type="button">
@@ -72,12 +72,12 @@
 
                                         <form class="boton-cantidad" action="<?php url ?>?controlador=pedido&action=sumarCantidad" method="post">
                                             <input type="hidden" name="sumarCantidad" value="<?php echo $prodCarrito->getProducto_id(); ?>">
-                                            <input class="boton-svg" type="image" src="../img/aumentar-cantidad.png">    
+                                            <input class="boton-svg" type="image" src="img/aumentar-cantidad.png">    
                                         </form>
 
                                         <form class="boton-eliminar" action="<?php url ?>?controlador=pedido&action=eliminarProducto" method="post">
                                             <input type="hidden" name="eliminarProducto" value="<?php echo $prodCarrito->getProducto_id(); ?>">
-                                            <input class="icon-eliminar" type="image" src="../img/eliminar-cantidad.png">
+                                            <input class="icon-eliminar" type="image" src="img/eliminar-cantidad.png">
                                         </form>
                                     </div>
                                 

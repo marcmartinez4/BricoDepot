@@ -1,4 +1,4 @@
 <?php
-    define('url','');
+    define('url','http://localhost/BricoDepot/');
     define('action_default','index');
 ?>

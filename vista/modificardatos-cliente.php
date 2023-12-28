@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="https://www.bricodepot.es/media/favicon/default/favicon-32x32.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="../vista/css/cliente.css">
+    <link rel="stylesheet" href="vista/css/cliente.css">
     <title>Cesta Brico Depôt</title>
 </head>
 <body>
@@ -58,22 +58,47 @@
                 </div>
                 <div class="col-12 col-md-6 col-lg-9 derecha">
                     <div class="panel">
-                        <h2 class="txt-info">Información de la cuenta</h2>
+                        <h2 class="txt-info">Modificar datos</h2>
 
-                        <form action="" method="post">
-                            <label>Nombre</label>
-                            <input>
+                        <div class="div-modificar-datos">
+                            <form action="" method="post">
+                                <div class="primer-div-form">
+                                    <div>
+                                        <h3>Nombre</h3>
+                                        <input class="input-sesion" type="text" name="nombre" placeholder="<?php echo $cliente->getNombre() ?>">
+                                    </div>
+                                    
+                                    <div>
+                                        <h3>Apellido</h3>
+                                        <input class="input-sesion" type="password" name="contraseña" placeholder="<?php echo $cliente->getApellido() ?>">
+                                    </div>
 
-                            <label>Apellido</label>
-                            <input>
+                                    <div>
+                                        <h3>Mail</h3>
+                                        <input class="input-sesion" type="password" name="contraseña" placeholder="<?php echo $cliente->getMail() ?>">
+                                    </div>
+                                </div>
+                            </form>
 
-                            <label>Correo</label>
-                            <input>
+                            <form action="" method="post">
+                                <div class="primer-div-form">
+                                    <div>
+                                        <h3>Nombre</h3>
+                                        <input class="input-sesion" type="text" name="nombre" placeholder="<?php echo $cliente->getNombre() ?>">
+                                    </div>
+                                    
+                                    <div>
+                                        <h3>Apellido</h3>
+                                        <input class="input-sesion" type="password" name="contraseña" placeholder="<?php echo $cliente->getApellido() ?>">
+                                    </div>
 
-                            <label>Contraseña</label>
-                            <input>
-                        </form>
-                        
+                                    <div>
+                                        <h3>Mail</h3>
+                                        <input class="input-sesion" type="password" name="contraseña" placeholder="<?php echo $cliente->getMail() ?>">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>

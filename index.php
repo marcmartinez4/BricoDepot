@@ -17,6 +17,7 @@
     include_once 'modelo/PedidoProductosDAO.php';
     include_once 'modelo/ClienteDAO.php';
     include_once 'controlador/pedidosUsuarioControlador.php';
+    include_once 'controlador/mostrarPedidoUsuario.php'; 
 
     if(!isset($_GET['controlador'])) {
         header("Location:" . url . "?controlador=home");

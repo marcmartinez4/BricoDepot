@@ -2,7 +2,8 @@
     $clientes = ClienteDAO::getAllClientes();
     $pedidos = ProductoDAO::getAllPedidos();
     $pedido_productos = PedidoProductosDAO::getAllPedidoProductos();
-    $id_cliente = $_SESSION['Cliente']->getCliente_id();
+    $productos = ProductoDAO::getAllProducts();
+    $id_cliente = $_SESSION['Cliente']->getCliente_id();                          
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="https://www.bricodepot.es/media/favicon/default/favicon-32x32.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="../vista/css/cliente.css">
+    <link rel="stylesheet" href="vista/css/cliente.css">
     <title>Cesta Brico Depôt</title>
 </head>
 <body>
@@ -61,25 +62,9 @@
                 <div class="col-12 col-md-6 col-lg-9 derecha">
                     <div class="panel">
                         <h2 class="txt-info">Pedidos</h2>
-                        <?php
-                            $pedidoEncontrado = false;
-
-                            foreach ($pedidos as $pedido) {
-                                if ($pedido->getCliente_id() == $id_cliente) {
-                                    $pedidoEncontrado = true;
-                                    
-                                    echo $pedido->getPedido_id(). ' ' . $pedido->getEstado(). ' ' . $pedido->getCliente_id() . '<br>';
-                                }
-                            }
-
-                            if (!$pedidoEncontrado) {
-                        ?>
-                            <div class="mensaje-vacio">
-                                <p>No ha hecho ningún pedido</p>
-                            </div>
-                        <?php
-                            }
-                        ?>
+                        <?php 
+                            mostrarPedidoUsuario::mostrarPedidos();
+                        ?>    
                     </div>
                 </div>
             </div>

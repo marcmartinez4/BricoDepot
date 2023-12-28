@@ -19,7 +19,10 @@ h1 {
     padding: 16px!important;
     background-color: #FFFFFF;
     margin-bottom: 16px;
-    width: 286.38px!important;
+    max-width: 279.13px!important;
+}
+.saludo h2 {
+    width: auto!important;
 }
 .pestañas {
     display: flex;
@@ -105,9 +108,6 @@ h2 {
     font-size: 14px;
     font-family: 'Goodhome', sans-serif;
 }
-.boton-derecho {
-    margin-left: 10px;
-}
 .mensaje-vacio {
     background-color: #FDF0D5;
     padding: 12px 20px 12px 20px;
@@ -117,4 +117,39 @@ h2 {
     font-family: 'Goodhome', sans-serif;
     font-size: 13px;
     margin: 0!important;
+}
+.input-sesion {
+    height: 44px;
+    width: 441.36px!important;
+    padding: 0 9px;
+    background-color: white;
+    border: 1px solid #ADB1B3;
+    border-radius: 5px;
+    width: 608px;
+}
+.input-sesion:hover {
+    border-color: red;
+}
+.input-sesion:focus {
+    outline: none;
+}
+.primer-div-form {
+    margin-bottom: 40px;
+}
+.primer-div-form div {
+    margin-bottom: 20px;
+}
+h3 {
+    font-family: 'Goodhome', sans-serif!important;
+    font-size: 16px!important;
+    font-weight: bold!important;
+    margin: 0 0 8px!important;
+}
+.div-modificar-datos{
+    display: flex;
+    gap: 40px;
+}
+.imagen-pedido {
+    width: 118px;
+    height: 108px;
 }
