@@ -61,42 +61,44 @@
                         <h2 class="txt-info">Modificar datos</h2>
 
                         <div class="div-modificar-datos">
-                            <form action="" method="post">
+                            <form action="?controlador=cliente&action=modificarDatosPrincipales" method="post">
                                 <div class="primer-div-form">
                                     <div>
                                         <h3>Nombre</h3>
-                                        <input class="input-sesion" type="text" name="nombre" placeholder="<?php echo $cliente->getNombre() ?>">
+                                        <input class="input-sesion" type="text" name="nuevo_nombre" placeholder="<?php echo $cliente->getNombre() ?>">
                                     </div>
                                     
                                     <div>
                                         <h3>Apellido</h3>
-                                        <input class="input-sesion" type="password" name="contraseña" placeholder="<?php echo $cliente->getApellido() ?>">
+                                        <input class="input-sesion" type="text" name="nuevo_apellido" placeholder="<?php echo $cliente->getApellido() ?>">
                                     </div>
 
                                     <div>
                                         <h3>Mail</h3>
-                                        <input class="input-sesion" type="password" name="contraseña" placeholder="<?php echo $cliente->getMail() ?>">
+                                        <input class="input-sesion" type="email" name="nuevo_correo" placeholder="<?php echo $cliente->getMail() ?>">
                                     </div>
                                 </div>
+                                <input class="guardar-datos" type="submit" value="Guardar">
                             </form>
 
-                            <form action="" method="post">
+                            <form action="?controlador=cliente&action=modificarContraseña" method="post">
                                 <div class="primer-div-form">
                                     <div>
-                                        <h3>Nombre</h3>
-                                        <input class="input-sesion" type="text" name="nombre" placeholder="<?php echo $cliente->getNombre() ?>">
+                                        <h3>Contraseña actual</h3>
+                                        <input class="input-sesion" type="password" name="contraseña_actual">
                                     </div>
                                     
                                     <div>
-                                        <h3>Apellido</h3>
-                                        <input class="input-sesion" type="password" name="contraseña" placeholder="<?php echo $cliente->getApellido() ?>">
+                                        <h3>Nueva contraseña</h3>
+                                        <input class="input-sesion" type="text" name="contraseña_nueva_1">
                                     </div>
 
                                     <div>
-                                        <h3>Mail</h3>
-                                        <input class="input-sesion" type="password" name="contraseña" placeholder="<?php echo $cliente->getMail() ?>">
+                                        <h3>Confirme nueva contraseña</h3>
+                                        <input class="input-sesion" type="text" name="contraseña_nueva_2">
                                     </div>
                                 </div>
+                                <input class="guardar-datos" type="submit" value="Guardar">
                             </form>
                         </div>
                     </div>

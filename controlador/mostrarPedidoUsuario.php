@@ -15,21 +15,20 @@
                     $pedidoEncontrado = true;
                     $pedido_id = $pedido->getPedido_id();
 
-                    echo ' Pedido: ' . $num_pedido . '<br>Estado: ' . $pedido->getEstado() . '<br>';
+                    echo '<div class="pedido"><h4>Pedido: '.$num_pedido.'<br>Estado: '.$pedido->getEstado().'</h4>';
 
                     foreach ($pedido_productos as $pedido_producto) {
                         if ($pedido_producto->getPedido_id() == $pedido_id) {
                             $producto_id = $pedido_producto->getProducto_id();
 
-                            echo 'Cantidad: ' . $pedido_producto->getCantidad() . '<br>';
-
                             foreach ($productos as $producto) {
                                 if ($producto->getProducto_id() == $producto_id) {
-                                    echo '<img style="width: 118px; height: 108px;" class="imagen-pedido" src="'.$producto->getImg().'">'.'$producto->getNombre_producto() . '<br>Precio por unidad: ' . $producto->getPrecio_unidad() . '<br><br>';
+                                    echo '<div class="info-prod"><img class="imagen-pedido" src="'.$producto->getImg().'"><div class=texto-prod><p class="nombre-producto">'.$producto->getNombre_producto().'</p><div class="cantidad-pedido"><p class="txt-cantidad">Cantidad: '.$pedido_producto->getCantidad().' - Precio por unidad: '.$producto->getPrecio_unidad().' € - Precio total: '.$pedido_producto->getCantidad() * $producto->getPrecio_unidad().' €</p></div></div></div>';
                                 }
                             }
                         }
                     }
+                    echo '</div>';
                 }
             }
 

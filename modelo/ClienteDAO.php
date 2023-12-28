@@ -30,8 +30,17 @@
 
         public static function crearCuenta($nombre, $apellido, $correo, $contraseña) {
             $con = dataBase::connect();
+            $con->query("INSERT INTO `usuarios`(`nombre`, `apellido`, `mail`, `rol`, `contra`) VALUES ('$nombre','$apellido','$correo','Cliente','$contraseña')");
+        }
 
-            $result = $con->query("INSERT INTO `usuarios`(`nombre`, `apellido`, `mail`, `rol`, `contra`) VALUES ('$nombre','$apellido','$correo','Cliente','$contraseña')");
+        public static function modificarDatosPrincipales($nuevo_nombre, $nuevo_apellido, $nuevo_correo, $id_cliente) {
+            $con = dataBase::connect();
+            $con->query("UPDATE usuarios SET `nombre` = '$nuevo_nombre', `apellido` = '$nuevo_apellido', `mail` = '$nuevo_correo' WHERE cliente_id = '$id_cliente'");
+        }
+
+        public static function modificarContraseña($contraseña_nueva_1, $id_cliente) {
+            $con = dataBase::connect();
+            $con->query("UPDATE usuarios SET `contra` = '$contraseña_nueva_1' WHERE cliente_id = '$id_cliente'");
         }
     }
 ?>

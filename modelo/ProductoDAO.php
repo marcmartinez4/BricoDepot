@@ -59,7 +59,7 @@
             $con->query("DELETE FROM `productos` WHERE producto_id = $id;");
         }
 
-        public static function modificarPedido($nombre_producto, $descripcion, $precio_unidad, $categoria_id, $id){
+        public static function modificarProducto($nombre_producto, $descripcion, $precio_unidad, $categoria_id, $id){
             $con = dataBase::connect();
             $con->query("UPDATE productos SET `nombre_producto` = $nombre_producto, `descripcion` = $descripcion, `precio_unidad` = $precio_unidad,`categoria_id` = $categoria_id WHERE producto_id = $id");
         }

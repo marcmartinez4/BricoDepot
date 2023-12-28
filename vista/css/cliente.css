@@ -72,12 +72,16 @@ h2 {
     height: auto;
     padding: 24px;
 }
+.primer-panel {
+    display: flex;
+    gap: 40px;
+}
 .txt-info {
     font-weight: 700;
     margin-bottom: 22px!important;
 }
 .informacion {
-    width: 456.47px;
+    width: 100%;
     margin-bottom: 40px;
 }
 .informacion span {
@@ -133,6 +137,17 @@ h2 {
 .input-sesion:focus {
     outline: none;
 }
+.guardar-datos {
+    padding: 0!important;
+    padding: 5px 15px!important;
+    background-color: #e20811;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-family: 'Goodhome', sans-serif;
+    font-weight: 900;
+    float: right;
+}
 .primer-div-form {
     margin-bottom: 40px;
 }
@@ -149,7 +164,52 @@ h3 {
     display: flex;
     gap: 40px;
 }
+.pedido {
+    margin-bottom: 40px;
+}
 .imagen-pedido {
     width: 118px;
     height: 108px;
+}
+.texto-prod {
+    display: flex;
+    flex-direction: column;
+}
+h4 {
+    margin: 0!important;
+    font-family: 'Goodhome', sans-serif;
+    font-size: 18px!important;
+    font-weight: 900!important;
+}
+p {
+    margin-bottom: 0!important;
+    font-family: 'Goodhome', sans-serif;
+}
+.imagen-pedido {
+    width: 118px; 
+    height: 108px;
+}
+.nombre-producto {
+    margin: 0!important;
+    font-size: 16px;
+    font-family: 'Goodhome', sans-serif;
+}
+.cantidad-pedido {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.txt-cantidad {
+    font-size: 20px;
+    font-weight: 900;
+}
+.info-prod {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.precio-pedido {
+    font-family: 'Goodhome', sans-serif;
+    font-weight: 900;
+    font-size: 20px;
 }
