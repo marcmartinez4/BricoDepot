@@ -12,16 +12,16 @@
             <h1 class="h1-sesion">Modificar Producto: <?php echo $id ?></h1>    
             <form action="?controlador=tablaProductos&action=modificarProducto" method="post">
                 <h3>Nombre del producto</h3>
-                <input class="input" type="text" name="nombre_producto" placeholder="<?php echo $producto->getNombre_producto() ?>">
+                <input class="input" type="text" name="nombre_producto" value="<?php echo $producto->getNombre_producto() ?>">
 
                 <h3>Descripción </h3>
-                <input class="input" type="text" name="descripcion" placeholder="<?php echo $producto->getDescripcion() ?>">
+                <input class="input" type="text" name="descripcion" value="<?php echo $producto->getDescripcion() ?>">
 
                 <h3>Precio </h3>
-                <input class="input" type="number" name="precio_unidad" placeholder="<?php echo $producto->getPrecio_unidad() ?> €">
+                <input class="input" type="number" name="precio_unidad" value="<?php echo $producto->getPrecio_unidad()?>">
 
                 <h3>ID de la categoría </h3>
-                <input class="input" type="number" name="categoria_id" placeholder="<?php echo $producto->getCategoria_id() ?>">
+                <input class="input" type="number" name="categoria_id" value="<?php echo $producto->getCategoria_id() ?>">
 
                 <input type="hidden" name="producto_id" value="<?php echo $id ?>">
                 <input class="input-boton-sesion" type="submit" value="Modificar Producto">
