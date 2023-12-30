@@ -1,13 +1,3 @@
-<?php
-    $prodCarrito = productoDAO::getAllProducts();
-    $count_array = count($_SESSION['carrito']);
-    
-    if ($count_array > 1) {
-        $top = 'Productos';
-    } else {
-        $top = 'Producto';
-    }
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

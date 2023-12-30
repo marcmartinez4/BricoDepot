@@ -1,13 +1,6 @@
 <?php
-    include_once 'config/functions.php';
-    include_once 'modelo/ProductoDAO.php';
-    include_once 'controlador/productoControlador.php';
-    include_once 'modelo/PedidoDAO.php';
-    
     $prodCarrito = productoDAO::getAllProducts();
-
     $total = 0;
-
     $count_array = count($_SESSION['carrito']);
 
     if (isset($_SESSION['carrito'])) {

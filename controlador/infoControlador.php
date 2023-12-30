@@ -4,6 +4,10 @@
             if(!isset($_GET['controlador'])) {
                 include_once 'vista/home.php';
             } else {
+                $producto_id = $_GET['producto_id'];
+                $productos = productoDAO::getAllProducts();
+                
+                $_SESSION['cantidad_añadir'] = 1;
                 include_once 'vista/informacion-producto.php';
             }
         }
@@ -19,7 +23,8 @@
                 if ($_SESSION['cantidad_añadir'] > 1) {
                     $_SESSION['cantidad_añadir']--;
                 }
-
+                $producto_id = $_GET['producto_id'];
+                $productos = productoDAO::getAllProducts();
                 include_once 'vista/informacion-producto.php';
             }
         }
@@ -29,6 +34,8 @@
                 include_once 'vista/home.php';
             } else {
                 $_SESSION['cantidad_añadir']++;
+                $producto_id = $_GET['producto_id'];
+                $productos = productoDAO::getAllProducts();
                 include_once 'vista/informacion-producto.php';
             }
             
@@ -44,6 +51,8 @@
             } else {
                 PedidoDAO::añadirCarrito($id, $_SESSION['cantidad_añadir']);
                 $_SESSION['cantidad_añadir'] = 1;
+                $producto_id = $_GET['producto_id'];
+                $productos = productoDAO::getAllProducts();
                 include_once 'vista/informacion-producto.php';
             }
         }

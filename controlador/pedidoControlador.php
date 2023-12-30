@@ -6,6 +6,14 @@
             if (!isset($_GET['controlador'])) {
                 include_once 'vista/home.php';
             } else {
+                $prodCarrito = productoDAO::getAllProducts();
+                $count_array = count($_SESSION['carrito']);
+                
+                if ($count_array > 1) {
+                    $top = 'Productos';
+                } else {
+                    $top = 'Producto';
+                }
                 include_once 'vista/carrito.php';
             }
         }

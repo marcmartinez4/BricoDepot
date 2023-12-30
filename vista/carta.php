@@ -1,6 +1,3 @@
-<?php
-    $productos = productoDAO::getAllProducts();
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

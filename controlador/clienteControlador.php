@@ -14,6 +14,8 @@
             if(!isset($_GET['controlador'])) {
                 include_once 'vista/home.php';
             } else {
+                $clientes = ClienteDAO::getAllClientes();
+                $id_cliente = $_SESSION['Cliente']->getCliente_id();
                 include_once 'vista/panel-cliente.php';
             }
         }
@@ -21,7 +23,9 @@
         public static function modificar() {
             if(!isset($_GET['controlador'])) {
                 include_once 'vista/home.php';
-            } else {
+            } else {            
+                $clientes = ClienteDAO::getAllClientes();
+                $id_cliente = $_SESSION['Cliente']->getCliente_id();
                 include_once 'vista/modificardatos-cliente.php';
             }
         }

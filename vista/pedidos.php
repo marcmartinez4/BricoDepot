@@ -11,7 +11,7 @@
     <h1>Tabla de pedidos</h1>
     
     <div class="div-navegacion">
-        <form action="<?= url ?>?controlador=pedidosAdmin&action=añadir" method="post">
+        <form action="?controlador=pedidosAdmin&action=añadir" method="post">
             <input class="btnAñadir" type="submit" value="Añadir Pedido">
         </form>
         <a href="<?= url ?>?controlador=tablaProductos" class="btnPedidos">Productos</a>
@@ -24,11 +24,10 @@
                 <th>Estado</th>
                 <th>Fecha Pedido</th>
                 <th>ID Cliente</th>
-                <th></th>
+                <!-- <th></th> -->
                 <th></th>
             </tr>
             <?php 
-                $pedidos = ProductoDAO::getAllPedidos();
                 foreach ($pedidos as $pedido) {
             ?>
             <tr>
@@ -36,21 +35,19 @@
                 <td><?php echo $pedido->getEstado() ?></td>
                 <td><?php echo $pedido->getFecha_pedido() ?></td>
                 <td><?php echo $pedido->getCliente_id() ?></td>
-                <form action="" method="post">
-                    <td>
-                        <form action="../controlador/modificarProducto.php" method="post">
-                            <input type="hidden" name="producto_id" value="<?php echo $pedido->getPedido_id(); ?>">
-                            <input type="submit" name="Modificar" value="Modificar">
-                        </form>
-                    </td>
+                <!--<td>
+                    <form action="" method="post">
+                        <input type="hidden" name="producto_id" value="<?php echo $pedido->getPedido_id(); ?>">
+                        <input type="submit" name="Modificar" value="Modificar">
+                    </form>
+                </td>-->
             
-                    <td>
-                        <form action="<?php url ?>?controlador=pedidosAdmin&action=eliminar" method="post">
-                            <input type="hidden" name="producto_id" value="<?php echo $pedido->getPedido_id (); ?>">
-                            <input type="submit" name="Eliminar" value="Eliminar">
-                        </form>
-                    </td>
-                </form>
+                <td>
+                    <form action="?controlador=pedidosAdmin&action=eliminar" method="post">
+                        <input type="hidden" name="producto_id" value="<?php echo $pedido->getPedido_id (); ?>">
+                        <input type="submit" name="Eliminar" value="Eliminar">
+                    </form>
+                </td>
             </tr>
             <?php } ?>
         </table>
@@ -61,10 +58,10 @@
                 <th>Producto ID</th>
                 <th>Cantidad</th>
                 <th>Precio por unidad</th>
-                <th></th>
+                <!-- <th></th> -->
             </tr>
             <?php 
-                $pedido_productos = PedidoProductosDAO::getAllPedidoProductos();
+                
                 foreach ($pedido_productos as $pedido_producto) {
             ?>
 
@@ -73,14 +70,12 @@
                 <td><?php echo $pedido_producto->getProducto_id() ?></td>
                 <td><?php echo $pedido_producto->getCantidad() ?></td>
                 <td><?php echo $pedido_producto->getPrecio_unidad() ?></td>
-                <form action="" method="post">
-                    <td>
-                        <form action="../controlador/modificarProducto.php" method="post">
-                            <input type="hidden" name="producto_id" value="<?php echo $pedido_producto->getPedido_id(); ?>">
-                            <input type="submit" name="Modificar" value="Modificar">
-                        </form>
-                    </td>
-                </form>
+                <!--<td>
+                    <form action="" method="post">
+                        <input type="hidden" name="producto_id" value="<?php echo $pedido_producto->getPedido_id(); ?>">
+                        <input type="submit" name="Modificar" value="Modificar">
+                    </form>
+                </td>-->
             </tr>
             <?php } ?>
         </table>

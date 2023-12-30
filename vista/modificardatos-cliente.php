@@ -1,7 +1,3 @@
-<?php
-    $clientes = ClienteDAO::getAllClientes();
-    $id_cliente = $_SESSION['Cliente']->getCliente_id();
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

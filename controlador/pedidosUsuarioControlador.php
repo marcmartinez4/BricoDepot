@@ -4,6 +4,11 @@
             if(!isset($_GET['controlador'])) {
                 include_once 'vista/home.php';
             } else {
+                $clientes = ClienteDAO::getAllClientes();
+                $pedidos = ProductoDAO::getAllPedidos();
+                $pedido_productos = PedidoProductosDAO::getAllPedidoProductos();
+                $productos = ProductoDAO::getAllProducts();
+                $id_cliente = $_SESSION['Cliente']->getCliente_id();  
                 include_once 'vista/pedidos-usuario.php';
             }
         }

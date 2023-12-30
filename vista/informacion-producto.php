@@ -1,10 +1,3 @@
-<?php
-    $producto_id = $_GET['producto_id'];
-    $productos = productoDAO::getAllProducts();
-    if (!isset($_SESSION['cantidad_añadir'])) {
-        $_SESSION['cantidad_añadir'] = 1;
-    }
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

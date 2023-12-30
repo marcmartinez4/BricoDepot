@@ -10,11 +10,10 @@
     <div class="panel">
         <div class="div-panel">
             <h1 class="h1-sesion">Añadir Pedido</h1>    
-            <form action="<?php url ?>?controlador=pedidosAdmin&action=añadirPedido" method="post">
+            <form action="?controlador=pedidosAdmin&action=añadirPedido" method="post">
                 <h3>Producto</h3>
                 <select class="input" name="Producto">
                     <?php
-                        $productos = ProductoDAO::getAllProducts();
                         foreach ($productos as $producto) {
                     ?>
                         <option value="<?php echo $producto->getProducto_id() ?>"><?php echo $producto->getNombre_producto() ?></option>
@@ -29,7 +28,6 @@
                 <h3>ID Cliente</h3>
                 <select class="input" name="IDCliente">
                     <?php
-                        $clientes = ClienteDAO::getAllClientes();
                         foreach ($clientes as $cliente) {
                     ?>
                         <option value="<?php echo $cliente->getCliente_id() ?>"><?php echo $cliente->getNombre() ?></option>
@@ -37,7 +35,6 @@
                         }
                     ?>
                 </select>
-                <!-- <input class="input" type="number" name="IDCliente"> -->
 
                 <input class="input-boton-sesion" type="submit" name="Añadir" value="Añadir Producto">
             </form>

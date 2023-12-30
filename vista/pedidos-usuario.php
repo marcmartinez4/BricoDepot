@@ -1,10 +1,3 @@
-<?php
-    $clientes = ClienteDAO::getAllClientes();
-    $pedidos = ProductoDAO::getAllPedidos();
-    $pedido_productos = PedidoProductosDAO::getAllPedidoProductos();
-    $productos = ProductoDAO::getAllProducts();
-    $id_cliente = $_SESSION['Cliente']->getCliente_id();                          
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
