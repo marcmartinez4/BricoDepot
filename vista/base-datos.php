@@ -13,7 +13,8 @@
         <form action="?controlador=tablaProductos&action=añadir" method="post">
             <input class="btnAñadir" type="submit" value="Añadir Producto">
         </form>
-        <a href="<?= url ?>?controlador=pedidosAdmin" class="btnPedidos">Pedidos</a>
+        <a href="?controlador=pedidosAdmin" class="btnPedidos">Pedidos</a>
+        <a href="?controlador=usuariosAdmin" class="btnPedidos">Usuarios</a>
     </div>
     
     <table>

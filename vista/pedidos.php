@@ -14,7 +14,8 @@
         <form action="?controlador=pedidosAdmin&action=añadir" method="post">
             <input class="btnAñadir" type="submit" value="Añadir Pedido">
         </form>
-        <a href="<?= url ?>?controlador=tablaProductos" class="btnPedidos">Productos</a>
+        <a href="?controlador=tablaProductos" class="btnPedidos">Productos</a>
+        <a href="?controlador=usuariosAdmin" class="btnPedidos">Usuarios</a>
     </div>
     
     <div class="div-tablas">

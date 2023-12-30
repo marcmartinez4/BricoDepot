@@ -20,7 +20,7 @@
             }
         }
 
-        public static function añadirPedido() {
+        public static function añadirUsuario() {
             $Producto = $_POST['Producto'];
             $Cantidad = $_POST['Cantidad'];
             $IDCliente = $_POST['IDCliente']; 

@@ -17,6 +17,7 @@
     include_once 'modelo/ClienteDAO.php';
     include_once 'controlador/pedidosUsuarioControlador.php';
     include_once 'controlador/mostrarPedidoUsuario.php';
+    include_once 'controlador/usuariosAdminControlador.php';
     include_once 'vista/header.php';
 
     if(!isset($_GET['controlador'])) {

@@ -25,6 +25,14 @@
                 include_once 'vista/home.php';
             } else if (isset($_POST['sumarCantidad'])) {
                 PedidoDAO::sumarCantidad($id);
+                $prodCarrito = productoDAO::getAllProducts();
+                $count_array = count($_SESSION['carrito']);
+                
+                if ($count_array > 1) {
+                    $top = 'Productos';
+                } else {
+                    $top = 'Producto';
+                }
                 include_once 'vista/carrito.php';
             }
         }
@@ -36,6 +44,14 @@
                 include_once 'vista/home.php';
             } else if (isset($_POST['restarCantidad'])) {
                 PedidoDAO::restarCantidad($id);
+                $prodCarrito = productoDAO::getAllProducts();
+                $count_array = count($_SESSION['carrito']);
+                
+                if ($count_array > 1) {
+                    $top = 'Productos';
+                } else {
+                    $top = 'Producto';
+                }
                 include_once 'vista/carrito.php';
             }
         }
@@ -47,6 +63,14 @@
                 include_once 'vista/home.php';
             } else if (isset($_POST['eliminarProducto'])) {
                 PedidoDAO::eliminarProducto($id);
+                $prodCarrito = productoDAO::getAllProducts();
+                $count_array = count($_SESSION['carrito']);
+                
+                if ($count_array > 1) {
+                    $top = 'Productos';
+                } else {
+                    $top = 'Producto';
+                }
                 include_once 'vista/carrito.php';
             }
         }
