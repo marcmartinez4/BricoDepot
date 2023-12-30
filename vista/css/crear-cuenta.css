@@ -79,6 +79,9 @@ h3 {
 .input-sesion:hover {
     border-color: red;
 }
+.input-sesion:focus {
+    outline: none;
+}
 .div-datos {
     display: flex;
     margin-top: 20px;
