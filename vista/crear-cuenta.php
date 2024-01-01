@@ -30,7 +30,7 @@
                         </a>
                     </div>
 
-                    <form class="form-inicio-sesion" action="<?php url ?>?controlador=registro&action=crearCuenta" method="post">
+                    <form class="form-inicio-sesion" action="?controlador=registro&action=crearCuenta" method="post">
                         <div class="primer-div-form">
                             <div class="segundo-div-form">
                                 <h3>Email</h3>

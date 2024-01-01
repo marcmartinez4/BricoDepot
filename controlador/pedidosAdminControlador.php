@@ -1,51 +1,129 @@
 <?php
-    class pedidosAdminControlador {
+    // Se incluye el archivo que contiene la definición de la clase 'pedidoDAO'
+    include_once 'modelo/pedidoDAO.php';
+
+    // Se define la clase
+    class pedidoControlador {
+        
+        // Método para la página de carrito (index)
         public static function index() {
-            if(!isset($_GET['controlador'])) {
+            // Verifica si no se ha establecido el parámetro 'controlador' en la URL
+            if (!isset($_GET['controlador'])) {
+                // Si no está definido, incluye la vista 'home.php'
                 include_once 'vista/home.php';
             } else {
-                $pedidos = ProductoDAO::getAllPedidos();
-                $pedido_productos = PedidoProductosDAO::getAllPedidoProductos();
-                include_once 'vista/pedidos.php';
+                // Obtiene todos los productos del carrito y cuenta la cantidad de elementos
+                $prodCarrito = productoDAO::getAllProducts();
+                $count_array = count($_SESSION['carrito']);
+                
+                // Determina si se debe utilizar la palabra 'Producto' o 'Productos' en la vista
+                if ($count_array > 1) {
+                    $top = 'Productos';
+                } else {
+                    $top = 'Producto';
+                }
+                // Incluye la vista 'carrito.php'
+                include_once 'vista/carrito.php';
             }
         }
+        
+        // Método para sumar la cantidad de un producto en el carrito
+        public static function sumarCantidad() {
+            // Obtiene el ID del producto desde el formulario
+            $id = $_POST['sumarCantidad'];
 
-        public static function añadir() {
-            if(!isset($_GET['controlador'])) {
-                include_once 'vista/pedidos.php';
-            } else {
-                $productos = ProductoDAO::getAllProducts();
-                $clientes = ClienteDAO::getAllClientes();
-                include_once 'vista/añadirPedido.php';
-            }
-        }
-
-        public static function añadirUsuario() {
-            $Producto = $_POST['Producto'];
-            $Cantidad = $_POST['Cantidad'];
-            $IDCliente = $_POST['IDCliente']; 
-
+            // Verifica si no se ha establecido el parámetro 'controlador' en la URL
             if (!isset($_GET['controlador'])) {
-                include_once 'vista/pedidos.php';
-            } else if (isset($_POST['Añadir'])) {
-                PedidoProductosDAO::añadirPedido($Producto, $Cantidad, $IDCliente);
-                $pedidos = ProductoDAO::getAllPedidos();
-                $pedido_productos = PedidoProductosDAO::getAllPedidoProductos();
-                include_once 'vista/pedidos.php';
+                // Si no está definido, incluye la vista 'home.php'
+                include_once 'vista/home.php';
+            } else if (isset($_POST['sumarCantidad'])) {
+                // Llama al método en la clase 'PedidoDAO' para sumar la cantidad del producto en el carrito
+                PedidoDAO::sumarCantidad($id);
+                // Obtiene todos los productos del carrito y cuenta la cantidad de elementos
+                $prodCarrito = productoDAO::getAllProducts();
+                $count_array = count($_SESSION['carrito']);
+                
+                // Determina si se debe utilizar la palabra 'Producto' o 'Productos' en la vista
+                if ($count_array > 1) {
+                    $top = 'Productos';
+                } else {
+                    $top = 'Producto';
+                }
+                // Incluye la vista 'carrito.php'
+                include_once 'vista/carrito.php';
             }
         }
 
-        public static function eliminar() {
-            $id = $_POST['producto_id'];
+        // Método para restar la cantidad de un producto en el carrito
+        public static function restarCantidad() {
+            // Obtiene el ID del producto desde el formulario
+            $id = $_POST['restarCantidad'];
 
+            // Verifica si no se ha establecido el parámetro 'controlador' en la URL
             if (!isset($_GET['controlador'])) {
-                include_once 'vista/pedidos.php';
-            } else if (isset($_POST['Eliminar'])) {
-                PedidoProductosDAO::eliminar($id);
-                $pedidos = ProductoDAO::getAllPedidos();
-                $pedido_productos = PedidoProductosDAO::getAllPedidoProductos();
-                include_once 'vista/pedidos.php';
+                // Si no está definido, incluye la vista 'home.php'
+                include_once 'vista/home.php';
+            } else if (isset($_POST['restarCantidad'])) {
+                // Llama al método en la clase 'PedidoDAO' para restar la cantidad del producto en el carrito
+                PedidoDAO::restarCantidad($id);
+                // Obtiene todos los productos del carrito y cuenta la cantidad de elementos
+                $prodCarrito = productoDAO::getAllProducts();
+                $count_array = count($_SESSION['carrito']);
+                
+                // Determina si se debe utilizar la palabra 'Producto' o 'Productos' en la vista
+                if ($count_array > 1) {
+                    $top = 'Productos';
+                } else {
+                    $top = 'Producto';
+                }
+                // Incluye la vista 'carrito.php'
+                include_once 'vista/carrito.php';
             }
+        }
+
+        // Método para eliminar un producto del carrito
+        public static function eliminarProducto() {
+            // Obtiene el ID del producto desde el formulario
+            $id = $_POST['eliminarProducto'];
+
+            // Verifica si no se ha establecido el parámetro 'controlador' en la URL
+            if (!isset($_GET['controlador'])) {
+                // Si no está definido, incluye la vista 'home.php'
+                include_once 'vista/home.php';
+            } else if (isset($_POST['eliminarProducto'])) {
+                // Llama al método en la clase 'PedidoDAO' para eliminar el producto del carrito
+                PedidoDAO::eliminarProducto($id);
+                // Obtiene todos los productos del carrito y cuenta la cantidad de elementos
+                $prodCarrito = productoDAO::getAllProducts();
+                $count_array = count($_SESSION['carrito']);
+                
+                // Determina si se debe utilizar la palabra 'Producto' o 'Productos' en la vista
+                if ($count_array > 1) {
+                    $top = 'Productos';
+                } else {
+                    $top = 'Producto';
+                }
+                // Incluye la vista 'carrito.php'
+                include_once 'vista/carrito.php';
+            }
+        }
+
+        // Método para finalizar el pedido
+        public static function finalizarPedido() {
+            // Obtiene el total desde el formulario
+            $total = $_POST['total'];
+
+            // Establece una cookie con el último pedido
+            setcookie('ultimo_pedido', $total, time() + 3600);
+
+            // Llama al método en la clase 'PedidoDAO' para finalizar el pedido
+            PedidoDAO::finalizarPedido();
+            
+            // Reinicia el carrito en la sesión
+            $_SESSION['carrito'] = [];
+            
+            // Incluye la vista 'home.php'
+            include_once 'vista/home.php';
         }
     }
 ?>

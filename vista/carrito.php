@@ -51,7 +51,7 @@
                             <div class="modificar-cantidad">
                                 <div class="botones">
                                     <div class="botones-cantidad">
-                                        <form class="boton-cantidad" action="<?php url ?>?controlador=pedido&action=restarCantidad" method="post">
+                                        <form class="boton-cantidad" action="?controlador=pedido&action=restarCantidad" method="post">
                                             <input type="hidden" name="restarCantidad" value="<?php echo $prodCarrito->getProducto_id(); ?>">
                                             <input class="boton-svg" type="image" src="img/menos-cantidad.png">        
                                         </form>
@@ -60,12 +60,12 @@
                                             <p class="precio-boton"><?php echo $cantidad; ?></p>
                                         </button>
 
-                                        <form class="boton-cantidad" action="<?php url ?>?controlador=pedido&action=sumarCantidad" method="post">
+                                        <form class="boton-cantidad" action="?controlador=pedido&action=sumarCantidad" method="post">
                                             <input type="hidden" name="sumarCantidad" value="<?php echo $prodCarrito->getProducto_id(); ?>">
                                             <input class="boton-svg" type="image" src="img/aumentar-cantidad.png">    
                                         </form>
 
-                                        <form class="boton-eliminar" action="<?php url ?>?controlador=pedido&action=eliminarProducto" method="post">
+                                        <form class="boton-eliminar" action="?controlador=pedido&action=eliminarProducto" method="post">
                                             <input type="hidden" name="eliminarProducto" value="<?php echo $prodCarrito->getProducto_id(); ?>">
                                             <input class="icon-eliminar" type="image" src="img/eliminar-cantidad.png">
                                         </form>
@@ -128,8 +128,8 @@
                         </div>
                     </div>
 
-                    <form class="" action="<?php url ?>?controlador=pedido&action=finalizarPedido" method="post">
-                        <input type="hidden" name="producto_id" value="">
+                    <form action="?controlador=pedido&action=finalizarPedido" method="post">
+                        <input type="hidden" name="total" value="<?php echo $total ?>">
                         <input class="boton-carrito1" type="submit" name="finalizarPedido" value="Continuar con el pedido">
                     </form>
                 </div>

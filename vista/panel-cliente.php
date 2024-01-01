@@ -15,8 +15,8 @@
     ?>
     <div class="container-fluid main">
         <h1>Mi cuenta</h1>
-        <div class="d-flex justify-content-start">
-            <div class="row justify-content-start">
+        <div class="d-flex justify-content-center">
+            <div class="row justify-content-center">
                 <div class="col-12 col-md-6 col-lg-3 izquierda">
                     <div class="saludo">
                         <h2>Hola <?php echo $cliente->getNombre() ?></h2>
@@ -77,8 +77,12 @@
                                 <hr class="hr-info">
                                 <p>
                                     <?php
-                                        echo $cliente->getNombre() .' '. $cliente->getApellido(). '<br>';
-                                        echo $cliente->getMail();
+                                        if (isset($_COOKIE['ultimo_pedido'])) {
+                                            $total = $_COOKIE['ultimo_pedido'];
+                                            echo "Tu pedido más reciente tuvo un coste de: ".$total;
+                                        } else {
+                                            echo "No tienen ningun pedido reciente.";
+                                        }
                                     ?>
                                 </p>
                             </div>
