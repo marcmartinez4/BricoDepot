@@ -1,18 +1,3 @@
-<?php
-    $prodCarrito = productoDAO::getAllProducts();
-    $total = 0;
-    $count_array = count($_SESSION['carrito']);
-
-    if (isset($_SESSION['carrito'])) {
-        foreach($_SESSION['carrito'] as $p) {
-            $prodCarrito = productoDAO::getProductById($p[0]);
-            $cantidad = $p[1];
-
-            $precioTotalProducto = $prodCarrito->getPrecio_unidad() * $cantidad;
-            $total += $precioTotalProducto;
-        }
-    }
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -150,10 +135,10 @@
                             if ($_SESSION['rolUsuario'] == 'Administrador') {
                     ?>
                         <li class="nav-item">
-                            <a href="<?= url ?>?controlador=tablaProductos">
+                            <a href="?controlador=tablaProductos">
                                 <img class="iconos-header" src="img/base-datos.png">
 
-                                <a href="<?= url ?>?controlador=tablaProductos" class="nav-link active boton-cuenta">Productos</a>
+                                <a href="?controlador=tablaProductos" class="nav-link active boton-cuenta">Productos</a>
                             </a>
                         </li>
                     <?php
@@ -189,27 +174,14 @@
                         }
                     ?>
                     <li class="nav-item">
-                        <a href="<?= url ?>?controlador=pedido">
+                        <a href="?controlador=pedido">
                             <div class="div-cantidad">
                                 <img class="iconos-header" src="img/carrito.svg">
-                                <?php
-                                    if ($count_array > 0) {
-                                        echo '<p class="cantidad">' . $count_array . '</p>';
-                                    } else {
-                                        echo '<p class="cantidad">0</p>';
-                                    }
-                                ?>
+                                <p class="cantidad"><?= $lista[1] ?></p>
                             </div>
                             
                             <a class="nav-link active boton-carrito">
-                                <?php 
-                                    if ($total > 0) {
-                                        echo number_format($total, 2, ',', '.').' €';
-                                    } else {
-                                        echo $total.',00 €';
-                                    }
-                                    
-                                ?>
+                                <?= $precio_boton ?>
                             </a>    
                         </a>
                     </li>
@@ -223,8 +195,8 @@
       <div class="d-flex justify-content-center fondo-menu-navegacion">
         <div class="row justify-content-center">
             <div class="col-12 col-md-6 col-lg-12 menu-navegacion">
-                <a class="boton-menu-navegacion" href="<?= url ?>?controlador=home">Home</a>
-                <a class="boton-menu-navegacion" href="<?= url ?>?controlador=producto">Carta</a>
+                <a class="boton-menu-navegacion" href="?controlador=home">Home</a>
+                <a class="boton-menu-navegacion" href="?controlador=producto">Carta</a>
             </div>
         </div> 
     </div>

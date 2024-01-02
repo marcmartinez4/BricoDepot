@@ -15,7 +15,7 @@
             <input class="btnAñadir" type="submit" value="Añadir Usuario">
         </form>
         <a href="?controlador=tablaProductos" class="btnPedidos">Productos</a>
-        <a href="?controlador=usuariosAdmin" class="btnPedidos">Usuarios</a>
+        <a href="?controlador=pedidosAdmin" class="btnPedidos">Pedidos</a>
     </div>
     
     <table>

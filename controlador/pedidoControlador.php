@@ -110,18 +110,10 @@
 
         // Método para finalizar el pedido
         public static function finalizarPedido() {
-            // Obtiene el total desde el formulario
-            $total = $_POST['total'];
-
-            // Establece una cookie con el último pedido
-            setcookie('ultimo_pedido', $total, time() + 3600);
-
             // Llama al método en la clase 'PedidoDAO' para finalizar el pedido
             PedidoDAO::finalizarPedido();
-            
             // Reinicia el carrito en la sesión
-            $_SESSION['carrito'] = [];
-            
+            $_SESSION['carrito'] = []; 
             // Incluye la vista 'home.php'
             include_once 'vista/home.php';
         }

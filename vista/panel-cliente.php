@@ -75,16 +75,18 @@
                             <div class="informacion">
                                 <span>Ultimo pedido</span>
                                 <hr class="hr-info">
-                                <p>
-                                    <?php
-                                        if (isset($_COOKIE['ultimo_pedido'])) {
-                                            $total = $_COOKIE['ultimo_pedido'];
-                                            echo "Tu pedido más reciente tuvo un coste de: ".$total;
-                                        } else {
-                                            echo "No tienen ningun pedido reciente.";
-                                        }
-                                    ?>
-                                </p>
+                                <?php
+                                    if (isset($_COOKIE['totalpedido'])) {
+                                        $precioTotal = $_COOKIE['totalpedido'];
+                                ?>
+                                <p>Tu pedido más reciente tuvo un coste de: <?= $precioTotal ?></p>
+                                <?php
+                                    } else {
+                                ?>
+                                <p>No tienes ningún pedido reciente.</p>
+                                <?php
+                                    }
+                                ?>  
                             </div>
                         </div>
                     </div>

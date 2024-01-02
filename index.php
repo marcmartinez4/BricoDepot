@@ -18,17 +18,18 @@
     include_once 'controlador/pedidosUsuarioControlador.php';
     include_once 'controlador/mostrarPedidoUsuario.php';
     include_once 'controlador/usuariosAdminControlador.php';
+    include_once 'controlador/headerControlador.php';
     include_once 'vista/header.php';
 
-    if(!isset($_GET['controlador'])) {
+    if (!isset($_GET['controlador'])) {
         header("Location:" . url . "?controlador=home");
     } else {
         $nombre_controlador = $_GET['controlador'] . "Controlador";
 
-        if(class_exists($nombre_controlador)) {
+        if (class_exists($nombre_controlador)) {
             $controlador = new $nombre_controlador;
 
-            if(isset($_GET['action'])) {
+            if (isset($_GET['action'])) {
                 $action = $_GET['action'];
             } else {
                 $action = action_default;

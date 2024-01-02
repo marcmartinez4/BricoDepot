@@ -25,7 +25,7 @@
                 
                 <div class="col-12 col-md-6 col-lg-6 panel-carrito">
                     <?php
-                        $total = 0;
+                        $preciototal = 0;
 
                         if (isset($_SESSION['carrito'])) {
                             foreach($_SESSION['carrito'] as $p) {
@@ -33,8 +33,7 @@
                                 $cantidad = $p[1];
 
                                 $precioTotalProducto = $prodCarrito->getPrecio_unidad() * $cantidad;
-                                $total += $precioTotalProducto;
-
+                                $preciototal += $precioTotalProducto;
                     ?>
                     <div class="item-carrito">
                         <div class="imagen-item-carrito">
@@ -105,9 +104,9 @@
                         <?php
                             $tasaIVA = 10;
                             
-                            $montoIVA = $total * ($tasaIVA / 100);
+                            $montoIVA = $preciototal * ($tasaIVA / 100);
                             
-                            $precioConIVA = $total + $montoIVA;                           
+                            $precioConIVA = $preciototal + $montoIVA;                           
                         ?>
                         <div class="precios">
                             <p class="p-arriba">Subtotal</p>
@@ -124,12 +123,11 @@
                         </div>
                         <div class="precios-2">
                             <p class="total-iva">Total sin IVA</p>
-                            <?php echo $total.' €';?>
+                            <?= $preciototal.' €'?>
                         </div>
                     </div>
 
                     <form action="?controlador=pedido&action=finalizarPedido" method="post">
-                        <input type="hidden" name="total" value="<?php echo $total ?>">
                         <input class="boton-carrito1" type="submit" name="finalizarPedido" value="Continuar con el pedido">
                     </form>
                 </div>
@@ -156,7 +154,7 @@
                             </g>
                         </svg>
                             <h1 class="h1-vacio">Tu carrito está vacío</h1>
-                            <p class="p-vacio">Loguéese para recuperar sus productos guardados.</p>
+                            <p class="p-vacio">Inicie sesión para poder realizar pedidos.</p>
                             <a class="boton-vacio" href="?controlador=cliente">
                                 <p>Inicio de sesión</p>
                             </a>
