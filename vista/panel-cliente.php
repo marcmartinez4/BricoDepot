@@ -76,10 +76,10 @@
                                 <span>Ultimo pedido</span>
                                 <hr class="hr-info">
                                 <?php
-                                    if (isset($_COOKIE['totalpedido'])) {
-                                        $precioTotal = $_COOKIE['totalpedido'];
+                                    if (isset($_COOKIE['preciototal'])) {
+                                        $preciototal = $_COOKIE['preciototal'];
                                 ?>
-                                <p>Tu pedido más reciente tuvo un coste de: <?= $precioTotal ?></p>
+                                <p>Tu pedido más reciente tuvo un coste de: <?= $preciototal ?> €</p>
                                 <?php
                                     } else {
                                 ?>

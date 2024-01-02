@@ -128,6 +128,7 @@
                     </div>
 
                     <form action="?controlador=pedido&action=finalizarPedido" method="post">
+                        <input type="hidden" name="preciototal" value="<?= $preciototal ?>">
                         <input class="boton-carrito1" type="submit" name="finalizarPedido" value="Continuar con el pedido">
                     </form>
                 </div>

@@ -110,12 +110,14 @@
 
         // Método para finalizar el pedido
         public static function finalizarPedido() {
+            $preciototal = $_POST['preciototal'];
+            setcookie('preciototal', $preciototal, time() + 3600);
             // Llama al método en la clase 'PedidoDAO' para finalizar el pedido
             PedidoDAO::finalizarPedido();
             // Reinicia el carrito en la sesión
             $_SESSION['carrito'] = []; 
             // Incluye la vista 'home.php'
-            include_once 'vista/home.php';
+            header("Location:" . url . "?controlador=home");
         }
     }
 ?>
