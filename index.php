@@ -20,6 +20,8 @@
     include_once 'controlador/usuariosAdminControlador.php';
     include_once 'modelo/Producto.php';
     include_once 'modelo/Pedido.php';
+    include_once 'modelo/CategoriaDAO.php';
+    include_once 'modelo/Categoria.php';
     include_once 'modelo/PedidoProductos.php';
 
     if (!isset($_GET['controlador'])) {

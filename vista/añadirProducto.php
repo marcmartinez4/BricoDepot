@@ -21,7 +21,15 @@
                 <input class="input" type="number" name="precio_unidad">
 
                 <h3>ID de la categoría </h3>
-                <input class="input" type="number" name="categoria_id">
+                <select class="input" name="categoria_id">
+                    <?php
+                        foreach ($categorias as $categoria) {
+                    ?>
+                    <option value="<?=$categoria->getCategoriaId();?>"><?=$categoria->getNombreCategoria();?></option>
+                    <?php
+                        }
+                    ?>
+                </select>
 
                 <input class="input-boton-sesion" type="submit" value="Añadir Producto">
             </form>

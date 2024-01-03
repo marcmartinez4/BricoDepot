@@ -25,7 +25,9 @@
                 // Si no está definido, incluye la vista 'base-datos.php'
                 include_once 'vista/base-datos.php';
             } else {
+                $categorias = CategoriaDAO::getAllCategorias();
                 // Incluye la vista 'añadirProducto.php'
+                include_once 'vista/header.php';
                 include_once 'vista/añadirProducto.php';
             }
         }
@@ -42,9 +44,6 @@
     
                 // Llama al método en la clase 'ProductoDAO' para añadir un nuevo producto
                 ProductoDAO::añadirProducto($nombre_producto, $descripcion, $precio_unidad, $categoria_id);
-                
-                // Obtiene todos los productos
-                $productos = ProductoDAO::getAllProducts();
                 
                 // Incluye la vista 'base-datos.php'
                 header('Location: '.url.'?controlador=tablaProductos');
@@ -65,6 +64,7 @@
                 $producto = ProductoDAO::getProductById($id);
                 
                 // Incluye la vista 'modificarProducto.php'
+                include_once 'vista/header.php';
                 include_once 'vista/modificarProducto.php';
             }
         }
