@@ -19,7 +19,7 @@
             <div class="row justify-content-start">
                 <div class="col-12 col-md-6 col-lg-3 izquierda">
                     <div class="saludo">
-                        <h2>Hola <?php echo $cliente->getNombre() ?></h2>
+                        <h2>Hola <?=$cliente->getNombre();?></h2>
                     </div>
                     <ul class="pestañas">
                         <a href="?controlador=cliente&action=cuenta">
@@ -61,17 +61,17 @@
                                 <div class="primer-div-form">
                                     <div>
                                         <h3>Nombre</h3>
-                                        <input class="input-sesion" type="text" name="nuevo_nombre" value="<?php echo $cliente->getNombre() ?>">
+                                        <input class="input-sesion" type="text" name="nuevo_nombre" value="<?=$cliente->getNombre();?>">
                                     </div>
                                     
                                     <div>
                                         <h3>Apellido</h3>
-                                        <input class="input-sesion" type="text" name="nuevo_apellido" value="<?php echo $cliente->getApellido() ?>">
+                                        <input class="input-sesion" type="text" name="nuevo_apellido" value="<?=$cliente->getApellido();?>">
                                     </div>
 
                                     <div>
                                         <h3>Mail</h3>
-                                        <input class="input-sesion" type="email" name="nuevo_correo" value="<?php echo $cliente->getMail() ?>">
+                                        <input class="input-sesion" type="email" name="nuevo_correo" value="<?=$cliente->getMail();?>">
                                     </div>
                                 </div>
                                 <input class="guardar-datos" type="submit" value="Guardar">

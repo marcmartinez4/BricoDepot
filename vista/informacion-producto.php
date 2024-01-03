@@ -16,36 +16,36 @@
     <div class="d-flex justify-content-center main">
         <div class="row justify-content-center">
             <div class="col-md-6 col-lg-6">
-                <img class="imagen-producto" src=" <?php echo $producto->getImg() ?> ">
+                <img class="imagen-producto" src="<?= $producto->getImg() ?>">
             </div>
 
             <div class="col-md-6 col-lg-6 toda-info">
-                <h1 class="nombre-producto"> <?php echo $producto->getNombre_producto(); ?> </h1>
+                <h1 class="nombre-producto"><?= $producto->getNombre_producto(); ?> </h1>
                 <div>
-                    <p class="precio"> <?php echo $producto->getPrecio_unidad(); ?><span>€</span></p>
+                    <p class="precio"><?=$producto->getPrecio_unidad();?><span>€</span></p>
                 </div>
                 
                 <div class="opciones-producto">
                     <div class="arriba">
                         <div class="botones">
-                            <form class="boton-cantidad" action="?controlador=info&action=reducirCantidad&producto_id=<?php echo $producto->getProducto_id();?>" method="post">
+                            <form class="boton-cantidad" action="?controlador=info&action=reducirCantidad&producto_id=<?=$producto->getProducto_id();?>" method="post">
                                 <input type="hidden" name="reducirCantidad">
                                 <input class="boton-svg" type="image" src="img/menos-cantidad.png">
                             </form>
                             
                             <button class="boton-cantidad" type="button">
-                                <p class="precio-boton"><?php echo $_SESSION['cantidad_añadir'] ?></p>
+                                <p class="precio-boton"><?=$_SESSION['cantidad_añadir'] ?></p>
                             </button>
 
-                            <form class="boton-cantidad" action="?controlador=info&action=añadirCantidad&producto_id=<?php echo $producto->getProducto_id();?>" method="post">
+                            <form class="boton-cantidad" action="?controlador=info&action=añadirCantidad&producto_id=<?=$producto->getProducto_id();?>" method="post">
                                 <input type="hidden" name="añadirCantidad">
                                 <input class="boton-svg" type="image" src="img/aumentar-cantidad.png">
                             </form>
                         </div>
 
                         <div>
-                            <form action="?controlador=info&action=añadirAlCarrito&producto_id=<?php echo $producto->getProducto_id();?>" method="post">
-                                <input type="hidden" name="producto_id" value="<?php echo $producto->getProducto_id(); ?>">
+                            <form action="?controlador=info&action=añadirAlCarrito&producto_id=<?=$producto->getProducto_id();?>" method="post">
+                                <input type="hidden" name="producto_id" value="<?=$producto->getProducto_id(); ?>">
                                 <input class="boton-carrito1" type="submit" name="AñadirCarrito" value="Añadir al carrito">
                             </form>    
                         </div>
@@ -88,7 +88,7 @@
                 <h3 class="titulo-descripcion"><strong>Información del producto</strong></h3>
                 <hr class="hr-descripcion">
                 <div>
-                    <p> <?php echo $producto->getDescripcion() ?> </p>
+                    <p><?=$producto->getDescripcion() ?> </p>
                 </div>
             </div>
         </div> 

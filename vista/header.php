@@ -80,37 +80,22 @@
                         }
                     ?>
                     
-                    <?php 
-                        if (isset($_SESSION['Cliente'])) {
-                    ?>
                     <li class="nav-item">
-                        <a href="?controlador=cliente&action=cuenta">
+                        <a href="<?= $link ?>">
                             <img class="iconos-header" src="img/mi_cuenta.svg">    
                             <a href="?controlador=cliente&action=cuenta" class="nav-link active boton-cuenta">Mi Cuenta</a> 
                         </a>
                     </li>
-                    <?php 
-                        } else {
-                    ?>
-                    <li class="nav-item">
-                        <a href="?controlador=cliente">
-                            <img class="iconos-header" src="img/mi_cuenta.svg">    
-                            <a href="?controlador=cliente" class="nav-link active boton-cuenta">Mi Cuenta</a> 
-                        </a>
-                    </li>
-                    <?php 
-                        }
-                    ?>
+                    
+                    <!-- Esto es lo que falla -->
                     <li class="nav-item">
                         <a href="?controlador=pedido">
                             <div class="div-cantidad">
                                 <img class="iconos-header" src="img/carrito.svg">
-                                <p class="cantidad"><?= $lista[1] ?></p>
+                                <p class="cantidad"><?=$lista[1]?></p>
                             </div>
                             
-                            <a class="nav-link active boton-carrito">
-                                <?= $precio_boton ?>
-                            </a>    
+                            <a class="nav-link active boton-carrito"><?=$precio_boton?></a>    
                         </a>
                     </li>
                 </ul>

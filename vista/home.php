@@ -55,10 +55,10 @@
                         if ($producto->getCategoria_ID() == 1) {
                 ?>
                     <div class="col-3 col-sm-3 col-md-3 col-lg-2 productos">
-                        <a class="form-productos" href="../vista/informacion-producto.php?producto_id=<?php echo $producto->getProducto_id(); ?>">
-                            <img class="imagen-producto" src="<?php echo $producto->getImg() ?>">
-                            <a><?php echo $producto->getNombre_producto(); ?></a>
-                            <p><?php echo $producto->getPrecio_unidad(); ?><span>€</span></p>
+                        <a class="form-productos" href="../vista/informacion-producto.php?producto_id=<?=$producto->getProducto_id(); ?>">
+                            <img class="imagen-producto" src="<?= $producto->getImg() ?>">
+                            <a><?= $producto->getNombre_producto(); ?></a>
+                            <p><?= $producto->getPrecio_unidad(); ?><span>€</span></p>
                         </a>
                     </div>
                 <?php

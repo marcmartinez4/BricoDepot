@@ -32,20 +32,20 @@
                 foreach ($pedidos as $pedido) {
             ?>
             <tr>
-                <td><?php echo $pedido->getPedido_id() ?></td>
-                <td><?php echo $pedido->getEstado() ?></td>
-                <td><?php echo $pedido->getFecha_pedido() ?></td>
-                <td><?php echo $pedido->getCliente_id() ?></td>
+                <td><?=$pedido->getPedido_id();?></td>
+                <td><?=$pedido->getEstado();?></td>
+                <td><?=$pedido->getFecha_pedido();?></td>
+                <td><?=$pedido->getCliente_id();?></td>
                 <!--<td>
                     <form action="" method="post">
-                        <input type="hidden" name="producto_id" value="<?php echo $pedido->getPedido_id(); ?>">
+                        <input type="hidden" name="producto_id" value="<?=$pedido->getPedido_id();?>">
                         <input type="submit" name="Modificar" value="Modificar">
                     </form>
                 </td>-->
             
                 <td>
                     <form action="?controlador=pedidosAdmin&action=eliminar" method="post">
-                        <input type="hidden" name="producto_id" value="<?php echo $pedido->getPedido_id (); ?>">
+                        <input type="hidden" name="producto_id" value="<?=$pedido->getPedido_id();?>">
                         <input type="submit" name="Eliminar" value="Eliminar">
                     </form>
                 </td>
@@ -67,13 +67,13 @@
             ?>
 
             <tr>
-                <td><?php echo $pedido_producto->getPedido_id() ?></td>
-                <td><?php echo $pedido_producto->getProducto_id() ?></td>
-                <td><?php echo $pedido_producto->getCantidad() ?></td>
-                <td><?php echo $pedido_producto->getPrecio_unidad() ?></td>
+                <td><?=$pedido_producto->getPedido_id();?></td>
+                <td><?=$pedido_producto->getProducto_id();?></td>
+                <td><?=$pedido_producto->getCantidad();?></td>
+                <td><?=$pedido_producto->getPrecio_unidad();?></td>
                 <!--<td>
                     <form action="" method="post">
-                        <input type="hidden" name="producto_id" value="<?php echo $pedido_producto->getPedido_id(); ?>">
+                        <input type="hidden" name="producto_id" value="<?=$pedido_producto->getPedido_id();?>">
                         <input type="submit" name="Modificar" value="Modificar">
                     </form>
                 </td>-->

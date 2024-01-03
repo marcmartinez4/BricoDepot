@@ -19,7 +19,7 @@
             <div class="row justify-content-start">
                 <div class="col-12 col-md-6 col-lg-3 izquierda">
                     <div class="saludo">
-                        <h2>Hola <?php echo $cliente->getNombre() ?></h2>
+                        <h2>Hola <?=$cliente->getNombre();?></h2>
                     </div>
                     <ul class="pestañas">
                         <a href="?controlador=cliente&action=cuenta">

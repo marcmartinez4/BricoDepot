@@ -27,7 +27,17 @@
             }
             return $precio_boton;
         }
+
+        public static function botonCuenta() {
+            if (isset($_SESSION['Cliente'])) {
+                $link = '?controlador=cliente&action=cuenta';
+            } else {
+                $link = '?controlador=cliente';
+            }
+            return $link;
+        }
     }
+    $link = headerControlador::botonCuenta();
     $lista = headerControlador::totalProductos();
     $precio_boton = headerControlador::mostrarPrecio();
 ?>

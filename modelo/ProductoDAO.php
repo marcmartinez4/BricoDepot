@@ -5,7 +5,7 @@
     include_once 'config/functions.php';
     include_once 'modelo/Pedido.php';
     include_once 'modelo/PedidoProductos.php';
-
+    
     // Se define la clase
     class productoDAO {
 

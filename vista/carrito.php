@@ -18,7 +18,7 @@
                 <div class="d-flex justify-content-start div-titulo">
                     <div class="row justify-content-start">
                         <div class="col-12 col-md-6 col-lg-12">
-                            <h1 class="h1">Mi carrito <span class="span-h1"><?php echo $count_array.' '.$top?></span></h1>
+                            <h1 class="h1">Mi carrito <span class="span-h1"><?= $count_array.' '.$top?></span></h1>
                         </div>
                     </div>
                 </div>
@@ -37,41 +37,39 @@
                     ?>
                     <div class="item-carrito">
                         <div class="imagen-item-carrito">
-                            <img class="imagen-pedido" src="<?php echo $prodCarrito->getImg() ?>">
+                            <img class="imagen-pedido" src="<?= $prodCarrito->getImg() ?>">
                         </div>
                         
                         <div class="div-carrito-principal">
                             <div class="nombre-producto">
-                            <?php
-                                echo $prodCarrito->getNombre_producto();     
-                            ?>
+                            <?= $prodCarrito->getNombre_producto();?>
                             </div>
                         
                             <div class="modificar-cantidad">
                                 <div class="botones">
                                     <div class="botones-cantidad">
                                         <form class="boton-cantidad" action="?controlador=pedido&action=restarCantidad" method="post">
-                                            <input type="hidden" name="restarCantidad" value="<?php echo $prodCarrito->getProducto_id(); ?>">
+                                            <input type="hidden" name="restarCantidad" value="<?= $prodCarrito->getProducto_id(); ?>">
                                             <input class="boton-svg" type="image" src="img/menos-cantidad.png">        
                                         </form>
                                         
                                         <button class="boton-cantidad" type="button">
-                                            <p class="precio-boton"><?php echo $cantidad; ?></p>
+                                            <p class="precio-boton"><?= $cantidad; ?></p>
                                         </button>
 
                                         <form class="boton-cantidad" action="?controlador=pedido&action=sumarCantidad" method="post">
-                                            <input type="hidden" name="sumarCantidad" value="<?php echo $prodCarrito->getProducto_id(); ?>">
+                                            <input type="hidden" name="sumarCantidad" value="<?= $prodCarrito->getProducto_id(); ?>">
                                             <input class="boton-svg" type="image" src="img/aumentar-cantidad.png">    
                                         </form>
 
                                         <form class="boton-eliminar" action="?controlador=pedido&action=eliminarProducto" method="post">
-                                            <input type="hidden" name="eliminarProducto" value="<?php echo $prodCarrito->getProducto_id(); ?>">
+                                            <input type="hidden" name="eliminarProducto" value="<?= $prodCarrito->getProducto_id(); ?>">
                                             <input class="icon-eliminar" type="image" src="img/eliminar-cantidad.png">
                                         </form>
                                     </div>
                                 
                                     <div class="div-precio">
-                                        <p class="precio"><?php echo $prodCarrito->getPrecio_unidad(); ?><span> €</span></p>
+                                        <p class="precio"><?= $prodCarrito->getPrecio_unidad(); ?><span> €</span></p>
                                     </div>
                                 </div>
                             </div>
@@ -110,16 +108,16 @@
                         ?>
                         <div class="precios">
                             <p class="p-arriba">Subtotal</p>
-                            <?php echo $precioConIVA.' €'; ?>
+                            <?= $precioConIVA.' €'; ?>
                         </div>
                         <div class="precios">
                             <p class="p-arriba">IVA</p>
-                            <?php echo $montoIVA.' €';?>
+                            <?= $montoIVA.' €';?>
                         </div>
                         <hr>
                         <div class="precios-1">
                             <p class="total"><strong>Total</strong></p>
-                            <?php echo '<strong>'.$precioConIVA.' €</strong>';?>
+                            <?= '<strong>'.$precioConIVA.' €</strong>';?>
                         </div>
                         <div class="precios-2">
                             <p class="total-iva">Total sin IVA</p>

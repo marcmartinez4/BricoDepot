@@ -16,7 +16,7 @@
                     <?php
                         foreach ($productos as $producto) {
                     ?>
-                        <option value="<?php echo $producto->getProducto_id() ?>"><?php echo $producto->getNombre_producto() ?></option>
+                        <option value="<?= $producto->getProducto_id() ?>"><?= $producto->getNombre_producto() ?></option>
                     <?php
                         }
                     ?>
@@ -30,7 +30,7 @@
                     <?php
                         foreach ($clientes as $cliente) {
                     ?>
-                        <option value="<?php echo $cliente->getCliente_id() ?>"><?php echo $cliente->getNombre() ?></option>
+                        <option value="<?= $cliente->getCliente_id() ?>"><?= $cliente->getNombre() ?></option>
                     <?php
                         }
                     ?>

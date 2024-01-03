@@ -31,21 +31,21 @@
             foreach ($productos as $producto) {
         ?>
         <tr>
-            <td><?php echo $producto->getProducto_id() ?></td>
-            <td><?php echo $producto->getNombre_producto() ?></td>
-            <td><?php echo $producto->getDescripcion() ?></td>
-            <td><?php echo $producto->getPrecio_unidad() ?> €</td>
-            <td><?php echo $producto->getCategoria_id() ?></td>
+            <td><?= $producto->getProducto_id() ?></td>
+            <td><?= $producto->getNombre_producto() ?></td>
+            <td><?= $producto->getDescripcion() ?></td>
+            <td><?= $producto->getPrecio_unidad() ?> €</td>
+            <td><?= $producto->getCategoria_id() ?></td>
             <td>
                 <form action="?controlador=tablaProductos&action=modificar" method="post">
-                    <input type="hidden" name="producto_id" value="<?php echo $producto->getProducto_id(); ?>">
+                    <input type="hidden" name="producto_id" value="<?= $producto->getProducto_id(); ?>">
                     <input type="submit" name="Modificar" value="Modificar">
                 </form>
             </td>
         
             <td>
                 <form action="?controlador=tablaProductos&action=eliminar" method="post">
-                    <input type="hidden" name="producto_id" value="<?php echo $producto->getProducto_id(); ?>">
+                    <input type="hidden" name="producto_id" value="<?= $producto->getProducto_id(); ?>">
                     <input type="submit" name="Eliminar" value="Eliminar">
                 </form>
             </td>

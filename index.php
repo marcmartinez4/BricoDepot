@@ -19,6 +19,9 @@
     include_once 'controlador/mostrarPedidoUsuario.php';
     include_once 'controlador/usuariosAdminControlador.php';
     include_once 'controlador/headerControlador.php';
+    include_once 'modelo/Producto.php';
+    include_once 'modelo/Pedido.php';
+    include_once 'modelo/PedidoProductos.php';
     include_once 'vista/header.php';
 
     if (!isset($_GET['controlador'])) {

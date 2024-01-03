@@ -33,22 +33,22 @@
                 foreach ($clientes as $cliente) {
             ?>
             <tr>
-                <td><?php echo $cliente->getCliente_id() ?></td>
-                <td><?php echo $cliente->getNombre() ?></td>
-                <td><?php echo $cliente->getApellido() ?></td>
-                <td><?php echo $cliente->getMail() ?></td>
-                <td><?php echo $cliente->getRol() ?></td>
-                <td><?php echo $cliente->getContra() ?></td>
+                <td><?=$cliente->getCliente_id();?></td>
+                <td><?=$cliente->getNombre();?></td>
+                <td><?=$cliente->getApellido();?></td>
+                <td><?=$cliente->getMail();?></td>
+                <td><?=$cliente->getRol();?></td>
+                <td><?=$cliente->getContra();?></td>
                 <td>
                     <form action="?controlador=usuariosAdmin&action=modificar" method="post">
-                        <input type="hidden" name="cliente_id" value="<?php echo $cliente->getCliente_id(); ?>">
+                        <input type="hidden" name="cliente_id" value="<?=$cliente->getCliente_id();?>">
                         <input type="submit" name="Modificar" value="Modificar">
                     </form>
                 </td>
             
                 <td>
                     <form action="?controlador=usuariosAdmin&action=eliminar" method="post">
-                        <input type="hidden" name="cliente_id" value="<?php echo $cliente->getCliente_id (); ?>">
+                        <input type="hidden" name="cliente_id" value="<?=$cliente->getCliente_id();?>">
                         <input type="submit" name="Eliminar" value="Eliminar">
                     </form>
                 </td>

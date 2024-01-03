@@ -31,11 +31,11 @@
                     if ($producto->getCategoria_ID() == 1) {
             ?>
             <div class="col-3 col-sm-3 col-md-3 col-lg-3 productos">
-                <a class="form-productos" href="<?= url ?>?controlador=info&producto_id=<?php echo $producto->getProducto_id(); ?>">
-                    <img class="imagen-producto" src="<?php echo $producto->getImg() ?>">
-                    <a><?php echo $producto->getNombre_producto(); ?></a>
+                <a class="form-productos" href="<?= url ?>?controlador=info&producto_id=<?= $producto->getProducto_id(); ?>">
+                    <img class="imagen-producto" src="<?= $producto->getImg() ?>">
+                    <a><?= $producto->getNombre_producto(); ?></a>
                     <div class="precio-añadir">
-                        <p><?php echo $producto->getPrecio_unidad(); ?><span>€</span></p>
+                        <p><?= $producto->getPrecio_unidad(); ?><span>€</span></p>
                     </div>
                 </a>
             </div>
@@ -63,11 +63,11 @@
                     if ($producto->getCategoria_ID() == 5) {
             ?>
             <div class="col-3 col-sm-3 col-md-3 col-lg-3 productos">
-                <a class="form-productos" href="<?= url ?>?controlador=info&producto_id=<?php echo $producto->getProducto_id(); ?>">
-                    <img class="imagen-producto" src="<?php echo $producto->getImg() ?>">
-                    <a><?php echo $producto->getNombre_producto(); ?></a>
+                <a class="form-productos" href="<?= url ?>?controlador=info&producto_id=<?= $producto->getProducto_id(); ?>">
+                    <img class="imagen-producto" src="<?= $producto->getImg() ?>">
+                    <a><?= $producto->getNombre_producto(); ?></a>
                     <div class="precio-añadir">
-                        <p><?php echo $producto->getPrecio_unidad(); ?><span>€</span></p>
+                        <p><?= $producto->getPrecio_unidad(); ?><span>€</span></p>
                     </div>
                 </a>
             </div>
@@ -95,11 +95,11 @@
                     if ($producto->getCategoria_ID() == 1) {
             ?>
             <div class="col-3 col-sm-3 col-md-3 col-lg-3 productos">
-                <a class="form-productos" href="<?= url ?>?controlador=info&producto_id=<?php echo $producto->getProducto_id(); ?>">
-                    <img class="imagen-producto" src="<?php echo $producto->getImg() ?>">
-                    <a><?php echo $producto->getNombre_producto(); ?></a>
+                <a class="form-productos" href="<?= url ?>?controlador=info&producto_id=<?= $producto->getProducto_id(); ?>">
+                    <img class="imagen-producto" src="<?= $producto->getImg() ?>">
+                    <a><?= $producto->getNombre_producto(); ?></a>
                     <div class="precio-añadir">
-                        <p><?php echo $producto->getPrecio_unidad(); ?><span>€</span></p>
+                        <p><?= $producto->getPrecio_unidad(); ?><span>€</span></p>
                     </div>
                 </a>
             </div>
@@ -127,11 +127,11 @@
                     if ($producto->getCategoria_ID() == 3) {
             ?>
             <div class="col-3 col-sm-3 col-md-3 col-lg-3 productos">
-                <a class="form-productos" href="<?= url ?>?controlador=info&producto_id=<?php echo $producto->getProducto_id(); ?>">
-                    <img class="imagen-producto" src="<?php echo $producto->getImg() ?>">
-                    <a><?php echo $producto->getNombre_producto(); ?></a>
+                <a class="form-productos" href="<?= url ?>?controlador=info&producto_id=<?= $producto->getProducto_id(); ?>">
+                    <img class="imagen-producto" src="<?= $producto->getImg() ?>">
+                    <a><?= $producto->getNombre_producto(); ?></a>
                     <div class="precio-añadir">
-                        <p><?php echo $producto->getPrecio_unidad(); ?><span>€</span></p>
+                        <p><?= $producto->getPrecio_unidad(); ?><span>€</span></p>
                     </div>
                 </a>
             </div>
