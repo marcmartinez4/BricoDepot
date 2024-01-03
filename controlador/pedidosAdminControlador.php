@@ -14,6 +14,7 @@
                 $pedido_productos = PedidoProductosDAO::getAllPedidoProductos();
                 
                 // Incluye la vista 'pedidos.php'
+                include_once 'vista/header.php';
                 include_once 'vista/pedidos.php';
             }
         }
@@ -35,7 +36,7 @@
         }
 
         // Método para añadir un pedido de un usuario
-        public static function añadirUsuario() {
+        public static function añadirPedido() {
             // Obtiene datos del formulario
             $Producto = $_POST['Producto'];
             $Cantidad = $_POST['Cantidad'];
@@ -54,7 +55,7 @@
                 $pedido_productos = PedidoProductosDAO::getAllPedidoProductos();
                 
                 // Incluye la vista 'pedidos.php'
-                include_once 'vista/pedidos.php';
+                header('Location: '.url.'?controlador=pedidosAdmin');
             }
         }
 
@@ -76,7 +77,7 @@
                 $pedido_productos = PedidoProductosDAO::getAllPedidoProductos();
                 
                 // Incluye la vista 'pedidos.php'
-                include_once 'vista/pedidos.php';
+                header('Location: '.url.'?controlador=pedidosAdmin');
             }
         }
     }

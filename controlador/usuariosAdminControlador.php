@@ -13,6 +13,7 @@
                 $clientes = ClienteDAO::getAllClientes();
                 
                 // Incluye la vista 'usuarios.php'
+                include_once 'vista/header.php';
                 include_once 'vista/usuarios.php';
             }
         }
@@ -53,7 +54,7 @@
                 $clientes = ClienteDAO::getAllClientes();
                 
                 // Incluye la vista 'usuarios.php'
-                include_once 'vista/usuarios.php';
+                header('Location: '.url.'?controlador=usuariosAdmin');
             }
         }
 
@@ -74,7 +75,7 @@
                 $clientes = ClienteDAO::getAllClientes();
                 
                 // Incluye la vista 'usuarios.php'
-                include_once 'vista/usuarios.php';
+                header('Location: '.url.'?controlador=usuariosAdmin');
             }
         }
 
@@ -119,7 +120,7 @@
             $clientes = ClienteDAO::getAllClientes();
             
             // Incluye la vista 'usuarios.php'
-            include_once 'vista/usuarios.php';
+            header('Location: '.url.'?controlador=usuariosAdmin');
         }
     }
 ?>

@@ -17,6 +17,7 @@
                 $_SESSION['cantidad_añadir'] = 1;
                 
                 // Incluye la vista 'informacion-producto.php'
+                include_once 'vista/header.php';
                 include_once 'vista/informacion-producto.php';
             }
         }
@@ -43,6 +44,7 @@
                 $productos = productoDAO::getAllProducts();
                 
                 // Incluye la vista 'informacion-producto.php'
+                include_once 'vista/header.php';
                 include_once 'vista/informacion-producto.php';
             }
         }
@@ -61,6 +63,7 @@
                 $productos = productoDAO::getAllProducts();
                 
                 // Incluye la vista 'informacion-producto.php'
+                include_once 'vista/header.php';
                 include_once 'vista/informacion-producto.php';
             }
         }
@@ -88,7 +91,7 @@
                 $producto_id = $_GET['producto_id'];
                 $productos = productoDAO::getAllProducts();
                 
-                header('Location: ' . url . '?controlador=home');
+                header('Location:'.url.'?controlador=producto');
             }
         }
     }

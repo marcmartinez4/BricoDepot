@@ -23,6 +23,7 @@
                     $top = 'Producto';
                 }
                 // Incluye la vista 'carrito.php'
+                include_once 'vista/header.php';
                 include_once 'vista/carrito.php';
             }
         }
@@ -50,7 +51,7 @@
                     $top = 'Producto';
                 }
                 // Incluye la vista 'carrito.php'
-                include_once 'vista/carrito.php';
+                header('Location:'.url.'?controlador=pedido');
             }
         }
 
@@ -77,7 +78,7 @@
                     $top = 'Producto';
                 }
                 // Incluye la vista 'carrito.php'
-                include_once 'vista/carrito.php';
+                header('Location:'.url.'?controlador=pedido');
             }
         }
 
@@ -104,7 +105,7 @@
                     $top = 'Producto';
                 }
                 // Incluye la vista 'carrito.php'
-                include_once 'vista/carrito.php';
+                header('Location:'.url.'?controlador=pedido');
             }
         }
 
@@ -115,8 +116,9 @@
             // Llama al método en la clase 'PedidoDAO' para finalizar el pedido
             PedidoDAO::finalizarPedido();
             // Reinicia el carrito en la sesión
-            $_SESSION['carrito'] = []; 
-            // Incluye la vista 'home.php'
+            $_SESSION['carrito'] = [];
+            
+            header('Location:'.url.'?controlador=home');
         }
     }
 ?>

@@ -10,6 +10,7 @@
                 include_once 'vista/home.php';
             } else {
                 // Incluye la vista 'crear-cuenta.php'
+                include_once 'vista/header.php';
                 include_once 'vista/crear-cuenta.php';
             }
         }

@@ -13,6 +13,7 @@
                 include_once 'vista/home.php';
             } else {
                 // Si está definido, incluye la vista 'inicio-sesion.php'
+                include_once 'vista/header.php';
                 include_once 'vista/inicio-sesion.php';
             }
         }
@@ -28,6 +29,7 @@
                 $clientes = ClienteDAO::getAllClientes();
                 $id_cliente = $_SESSION['Cliente']->getCliente_id();
                 // Incluye la vista 'panel-cliente.php'
+                include_once 'vista/header.php';
                 include_once 'vista/panel-cliente.php';
             }
         }
@@ -43,6 +45,7 @@
                 $clientes = ClienteDAO::getAllClientes();
                 $id_cliente = $_SESSION['Cliente']->getCliente_id();
                 // Incluye la vista 'modificardatos-cliente.php'
+                include_once 'vista/header.php';
                 include_once 'vista/modificardatos-cliente.php';
             }
         }
@@ -60,7 +63,7 @@
                 // Llama al método en la clase 'ClienteDAO' para modificar los datos principales del cliente
                 ClienteDAO::modificarDatosPrincipales($nuevo_nombre, $nuevo_apellido, $nuevo_correo, $id_cliente);
                 // Incluye la vista 'modificardatos-cliente.php'
-                include_once 'vista/modificardatos-cliente.php';
+                header('Location:'.url.'?controlador=cliente&action=modificar');
             }
         }
 
@@ -92,7 +95,7 @@
                         // Llama al método en la clase 'ClienteDAO' para modificar la contraseña del cliente
                         ClienteDAO::modificarContraseña($contraseña_nueva_1, $id_cliente);
                         // Incluye la vista 'modificardatos-cliente.php'
-                        include_once 'vista/modificardatos-cliente.php';
+                        header('Location:'.url.'?controlador=cliente&action=modificar');
                     }
                 }
             }
@@ -109,6 +112,7 @@
                 // Llama al método en la clase 'ClienteDAO' para iniciar sesión
                 ClienteDAO::iniciarSesion($mail, $contra);
                 // Incluye la vista 'home.php'
+                include_once 'vista/header.php';
                 include_once 'vista/home.php';
                 // También se podría redirigir a la página de inicio usando header como se indica en el comentario comentado
                 // header('Location:'.url.'?controlador=home');

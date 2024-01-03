@@ -13,6 +13,7 @@
                 $productos = ProductoDAO::getAllProducts();
                 
                 // Incluye la vista 'base-datos.php'
+                include_once 'vista/header.php';
                 include_once 'vista/base-datos.php';
             }
         }
@@ -46,7 +47,7 @@
                 $productos = ProductoDAO::getAllProducts();
                 
                 // Incluye la vista 'base-datos.php'
-                include_once 'vista/base-datos.php';
+                header('Location: '.url.'?controlador=tablaProductos');
             }
         }
 
@@ -84,7 +85,7 @@
             $productos = ProductoDAO::getAllProducts();
             
             // Incluye la vista 'base-datos.php'
-            include_once 'vista/base-datos.php';
+            header('Location: '.url.'?controlador=tablaProductos');
         }
 
         // Método para la página de eliminar producto
@@ -104,7 +105,7 @@
                 $productos = ProductoDAO::getAllProducts();
                 
                 // Incluye la vista 'base-datos.php'
-                include_once 'vista/base-datos.php';
+                header('Location: '.url.'?controlador=tablaProductos');
             }
         }
     }

@@ -8,6 +8,7 @@
             $productos = productoDAO::getAllProducts();
             
             // Incluye la vista 'home.php', probablemente para mostrar la lista de productos en la página principal
+            include_once 'vista/header.php';
             include_once 'vista/home.php';
         }
     }

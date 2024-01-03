@@ -19,6 +19,7 @@
                 $id_cliente = $_SESSION['Cliente']->getCliente_id();  
                 
                 // Incluye la vista 'pedidos-usuario.php'
+                include_once 'vista/header.php';
                 include_once 'vista/pedidos-usuario.php';
             }
         }

@@ -78,24 +78,49 @@
                     <?php
                             }
                         }
+                        if (isset($_SESSION['Cliente'])) {
                     ?>
+                        <li class="nav-item">
+                            <a href="?controlador=cliente&action=cuenta">
+                                <img class="iconos-header" src="img/mi_cuenta.svg">    
+                                <a href="?controlador=cliente&action=cuenta" class="nav-link active boton-cuenta">Mi Cuenta</a> 
+                            </a>
+                        </li>
+                    <?php
+                        } else {
+                    ?>
+                        <li class="nav-item">
+                            <a href="?controlador=cliente">
+                                <img class="iconos-header" src="img/mi_cuenta.svg">    
+                                <a href="?controlador=cliente" class="nav-link active boton-cuenta">Mi Cuenta</a> 
+                            </a>
+                        </li>
+                    <?php    
+                        }
                     
-                    <li class="nav-item">
-                        <a href="<?=$link?>">
-                            <img class="iconos-header" src="img/mi_cuenta.svg">    
-                            <a href="?controlador=cliente&action=cuenta" class="nav-link active boton-cuenta">Mi Cuenta</a> 
-                        </a>
-                    </li>
                     
                     
+                    $total = 0;
+                    $count_array = count($_SESSION['carrito']);
+
+                    if (isset($_SESSION['carrito'])) {
+                        foreach($_SESSION['carrito'] as $p) {
+                            $prodCarrito = productoDAO::getProductById($p[0]);
+                            $cantidad = $p[1];
+
+                            $precioTotalProducto = $prodCarrito->getPrecio_unidad() * $cantidad;
+                            $total += $precioTotalProducto;
+                        }
+                    }
+                    ?>
                     <li class="nav-item">
                         <a href="?controlador=pedido">
                             <div class="div-cantidad">
                                 <img class="iconos-header" src="img/carrito.svg">
-                                <p class="cantidad"><?=$lista[1]?></p>
+                                <p class="cantidad"><?=$count_array?></p>
                             </div>
                             
-                            <a class="nav-link active boton-carrito"><?=$precio_boton?></a>    
+                            <a class="nav-link active boton-carrito"><?=number_format($total, 2, ',', '.').' €'?></a>    
                         </a>
                     </li>
                 </ul>
