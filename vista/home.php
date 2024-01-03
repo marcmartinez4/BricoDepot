@@ -12,15 +12,15 @@
         <div class="d-flex justify-content-center banner">
             <div class="row justify-content-center">
                 <div class="col-12 col-md-6 col-lg-6"> 
-                    <a href="vista/carta.php">    
+                    <a href="?controlador=producto">    
                         <img src="img/Hamburguesa queso fundido.png" class="img-fluid Hamburguesa" alt="Imagen hamburguesa queso fundido">
                     </a>
                 </div>
                 <div class="col-12 col-md-6 col-lg-5">
-                    <a href="vista/carta.php">
+                    <a href="?controlador=producto">
                         <img src="img/Bocata1.png" class="img-fluid Bocata" alt="Imagen bocadillo vegetal">
                     </a>    
-                    <a href="vista/carta.php">
+                    <a href="?controlador=producto">
                         <img src="img/Bocata2.png" class="img-fluid Bocata" alt="Imagen bocadillo vegetal">
                     </a>
                 </div>
@@ -40,7 +40,7 @@
         <div class="d-flex justify-content-center img-destacado">
             <div class="row justify-content-center">
                 <div class="col-12 col-md-6 col-lg-11">
-                    <a href="../vista/carta.php">
+                    <a href="?controlador=producto">
                         <img src="img/DESTACADO.png" class="img-fluid" alt="Imagen banner destacado">
                     </a>
                 </div>
@@ -55,7 +55,7 @@
                         if ($producto->getCategoria_ID() == 1) {
                 ?>
                     <div class="col-3 col-sm-3 col-md-3 col-lg-2 productos">
-                        <a class="form-productos" href="../vista/informacion-producto.php?producto_id=<?=$producto->getProducto_id(); ?>">
+                        <a class="form-productos" href="<?= url ?>?controlador=info&producto_id=<?=$producto->getProducto_id(); ?>">
                             <img class="imagen-producto" src="<?= $producto->getImg() ?>">
                             <a><?= $producto->getNombre_producto(); ?></a>
                             <p><?= $producto->getPrecio_unidad(); ?><span>€</span></p>
@@ -86,17 +86,17 @@
         <div class="d-flex justify-content-center">
             <div class="row justify-content-center">
                 <div class="col-12 col-md-6 col-lg-4 imagenes-verticales">
-                    <a href="../vista/carta.php">
+                    <a href="?controlador=producto">
                         <img src="img/Hot Dog.png" class="img-fluid" alt="...">
                     </a>
                 </div>
                 <div class="col-12 col-md-6 col-lg-4 imagenes-verticales">
-                    <a href="../vista/carta.php">    
+                    <a href="?controlador=producto">    
                         <img src="img/Tacos.png" class="img-fluid" alt="...">
                     </a>
                 </div>
                 <div class="col-12 col-md-6 col-lg-4 imagenes-verticales">
-                    <a href="../vista/carta.php">
+                    <a href="?controlador=producto">
                         <img src="img/Cola.png" class="img-fluid" alt="...">
                     </a>
                 </div>

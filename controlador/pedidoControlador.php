@@ -117,7 +117,6 @@
             // Reinicia el carrito en la sesión
             $_SESSION['carrito'] = []; 
             // Incluye la vista 'home.php'
-            header("Location:" . url . "?controlador=home");
         }
     }
 ?>

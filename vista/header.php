@@ -81,13 +81,13 @@
                     ?>
                     
                     <li class="nav-item">
-                        <a href="<?= $link ?>">
+                        <a href="<?=$link?>">
                             <img class="iconos-header" src="img/mi_cuenta.svg">    
                             <a href="?controlador=cliente&action=cuenta" class="nav-link active boton-cuenta">Mi Cuenta</a> 
                         </a>
                     </li>
                     
-                    <!-- Esto es lo que falla -->
+                    
                     <li class="nav-item">
                         <a href="?controlador=pedido">
                             <div class="div-cantidad">

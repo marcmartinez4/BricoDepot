@@ -88,7 +88,6 @@
                 $producto_id = $_GET['producto_id'];
                 $productos = productoDAO::getAllProducts();
                 
-                // Incluye la vista 'informacion-producto.php'
                 header('Location: ' . url . '?controlador=home');
             }
         }
