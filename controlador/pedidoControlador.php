@@ -15,7 +15,7 @@
                 // Obtiene todos los productos del carrito y cuenta la cantidad de elementos
                 $prodCarrito = productoDAO::getAllProducts();
                 $count_array = count($_SESSION['carrito']);
-                
+                $lista = headerControlador::mostrarHeader();
                 // Determina si se debe utilizar la palabra 'Producto' o 'Productos' en la vista
                 if ($count_array > 1) {
                     $top = 'Productos';

@@ -13,6 +13,7 @@
                 include_once 'vista/home.php';
             } else {
                 // Si está definido, incluye la vista 'inicio-sesion.php'
+                $lista = headerControlador::mostrarHeader();
                 include_once 'vista/header.php';
                 include_once 'vista/inicio-sesion.php';
             }
@@ -28,6 +29,7 @@
                 // Si está definido, obtiene todos los clientes y la sesión del cliente actual
                 $clientes = ClienteDAO::getAllClientes();
                 $id_cliente = $_SESSION['Cliente']->getCliente_id();
+                $lista = headerControlador::mostrarHeader();
                 // Incluye la vista 'panel-cliente.php'
                 include_once 'vista/header.php';
                 include_once 'vista/panel-cliente.php';
@@ -44,6 +46,7 @@
                 // Si está definido, obtiene todos los clientes y la sesión del cliente actual
                 $clientes = ClienteDAO::getAllClientes();
                 $id_cliente = $_SESSION['Cliente']->getCliente_id();
+                $lista = headerControlador::mostrarHeader();
                 // Incluye la vista 'modificardatos-cliente.php'
                 include_once 'vista/header.php';
                 include_once 'vista/modificardatos-cliente.php';
@@ -111,6 +114,7 @@
 
                 // Llama al método en la clase 'ClienteDAO' para iniciar sesión
                 ClienteDAO::iniciarSesion($mail, $contra);
+                $lista = headerControlador::mostrarHeader();
                 // Incluye la vista 'home.php'
                 include_once 'vista/header.php';
                 include_once 'vista/home.php';

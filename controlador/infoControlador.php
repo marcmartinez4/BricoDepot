@@ -12,7 +12,7 @@
                 // Obtiene el ID del producto desde la URL y todos los productos
                 $producto_id = $_GET['producto_id'];
                 $productos = productoDAO::getAllProducts();
-                
+                $lista = headerControlador::mostrarHeader();
                 // Inicializa la cantidad a añadir al carrito a 1 en la sesión
                 $_SESSION['cantidad_añadir'] = 1;
                 
@@ -42,7 +42,7 @@
                 // Obtiene el ID del producto desde la URL y todos los productos
                 $producto_id = $_GET['producto_id'];
                 $productos = productoDAO::getAllProducts();
-                
+                $lista = headerControlador::mostrarHeader();
                 // Incluye la vista 'informacion-producto.php'
                 include_once 'vista/header.php';
                 include_once 'vista/informacion-producto.php';
@@ -61,7 +61,7 @@
                 // Obtiene el ID del producto desde la URL y todos los productos
                 $producto_id = $_GET['producto_id'];
                 $productos = productoDAO::getAllProducts();
-                
+                $lista = headerControlador::mostrarHeader();
                 // Incluye la vista 'informacion-producto.php'
                 include_once 'vista/header.php';
                 include_once 'vista/informacion-producto.php';

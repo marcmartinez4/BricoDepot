@@ -9,6 +9,7 @@
                 // Si no está definido, incluye la vista 'home.php'
                 include_once 'vista/home.php';
             } else {
+                $lista = headerControlador::mostrarHeader();
                 // Incluye la vista 'crear-cuenta.php'
                 include_once 'vista/header.php';
                 include_once 'vista/crear-cuenta.php';

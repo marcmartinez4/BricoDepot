@@ -23,6 +23,7 @@
     include_once 'modelo/CategoriaDAO.php';
     include_once 'modelo/Categoria.php';
     include_once 'modelo/PedidoProductos.php';
+    include_once 'controlador/headerControlador.php'; 
 
     if (!isset($_GET['controlador'])) {
         header("Location:" . url . "?controlador=home");

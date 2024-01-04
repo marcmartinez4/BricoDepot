@@ -11,7 +11,7 @@
             } else {
                 // Obtiene todos los productos
                 $productos = ProductoDAO::getAllProducts();
-                
+                $lista = headerControlador::mostrarHeader();
                 // Incluye la vista 'base-datos.php'
                 include_once 'vista/header.php';
                 include_once 'vista/base-datos.php';
@@ -26,6 +26,7 @@
                 include_once 'vista/base-datos.php';
             } else {
                 $categorias = CategoriaDAO::getAllCategorias();
+                $lista = headerControlador::mostrarHeader();
                 // Incluye la vista 'añadirProducto.php'
                 include_once 'vista/header.php';
                 include_once 'vista/añadirProducto.php';
@@ -62,7 +63,7 @@
             } else if (isset($_POST['producto_id'])) {    
                 // Obtiene información del producto para modificar
                 $producto = ProductoDAO::getProductById($id);
-                
+                $lista = headerControlador::mostrarHeader();
                 // Incluye la vista 'modificarProducto.php'
                 include_once 'vista/header.php';
                 include_once 'vista/modificarProducto.php';

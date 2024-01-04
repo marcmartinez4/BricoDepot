@@ -12,7 +12,7 @@
                 // Obtiene todos los pedidos y productos de pedidos
                 $pedidos = ProductoDAO::getAllPedidos();
                 $pedido_productos = PedidoProductosDAO::getAllPedidoProductos();
-                
+                $lista = headerControlador::mostrarHeader();
                 // Incluye la vista 'pedidos.php'
                 include_once 'vista/header.php';
                 include_once 'vista/pedidos.php';

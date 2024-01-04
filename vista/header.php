@@ -97,30 +97,15 @@
                         </li>
                     <?php    
                         }
-                    
-                    
-                    
-                    $total = 0;
-                    $count_array = count($_SESSION['carrito']);
-
-                    if (isset($_SESSION['carrito'])) {
-                        foreach($_SESSION['carrito'] as $p) {
-                            $prodCarrito = productoDAO::getProductById($p[0]);
-                            $cantidad = $p[1];
-
-                            $precioTotalProducto = $prodCarrito->getPrecio_unidad() * $cantidad;
-                            $total += $precioTotalProducto;
-                        }
-                    }
                     ?>
                     <li class="nav-item">
                         <a href="?controlador=pedido">
                             <div class="div-cantidad">
                                 <img class="iconos-header" src="img/carrito.svg">
-                                <p class="cantidad"><?=$count_array?></p>
+                                <p class="cantidad"><?=$lista[1]?></p>
                             </div>
                             
-                            <a class="nav-link active boton-carrito"><?=number_format($total, 2, ',', '.').' €'?></a>    
+                            <a class="nav-link active boton-carrito"><?=number_format($lista[0], 2, ',', '.').' €'?></a>    
                         </a>
                     </li>
                 </ul>

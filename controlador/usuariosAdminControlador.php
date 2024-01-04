@@ -11,7 +11,7 @@
             } else {
                 // Obtiene todos los clientes
                 $clientes = ClienteDAO::getAllClientes();
-                
+                $lista = headerControlador::mostrarHeader();
                 // Incluye la vista 'usuarios.php'
                 include_once 'vista/header.php';
                 include_once 'vista/usuarios.php';

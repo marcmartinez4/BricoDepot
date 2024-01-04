@@ -17,7 +17,7 @@
                 
                 // Obtiene el ID del cliente actual desde la sesión
                 $id_cliente = $_SESSION['Cliente']->getCliente_id();  
-                
+                $lista = headerControlador::mostrarHeader();
                 // Incluye la vista 'pedidos-usuario.php'
                 include_once 'vista/header.php';
                 include_once 'vista/pedidos-usuario.php';

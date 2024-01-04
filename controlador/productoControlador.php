@@ -15,7 +15,7 @@
             } else {
                 // Obtiene todos los productos
                 $productos = productoDAO::getAllProducts();
-                
+                $lista = headerControlador::mostrarHeader();
                 // Incluye la vista 'carta.php'
                 include_once 'vista/header.php';
                 include_once 'vista/carta.php';
