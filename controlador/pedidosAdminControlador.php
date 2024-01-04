@@ -29,8 +29,10 @@
                 // Obtiene todos los productos y clientes
                 $productos = ProductoDAO::getAllProducts();
                 $clientes = ClienteDAO::getAllClientes();
+                $lista = headerControlador::mostrarHeader();
                 
                 // Incluye la vista 'añadirPedido.php'
+                include_once 'vista/header.php';
                 include_once 'vista/añadirPedido.php';
             }
         }

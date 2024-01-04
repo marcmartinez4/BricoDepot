@@ -14,9 +14,13 @@
             if ($cliente->getCliente_id() == $id_cliente) {
     ?>
     <div class="container-fluid main">
-        <h1>Mi cuenta</h1>
-        <div class="d-flex justify-content-start">
-            <div class="row justify-content-start">
+        <div class="d-flex justify-content-center">
+            <div class="row justify-content-center">
+                <div class="d-flex justify-content-start">
+                    <div class="row justify-content-start">
+                        <h1>Mi cuenta</h1>
+                    </div>
+                </div>
                 <div class="col-12 col-md-6 col-lg-3 izquierda">
                     <div class="saludo">
                         <h2>Hola <?=$cliente->getNombre();?></h2>
@@ -57,7 +61,7 @@
                         <h2 class="txt-info">Modificar datos</h2>
 
                         <div class="div-modificar-datos">
-                            <form action="?controlador=cliente&action=modificarDatosPrincipales" method="post">
+                            <form class="form-datos" action="?controlador=cliente&action=modificarDatosPrincipales" method="post">
                                 <div class="primer-div-form">
                                     <div>
                                         <h3>Nombre</h3>
@@ -77,7 +81,7 @@
                                 <input class="guardar-datos" type="submit" value="Guardar">
                             </form>
 
-                            <form action="?controlador=cliente&action=modificarContraseña" method="post">
+                            <form class="form-datos" action="?controlador=cliente&action=modificarContraseña" method="post">
                                 <div class="primer-div-form">
                                     <div>
                                         <h3>Contraseña actual</h3>
@@ -106,5 +110,6 @@
             }
         }
     ?>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>

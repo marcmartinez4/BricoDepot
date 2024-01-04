@@ -27,8 +27,10 @@
             } else {
                 // Obtiene todos los clientes
                 $clientes = ClienteDAO::getAllClientes();
+                $lista = headerControlador::mostrarHeader();
                 
                 // Incluye la vista 'añadirUsuario.php'
+                include_once 'vista/header.php';
                 include_once 'vista/añadirUsuario.php';
             }
         }
@@ -97,8 +99,9 @@
             } else {
                 // Obtiene información del cliente para modificar
                 $cliente = ClienteDAO::getClientById($id);
-                
+                $lista = headerControlador::mostrarHeader();
                 // Incluye la vista 'modificarUsuario.php'
+                include_once 'vista/header.php';
                 include_once 'vista/modificarUsuario.php';
             }
         }

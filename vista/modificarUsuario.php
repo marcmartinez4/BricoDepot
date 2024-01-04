@@ -30,7 +30,7 @@
                 <input class="input" type="password" name="Contraseña" value="<?=$cliente->getContra();?>">
 
                 <input type="hidden" name="cliente_id" value="<?=$id?>">
-                <input class="input-boton-sesion" type="submit" value="Modificar Producto">
+                <input class="input-boton-sesion" type="submit" value="Modificar Usuario">
             </form>
         </div>
     </div>

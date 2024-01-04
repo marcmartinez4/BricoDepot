@@ -36,7 +36,7 @@
                     ?>
                 </select>
 
-                <input class="input-boton-sesion" type="submit" name="Añadir" value="Añadir Producto">
+                <input class="input-boton-sesion" type="submit" name="Añadir" value="Añadir Pedido">
             </form>
         </div>
     </div>

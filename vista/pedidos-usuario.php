@@ -14,9 +14,13 @@
             if ($cliente->getCliente_id() == $id_cliente) {
     ?>
     <div class="container-fluid main">
-        <h1>Mi cuenta</h1>
-        <div class="d-flex justify-content-start">
-            <div class="row justify-content-start">
+        <div class="d-flex justify-content-center">
+            <div class="row justify-content-center">
+                <div class="d-flex justify-content-start">
+                    <div class="row justify-content-start">
+                        <h1>Mi cuenta</h1>
+                    </div>
+                </div>
                 <div class="col-12 col-md-6 col-lg-3 izquierda">
                     <div class="saludo">
                         <h2>Hola <?=$cliente->getNombre();?></h2>
