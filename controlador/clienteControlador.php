@@ -116,10 +116,8 @@
                 ClienteDAO::iniciarSesion($mail, $contra);
                 $lista = headerControlador::mostrarHeader();
                 // Incluye la vista 'home.php'
-                include_once 'vista/header.php';
-                include_once 'vista/home.php';
                 // También se podría redirigir a la página de inicio usando header como se indica en el comentario comentado
-                // header('Location:'.url.'?controlador=home');
+                header('Location:'.url.'?controlador=home');
             }
         }
     }

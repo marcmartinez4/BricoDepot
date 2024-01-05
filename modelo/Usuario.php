@@ -1,11 +1,10 @@
 <?php
-    class Cliente {
-        protected $cliente_id;
-        protected $nombre;
-        protected $apellido;
-        protected $mail;
-        protected $rol;
-        protected $contra;
+    include_once 'modelo/Cliente.php';
+
+    class Usuario extends Cliente {
+        function __construct() {
+            
+        }
 
         /**
          * Get the value of cliente_id

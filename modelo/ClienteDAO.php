@@ -2,6 +2,8 @@
     // Se incluyen los archivos necesarios
     include_once 'config/dataBase.php';
     include_once 'modelo/Cliente.php';
+    include_once 'modelo/Usuario.php';
+    include_once 'modelo/Admin.php';
 
     // Se desclara la clase
     class ClienteDAO {
@@ -36,15 +38,28 @@
         public static function iniciarSesion($mail, $contra) {
             $con = database::connect();
 
-            // Consulta SQL para obtener un cliente por su correo y contraseña
-            $result = $con->query("SELECT * FROM usuarios WHERE mail = '$mail' AND contra = '$contra' LIMIT 1;");
-            $cliente = $result->fetch_object('Cliente');
-            $_SESSION['Cliente'] = $cliente;
-
-            // Consulta SQL para obtener el rol del usuario
             $result = $con->query("SELECT rol FROM usuarios WHERE mail = '$mail' AND contra = '$contra' LIMIT 1;");
             $row = $result->fetch_assoc();
             $_SESSION['rolUsuario'] = $row['rol'];
+
+            $result = $con->query("SELECT * FROM usuarios WHERE mail = '$mail' AND contra = '$contra' LIMIT 1;");
+            if ($_SESSION['rolUsuario'] == 'Cliente') {
+                $cliente = $result->fetch_object('Usuario');
+            } else if ($_SESSION['rolUsuario'] == 'Administrador') {
+                $cliente = $result->fetch_object('Admin');
+            }
+
+            $_SESSION['Cliente'] = $cliente;
+
+            // // Consulta SQL para obtener un cliente por su correo y contraseña
+            // $result = $con->query("SELECT * FROM usuarios WHERE mail = '$mail' AND contra = '$contra' LIMIT 1;");
+            // $cliente = $result->fetch_object('Cliente');
+            // $_SESSION['Cliente'] = $cliente;
+
+            // // Consulta SQL para obtener el rol del usuario
+            // $result = $con->query("SELECT rol FROM usuarios WHERE mail = '$mail' AND contra = '$contra' LIMIT 1;");
+            // $row = $result->fetch_assoc();
+            // $_SESSION['rolUsuario'] = $row['rol'];
         }   
 
         // Método para crear una cuenta de usuario

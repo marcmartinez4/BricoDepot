@@ -47,7 +47,7 @@
                                 <img class="flecha" src="img/flecha-derecha.svg">
                             </li>
                         </a>
-                        <a href="#">
+                        <a href="controlador/cerrarSesion.php">
                             <li>
                                 <img class="imagen-izquierda" src="img/cerrar-sesion.svg">
                                 <a href="controlador/cerrarSesion.php">Cerrar sesión</a>

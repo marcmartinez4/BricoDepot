@@ -1,4 +1,7 @@
 <?php
+    include_once 'modelo/Cliente.php';
+    include_once 'modelo/Usuario.php';
+    include_once 'modelo/Admin.php';
     include_once 'config/dataBase.php';
     include_once 'config/functions.php';
     include_once 'config/parametros.php';
@@ -12,7 +15,6 @@
     include_once 'controlador/registroControlador.php';
     include_once 'controlador/infoControlador.php';
     include_once 'controlador/pedidosAdminControlador.php';
-    include_once 'modelo/Cliente.php';
     include_once 'modelo/PedidoProductosDAO.php';
     include_once 'modelo/ClienteDAO.php';
     include_once 'controlador/pedidosUsuarioControlador.php';
