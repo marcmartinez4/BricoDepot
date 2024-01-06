@@ -18,7 +18,7 @@
                 <input class="input" type="text" name="descripcion">
 
                 <h3>Precio </h3>
-                <input class="input" type="number" name="precio_unidad">
+                <input class="input" type="number" name="precio_unidad" value="1">
 
                 <h3>ID de la categoría </h3>
                 <select class="input" name="categoria_id">

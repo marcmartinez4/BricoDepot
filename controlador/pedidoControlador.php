@@ -4,8 +4,7 @@
 
     // Definición de la clase 'pedidoControlador'
     class pedidoControlador {
-        
-        // Método para la página de carrito (index)
+        // Método para el index
         public static function index() {
             // Verifica si no se ha establecido el parámetro 'controlador' en la URL
             if (!isset($_GET['controlador'])) {
@@ -112,9 +111,8 @@
         // Método para finalizar el pedido
         public static function finalizarPedido() {
             $preciototal = $_POST['preciototal'];
-            setcookie('preciototal', $preciototal, time() + 3600);
             // Llama al método en la clase 'PedidoDAO' para finalizar el pedido
-            PedidoDAO::finalizarPedido();
+            PedidoDAO::finalizarPedido($preciototal);
             // Reinicia el carrito en la sesión
             $_SESSION['carrito'] = [];
             
