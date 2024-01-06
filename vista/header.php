@@ -20,17 +20,17 @@
         <div class="container-fluid c-fluid">
             <div class="tool-bar2">
                 <div class="region u-mr-medium icon-align icon-align--left icon-align--center">
-                    <img src="img/transporte.svg">
+                    <img src="img/transporte.svg" alt="Imagen transporte">
                     <span class="peninsula">España península</span>
                 </div>
 
                 <div>
-                    <img src="img/tienda.svg">
+                    <img src="img/tienda.svg" alt="Tienda">
                     <span class="tienda">Seleccionar tienda</span>
                 </div>
 
                 <a class="btn-a-toolbar2">
-                    <img class="btn-ubicacion" src="img/ubicacion.svg">
+                    <img class="btn-ubicacion" src="img/ubicacion.svg" alt="Ubicación">
                     <span>
                       <strong class="dos-ultimos">Ver todas las tiendas</strong>
                     </span>
@@ -55,7 +55,7 @@
         <div class="container-fluid div-header">
             <div class="logo-busqueda">
                 <a href="?controlador=home">
-                    <img class="logo" src="img/logoBD.svg">
+                    <img class="logo" src="img/logoBD.svg" alt="Logo BricoDepot">
                 </a>
                 <form class="d-flex" role="search">
                     <input class="form-control me-2 barra-busqueda" type="search" placeholder="¿Qué estas buscando? " aria-label="Search">
@@ -70,7 +70,7 @@
                     ?>
                         <li class="nav-item">
                             <a href="?controlador=tablaProductos">
-                                <img class="iconos-header" src="img/base-datos.png">
+                                <img class="iconos-header" src="img/base-datos.png" alt="Menú admin">
 
                                 <a href="?controlador=tablaProductos" class="nav-link active boton-cuenta">Productos</a>
                             </a>
@@ -82,7 +82,7 @@
                     ?>
                         <li class="nav-item">
                             <a href="?controlador=cliente&action=cuenta">
-                                <img class="iconos-header" src="img/mi_cuenta.svg">    
+                                <img class="iconos-header" src="img/mi_cuenta.svg" alt="Mi cuenta">    
                                 <a href="?controlador=cliente&action=cuenta" class="nav-link active boton-cuenta">Mi Cuenta</a> 
                             </a>
                         </li>
@@ -91,7 +91,7 @@
                     ?>
                         <li class="nav-item">
                             <a href="?controlador=cliente">
-                                <img class="iconos-header" src="img/mi_cuenta.svg">    
+                                <img class="iconos-header" src="img/mi_cuenta.svg" alt="Mi cuenta">    
                                 <a href="?controlador=cliente" class="nav-link active boton-cuenta">Mi Cuenta</a> 
                             </a>
                         </li>
@@ -101,7 +101,7 @@
                     <li class="nav-item">
                         <a href="?controlador=pedido">
                             <div class="div-cantidad">
-                                <img class="iconos-header" src="img/carrito.svg">
+                                <img class="iconos-header" src="img/carrito.svg" alt="Carrito">
                                 <p class="cantidad"><?=$lista[1]?></p>
                             </div>
                             

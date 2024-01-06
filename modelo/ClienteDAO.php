@@ -50,16 +50,6 @@
             }
 
             $_SESSION['Cliente'] = $cliente;
-
-            // // Consulta SQL para obtener un cliente por su correo y contraseña
-            // $result = $con->query("SELECT * FROM usuarios WHERE mail = '$mail' AND contra = '$contra' LIMIT 1;");
-            // $cliente = $result->fetch_object('Cliente');
-            // $_SESSION['Cliente'] = $cliente;
-
-            // // Consulta SQL para obtener el rol del usuario
-            // $result = $con->query("SELECT rol FROM usuarios WHERE mail = '$mail' AND contra = '$contra' LIMIT 1;");
-            // $row = $result->fetch_assoc();
-            // $_SESSION['rolUsuario'] = $row['rol'];
         }   
 
         // Método para crear una cuenta de usuario

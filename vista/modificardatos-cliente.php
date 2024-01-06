@@ -28,30 +28,30 @@
                     <ul class="pestañas">
                         <a href="?controlador=cliente&action=cuenta">
                             <li>
-                                <img class="imagen-izquierda" src="img/panel-control.svg">
+                                <img class="imagen-izquierda" src="img/panel-control.svg" alt="Panel de control">
                                 <a href="?controlador=cliente&action=cuenta">Panel de control</a>
-                                <img class="flecha" src="img/flecha-derecha.svg">
+                                <img class="flecha" src="img/flecha-derecha.svg" alt="Flecha">
                             </li>
                         </a>
                         <a href="?controlador=pedidosUsuario">
                             <li>
-                                <img class="imagen-izquierda" src="img/carrito.svg">
+                                <img class="imagen-izquierda" src="img/carrito.svg" alt="Mis pedidos">
                                 <a href="?controlador=pedidosUsuario">Mis pedidos</a>
-                                <img class="flecha" src="img/flecha-derecha.svg">
+                                <img class="flecha" src="img/flecha-derecha.svg" alt="Flecha">
                             </li>
                         </a>
                         <a href="?controlador=cliente&action=modificar">
                             <li class="activa">
-                                <img class="imagen-izquierda" src="img/informacion.svg">
+                                <img class="imagen-izquierda" src="img/informacion.svg" alt="Información personal">
                                 <a href="?controlador=cliente&action=modificar">Información personal</a>
-                                <img class="flecha" src="img/flecha-derecha.svg">
+                                <img class="flecha" src="img/flecha-derecha.svg" alt="Flecha">
                             </li>
                         </a>
                         <a href="controlador/cerrarSesion.php">
                             <li>
-                                <img class="imagen-izquierda" src="img/cerrar-sesion.svg">
+                                <img class="imagen-izquierda" src="img/cerrar-sesion.svg" alt="Cerrar sesión">
                                 <a href="controlador/cerrarSesion.php">Cerrar sesión</a>
-                                <img class="flecha" src="img/flecha-derecha.svg">
+                                <img class="flecha" src="img/flecha-derecha.svg" alt="Flecha">
                             </li>
                         </a>
                     </ul>

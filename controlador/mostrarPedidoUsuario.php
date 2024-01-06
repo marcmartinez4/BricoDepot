@@ -39,7 +39,7 @@
                                 // Verifica si el producto actual coincide con el producto del pedido
                                 if ($producto->getProducto_id() == $producto_id) {
                                     // Imprime información detallada del producto en el pedido
-                                    echo '<div class="info-prod"><img class="imagen-pedido" src="'.$producto->getImg().'"><div class=texto-prod><p class="nombre-producto">'.$producto->getNombre_producto().'</p><div class="cantidad-pedido"><p class="txt-cantidad">Cantidad: '.$pedido_producto->getCantidad().' - Precio por unidad: '.$producto->getPrecio_unidad().' € - Precio total: '.$pedido_producto->getCantidad() * $producto->getPrecio_unidad().' €</p></div></div></div>';
+                                    echo '<div class="info-prod"><img class="imagen-pedido" src="'.$producto->getImg().'" alt="Imagen pedido"><div class=texto-prod><p class="nombre-producto">'.$producto->getNombre_producto().'</p><div class="cantidad-pedido"><p class="txt-cantidad">Cantidad: '.$pedido_producto->getCantidad().' - Precio por unidad: '.$producto->getPrecio_unidad().' € - Precio total: '.$pedido_producto->getCantidad() * $producto->getPrecio_unidad().' €</p></div></div></div>';
                                 }
                             }
                         }
