@@ -22,7 +22,7 @@
             $nombre = $_POST['nombre'];
             $apellido = $_POST['apellido'];
             $correo = $_POST['correo'];
-            $Rol = $_POST['Cliente'];
+            $Rol = 'Cliente';
             $contraseña = $_POST['contraseña'];
 
             // Verifica si no se ha establecido el parámetro 'controlador' en la URL
@@ -33,8 +33,7 @@
                 // Llama al método en la clase 'ClienteDAO' para crear una nueva cuenta de cliente
                 ClienteDAO::crearCuenta($nombre, $apellido, $correo, $Rol, $contraseña);
                 
-                // Incluye la vista 'inicio-sesion.php'
-                include_once 'vista/inicio-sesion.php';
+                header('Location: '.url.'?controlador=cliente');
             }
         }
     }

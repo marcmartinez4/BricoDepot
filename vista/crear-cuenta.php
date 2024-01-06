@@ -59,7 +59,7 @@
                         </div>
 
                         <div class="boton-inicio">
-                            <input type="submit" class="input-boton-sesion" value="Entrar">
+                            <input type="submit" class="input-boton-sesion" value="Crear cuenta">
                         </div>
                     </form>
                 </div>
