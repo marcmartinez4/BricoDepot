@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="https://www.bricodepot.es/media/favicon/default/favicon-32x32.png">
     <link rel="stylesheet" href="vista/css/css-bd.css">
-    <title>Base de Datos Productos</title>
+    <title>Pedidos</title>
 </head>
 <body>
     <h1>Tabla de pedidos</h1>

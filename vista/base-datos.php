@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="vista/css/css-bd.css">
-    <title>Base de Datos Productos</title>
+    <title>Productos</title>
 </head>
 <body>
     <h1>Tabla de productos</h1>
