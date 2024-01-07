@@ -88,13 +88,13 @@
 
                                         if ($cliente->getCliente_id() == $id_cookie) {
                                 ?>
-                                <p>Tu pedido más reciente tuvo un coste de: <?= $precioConIVA ?> €</p>
+                                <p>Tu pedido más reciente tuvo un coste de: <?= number_format($precioConIVA, 2, ',', '.') ?> €</p>
                                 <?php
+                                        }
                                     } else {
                                 ?>
                                 <p>No tienes ningún pedido reciente.</p>
                                 <?php
-                                        }
                                     }
                                 ?>  
                             </div>
