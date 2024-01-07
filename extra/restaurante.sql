@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Temps de generació: 19-12-2023 a les 19:03:47
--- Versió del servidor: 10.4.28-MariaDB
--- Versió de PHP: 8.2.4
+-- Tiempo de generación: 07-01-2024 a las 19:39:32
+-- Versión del servidor: 10.4.28-MariaDB
+-- Versión de PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de dades: `restaurante`
+-- Base de datos: `restaurante`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `categorias`
+-- Estructura de tabla para la tabla `categorias`
 --
 
 CREATE TABLE `categorias` (
@@ -33,7 +33,7 @@ CREATE TABLE `categorias` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Bolcament de dades per a la taula `categorias`
+-- Volcado de datos para la tabla `categorias`
 --
 
 INSERT INTO `categorias` (`categoria_id`, `nombre_categoria`) VALUES
@@ -45,7 +45,7 @@ INSERT INTO `categorias` (`categoria_id`, `nombre_categoria`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `pedidos`
+-- Estructura de tabla para la tabla `pedidos`
 --
 
 CREATE TABLE `pedidos` (
@@ -56,41 +56,16 @@ CREATE TABLE `pedidos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Bolcament de dades per a la taula `pedidos`
+-- Volcado de datos para la tabla `pedidos`
 --
 
 INSERT INTO `pedidos` (`pedido_id`, `estado`, `fecha_pedido`, `cliente_id`) VALUES
-(32, 'Pendiente', '2023-12-13', 1),
-(33, 'Pendiente', '2023-12-13', 8),
-(34, 'Pendiente', '2023-12-13', 8),
-(35, 'Pendiente', '2023-12-13', 8),
-(36, 'Pendiente', '2023-12-13', 8),
-(37, 'Pendiente', '2023-12-13', 1),
-(38, 'Pendiente', '2023-12-19', 1),
-(39, 'Pendiente', '2023-12-19', 1),
-(40, 'Pendiente', '2023-12-19', 1),
-(41, 'Pendiente', '2023-12-19', 1),
-(42, 'Pendiente', '2023-12-19', 1),
-(43, 'Pendiente', '2023-12-19', 1),
-(44, 'Pendiente', '2023-12-19', 1),
-(45, 'Pendiente', '2023-12-19', 1),
-(46, 'Pendiente', '2023-12-19', 1),
-(47, 'Pendiente', '2023-12-19', 1),
-(48, 'Pendiente', '2023-12-19', 1),
-(49, 'Pendiente', '2023-12-19', 1),
-(50, 'Pendiente', '2023-12-19', 1),
-(51, 'Pendiente', '2023-12-19', 1),
-(52, 'Pendiente', '2023-12-19', 1),
-(53, 'Pendiente', '2023-12-19', 1),
-(54, 'Pendiente', '2023-12-19', 1),
-(59, 'Pendiente', '2023-12-19', 18),
-(60, 'Pendiente', '2023-12-19', 18),
-(61, 'Pendiente', '2023-12-19', 18);
+(228, 'Pendiente', '2024-01-07', 1);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `pedido_productos`
+-- Estructura de tabla para la tabla `pedido_productos`
 --
 
 CREATE TABLE `pedido_productos` (
@@ -101,44 +76,17 @@ CREATE TABLE `pedido_productos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Bolcament de dades per a la taula `pedido_productos`
+-- Volcado de datos para la tabla `pedido_productos`
 --
 
 INSERT INTO `pedido_productos` (`pedido_id`, `producto_id`, `cantidad`, `precio_unidad`) VALUES
-(32, 29, 1, 6),
-(33, 30, 1, 6),
-(34, 30, 1, 6),
-(35, 30, 1, 6),
-(36, 30, 1, 6),
-(36, 21, 1, 13),
-(37, 5, 1, 6),
-(38, 29, 4, 6),
-(38, 30, 3, 6),
-(39, 29, 4, 6),
-(39, 30, 3, 6),
-(40, 29, 4, 6),
-(40, 30, 3, 6),
-(41, 29, 4, 6),
-(41, 30, 3, 6),
-(42, 29, 4, 6),
-(42, 30, 3, 6),
-(43, 29, 4, 6),
-(43, 30, 3, 6),
-(46, 30, 1, 6),
-(47, 31, 1, 6),
-(50, 29, 2, 6),
-(51, 29, 2, 6),
-(52, 29, 2, 6),
-(53, 29, 2, 6),
-(54, 29, 2, 6),
-(59, 29, 1, 6),
-(60, 29, 1, 6),
-(61, 29, 1, 6);
+(228, 29, 1, 6),
+(228, 30, 1, 6);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `productos`
+-- Estructura de tabla para la tabla `productos`
 --
 
 CREATE TABLE `productos` (
@@ -151,7 +99,7 @@ CREATE TABLE `productos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Bolcament de dades per a la taula `productos`
+-- Volcado de datos para la tabla `productos`
 --
 
 INSERT INTO `productos` (`producto_id`, `nombre_producto`, `descripcion`, `precio_unidad`, `categoria_id`, `img`) VALUES
@@ -181,7 +129,7 @@ INSERT INTO `productos` (`producto_id`, `nombre_producto`, `descripcion`, `preci
 -- --------------------------------------------------------
 
 --
--- Estructura de la taula `usuarios`
+-- Estructura de tabla para la tabla `usuarios`
 --
 
 CREATE TABLE `usuarios` (
@@ -194,99 +142,98 @@ CREATE TABLE `usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Bolcament de dades per a la taula `usuarios`
+-- Volcado de datos para la tabla `usuarios`
 --
 
 INSERT INTO `usuarios` (`cliente_id`, `nombre`, `apellido`, `mail`, `rol`, `contra`) VALUES
-(1, 'admin', 'admin', 'admin@restaurantebd.com', 'Administrador', '1234'),
-(8, 'Marc', 'Martínez', 'mmarti@bernatferrer.com', 'Cliente', '1234'),
-(17, 'Joel', 'Cosp', 'joel@restaurantebd.com', 'Cliente', '123'),
-(18, 'Alejandro', 'Campos', 'alejandro@restaurantebd.com', 'Cliente', '1234');
+(1, 'Admin', 'admin', 'admin@restaurantebd.com', 'Administrador', '1234'),
+(8, 'Marc', 'Martínez', 'marcmartinezsotillo@gmail.com', 'Cliente', '1234'),
+(32, 'Alex', 'Martínez', 'alex@gmail.com', 'Cliente', '1234');
 
 --
--- Índexs per a les taules bolcades
+-- Índices para tablas volcadas
 --
 
 --
--- Índexs per a la taula `categorias`
+-- Indices de la tabla `categorias`
 --
 ALTER TABLE `categorias`
   ADD PRIMARY KEY (`categoria_id`);
 
 --
--- Índexs per a la taula `pedidos`
+-- Indices de la tabla `pedidos`
 --
 ALTER TABLE `pedidos`
   ADD PRIMARY KEY (`pedido_id`),
   ADD KEY `cliente_id` (`cliente_id`);
 
 --
--- Índexs per a la taula `pedido_productos`
+-- Indices de la tabla `pedido_productos`
 --
 ALTER TABLE `pedido_productos`
   ADD KEY `pedido_id` (`pedido_id`,`producto_id`),
   ADD KEY `fk4` (`producto_id`);
 
 --
--- Índexs per a la taula `productos`
+-- Indices de la tabla `productos`
 --
 ALTER TABLE `productos`
   ADD PRIMARY KEY (`producto_id`),
   ADD KEY `categoria_id` (`categoria_id`);
 
 --
--- Índexs per a la taula `usuarios`
+-- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`cliente_id`);
 
 --
--- AUTO_INCREMENT per les taules bolcades
+-- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT per la taula `categorias`
+-- AUTO_INCREMENT de la tabla `categorias`
 --
 ALTER TABLE `categorias`
   MODIFY `categoria_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT per la taula `pedidos`
+-- AUTO_INCREMENT de la tabla `pedidos`
 --
 ALTER TABLE `pedidos`
-  MODIFY `pedido_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
+  MODIFY `pedido_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=229;
 
 --
--- AUTO_INCREMENT per la taula `productos`
+-- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `producto_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `producto_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 
 --
--- AUTO_INCREMENT per la taula `usuarios`
+-- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `cliente_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `cliente_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
--- Restriccions per a les taules bolcades
+-- Restricciones para tablas volcadas
 --
 
 --
--- Restriccions per a la taula `pedidos`
+-- Filtros para la tabla `pedidos`
 --
 ALTER TABLE `pedidos`
   ADD CONSTRAINT `fk1` FOREIGN KEY (`cliente_id`) REFERENCES `usuarios` (`cliente_id`);
 
 --
--- Restriccions per a la taula `pedido_productos`
+-- Filtros para la tabla `pedido_productos`
 --
 ALTER TABLE `pedido_productos`
   ADD CONSTRAINT `fk3` FOREIGN KEY (`pedido_id`) REFERENCES `pedidos` (`pedido_id`),
   ADD CONSTRAINT `fk4` FOREIGN KEY (`producto_id`) REFERENCES `productos` (`producto_id`);
 
 --
--- Restriccions per a la taula `productos`
+-- Filtros para la tabla `productos`
 --
 ALTER TABLE `productos`
   ADD CONSTRAINT `fk2` FOREIGN KEY (`categoria_id`) REFERENCES `categorias` (`categoria_id`);
