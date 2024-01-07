@@ -110,9 +110,9 @@
 
         // Método para finalizar el pedido
         public static function finalizarPedido() {
-            $preciototal = $_POST['preciototal'];
+            $precioConIVA = $_POST['precioConIVA'];
             // Llama al método en la clase 'PedidoDAO' para finalizar el pedido
-            PedidoDAO::finalizarPedido($preciototal);
+            PedidoDAO::finalizarPedido($precioConIVA);
             // Reinicia el carrito en la sesión
             $_SESSION['carrito'] = [];
             

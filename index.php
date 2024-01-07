@@ -1,4 +1,5 @@
 <?php
+    // Se incluyen todos los archivos necesarios 
     include_once 'modelo/Cliente.php';
     include_once 'modelo/Usuario.php';
     include_once 'modelo/Admin.php';
@@ -27,26 +28,35 @@
     include_once 'modelo/PedidoProductos.php';
     include_once 'controlador/headerControlador.php'; 
 
+    // Verifica si existe el parametro controlador en la URL
     if (!isset($_GET['controlador'])) {
+        // Redirige a la página home si el controlador no existe
         header("Location:" . url . "?controlador=home");
     } else {
+        // Si existe, se crea la variable $nombre_controlador con el valor de controlador y la palabra Controlador
         $nombre_controlador = $_GET['controlador'] . "Controlador";
 
+        // Si la clase de $nombre_controlador existe se crea un objeto
         if (class_exists($nombre_controlador)) {
             $controlador = new $nombre_controlador;
 
+            // Si existe el valor de action en la URL se declara la variable con su valor
             if (isset($_GET['action'])) {
                 $action = $_GET['action'];
             } else {
+                // Si no existe se declara con el valor por defecto (index)
                 $action = action_default;
             }
 
+            // Se invoca la accion del controlador
             $controlador->$action();
 
         } else {
+            // Si no existe la clase, se carga la página home
             header("Location:" . url . "?controlador=home");
         }
     }
 
+    // Se incluye el footer
     include_once 'vista/footer.html';
 ?>

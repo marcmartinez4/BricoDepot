@@ -114,16 +114,16 @@
                         ?>
                         <div class="precios">
                             <p class="p-arriba">Subtotal</p>
-                            <?= $precioConIVA.' €'; ?>
+                            <?= number_format($precioConIVA, 2, ',', '.').' €'; ?>
                         </div>
                         <div class="precios">
                             <p class="p-arriba">IVA</p>
-                            <?= $montoIVA.' €';?>
+                            <?= number_format($montoIVA, 2, ',', '.').' €';?>
                         </div>
                         <hr>
                         <div class="precios-1">
                             <p class="total"><strong>Total</strong></p>
-                            <?= '<strong>'.$precioConIVA.' €</strong>';?>
+                            <strong><?= number_format($precioConIVA, 2, ',', '.') ?> €</strong>
                         </div>
                         <div class="precios-2">
                             <p class="total-iva">Total sin IVA</p>
@@ -133,7 +133,7 @@
                     
                     <!-- Botón para finalizar el pedido -->
                     <form action="?controlador=pedido&action=finalizarPedido" method="post">
-                        <input type="hidden" name="preciototal" value="<?= $preciototal ?>">
+                        <input type="hidden" name="precioConIVA" value="<?= $precioConIVA ?>">
                         <input class="boton-carrito1" type="submit" name="finalizarPedido" value="Continuar con el pedido">
                     </form>
                 </div>

@@ -16,6 +16,8 @@
                     $total += $precioTotalProducto;
                 }
             }
+            // Se suma el iva al total
+            $total = $total + ($total * 0.10);
             // Se crea una lista con estos dos valores 
             $lista = array();
             $lista[0] = $total;

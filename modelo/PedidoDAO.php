@@ -65,7 +65,7 @@
         }
 
         // Método para finalizar un pedido
-        public static function finalizarPedido($preciototal)  {
+        public static function finalizarPedido($precioConIVA)  {
             $con = database::connect();
             
             // Verifica si hay un cliente en sesión
@@ -91,7 +91,7 @@
                     $result = $con->query("INSERT INTO `pedido_productos` (pedido_id, producto_id, cantidad, precio_unidad) VALUES ('$pedido_id', '$producto_id', '$cantidad','$precio_unidad');");
                 }
 
-                setcookie('preciototal', $preciototal . ',' . $id_cliente, time() + 3600);
+                setcookie('precioConIVA', $precioConIVA . ',' . $id_cliente, time() + 3600);
             }
         }        
     }

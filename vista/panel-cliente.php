@@ -81,14 +81,14 @@
                                 <span>Ultimo pedido</span>
                                 <hr class="hr-info">
                                 <?php
-                                    if (isset($_COOKIE['preciototal'])) {
-                                        $cookie = explode(',', $_COOKIE['preciototal']);
-                                        $precio_total = $cookie[0];
+                                    if (isset($_COOKIE['precioConIVA'])) {
+                                        $cookie = explode(',', $_COOKIE['precioConIVA']);
+                                        $precioConIVA = $cookie[0];
                                         $id_cookie = $cookie[1];
 
                                         if ($cliente->getCliente_id() == $id_cookie) {
                                 ?>
-                                <p>Tu pedido más reciente tuvo un coste de: <?= $precio_total ?> €</p>
+                                <p>Tu pedido más reciente tuvo un coste de: <?= $precioConIVA ?> €</p>
                                 <?php
                                     } else {
                                 ?>
