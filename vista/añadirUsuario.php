@@ -9,7 +9,9 @@
 <body>
     <div class="panel">
         <div class="div-panel">
-            <h1 class="h1-sesion">Añadir Usuario</h1>    
+            <!-- Título de la página -->
+            <h1 class="h1-sesion">Añadir Usuario</h1>
+            <!-- Form con los datos a rellenar para añadir un usuario -->
             <form action="?controlador=usuariosAdmin&action=añadirCliente" method="post">
                 <h3>Nombre</h3>
                 <input class="input" type="text" name="Nombre">
@@ -21,6 +23,7 @@
                 <input class="input" type="email" name="Correo">
 
                 <h3>Rol</h3>
+                <!-- Select con las categorias de usuario que existen -->
                 <select class="input" name="Rol">
                     <option value="Cliente">Cliente</option>
                     <option value="Administrador">Administrador</option>
@@ -28,7 +31,8 @@
                 
                 <h3>Contraseña</h3>
                 <input class="input" type="password" name="Contraseña">
-
+                
+                <!-- Input para crear el usuario -->
                 <input class="input-boton-sesion" type="submit" name="Añadir" value="Añadir Usuario">
             </form>
         </div>

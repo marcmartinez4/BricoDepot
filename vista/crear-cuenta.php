@@ -12,23 +12,25 @@
         <div class="d-flex justify-content-center fondo-panel-sesion">
             <div class="row justify-content-center">
                 <div class="col-12 col-md-6 col-lg-6 panel-inicio-sesion">
-                    
+                    <!-- Título de la página -->
                     <h1 class="h1-sesion">Mi cuenta</h1>
                     
+                    <!-- Div de navegación entre crear cuenta y iniciar sesión -->
                     <div class="div-pestañas">
-                        <a class="pestaña-no-activa" href="<?= url ?>?controlador=cliente">
+                        <a class="pestaña-no-activa" href="?controlador=cliente">
                             <div>
                                 <p class="pestañas">Identificación</p>
                             </div>
                         </a>
                         
-                        <a class="pestaña-activa" href="<?= url ?>?controlador=registro">
+                        <a class="pestaña-activa" href="?controlador=registro">
                             <div>
                                 <p class="pestañas">Crear una cuenta</p>
                             </div>
                         </a>
                     </div>
 
+                    <!-- Form con los campos a rellenar para crear una cuenta -->
                     <form class="form-inicio-sesion" action="?controlador=registro&action=crearCuenta" method="post">
                         <div class="primer-div-form">
                             <div class="segundo-div-form">
@@ -47,12 +49,12 @@
                             <div class="div-datos">
                                 <div class="nombre">
                                     <h3>Nombre</h3>
-                                    <input class="input-sesion-datos" type="text" name="nombre">
+                                    <input class="input-sesion-datos" type="text" name="nombre" placeholder="Juan">
                                 </div>
 
                                 <div class="apellido">
                                     <h3>Apellido</h3>
-                                    <input class="input-sesion-datos" type="text" name="apellido">
+                                    <input class="input-sesion-datos" type="text" name="apellido" placeholder="García">
                                 </div>
                             </div>
                         </div>

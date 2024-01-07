@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="https://www.bricodepot.es/media/favicon/default/favicon-32x32.png">
     <link rel="stylesheet" href="vista/css/css-bd.css">
     <title>Pedidos</title>
 </head>
 <body>
+    <!-- Titulo de la página -->
     <h1>Tabla de pedidos</h1>
     
+    <!-- Botones de navegación -->
     <div class="div-navegacion">
         <form action="?controlador=pedidosAdmin&action=añadir" method="post">
             <input class="btnAñadir" type="submit" value="Añadir Pedido">
@@ -19,6 +20,7 @@
     </div>
     
     <div class="div-tablas">
+        <!-- Tabla de pedidos -->
         <table>
             <tr>
                 <th>ID</th>
@@ -28,6 +30,7 @@
                 <!-- <th></th> -->
                 <th></th>
             </tr>
+            <!-- Bucle tabla de productos -->
             <?php 
                 foreach ($pedidos as $pedido) {
             ?>
@@ -36,13 +39,7 @@
                 <td><?=$pedido->getEstado();?></td>
                 <td><?=$pedido->getFecha_pedido();?></td>
                 <td><?=$pedido->getCliente_id();?></td>
-                <!--<td>
-                    <form action="" method="post">
-                        <input type="hidden" name="producto_id" value="<?=$pedido->getPedido_id();?>">
-                        <input type="submit" name="Modificar" value="Modificar">
-                    </form>
-                </td>-->
-            
+                <!-- Boton de eliminar -->
                 <td>
                     <form action="?controlador=pedidosAdmin&action=eliminar" method="post">
                         <input type="hidden" name="producto_id" value="<?=$pedido->getPedido_id();?>">
@@ -50,19 +47,21 @@
                     </form>
                 </td>
             </tr>
-            <?php } ?>
+            <?php 
+                } 
+            ?>
         </table>
 
+        <!-- Tabla de pedido_productos -->
         <table>
             <tr>
                 <th>Pedido ID</th>
                 <th>Producto ID</th>
                 <th>Cantidad</th>
                 <th>Precio por unidad</th>
-                <!-- <th></th> -->
             </tr>
+            <!-- Bucle de pedido_productos -->
             <?php 
-                
                 foreach ($pedido_productos as $pedido_producto) {
             ?>
 
@@ -71,14 +70,10 @@
                 <td><?=$pedido_producto->getProducto_id();?></td>
                 <td><?=$pedido_producto->getCantidad();?></td>
                 <td><?=$pedido_producto->getPrecio_unidad();?></td>
-                <!--<td>
-                    <form action="" method="post">
-                        <input type="hidden" name="producto_id" value="<?=$pedido_producto->getPedido_id();?>">
-                        <input type="submit" name="Modificar" value="Modificar">
-                    </form>
-                </td>-->
             </tr>
-            <?php } ?>
+            <?php 
+                } 
+            ?>
         </table>
     </div>
 </body>

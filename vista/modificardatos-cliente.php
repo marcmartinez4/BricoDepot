@@ -8,18 +8,22 @@
     <title>Información personal</title>
 </head>
 <body>
+    <!-- Bucle que solo muestra si la info del cliente es la del mismo que inició sesión -->
     <?php
         foreach ($clientes as $cliente) {
             if ($cliente->getCliente_id() == $id_cliente) {
     ?>
+    
     <div class="container-fluid main">
         <div class="d-flex justify-content-center">
             <div class="row justify-content-center">
                 <div class="d-flex justify-content-start">
+                    <!-- Título de la página -->
                     <div class="row justify-content-start">
                         <h1>Mi cuenta</h1>
                     </div>
                 </div>
+                <!-- Panel de navegación con accceso a las diferentes partes de la página de cliente -->
                 <div class="col-12 col-md-6 col-lg-3 izquierda">
                     <div class="saludo">
                         <h2>Hola <?=$cliente->getNombre();?></h2>
@@ -57,9 +61,11 @@
                 </div>
                 <div class="col-12 col-md-6 col-lg-9 derecha">
                     <div class="panel">
+                        <!-- Titulo del apartado -->
                         <h2 class="txt-info">Modificar datos</h2>
 
                         <div class="div-modificar-datos">
+                            <!-- Form para modificar los datos principales -->
                             <form class="form-datos" action="?controlador=cliente&action=modificarDatosPrincipales" method="post">
                                 <div class="primer-div-form">
                                     <div>
@@ -80,6 +86,7 @@
                                 <input class="guardar-datos" type="submit" value="Guardar">
                             </form>
 
+                            <!-- Form para modificar la contraseña -->
                             <form class="form-datos" action="?controlador=cliente&action=modificarContraseña" method="post">
                                 <div class="primer-div-form">
                                     <div>

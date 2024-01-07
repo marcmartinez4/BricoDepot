@@ -9,7 +9,9 @@
 <body>
     <div class="panel">
         <div class="div-panel">
-            <h1 class="h1-sesion">Modificar Usuario: <?=$nombre?></h1>    
+            <!-- Título de la página que muestra el nombre del usuario que se esta modificando-->
+            <h1 class="h1-sesion">Modificar Usuario: <?=$nombre?></h1>
+            <!-- Form con los datos que podemos modificar de un usuario -->    
             <form action="?controlador=usuariosAdmin&action=modificarUsuario" method="post">
                 <h3>Nombre</h3>
                 <input class="input" type="text" name="Nombre" value="<?=$cliente->getNombre();?>">
@@ -21,6 +23,7 @@
                 <input class="input" type="email" name="Correo" value="<?=$cliente->getMail();?>">
 
                 <h3>Rol</h3>
+                <!-- Select con todas las categorías de usuario que existen -->
                 <select class="input" name="Rol">
                     <option value="Cliente">Cliente</option>
                     <option value="Administrador">Administrador</option>
@@ -30,6 +33,7 @@
                 <input class="input" type="password" name="Contraseña" value="<?=$cliente->getContra();?>">
 
                 <input type="hidden" name="cliente_id" value="<?=$id?>">
+                <!-- Input para modificar el usuario -->
                 <input class="input-boton-sesion" type="submit" value="Modificar Usuario">
             </form>
         </div>

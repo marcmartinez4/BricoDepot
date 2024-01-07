@@ -67,6 +67,8 @@
             } else if (isset($_POST['producto_id'])) {    
                 // Obtiene información del producto para modificar
                 $producto = ProductoDAO::getProductById($id);
+                // Se obtienen todas las categorias
+                $categorias = CategoriaDAO::getAllCategorias();
                 // Se define la variable lista la cual será utilzada en el header
                 $lista = headerControlador::mostrarHeader();
                 

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="vista/css/header.css">
 </head>
 <body>
+    <!-- Mensaje superior en la página de BricoDepot -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary c-fluid container-fluid">
         <div class="container-fluid c-fluid">
             <div class="tool-bar1">
@@ -16,6 +17,7 @@
         </div>
     </nav>
 
+    <!-- Botones del header de BricoDepot -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary c-fluid content-fluid">
         <div class="container-fluid c-fluid">
             <div class="tool-bar2">
@@ -54,17 +56,21 @@
     <nav class="navbar navbar-expand-lg bg-body-tertiary header">
         <div class="container-fluid div-header">
             <div class="logo-busqueda">
+                <!-- Logo de BricoDepot -->
                 <a href="?controlador=home">
                     <img class="logo" src="img/logoBD.svg" alt="Logo BricoDepot">
                 </a>
+                <!-- Barra de barra busqueda -->
                 <form class="d-flex" role="search">
                     <input class="form-control me-2 barra-busqueda" type="search" placeholder="¿Qué estas buscando? " aria-label="Search">
                 </form>
             </div>
           
+            <!-- Div botones iniciar sesión, acceso al menú admin y carrito -->
             <div class="collapse navbar-collapse juntar-derecha" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ul-juntar-derecha">
                     <?php
+                        // Si existe la sesión cliente y el rol se ese cliente es Administrador se muestra el botón de acceso al menu admin 
                         if (isset($_SESSION['Cliente'])) {
                             if ($_SESSION['rolUsuario'] == 'Administrador') {
                     ?>
@@ -78,6 +84,8 @@
                     <?php
                             }
                         }
+
+                        // Si existe la sesión cliente el botón da acceso al panel de usuario, si no existe manda al inicio de sesión
                         if (isset($_SESSION['Cliente'])) {
                     ?>
                         <li class="nav-item">
@@ -98,6 +106,8 @@
                     <?php    
                         }
                     ?>
+
+                    <!-- Se muestra la imagen del carrito con el numero de productos que hay dentro y la cantidad total del carrito -->
                     <li class="nav-item">
                         <a href="?controlador=pedido">
                             <div class="div-cantidad">
@@ -111,11 +121,11 @@
                 </ul>
             </div>
         </div>
-      </nav>
+    </nav>
 
 
-
-      <div class="d-flex justify-content-center fondo-menu-navegacion">
+    <!-- Los botones para ir al Home y a la Carta -->
+    <div class="d-flex justify-content-center fondo-menu-navegacion">
         <div class="row justify-content-center">
             <div class="col-12 col-md-6 col-lg-12 menu-navegacion">
                 <a class="boton-menu-navegacion" href="?controlador=home">Home</a>

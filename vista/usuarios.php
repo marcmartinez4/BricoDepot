@@ -8,8 +8,10 @@
     <title>Usuarios</title>
 </head>
 <body>
+    <!-- Titulo de la página -->
     <h1>Tabla de usuarios</h1>
     
+    <!-- Botones de navegación -->
     <div class="div-navegacion">
         <form action="?controlador=usuariosAdmin&action=añadir" method="post">
             <input class="btnAñadir" type="submit" value="Añadir Usuario">
@@ -17,7 +19,8 @@
         <a href="?controlador=tablaProductos" class="btnPedidos">Productos</a>
         <a href="?controlador=pedidosAdmin" class="btnPedidos">Pedidos</a>
     </div>
-    
+
+    <!-- Tabla de usuarios -->
     <table>
             <tr>
                 <th>ID</th>
@@ -29,6 +32,7 @@
                 <th></th>
                 <th></th>
             </tr>
+            <!-- Bucle tabla de usuarios -->
             <?php 
                 foreach ($clientes as $cliente) {
             ?>
@@ -39,6 +43,7 @@
                 <td><?=$cliente->getMail();?></td>
                 <td><?=$cliente->getRol();?></td>
                 <td><?=$cliente->getContra();?></td>
+                <!-- Botones modificar y eliminar -->
                 <td>
                     <form action="?controlador=usuariosAdmin&action=modificar" method="post">
                         <input type="hidden" name="cliente_id" value="<?=$cliente->getCliente_id();?>">
@@ -53,7 +58,9 @@
                     </form>
                 </td>
             </tr>
-            <?php } ?>
+            <?php 
+                } 
+            ?>
         </table>
 </body>
 </html>

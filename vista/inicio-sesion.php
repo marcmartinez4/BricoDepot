@@ -12,23 +12,25 @@
         <div class="d-flex justify-content-center">
             <div class="row justify-content-center fondo-panel-sesion">
                 <div class="col-12 col-md-6 col-lg-6 panel-inicio-sesion">
-                    
+                    <!-- Título de la página -->
                     <h1 class="h1-sesion">Mi cuenta</h1>
                     
+                    <!-- Div de navegación entre iniciar sesión y crear cuenta -->
                     <div class="div-pestañas">
-                        <a class="pestaña-activa" href="<?= url ?>?controlador=cliente">
+                        <a class="pestaña-activa" href="?controlador=cliente">
                             <div>
                                 <p class="pestañas">Identificación</p>
                             </div>
                         </a>
                         
-                        <a class="pestaña-no-activa" href="<?= url ?>?controlador=registro">
+                        <a class="pestaña-no-activa" href="?controlador=registro">
                             <div>
                                 <p class="pestañas">Crear una cuenta</p>
                             </div>
                         </a>
                     </div>
 
+                    <!-- Form con los campos a rellenar para iniciar sesión -->
                     <form action="?controlador=cliente&action=iniciarSesion" method="post" class="form-inicio-sesion">
                         <div class="primer-div-form">
                             <div class="segundo-div-form">

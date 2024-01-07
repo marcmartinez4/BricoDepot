@@ -9,12 +9,14 @@
 </head>
 <body>
     <div class="container-fluid">
+        <!-- Condición para mostrar el carrito o mostrar el mensaje de que no hay pedidos -->
         <?php
             if ($count_array > 0) {
         ?>
         <div class="d-flex justify-content-center">
             <div class="row justify-content-center div-centro">
                 <div class="d-flex justify-content-start div-titulo">
+                    <!-- Div texto con la cuenta de los productos que hay en el carrito -->
                     <div class="row justify-content-start">
                         <div class="col-12 col-md-6 col-lg-12">
                             <h1 class="h1">Mi carrito <span class="span-h1"><?= $count_array.' '.$top?></span></h1>
@@ -23,35 +25,40 @@
                 </div>
                 
                 <div class="col-12 col-md-6 col-lg-6 panel-carrito">
+                    <!-- Calcular el precio total que hay en el carrito -->
                     <?php
                         $preciototal = 0;
 
                         if (isset($_SESSION['carrito'])) {
-                            foreach($_SESSION['carrito'] as $p) {
-                                $prodCarrito = productoDAO::getProductById($p[0]);
-                                $cantidad = $p[1];
+                            foreach($_SESSION['carrito'] as $productos) {
+                                $prodCarrito = productoDAO::getProductById($productos[0]);
+                                $cantidad = $productos[1];
 
                                 $precioTotalProducto = $prodCarrito->getPrecio_unidad() * $cantidad;
                                 $preciototal += $precioTotalProducto;
                     ?>
                     <div class="item-carrito">
+                        <!-- Mostrar la imagen del producto que hay en el carrito -->
                         <div class="imagen-item-carrito">
                             <img class="imagen-pedido" src="<?= $prodCarrito->getImg() ?>" alt="imagen-pedido">
                         </div>
                         
                         <div class="div-carrito-principal">
                             <div class="nombre-producto">
-                            <?= $prodCarrito->getNombre_producto();?>
+                                <!-- Mostrar el nombre del producto en el carrito -->
+                                <?= $prodCarrito->getNombre_producto();?>
                             </div>
                         
                             <div class="modificar-cantidad">
                                 <div class="botones">
+                                    <!-- Botones con las operaciones de restar cantidad, sumar cantidad y eliminar el producto del carrito -->
                                     <div class="botones-cantidad">
                                         <form class="boton-cantidad" action="?controlador=pedido&action=restarCantidad" method="post">
                                             <input type="hidden" name="restarCantidad" value="<?= $prodCarrito->getProducto_id(); ?>">
                                             <input class="boton-svg" type="image" src="img/menos-cantidad.png" alt="Restar cantidad">        
                                         </form>
                                         
+                                        <!-- Muestra la cantidad del producto que hay en el carrito -->
                                         <button class="boton-cantidad" type="button">
                                             <p class="precio-boton"><?= $cantidad; ?></p>
                                         </button>
@@ -66,7 +73,8 @@
                                             <input class="icon-eliminar" type="image" src="img/eliminar-cantidad.png" alt="Eliminar producto">
                                         </form>
                                     </div>
-                                
+ 
+                                    <!-- Muestra el precio por unidad del producto en el carrito -->
                                     <div class="div-precio">
                                         <p class="precio"><?= $prodCarrito->getPrecio_unidad(); ?><span> €</span></p>
                                     </div>
@@ -87,6 +95,7 @@
                     
                 </div>
 
+                <!-- Panel con la información sobre el precio total -->
                 <div class="col-12 col-md-6 col-lg-5 panel-finalizar">
                     <h2 class="txt-resumen">Resumen del pedido</h2>
                     <hr>
@@ -121,7 +130,8 @@
                             <?= $preciototal.' €'?>
                         </div>
                     </div>
-
+                    
+                    <!-- Botón para finalizar el pedido -->
                     <form action="?controlador=pedido&action=finalizarPedido" method="post">
                         <input type="hidden" name="preciototal" value="<?= $preciototal ?>">
                         <input class="boton-carrito1" type="submit" name="finalizarPedido" value="Continuar con el pedido">
@@ -132,7 +142,8 @@
         <?php
             } else {
         ?>
-        
+
+        <!-- Mensaje que se muestra si no hay productos en el carrito -->
         <div class="d-flex justify-content-center div-vacio">
             <div class="row justify-content-center">
                 <div class="d-flex justify-content-start">

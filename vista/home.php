@@ -8,6 +8,7 @@
 </head>
 <body>
     <main class="container-fluid">
+        <!-- Un banner de imagenes -->
         <div class="d-flex justify-content-center banner">
             <div class="row justify-content-center">
                 <div class="col-12 col-md-6 col-lg-6"> 
@@ -34,6 +35,7 @@
             </div>
         </div>
 
+        <!-- Muestra un mensaje de destacado con una imagen que lleva a la carta -->
         <p class="h2">DESTACADO</p>
 
         <div class="d-flex justify-content-center img-destacado">
@@ -49,12 +51,17 @@
         <div class="d-flex justify-content-center">
             <div class="row justify-content-center">
                 <?php
+                    // Muestra 5 productos los cuales llevan a la info de este producto si se hace click en ellos
                     $contador = 0;
+                    // Bucle que va por todos los productos
                     foreach ($productos as $producto) {
+                        // Solo se muestran los de la categoria 1
                         if ($producto->getCategoria_ID() == 1) {
                 ?>
                     <div class="col-3 col-sm-3 col-md-3 col-lg-2 productos">
-                        <a class="form-productos" href="<?= url ?>?controlador=info&producto_id=<?=$producto->getProducto_id(); ?>">
+                        <!-- Href que redirige a la página de info con los datos de estes produto en especifico si se hace click encoima  -->
+                        <a class="form-productos" href="?controlador=info&producto_id=<?=$producto->getProducto_id(); ?>">
+                            <!-- Muestra la imagen del producto el nombre y el precio por unidad -->
                             <img class="imagen-producto" src="<?= $producto->getImg() ?>" alt="Imagen producto">
                             <a><?= $producto->getNombre_producto(); ?></a>
                             <p><?= $producto->getPrecio_unidad(); ?><span>€</span></p>
@@ -80,6 +87,7 @@
             </div>
         </div>
 
+        <!-- Muestra 3 imagenes verticales sobre productos del restaurante -->
         <p class="h2">EL MEJOR PRECIO</p>
 
         <div class="d-flex justify-content-center">
@@ -110,6 +118,7 @@
             </div>
         </div>
 
+        <!-- Dos paneles con texto. Uno con una descripción del restaurante y otro con una opinion de un cliente -->
         <div class="d-flex justify-content-center">
             <div class="row justify-content-center">
                 <div class="col-12 col-md-6 col-lg-6">

@@ -7,8 +7,10 @@
     <title>Productos</title>
 </head>
 <body>
+    <!-- Titulo de la página -->
     <h1>Tabla de productos</h1>
     
+    <!-- Botones de navegación -->
     <div class="div-navegacion">
         <form action="?controlador=tablaProductos&action=añadir" method="post">
             <input class="btnAñadir" type="submit" value="Añadir Producto">
@@ -17,6 +19,7 @@
         <a href="?controlador=usuariosAdmin" class="btnPedidos">Usuarios</a>
     </div>
     
+    <!-- Tabla de productos -->
     <table>
         <tr>
             <th>ID</th>
@@ -27,6 +30,7 @@
             <th></th>
             <th></th>
         </tr>
+        <!-- Bucle tabla de productos -->
         <?php 
             foreach ($productos as $producto) {
         ?>
@@ -36,6 +40,7 @@
             <td><?= $producto->getDescripcion() ?></td>
             <td><?= $producto->getPrecio_unidad() ?> €</td>
             <td><?= $producto->getCategoria_id() ?></td>
+            <!-- Botones modificar y eliminar -->
             <td>
                 <form action="?controlador=tablaProductos&action=modificar" method="post">
                     <input type="hidden" name="producto_id" value="<?= $producto->getProducto_id(); ?>">

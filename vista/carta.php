@@ -11,6 +11,7 @@
     </style>
 </head>
 <body>
+    <!-- Titulo de la página -->
     <p class="h2-principal">LA CARTA</p>
     
     <div class="container-fluid">
@@ -21,18 +22,25 @@
         </div>
     </div>
 
+    <!-- Nombre de la categoria de producto que se muestra -->
     <p class="h2">DESTACADOS</p>
     
+    <!-- Div que muestra los productos -->
     <div class="d-flex justify-content-center">
         <div class="row justify-content-center">
+            <!-- Bucle que va por todos los productos -->
             <?php
                 foreach ($productos as $producto) {
                     if ($producto->getCategoria_ID() == 1) {
             ?>
             <div class="col-3 col-sm-3 col-md-3 col-lg-3 productos">
+                <!-- Es un href el cual lleva a la página de información cargando la info del producto seleccionado -->
                 <a class="form-productos" href="?controlador=info&producto_id=<?= $producto->getProducto_id(); ?>">
-                    <img class="imagen-producto" src="<?= $producto->getImg() ?>" alt="Imagen producto">
+                    <!-- Se muestra la imagen del producto -->
+                <img class="imagen-producto" src="<?= $producto->getImg() ?>" alt="Imagen producto">
+                    <!-- El nombre del producto -->
                     <a><?= $producto->getNombre_producto(); ?></a>
+                    <!-- Y el precio por unidad del producto -->
                     <div class="precio-añadir">
                         <p><?= $producto->getPrecio_unidad(); ?><span>€</span></p>
                     </div>

@@ -20,8 +20,15 @@
                 <h3>Precio </h3>
                 <input class="input" type="number" name="precio_unidad" value="<?=$producto->getPrecio_unidad();?>">
 
-                <h3>ID de la categoría </h3>
-                <input class="input" type="number" name="categoria_id" value="<?=$producto->getCategoria_id();?>">
+                <select class="input" name="categoria_id">
+                    <?php
+                        foreach ($categorias as $categoria) {
+                    ?>
+                    <option value="<?=$categoria->getCategoriaId();?>"><?=$categoria->getNombreCategoria();?></option>
+                    <?php
+                        }
+                    ?>
+                </select>
 
                 <input type="hidden" name="producto_id" value="<?=$id?>">
                 <input class="input-boton-sesion" type="submit" value="Modificar Producto">

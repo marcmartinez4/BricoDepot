@@ -9,7 +9,9 @@
 <body>
     <div class="panel">
         <div class="div-panel">
-            <h1 class="h1-sesion">Añadir Productos</h1>    
+            <!-- Título de la página -->
+            <h1 class="h1-sesion">Añadir Productos</h1>
+            <!-- Form con los datos a rellenar para añadir un producto -->
             <form action="?controlador=tablaProductos&action=añadirProducto" method="post">
                 <h3>Nombre del producto</h3>
                 <input class="input" type="text" name="nombre_producto">
@@ -21,6 +23,7 @@
                 <input class="input" type="number" name="precio_unidad" value="1">
 
                 <h3>ID de la categoría </h3>
+                <!-- Bucle que muestra todas las categorias -->
                 <select class="input" name="categoria_id">
                     <?php
                         foreach ($categorias as $categoria) {
@@ -31,6 +34,7 @@
                     ?>
                 </select>
 
+                <!-- Input para crear el producto -->
                 <input class="input-boton-sesion" type="submit" value="Añadir Producto">
             </form>
         </div>

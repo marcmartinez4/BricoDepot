@@ -8,6 +8,7 @@
     <title>Información del producto</title>
 </head>
 <body>
+    <!-- Bucle que pasa por todos los productos y muestra solo el que tenga la misma id que el seleccionado -->
     <?php
         foreach ($productos as $producto) {
             if ($producto->getProducto_ID() == $producto_id) {
@@ -15,24 +16,29 @@
 
     <div class="d-flex justify-content-center main">
         <div class="row justify-content-center">
+            <!-- Se muestra la imagen -->
             <div class="col-md-6 col-lg-6">
                 <img class="imagen-producto" src="<?= $producto->getImg() ?>" alt="Imagen producto">
             </div>
 
             <div class="col-md-6 col-lg-6 toda-info">
+                <!-- Se muestra el nombre -->
                 <h1 class="nombre-producto"><?= $producto->getNombre_producto(); ?> </h1>
+                <!-- Se muestra el precio por unidad del producto -->
                 <div>
                     <p class="precio"><?=$producto->getPrecio_unidad();?><span>€</span></p>
                 </div>
                 
                 <div class="opciones-producto">
                     <div class="arriba">
+                        <!-- Los botones para añadir y restar la cantidad que se añadirá al carrito -->
                         <div class="botones">
                             <form class="boton-cantidad" action="?controlador=info&action=reducirCantidad&producto_id=<?=$producto->getProducto_id();?>" method="post">
                                 <input type="hidden" name="reducirCantidad">
                                 <input class="boton-svg" type="image" src="img/menos-cantidad.png" alt="Restar cantidad">
                             </form>
                             
+                            <!-- Se muestra la cantidad actual a añadir al carrito -->
                             <button class="boton-cantidad" type="button">
                                 <p class="precio-boton"><?=$_SESSION['cantidad_añadir'] ?></p>
                             </button>
@@ -44,6 +50,7 @@
                         </div>
 
                         <div>
+                            <!-- Form para añadir ese producto al carrito -->
                             <form action="?controlador=info&action=añadirAlCarrito&producto_id=<?=$producto->getProducto_id();?>" method="post">
                                 <input type="hidden" name="producto_id" value="<?=$producto->getProducto_id(); ?>">
                                 <input class="boton-carrito1" type="submit" name="AñadirCarrito" value="Añadir al carrito">
@@ -56,6 +63,7 @@
                     <span class="texto-mini-logo">Vendido por <img class="mini-logo" src="https://www.bricodepot.es/media/favicon/default/favicon-32x32.png"> <strong>Brico Depôt</strong></span>
                 </div>
 
+                <!-- Mensajes sobre el producto -->
                 <div class="div-envio">
                     <img class="imagen-furgo" src="img/furgo-info.svg" alt="Envio a domicilio">
                     <span>
@@ -77,7 +85,7 @@
         </div> 
     </div>
 
-    
+    <!-- Se muestra la descripcion del producto -->
     <div class="d-flex justify-content-center descripcion">
         <div class="row justify-content-center">
             <div class="col-6 col-md-6 col-lg-10">
