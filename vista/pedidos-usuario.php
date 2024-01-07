@@ -6,7 +6,7 @@
     <link rel="icon" href="https://www.bricodepot.es/media/favicon/default/favicon-32x32.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="vista/css/cliente.css">
-    <title>Mis pedidos</title>
+    <title>Panel de control</title>
 </head>
 <body>
     <!-- Bucle que solo muestra si la info del cliente es la del mismo que inició sesión -->
@@ -37,7 +37,7 @@
                             </li>
                         </a>
                         <a href="?controlador=pedidosUsuario">
-                            <li  class="activa">
+                            <li class="activa">
                                 <img class="imagen-izquierda" src="img/carrito.svg" alt="Mis pedidos">
                                 <a href="?controlador=pedidosUsuario">Mis pedidos</a>
                                 <img class="flecha" src="img/flecha-derecha.svg" alt="Flecha">
@@ -59,13 +59,15 @@
                         </a>
                     </ul>
                 </div>
-                <!-- Se muestran los pedidos realizados por el usuario -->
-                <div class="col-12 col-md-6 col-lg-9 derecha">
+                <div class="col-12 col-md-6 col-lg-7 derecha">
                     <div class="panel">
+                        <!-- Titulo del apartado -->
                         <h2 class="txt-info">Pedidos</h2>
-                        <?php 
-                            mostrarPedidoUsuario::mostrarPedidos();
-                        ?>    
+                        
+                        <!-- Se muestra el nombre y correo del usuario además de un botón el cual manda a la página de modificar datos -->
+                        <div class="primer-panel">
+                            <?= mostrarPedidoUsuario::mostrarPedidos(); ?>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -75,5 +77,6 @@
             }
         }
     ?>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>

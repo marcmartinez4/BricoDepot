@@ -32,7 +32,7 @@
                         <a href="?controlador=cliente&action=cuenta">
                             <li class="activa">
                                 <img class="imagen-izquierda" src="img/panel-control.svg" alt="Panel de control">
-                                <a href="#">Panel de control</a>
+                                <a href="?controlador=cliente&action=cuenta">Panel de control</a>
                                 <img class="flecha" src="img/flecha-derecha.svg" alt="Flecha">
                             </li>
                         </a>
@@ -59,7 +59,7 @@
                         </a>
                     </ul>
                 </div>
-                <div class="col-12 col-md-6 col-lg-9 derecha">
+                <div class="col-12 col-md-6 col-lg-7 derecha">
                     <div class="panel">
                          <!-- Titulo del apartado -->
                         <h2 class="txt-info">Información de la cuenta</h2>
