@@ -76,14 +76,19 @@
                                 <hr class="hr-info">
                                 <?php
                                     if (isset($_COOKIE['preciototal'])) {
-                                        $preciototal = $_COOKIE['preciototal'];
+                                        $cookie = explode(',', $_COOKIE['preciototal']);
+                                        $precio_total = $cookie[0];
+                                        $id_cookie = $cookie[1];
+
+                                        if ($cliente->getCliente_id() == $id_cookie) {
                                 ?>
-                                <p>Tu pedido más reciente tuvo un coste de: <?= $preciototal ?> €</p>
+                                <p>Tu pedido más reciente tuvo un coste de: <?= $precio_total ?> €</p>
                                 <?php
                                     } else {
                                 ?>
                                 <p>No tienes ningún pedido reciente.</p>
                                 <?php
+                                        }
                                     }
                                 ?>  
                             </div>
