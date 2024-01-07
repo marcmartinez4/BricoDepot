@@ -1,22 +1,25 @@
 <?php
-    include_once '../modelo/productoDAO.php';
-    include_once '../config/functions.php';
+    // Se incluyen los archivos necesarios
+    include_once 'modelo/productoDAO.php';
+    include_once 'config/functions.php';
     
+    // Se define la clase
     class productoControlador {
+        // Método para la página principal de productos (index)
         public static function index() {
-            productoDAO::getAllProducts();
-        }
-
-        public static function añadirProducto($nombre_producto, $descripcion, $precio_unidad, $categoria_id){
-            productoDAO::añadirProducto($nombre_producto, $descripcion, $precio_unidad, $categoria_id);
-        }
-
-        public static function eliminarProducto($id){
-            productoDAO::eliminarProducto($id);
-        }
-
-        public static function modificarProducto($nombre_producto, $descripcion, $precio_unidad, $categoria_id, $id){
-            productoDAO::modificarProducto($nombre_producto, $descripcion, $precio_unidad, $categoria_id, $id);
+            // Verifica si no se ha establecido el parámetro 'controlador' en la URL
+            if(!isset($_GET['controlador'])) {
+                // Si no está definido, incluye la vista 'home.php'
+                include_once 'vista/home.php';
+            } else {
+                // Obtiene todos los productos y la variable lista la cual será utilzada en el header
+                $productos = productoDAO::getAllProducts();
+                $lista = headerControlador::mostrarHeader();
+                
+                // Incluye la vista carta.php y el header
+                include_once 'vista/header.php';
+                include_once 'vista/carta.php';
+            }
         }
     }
 ?>

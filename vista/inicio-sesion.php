@@ -1,52 +1,37 @@
-<?php
-    include ('../config/functions.php');
-    include ('../controlador/clienteControlador.php');
-
-    if (isset($_POST['iniciarSesion'])) {
-        if (isset($_POST['mail'], $_POST['contraseña'])) {
-            $mail = $_POST['mail'];
-            $contra = $_POST['contraseña'];
-
-            $inicio = clienteControlador::iniciarSesion($mail, $contra);
-            header('Location: ../vista/index.php');
-        }
-    }
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="https://www.bricodepot.es/media/favicon/default/favicon-32x32.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="../vista/css/inicio-sesion.css">
+    <link rel="stylesheet" href="vista/css/inicio-sesion.css">
     <title>Customer Login Brico Depôt</title>
 </head>
 <body>
-    <?php include ('../vista/header.php'); ?>
-    
     <div class="container-fluid">
         <div class="d-flex justify-content-center">
             <div class="row justify-content-center fondo-panel-sesion">
                 <div class="col-12 col-md-6 col-lg-6 panel-inicio-sesion">
-                    
+                    <!-- Título de la página -->
                     <h1 class="h1-sesion">Mi cuenta</h1>
                     
+                    <!-- Div de navegación entre iniciar sesión y crear cuenta -->
                     <div class="div-pestañas">
-                        <a class="pestaña-activa" href="../vista/inicio-sesion.php">
+                        <a class="pestaña-activa" href="?controlador=cliente">
                             <div>
                                 <p class="pestañas">Identificación</p>
                             </div>
                         </a>
                         
-                        <a class="pestaña-no-activa" href="../vista/crear-cuenta.php">
+                        <a class="pestaña-no-activa" href="?controlador=registro">
                             <div>
                                 <p class="pestañas">Crear una cuenta</p>
                             </div>
                         </a>
                     </div>
 
-                    <form action="" method="post" class="form-inicio-sesion">
+                    <!-- Form con los campos a rellenar para iniciar sesión -->
+                    <form action="?controlador=cliente&action=iniciarSesion" method="post" class="form-inicio-sesion">
                         <div class="primer-div-form">
                             <div class="segundo-div-form">
                                 <h3>Email</h3>
@@ -68,8 +53,6 @@
             </div> 
         </div>
     </div>
-
-    <?php include ('../vista/footer.html'); ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>

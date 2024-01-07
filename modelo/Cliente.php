@@ -1,11 +1,11 @@
 <?php
     class Cliente {
-        private $cliente_id;
-        private $nombre;
-        private $apellido;
-        private $mail;
-        private $rol;
-        private $contra;
+        protected $cliente_id;
+        protected $nombre;
+        protected $apellido;
+        protected $mail;
+        protected $rol;
+        protected $contra;
 
         /**
          * Get the value of cliente_id

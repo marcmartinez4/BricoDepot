@@ -1,12 +1,17 @@
 <?php
-    include_once ('../config/dataBase.php');
-    include_once ('../config/functions.php');
+    // Se incluyen los archivos necesarios
+    include_once 'config/dataBase.php';
+    include_once 'config/functions.php';
     
+    // Se declara la clase
     class PedidoDAO {
+        
+        // Método para añadir un producto al carrito
         public static function añadirCarrito($id, $cantidad_añadir) {
             $found = false;
             $position = -1;
         
+            // Verifica si el producto ya está en el carrito
             if (count($_SESSION['carrito']) > 0) {
                 for ($i = 0; $i < count($_SESSION['carrito']); $i++) {
                     if ($_SESSION['carrito'][$i][0] == $id) {
@@ -16,6 +21,7 @@
                 }
             }
         
+            // Añade el producto al carrito o actualiza la cantidad si ya está presente
             if ($found == false) {
                 $p = array($id, $cantidad_añadir);
                 array_push($_SESSION['carrito'], $p);
@@ -25,6 +31,7 @@
         }
         
 
+        // Método para sumar la cantidad de un producto en el carrito
         public static function sumarCantidad($id) {
             for ($i = 0; $i < count($_SESSION['carrito']); $i++) {
                 if ($_SESSION['carrito'][$i][0] == $id) {
@@ -33,6 +40,7 @@
             }
         }
 
+        // Método para eliminar un producto del carrito
         public static function eliminarProducto($id) {
             for ($i = 0; $i < count($_SESSION['carrito']); $i++) {
                 if ($_SESSION['carrito'][$i][0] == $id) {
@@ -42,6 +50,7 @@
             }
         }
 
+        // Método para restar la cantidad de un producto en el carrito
         public static function restarCantidad($id) {
             for ($i = 0; $i < count($_SESSION['carrito']); $i++) {
                 if ($_SESSION['carrito'][$i][0] == $id) {
@@ -55,31 +64,35 @@
             }
         }
 
-        public static function finalizarPedido()  {
+        // Método para finalizar un pedido
+        public static function finalizarPedido($precioConIVA)  {
             $con = database::connect();
             
+            // Verifica si hay un cliente en sesión
             if (isset($_SESSION['Cliente'])) {
                 $id_cliente = $_SESSION['Cliente']->getCliente_id();
                 $fecha = date('Y-m-d H:i:s');
                 
+                // Inserta un nuevo pedido en la base de datos
                 $result = $con->query("INSERT INTO pedidos (estado, fecha_pedido, cliente_id) VALUES ('Pendiente', '$fecha', '$id_cliente');");
                 $pedido_id = mysqli_insert_id($con);
 
+                // Itera sobre los productos en el carrito y los añade al pedido
                 foreach($_SESSION['carrito'] as $producto) {
                     $producto_id = $producto[0];
                     $cantidad = $producto[1];
 
+                    // Obtiene el precio unitario del producto
                     $result = $con->query("SELECT precio_unidad FROM productos WHERE producto_id = '$producto_id' LIMIT 1;");
                     $row = mysqli_fetch_assoc($result);
                     $precio_unidad = $row['precio_unidad'];
 
+                    // Inserta el producto en la tabla 'pedido_productos'
                     $result = $con->query("INSERT INTO `pedido_productos` (pedido_id, producto_id, cantidad, precio_unidad) VALUES ('$pedido_id', '$producto_id', '$cantidad','$precio_unidad');");
                 }
 
-            } else {
-                header('Location: ../vista/inicio-sesion.php');
+                setcookie('precioConIVA', $precioConIVA . ',' . $id_cliente, time() + 3600);
             }
         }        
     }
-
 ?>

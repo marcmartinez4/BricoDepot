@@ -7,10 +7,6 @@
         protected $categoria_id;
         protected $img;
 
-        public function __construct() {
-            
-        }
-
         /**
          * Get the value of producto_id
          */ 
@@ -130,12 +126,5 @@
 
                 return $this;
         }
-
-        public static function getProductById($id) {
-                $con = database::connect();
-                $result = $con->query("SELECT * FROM productos WHERE producto_id = $id;");
-                $productoCarrito = $result->fetch_object('producto');
-                return $productoCarrito;
-            }
     }
 ?>

@@ -76,6 +76,12 @@ h3 {
     border-radius: 5px;
     width: 608px;
 }
+.input-sesion:hover {
+    border-color: red;
+}
+.input-sesion:focus {
+    outline: none;
+}
 .div-datos {
     display: flex;
     margin-top: 20px;
@@ -93,6 +99,9 @@ h3 {
     border: 1px solid #ADB1B3;
     border-radius: 5px;
     width: 302px;
+}
+.input-sesion-datos:hover {
+    border-color: red;
 }
 .boton-inicio {
     display: flex;

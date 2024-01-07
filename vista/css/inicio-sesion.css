@@ -76,6 +76,12 @@ h3 {
     border-radius: 5px;
     width: 608px;
 }
+.input-sesion:hover {
+    border-color: red;
+}
+.input-sesion:focus {
+    outline: none;
+}
 .a-olv-contra {
     font-family: 'Goodhome', sans-serif;
     font-size: 16px;

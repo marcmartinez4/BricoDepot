@@ -1,37 +1,39 @@
-<?php
-    include ('../config/dataBase.php');
-    include ('../controlador/productoControlador.php');
-?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="vista/css/añadirProducto.css">
     <title>Modificar Producto</title>
 </head>
 <body>
-    <h1>Modificar Producto</h1>
-    <form action="" method="post">
-        <input type="text" name="nombre_producto" placeholder="Nombre"><br><br>
+    <div class="panel">
+        <div class="div-panel">
+            <h1 class="h1-sesion">Modificar Producto: <?= $id ?></h1>    
+            <form action="?controlador=tablaProductos&action=modificarProducto" method="post">
+                <h3>Nombre del producto</h3>
+                <input class="input" type="text" name="nombre_producto" value="<?=$producto->getNombre_producto();?>">
 
-        <input type="text" name="descripcion" placeholder="Descripción"><br><br>
+                <h3>Descripción </h3>
+                <input class="input" type="text" name="descripcion" value="<?=$producto->getDescripcion();?>">
 
-        <input type="text" name="precio_unidad" placeholder="Precio unitario"><br><br>
+                <h3>Precio </h3>
+                <input class="input" type="number" name="precio_unidad" value="<?=$producto->getPrecio_unidad();?>">
 
-        <input type="text" name="categoria_id" placeholder="Categoría"><br><br>
+                <select class="input" name="categoria_id">
+                    <?php
+                        foreach ($categorias as $categoria) {
+                    ?>
+                    <option value="<?=$categoria->getCategoriaId();?>"><?=$categoria->getNombreCategoria();?></option>
+                    <?php
+                        }
+                    ?>
+                </select>
 
-        <input type="submit" name="Enviar" value="Enviar">
-    </form>
-    <?php
-        $id = $_POST['producto_id'];
-        echo "Estas editando el producto con el ID: " . $id;
-
-        if (!empty($_POST['nombre_producto']) && !empty($_POST['descripcion']) && !empty($_POST['precio_unidad']) && !empty($_POST['categoria_id'])) {
-            productoControlador::modificarProducto($_POST['nombre_producto'], $_POST['descripcion'], $_POST['precio_unidad'], $_POST['categoria_id']);
-        } else {
-            echo 'Campos vacíos!';
-        }     
-    ?>
+                <input type="hidden" name="producto_id" value="<?=$id?>">
+                <input class="input-boton-sesion" type="submit" value="Modificar Producto">
+            </form>
+        </div>
+    </div>
 </body>
 </html>

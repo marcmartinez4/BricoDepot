@@ -1,4 +1,4 @@
 <?php
-    define('url','http://localhost/dashboard/Base%20de%20datos/');
+    define('url','http://localhost/BricoDepot/');
     define('action_default','index');
 ?>
