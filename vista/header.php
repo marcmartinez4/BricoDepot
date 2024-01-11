@@ -130,6 +130,7 @@
             <div class="col-12 col-md-6 col-lg-12 menu-navegacion">
                 <a class="boton-menu-navegacion" href="?controlador=home">Home</a>
                 <a class="boton-menu-navegacion" href="?controlador=producto">Carta</a>
+                <a class="boton-menu-navegacion" href="?controlador=review&action=info">Sobre nosotros</a>
             </div>
         </div> 
     </div>

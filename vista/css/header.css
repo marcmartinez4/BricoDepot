@@ -159,6 +159,7 @@ body {
     align-items: center;
     margin-left: 10px;
     width: 64px;
+    padding: 0px !important;
 }
 .nav-item a {
     text-decoration: none;

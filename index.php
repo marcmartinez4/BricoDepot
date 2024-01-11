@@ -26,6 +26,9 @@
     include_once 'modelo/CategoriaDAO.php';
     include_once 'modelo/Categoria.php';
     include_once 'modelo/PedidoProductos.php';
+    include_once 'controlador/reviewControlador.php';
+    include_once 'modelo/Review.php';
+    include_once 'modelo/ReviewDAO.php';
     include_once 'controlador/headerControlador.php'; 
 
     // Verifica si existe el parametro controlador en la URL

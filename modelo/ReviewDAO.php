@@ -1,6 +1,6 @@
 <?php
     class ReviewDAO {
-        public static function getAllReseñas() {
+        public static function getAllReviews() {
             $con = dataBase::connect();
                 
             if ($result = $con->query("SELECT * FROM reviews")) {    
@@ -11,6 +11,11 @@
                 }
                 return $reviews;
             }
+        }
+
+        public static function getNombreCliente() {
+            $con = dataBase::connect();
+            
         }
     }
 ?>

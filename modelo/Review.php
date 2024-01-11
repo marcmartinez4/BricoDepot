@@ -5,6 +5,7 @@
         protected $pedido_id;
         protected $titulo;
         protected $review;
+        protected $fecha;
         protected $puntuacion;
 
         /**
@@ -103,6 +104,26 @@
         public function setReview($review)
         {
                 $this->review = $review;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of fecha
+         */ 
+        public function getFecha()
+        {
+                return $this->fecha;
+        }
+
+        /**
+         * Set the value of fecha
+         *
+         * @return  self
+         */ 
+        public function setFecha($fecha)
+        {
+                $this->fecha = $fecha;
 
                 return $this;
         }
