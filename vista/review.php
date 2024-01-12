@@ -40,7 +40,7 @@
                             <img class="estrellita" src="img/estrella_llena.svg">
                             <img class="estrellita" src="img/estrella_vacia.svg">
                         </div>
-                        <p class="p-rating">8 Opiniones</p>
+                        <p class="p-rating"><?= $num_review ?> Opiniones</p>
                     </div>
                     <hr>
                     <div class="col-sm-9 col-md-6 col-lg-12 filtro">
@@ -60,7 +60,7 @@
                     </div>
                     <hr>
                     <div class="col-sm-9 col-md-6 col-lg-12 clasificacion">
-                        <p class="p-select">8 Opiniones</p>
+                        <p class="p-select"><?= $num_review ?> Opiniones</p>
                                 
                         <select class="select-orden">
                             <option>Más reciente</option>
@@ -99,59 +99,21 @@
                                     ?>
                                     <div class="div-estrella-reseña">
                                         <?php
-                                            if ($review->getPuntuacion() == 0) {
+                                            for ($i = 0; $i < 5; $i++) {
+                                                if ($i < $review->getPuntuacion()) {
                                         ?>
-                                            <img class="estrella-reseña" src="img/estrella_vacia.svg">
-                                            <img class="estrella-reseña" src="img/estrella_vacia.svg">
-                                            <img class="estrella-reseña" src="img/estrella_vacia.svg">
-                                            <img class="estrella-reseña" src="img/estrella_vacia.svg">
-                                            <img class="estrella-reseña" src="img/estrella_vacia.svg">
+                                        <img class="estrella-reseña" src="img/estrella_llena.svg">
                                         <?php
-                                            } else if ($review->getPuntuacion() == 1) {
+                                                } else {
                                         ?>
-                                            <img class="estrella-reseña" src="img/estrella_llena.svg">
-                                            <img class="estrella-reseña" src="img/estrella_vacia.svg">
-                                            <img class="estrella-reseña" src="img/estrella_vacia.svg">
-                                            <img class="estrella-reseña" src="img/estrella_vacia.svg">
-                                            <img class="estrella-reseña" src="img/estrella_vacia.svg">
+                                        <img class="estrella-reseña" src="img/estrella_vacia.svg">
                                         <?php
-                                            } else if ($review->getPuntuacion() == 2) {
-                                        ?>
-                                            <img class="estrella-reseña" src="img/estrella_llena.svg">
-                                            <img class="estrella-reseña" src="img/estrella_llena.svg">
-                                            <img class="estrella-reseña" src="img/estrella_vacia.svg">
-                                            <img class="estrella-reseña" src="img/estrella_vacia.svg">
-                                            <img class="estrella-reseña" src="img/estrella_vacia.svg">
-                                        <?php
-                                            } else if ($review->getPuntuacion() == 3) {
-                                        ?>
-                                            <img class="estrella-reseña" src="img/estrella_llena.svg">
-                                            <img class="estrella-reseña" src="img/estrella_llena.svg">
-                                            <img class="estrella-reseña" src="img/estrella_llena.svg">
-                                            <img class="estrella-reseña" src="img/estrella_vacia.svg">
-                                            <img class="estrella-reseña" src="img/estrella_vacia.svg">
-                                        <?php
-                                            } else if ($review->getPuntuacion() == 4) {
-                                        ?>
-                                            <img class="estrella-reseña" src="img/estrella_llena.svg">
-                                            <img class="estrella-reseña" src="img/estrella_llena.svg">
-                                            <img class="estrella-reseña" src="img/estrella_llena.svg">
-                                            <img class="estrella-reseña" src="img/estrella_llena.svg">
-                                            <img class="estrella-reseña" src="img/estrella_vacia.svg">
-                                        <?php
-                                            } else if ($review->getPuntuacion() == 5) {
-                                        ?>
-                                            <img class="estrella-reseña" src="img/estrella_llena.svg">
-                                            <img class="estrella-reseña" src="img/estrella_llena.svg">
-                                            <img class="estrella-reseña" src="img/estrella_llena.svg">
-                                            <img class="estrella-reseña" src="img/estrella_llena.svg">
-                                            <img class="estrella-reseña" src="img/estrella_llena.svg">
-                                        <?php
+                                                }
                                             }
                                         ?>
                                     </div>
                                 </div>
-                                <p class="fecha"><?= $review->getFecha() ?></p>
+                                <p class="fecha"><?= date("d/m/Y", strtotime($review->getFecha())) ?></p>
                             </div>
                         </div>
                         <div class="bottom-reseña">

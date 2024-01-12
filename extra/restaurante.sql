@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-01-2024 a las 19:39:32
--- Versión del servidor: 10.4.28-MariaDB
--- Versión de PHP: 8.2.4
+-- Temps de generació: 12-01-2024 a les 17:54:50
+-- Versió del servidor: 10.4.28-MariaDB
+-- Versió de PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `restaurante`
+-- Base de dades: `restaurante`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `categorias`
+-- Estructura de la taula `categorias`
 --
 
 CREATE TABLE `categorias` (
@@ -33,7 +33,7 @@ CREATE TABLE `categorias` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Volcado de datos para la tabla `categorias`
+-- Bolcament de dades per a la taula `categorias`
 --
 
 INSERT INTO `categorias` (`categoria_id`, `nombre_categoria`) VALUES
@@ -45,7 +45,7 @@ INSERT INTO `categorias` (`categoria_id`, `nombre_categoria`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `pedidos`
+-- Estructura de la taula `pedidos`
 --
 
 CREATE TABLE `pedidos` (
@@ -56,16 +56,20 @@ CREATE TABLE `pedidos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Volcado de datos para la tabla `pedidos`
+-- Bolcament de dades per a la taula `pedidos`
 --
 
 INSERT INTO `pedidos` (`pedido_id`, `estado`, `fecha_pedido`, `cliente_id`) VALUES
-(228, 'Pendiente', '2024-01-07', 1);
+(228, 'Pendiente', '2024-01-07', 1),
+(229, 'Pendiente', '2024-01-11', 8),
+(230, 'Pendiente', '2024-01-11', 32),
+(231, 'Pendiente', '2024-01-11', 32),
+(232, 'Pendiente', '2024-01-12', 1);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `pedido_productos`
+-- Estructura de la taula `pedido_productos`
 --
 
 CREATE TABLE `pedido_productos` (
@@ -76,17 +80,24 @@ CREATE TABLE `pedido_productos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Volcado de datos para la tabla `pedido_productos`
+-- Bolcament de dades per a la taula `pedido_productos`
 --
 
 INSERT INTO `pedido_productos` (`pedido_id`, `producto_id`, `cantidad`, `precio_unidad`) VALUES
 (228, 29, 1, 6),
-(228, 30, 1, 6);
+(228, 30, 1, 6),
+(229, 21, 2, 13),
+(229, 38, 2, 7.5),
+(230, 29, 2, 6),
+(231, 5, 6, 6),
+(232, 5, 3, 6),
+(232, 32, 4, 6),
+(232, 27, 3, 15);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `productos`
+-- Estructura de la taula `productos`
 --
 
 CREATE TABLE `productos` (
@@ -99,7 +110,7 @@ CREATE TABLE `productos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Volcado de datos para la tabla `productos`
+-- Bolcament de dades per a la taula `productos`
 --
 
 INSERT INTO `productos` (`producto_id`, `nombre_producto`, `descripcion`, `precio_unidad`, `categoria_id`, `img`) VALUES
@@ -129,7 +140,34 @@ INSERT INTO `productos` (`producto_id`, `nombre_producto`, `descripcion`, `preci
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `usuarios`
+-- Estructura de la taula `reviews`
+--
+
+CREATE TABLE `reviews` (
+  `review_id` int(11) NOT NULL,
+  `cliente_id` int(11) NOT NULL,
+  `pedido_id` int(11) NOT NULL,
+  `titulo` text NOT NULL,
+  `review` text NOT NULL,
+  `fecha` date NOT NULL,
+  `puntuacion` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Bolcament de dades per a la taula `reviews`
+--
+
+INSERT INTO `reviews` (`review_id`, `cliente_id`, `pedido_id`, `titulo`, `review`, `fecha`, `puntuacion`) VALUES
+(1, 1, 1, 'Una experiencia deliciosa y rápida', 'Visitamos este local de comida rápida en busca de una solución rápida para satisfacer nuestro apetito, y salimos muy satisfechos con la experiencia general. La comida era deliciosa y fresca, cumpliendo con nuestras expectativas de un lugar de comida rápida.\n\nEl menú ofrecía una variedad de opciones, desde opciones clásicas hasta algunas más innovadoras, lo que hizo que la elección fuera un tanto difícil, pero al final, nuestras elecciones fueron acertadas. La preparación fue rápida, y el personal mostró eficiencia y amabilidad en el servicio.\n\nEl ambiente era limpio y acogedor, y aunque el espacio para sentarse era limitado, pudimos disfrutar de nuestra comida sin sentirnos apretados. La relación calidad-precio era razonable para la calidad de la comida que recibimos.\n\nEn resumen, este local de comida rápida ofrece una experiencia agradable y deliciosa para aquellos que buscan una comida rápida de calidad. Con su servicio eficiente y opciones sabrosas en el menú, merece una sólida calificación de 4 estrellas.', '2024-01-11', 4),
+(2, 8, 229, 'Experiencia culinaria excepcional', '¡Este lugar de comida rápida ha superado todas mis expectativas! Desde la primera vez que entré, quedé impresionado por la atención al cliente, la calidad de los alimentos y la atmósfera acogedora.\n\nEl personal es extremadamente amable y siempre está dispuesto a ayudar a los clientes a tomar decisiones informadas sobre sus opciones de menú. La rapidez del servicio no compromete la frescura y el sabor de los alimentos. Además, me encanta que ofrezcan opciones saludables sin sacrificar el delicioso sabor que caracteriza a la comida rápida.\n\nEl menú es variado y ofrece una amplia gama de opciones, desde opciones clásicas hasta creaciones únicas que satisfacen todos los gustos. La presentación de los platos demuestra un cuidado especial por los detalles, lo que eleva la experiencia a otro nivel.\n\nEl ambiente del lugar es moderno y limpio, creando un espacio perfecto para disfrutar de una comida rápida de alta calidad. Además, la música ambiental crea una atmósfera agradable que complementa perfectamente la experiencia gastronómica.\n\nEn resumen, este local de comida rápida ha logrado combinar la conveniencia de un servicio rápido con la excelencia en calidad y sabor. Recomiendo encarecidamente este lugar a cualquier amante de la buena comida que busca una experiencia culinaria excepcional. ¡Sin duda, merece cada una de sus cinco estrellas!', '2024-01-11', 5),
+(3, 32, 230, 'Experiencia promedio, con margen de mejora', 'Mi visita a este local de comida rápida dejó una impresión mixta. En primer lugar, la ubicación es conveniente y el servicio fue rápido y eficiente. Sin embargo, la calidad de la comida no cumplió completamente con mis expectativas.\n\nOpté por uno de sus combos, y aunque la porción era adecuada, el sabor no fue excepcional. La hamburguesa estaba bien, pero no destacaba en comparación con otras opciones disponibles en la zona. Además, encontré que las papas fritas estaban un poco grasosas, lo que restó puntos a la experiencia general.\n\nEl ambiente del lugar era bastante estándar para un establecimiento de comida rápida, con un ambiente animado y limpio. El personal, aunque amable, parecía un poco apresurado, lo que podría explicar algunos de los detalles pasados por alto en la preparación de la comida.\n\nEn resumen, este local ofrece una comida rápida aceptable, pero hay margen para mejorar en términos de sabor y atención a los detalles. Con algunas mejoras en la calidad de los ingredientes y una mayor atención al servicio al cliente, podría elevarse a un nivel superior.', '2024-01-11', 3),
+(4, 35, 231, 'Experiencia mediocre, deja mucho que desear', 'Mi visita a este local de comida rápida fue bastante decepcionante. A pesar de las expectativas iniciales, la experiencia en general dejó mucho que desear. El servicio fue lento y poco atento, lo cual resultó frustrante, especialmente considerando la naturaleza de la comida rápida.\n\nLa calidad de la comida tampoco estuvo a la altura de mis expectativas. Los alimentos parecían carecer de frescura, y la presentación dejaba mucho que desear. Además, los precios no coincidían con la calidad ofrecida. Sentí que pagué demasiado por lo que obtuve.\n\nEl ambiente del local tampoco contribuyó positivamente a la experiencia. El lugar parecía descuidado, y las mesas no estaban limpias. La falta de atención a los detalles se hizo evidente, lo que afectó mi percepción general del establecimiento.\n\nEn resumen, mi visita a este local de comida rápida no cumplió con mis expectativas en términos de servicio, calidad de la comida y ambiente. Aunque no fue una experiencia totalmente negativa, definitivamente hay margen para mejorar en varios aspectos clave.', '2024-01-11', 2),
+(5, 36, 231, 'Una experiencia lamentable', 'Visité este local de comida rápida con grandes expectativas, pero mi experiencia fue decepcionante en todos los aspectos. Desde el momento en que entré, noté la falta de higiene en el lugar. Las mesas estaban sucias y parecía que no se habían limpiado en días.\n\nLa atención al cliente fue pésima. El personal parecía desinteresado y poco amable. Tuve que esperar mucho tiempo para realizar mi pedido, y cuando finalmente lo hice, mi comida tardó una eternidad en llegar. La falta de organización en la cocina era evidente, y el personal no mostraba ningún sentido de urgencia para atender a los clientes.\n\nCuando finalmente recibí mi pedido, quedé horrorizado al descubrir que la comida estaba fría y completamente insípida. Parecía como si hubiera sido recalentada una y otra vez. La presentación dejaba mucho que desear, y la calidad de los ingredientes era cuestionable.\n\nEn resumen, esta fue una experiencia culinaria lamentable. No puedo recomendar este lugar a nadie que busque una comida rápida y sabrosa. La falta de limpieza, la atención al cliente deficiente y la calidad de la comida hacen que este local merezca su baja calificación.', '2024-01-11', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de la taula `usuarios`
 --
 
 CREATE TABLE `usuarios` (
@@ -142,98 +180,112 @@ CREATE TABLE `usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
--- Volcado de datos para la tabla `usuarios`
+-- Bolcament de dades per a la taula `usuarios`
 --
 
 INSERT INTO `usuarios` (`cliente_id`, `nombre`, `apellido`, `mail`, `rol`, `contra`) VALUES
-(1, 'Admin', 'admin', 'admin@restaurantebd.com', 'Administrador', '1234'),
+(1, 'Admin', 'Admin', 'admin@restaurantebd.com', 'Administrador', '1234'),
 (8, 'Marc', 'Martínez', 'marcmartinezsotillo@gmail.com', 'Cliente', '1234'),
-(32, 'Alex', 'Martínez', 'alex@gmail.com', 'Cliente', '1234');
+(32, 'Alex', 'Martínez', 'alex@gmail.com', 'Cliente', '1234'),
+(35, 'Paco', 'Galaxia', 'pacogalaxia@mail.com', 'Cliente', '1234'),
+(36, 'Ernesto', 'Viyuela', 'ernestoviyuela@mail.com', 'Cliente', '1234');
 
 --
--- Índices para tablas volcadas
+-- Índexs per a les taules bolcades
 --
 
 --
--- Indices de la tabla `categorias`
+-- Índexs per a la taula `categorias`
 --
 ALTER TABLE `categorias`
   ADD PRIMARY KEY (`categoria_id`);
 
 --
--- Indices de la tabla `pedidos`
+-- Índexs per a la taula `pedidos`
 --
 ALTER TABLE `pedidos`
   ADD PRIMARY KEY (`pedido_id`),
   ADD KEY `cliente_id` (`cliente_id`);
 
 --
--- Indices de la tabla `pedido_productos`
+-- Índexs per a la taula `pedido_productos`
 --
 ALTER TABLE `pedido_productos`
   ADD KEY `pedido_id` (`pedido_id`,`producto_id`),
   ADD KEY `fk4` (`producto_id`);
 
 --
--- Indices de la tabla `productos`
+-- Índexs per a la taula `productos`
 --
 ALTER TABLE `productos`
   ADD PRIMARY KEY (`producto_id`),
   ADD KEY `categoria_id` (`categoria_id`);
 
 --
--- Indices de la tabla `usuarios`
+-- Índexs per a la taula `reviews`
+--
+ALTER TABLE `reviews`
+  ADD PRIMARY KEY (`review_id`);
+
+--
+-- Índexs per a la taula `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`cliente_id`);
 
 --
--- AUTO_INCREMENT de las tablas volcadas
+-- AUTO_INCREMENT per les taules bolcades
 --
 
 --
--- AUTO_INCREMENT de la tabla `categorias`
+-- AUTO_INCREMENT per la taula `categorias`
 --
 ALTER TABLE `categorias`
   MODIFY `categoria_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT de la tabla `pedidos`
+-- AUTO_INCREMENT per la taula `pedidos`
 --
 ALTER TABLE `pedidos`
-  MODIFY `pedido_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=229;
+  MODIFY `pedido_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=233;
 
 --
--- AUTO_INCREMENT de la tabla `productos`
+-- AUTO_INCREMENT per la taula `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `producto_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
+  MODIFY `producto_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
 
 --
--- AUTO_INCREMENT de la tabla `usuarios`
+-- AUTO_INCREMENT per la taula `reviews`
+--
+ALTER TABLE `reviews`
+  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT per la taula `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `cliente_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `cliente_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
--- Restricciones para tablas volcadas
+-- Restriccions per a les taules bolcades
 --
 
 --
--- Filtros para la tabla `pedidos`
+-- Restriccions per a la taula `pedidos`
 --
 ALTER TABLE `pedidos`
   ADD CONSTRAINT `fk1` FOREIGN KEY (`cliente_id`) REFERENCES `usuarios` (`cliente_id`);
 
 --
--- Filtros para la tabla `pedido_productos`
+-- Restriccions per a la taula `pedido_productos`
 --
 ALTER TABLE `pedido_productos`
   ADD CONSTRAINT `fk3` FOREIGN KEY (`pedido_id`) REFERENCES `pedidos` (`pedido_id`),
   ADD CONSTRAINT `fk4` FOREIGN KEY (`producto_id`) REFERENCES `productos` (`producto_id`);
 
 --
--- Filtros para la tabla `productos`
+-- Restriccions per a la taula `productos`
 --
 ALTER TABLE `productos`
   ADD CONSTRAINT `fk2` FOREIGN KEY (`categoria_id`) REFERENCES `categorias` (`categoria_id`);

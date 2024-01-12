@@ -10,6 +10,10 @@
                 $lista = headerControlador::mostrarHeader();
                 $reviews = ReviewDAO::getAllReviews();
                 $clientes = ClienteDAO::getAllClientes();
+                $num_review = 0;
+                foreach ($reviews as $review) {
+                    $num_review++;
+                }
 
                 include_once 'vista/header.php';
                 include_once 'vista/review.php';
