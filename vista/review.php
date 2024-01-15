@@ -32,13 +32,31 @@
                         <h1>Reseñas</h1>
                     </div>
                     <div class="col-sm-9 col-md-6 col-lg-12 rating-principal">
-                        <h2>4</h2>
+                        <?php
+                            $puntuacion = 0;
+                            $contador = 0;
+                            foreach ($reviews as $review) {
+                                $puntuacion += $review->getPuntuacion();
+                                $contador++;
+                            }
+                            $puntuacion = $puntuacion / $contador;
+                            $puntuacion = round($puntuacion);
+                        ?>
+                        <h2><?=$puntuacion?></h2>
                         <div class="div-estrellita">
+                            <?php
+                                for ($i = 0; $i < 5; $i++) {
+                                    if ($i < $puntuacion) {
+                            ?>
                             <img class="estrellita" src="img/estrella_llena.svg">
-                            <img class="estrellita" src="img/estrella_llena.svg">
-                            <img class="estrellita" src="img/estrella_llena.svg">
-                            <img class="estrellita" src="img/estrella_llena.svg">
+                            <?php
+                                } else {
+                            ?>
                             <img class="estrellita" src="img/estrella_vacia.svg">
+                            <?php
+                                    }
+                                }
+                            ?>
                         </div>
                         <p class="p-rating"><?= $num_review ?> Opiniones</p>
                     </div>
@@ -49,14 +67,7 @@
                             <input class="form-control me-2 input-search-bar" type="search" placeholder="Buscar en reseñas de clientes" aria-label="Search">
                         </form>
     
-                        <select class="primer-select">
-                            <option>Todas</option>
-                            <option>5 estrellas</option>
-                            <option>4 estrellas</option>
-                            <option>3 estrellas</option>
-                            <option>2 estrellas</option>
-                            <option>1 estrellas</option>
-                        </select>
+                        <button id="selectEstrellas">Ordenar</button>
                     </div>
                     <hr>
                     <div class="col-sm-9 col-md-6 col-lg-12 clasificacion">

@@ -14,6 +14,7 @@ h2 {
     font-size: 42px;
     color: #6B6D79;
     font-family: 'Goodhome', sans-serif;
+    max-height: 30px;
 }
 .rating-principal {
     display: flex;
