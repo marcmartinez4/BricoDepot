@@ -47,7 +47,7 @@
                         <p><span>Dirección:</span> C/ de la Bassa, 08150, Barcelona</p>
                     </div>
                     <div class="col-sm-12 col-md-12 col-lg-12">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59334.586102525!2d2.2324968878079057!3d41.578577594609975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4c762b3f0db57%3A0xde6ed9398c991f21!2sBrico%20Dep%C3%B4t%20Parets%20del%20Vall%C3%A8s!5e0!3m2!1ses!2ses!4v1704987880260!5m2!1ses!2ses" width="100%" height="500px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59334.586102525!2d2.2324968878079057!3d41.578577594609975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4c762b3f0db57%3A0xde6ed9398c991f21!2sBrico%20Dep%C3%B4t%20Parets%20del%20Vall%C3%A8s!5e0!3m2!1ses!2ses!4v1704987880260!5m2!1ses!2ses" width="100%" height="500px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </div>

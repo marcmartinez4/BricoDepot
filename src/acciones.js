@@ -27,4 +27,9 @@ selectEstrellas.addEventListener( 'click', () => {
         selectEstrellas.innerHTML = 'Puntuación';
         click = true;
     }
-})
+});
+
+function mostrarFormulario() {
+    let formulario = document.getElementById('formulario');
+    formulario.classList.add('mostrar');
+}

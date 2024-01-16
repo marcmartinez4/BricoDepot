@@ -211,3 +211,63 @@ li {
     font-weight: bold;
     
 }
+
+/* Después de finalizar producto */
+.botones-primarios {
+    width: 374.33px;
+    height: 34px!important;
+    border: none;
+    border-radius: 4px;
+    background-color: #E20811;
+    color: white;
+    font-family: 'Goodhome', sans-serif;
+    font-size: 16px;
+    font-weight: 900;
+    padding: 0;
+    margin-top: 16px;
+}
+#formulario {
+    max-height: 0;
+    overflow: hidden;
+    margin-top: 20px;
+    opacity: 0;
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+#formulario.mostrar {
+    max-height: 300px;
+    opacity: 1;
+}
+.label-reseña {
+    font-family: 'Goodhome', sans-serif !important;
+    font-size: 16px !important;
+    font-weight: bold !important;
+    margin: 10px 0 0 0;
+    padding: 0;
+}
+.texto-reseña {
+    height: 44px;
+    padding: 0 9px;
+    background-color: white;
+    border: 1px solid #ADB1B3;
+    border-radius: 5px;
+    width: 608px;
+}
+.texto-reseña:hover {
+    border-color: red;
+}
+.texto-reseña:focus {
+    outline: none;
+}
+.submit-reseña {
+    width: 100%!important;
+    height: 34px !important;
+    border: none;
+    border-radius: 4px;
+    background-color: #E20811;
+    color: white;
+    font-family: 'Goodhome', sans-serif;
+    font-size: 16px;
+    font-weight: 900;
+    padding: 0;
+    margin: 20px 0 0 0;
+}
