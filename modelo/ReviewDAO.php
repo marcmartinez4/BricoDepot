@@ -1,21 +1,35 @@
 <?php
     class ReviewDAO {
         public static function getAllReviews() {
-            $con = dataBase::connect();
-                
-            if ($result = $con->query("SELECT * FROM reviews")) {    
-                $reviews = array();
-                    
-                while ($review = $result->fetch_object('Review')) {
-                    $reviews[] = $review;
-                }
-                return $reviews;
-            }
-        }
-
-        public static function getNombreCliente() {
+            $listaReviews = [];
             $con = dataBase::connect();
             
+            if (!$con) {
+                return $listaReviews;
+            }
+
+            $result = $con->query("SELECT * FROM reviews");
+            if (!$result) {
+                    $con->close();
+                    return $listaReviews;
+            }
+
+            while ($reviewData = $result->fetch_assoc()) {
+                $listaReviews[] = [
+                    'review_id' => $reviewData['review_id'],
+                    'cliente_id' => $reviewData['cliente_id'],
+                    'pedido_id' => $reviewData['pedido_id'],
+                    'titulo' => $reviewData['titulo'],
+                    'review' => $reviewData['review'],
+                    'fecha' => $reviewData['fecha'],
+                    'puntuacion' => $reviewData['puntuacion']
+                ];
+            }
+
+            $result->close();
+            $con->close();
+
+            return $listaReviews;
         }
     }
 ?>

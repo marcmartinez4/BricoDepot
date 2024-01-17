@@ -1,10 +1,18 @@
 <?php
+//Esto es un NUEVO CONTROLADOR
+//hacer todas las configuraciones necesarias para que funcione como controlador
 
 /** IMPORTANTE**/
 //Cargar Modelos necesarios BBDD
 
-class APIController {    
-    public function api() {
+/** IMPORTANTE**/
+//Instala la extensión Thunder Client en VSC. Te permite probar si tu API funciona correctamente.
+
+
+class APIController{    
+ 
+    public function api(){
+       
         if($_POST["accion"] == 'buscar_pedido'){
 
             $id_usuario = json_decode($_POST["id_usuario"]); //se decodifican los datos JSON que se reciben desde JS
@@ -15,7 +23,7 @@ class APIController {
             echo json_encode($pedidos, JSON_UNESCAPED_UNICODE) ; 
             return; //return para salir de la funcion
 
-        }else if ($_POST["accion"] == 'add_review') {
+        }else if($_POST["accion"] == 'add_review'){
 
             $id_pedido = json_decode($_POST["pedido"]); //se decodifican los datos JSON que se reciben desde JS
             $id_usuario = json_decode($_POST["id_usuario"]); //se decodifican los datos JSON que se reciben desde JS
@@ -27,7 +35,7 @@ class APIController {
             */
             
             //si solo quieres devolver un pequeño mensaje, simplemente puedes hacer un echo de texto
-            echo "Bienvenido Pedrito";
+            echo "Bienvenido Pedrito" 
             return;
         }
     }

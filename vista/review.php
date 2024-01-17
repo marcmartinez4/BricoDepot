@@ -1,3 +1,7 @@
+<?php
+    include_once 'modelo/reviewDAO.php';
+    include_once 'controlador/APIControlador.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,135 +15,38 @@
     <div class="container-fluid">
         <div class="d-flex justify-content-center">
             <div class="row d-flex justify-content-center div-completo">
-                <div class="col-sm-9 col-md-6 col-lg-3">
-                    <ul>
-                        <a class="a-menu" href="?controlador=review&action=info">
-                            <li>
-                                <p class="p-menu">Sobre nosotros</p>
-                            </li>
-                        </a>
-                        <hr>
-                        <a class="a-menu" href="?controlador=review">
-                            <li class="activa">
-                                <p class="p-menu">Reseñas</p>
-                                </li>
-                        </a>
-                    </ul>
-                </div>
+                
 
                 <div class="col-sm-9 col-md-6 col-lg-7">
-                    <div class="col-sm-9 col-md-6 col-lg-12">
-                        <h1>Reseñas</h1>
-                    </div>
-                    <div class="col-sm-9 col-md-6 col-lg-12 rating-principal">
-                        <?php
-                            $puntuacion = 0;
-                            $contador = 0;
-                            foreach ($reviews as $review) {
-                                $puntuacion += $review->getPuntuacion();
-                                $contador++;
-                            }
-                            $puntuacion = $puntuacion / $contador;
-                            $puntuacion = round($puntuacion);
-                        ?>
-                        <h2><?=$puntuacion?></h2>
-                        <div class="div-estrellita">
-                            <?php
-                                for ($i = 0; $i < 5; $i++) {
-                                    if ($i < $puntuacion) {
-                            ?>
-                            <img class="estrellita" src="img/estrella_llena.svg">
-                            <?php
-                                } else {
-                            ?>
-                            <img class="estrellita" src="img/estrella_vacia.svg">
-                            <?php
-                                    }
-                                }
-                            ?>
-                        </div>
-                        <p class="p-rating"><?= $num_review ?> Opiniones</p>
-                    </div>
-                    <hr>
-                    <div class="col-sm-9 col-md-6 col-lg-12 filtro">
-                        <h3>Filtrar reseñas</h3>
-                        <form class="d-flex search-bar" role="search">
-                            <input class="form-control me-2 input-search-bar" type="search" placeholder="Buscar en reseñas de clientes" aria-label="Search">
-                        </form>
-    
-                        <button id="selectEstrellas">Ordenar</button>
-                    </div>
-                    <hr>
-                    <div class="col-sm-9 col-md-6 col-lg-12 clasificacion">
-                        <p class="p-select"><?= $num_review ?> Opiniones</p>
-                                
-                        <select class="select-orden">
-                            <option>Más reciente</option>
-                            <option>Clasificación más alta</option>
-                            <option>Clasificación más baja</option>
-                            <option>Con más votos</option>
-                            <option>Con menos votos</option>
-                        </select>
-                    </div>
-                    <?php
-                        foreach ($reviews as $review) {
-                    ?>
-                    <div class="col-sm-9 col-md-6 col-lg-12 reseña">
-                        <div class="top">
-                            <div class="fondo-perfil">
-                                <?php 
-                                    foreach ($clientes as $cliente) {
-                                        if ($cliente->getCliente_id() == $review->getCliente_id()) {
-                                ?>
-                                <p class="foto-perfil"><?= $cliente->getNombre()[0] ?></p>
-                                <?php 
-                                        }
-                                    }
-                                ?>
-                            </div>
-                            <div class="top-reseña">
-                                <div class="info">
-                                    <?php
-                                        foreach ($clientes as $cliente) {
-                                            if ($cliente->getCliente_id() == $review->getCliente_id()) {
-                                    ?>
-                                    <p class="nombre"><?= $cliente->getNombre().' '.$cliente->getApellido()?></p>
-                                    <?php
-                                            }
-                                        }
-                                    ?>
-                                    <div class="div-estrella-reseña">
-                                        <?php
-                                            for ($i = 0; $i < 5; $i++) {
-                                                if ($i < $review->getPuntuacion()) {
-                                        ?>
-                                        <img class="estrella-reseña" src="img/estrella_llena.svg">
-                                        <?php
-                                                } else {
-                                        ?>
-                                        <img class="estrella-reseña" src="img/estrella_vacia.svg">
-                                        <?php
-                                                }
-                                            }
-                                        ?>
-                                    </div>
-                                </div>
-                                <p class="fecha"><?= date("d/m/Y", strtotime($review->getFecha())) ?></p>
-                            </div>
-                        </div>
-                        <div class="bottom-reseña">
-                            <p class="titulo-reseña"><?= $review->getTitulo() ?></p>
-                            <p class="texto-reseña"><?= $review->getReview() ?></p>
-                        </div>
-                        <hr>
-                    </div>
-                    <?php    
-                        }
-                    ?>
+                    
                 </div>
             </div>
         </div>
     </div>
+
+    <div id="reseñasContainer"></div>
+
+    <script>
+        fetch("http://localhost/BricoDepot/?controlador=API&action=api")
+            .then(response => response.json())
+            .then(reseñasData => {
+                let reseñasContainer = document.getElementById('reseñasContainer');
+                reseñasData.forEach((reseña) => {
+                    let reseñaElemento = document.createElement('div');
+                    reseñaElemento.innerHTML = `
+                        <p>${reseña.review_id}</p>
+                        <p>${reseña.cliente_id}</p>
+                        <p>${reseña.pedido_id}</p>
+                        <p>${reseña.titulo}</p>
+                        <p>${reseña.review}</p>
+                        <p>${reseña.fecha}</p>
+                        <p>${reseña.puntuacion}</p>
+                    `;
+                    reseñasContainer.appendChild(reseñaElemento);
+                });
+            });
+
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
