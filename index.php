@@ -63,5 +63,5 @@
     }
 
     // Se incluye el footer
-    include_once 'vista/footer.html';
+    // include_once 'vista/footer.html';
 ?>

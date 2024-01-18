@@ -1,215 +1,83 @@
+/* Cuerpo */
 body {
     background-color: #F7F7F7;
     overflow-y: none !important;
 }
 .div-completo {
-    margin: 30px 0 !important;
+    margin: 30px 10px !important;
 }
-h1 {
-    font-size: 20px;
-    font-family: 'Goodhome', sans-serif;
-    font-weight: 700;
-}
-h2 {
-    font-size: 42px;
-    color: #6B6D79;
-    font-family: 'Goodhome', sans-serif;
-    max-height: 30px;
-}
-.rating-principal {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 25px 0 22px;
-    margin: 0 10px;
-}
-.rating-principal h2 {
-    margin: 0;
-    padding-right: 10px;
-}
-.div-estrellita {
-    gap: 1px;
-}
-.estrellita {
-    width: 26px;
-    height: 26px;
-}
-.p-rating {
-    margin: 0;
-    padding: 10px 0 0 10px;
-    color: #6B6D79;
-    font-size: 14px;
-    font-family: 'Goodhome', sans-serif;
-}
-hr {
-    margin: 0 !important;
-}
-.filtro {
-    padding: 25px 0 22px;
-}
-h3 {
-    font-size: 16px;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #6B6D76;
-    margin: 0;
-    padding-bottom: 20px;
-    font-weight: 700;
-}
-.search-bar {
-    margin: 15px 10px 20px 0;
-    max-width: 455px;
-}
-.input-search-bar {
-    padding: 0 20px;
-    margin: 0 !important;
-    height: 40px;
-    border-radius: 5px;
-    border-color: black;
-    font-family: 'Goodhome', sans-serif;
-}
-.primer-select {
-    padding: 3px 103px 3px 15px;
-    border-radius: 4px;
-    border-color: rgba(164, 164, 164, 0.486);
-    outline: none;
-    font-family: 'Goodhome', sans-serif;
-}
-.clasificacion {
-    padding: 25px 0 22px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.p-select {
-    margin: 0;
-}
-.select-orden {
-    font-family: 'Goodhome', sans-serif;
-    color: #737373;
-    font-size: 12px;
-    padding: 8px 5px 8px 5px;
-    border-radius: 4px;
-    border-color: rgba(164, 164, 164, 0);
-    background-color: transparent;
-    outline: none;
-}
+
+/* Reseñas */
 .reseña {
-    padding: 10px 0 22px;
-    margin: 0 10px;
+    padding: 10px 0 22px;   
+}
+p {
+    margin: 0;
 }
 .top {
     display: flex;
 }
-.fondo-perfil {
+.foto-perfil {
+    background-color: #7A7A7A;
     min-width: 45px;
     height: 45px;
-    background-color: #7A7A7A;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 8px;
-}
-.foto-perfil {
-    margin: 0;
     color: white;
     font-family: 'Goodhome', sans-serif;
-    font-size: 20px;
-    width: auto;
-    height: auto;
-}
-.top-reseña {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
+    font-size: 14px;
+    font-weight: 900;
+    margin-right: 8px;
 }
 .info {
-    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
-.nombre {
-    margin: 0;
+.nombre-puntuacion {
+    display: flex;
+    flex-direction: column;
+}
+.nombre-puntuacion p {
     font-family: 'Goodhome', sans-serif;
     font-size: 12px;
-    font-weight: 900;
-}
-.div-estrella-reseña {
-    gap: 2px;
-}
-.estrella-reseña {
-    width: 17.5px;
-    height: 17.5px;    
 }
 .fecha {
-    margin: 0;
-    font-family: 'Goodhome', sans-serif;
     font-size: 12px;
+    font-family: 'Goodhome', sans-serif;
     color: #6A6C77;
 }
-.bottom-reseña {
-    padding: 10px 0 15px 53px;
+.bottom {
+    margin: 10px 0 15px 53px;
 }
-.titulo-reseña {
+h3 {
     font-size: 14px;
     font-family: 'Goodhome', sans-serif;
-    font-weight: 900;
     padding: 0 0 5px;
+    color: #6B6D76;
     margin: 0;
 }
-.texto-reseña {
-    font-family: 'Goodhome', sans-serif;
+h4 {
     font-size: 14px;
+    font-family: 'Goodhome', sans-serif;
+    color: #6b6d76a3;
     margin: 0;
-}
 
-/* Menu izquierda */
-ul {
-    list-style: none;
 }
-li {
-    padding: 8px 0 8px 8px;
-    display: flex;
-    gap: 5px;
-    align-items: center;
-}
-.activa {
-    background-color: #f0f0efa3;
-}
-.a-menu {
-    text-decoration: none;
-}
-.a-menu:hover {
-    cursor: pointer;
-}
-.li-estrella {
+.estrellas {
     display: flex;
     gap: 2px;
+    margin-top: 5px;
 }
-.p-menu {
-    color: black;
+.svg-estrella {
+    width: 17.5px;
+    height: 17.5px;
+}
+hr {
     margin: 0;
-    text-decoration: none;
-    font-family: 'Goodhome', sans-serif;
-}
-
-/* Página Información */
-.texto-info {
-    font-family: 'Goodhome', sans-serif;
-    font-size: 14px;
-    margin: 20px 0;
-}
-.titulo {
-    text-align: center;
-    font-weight: 900;
-    font-family: 'Barlow';
-    margin-bottom: 20px;
-}
-.info-contacto p {
-    font-family: 'Goodhome', sans-serif;
-    font-size: 18px;
-}
-.info-contacto p span {
-    font-weight: bold;
-    
+    color: #6a6c7770;
 }
 
 /* Después de finalizar producto */
