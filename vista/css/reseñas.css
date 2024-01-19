@@ -6,7 +6,45 @@ body {
 .div-completo {
     margin: 30px 10px !important;
 }
-
+h2 {
+    font-family: 'Goodhome', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #6B6D76;
+    margin-bottom: 20px;
+}
+.filtro-top {
+    display: flex;
+    flex-direction: column;
+}
+.filtro-top input {
+    margin: 15px 0 20px;
+    width: 455px;
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 0 15px;
+    font-family: 'Goodhome', sans-serif;
+}
+.select {
+    width: 220px;
+    height: 35px;
+    border: 1px solid rgba(128, 128, 128, 0.342);
+    border-radius: 5px;
+    outline: none;
+    padding: 3px 10px;
+    font-family: 'Goodhome', sans-serif;
+    font-size: 13px;
+    margin-bottom: 22px;
+}
+.div-top-reseñas {
+    padding: 25px 0 22px;
+}
+.div-top-reseñas div {
+    font-family: 'Goodhome', sans-serif;
+    font-size: 16px;
+    color: #6A6C77;
+}
 /* Reseñas */
 .reseña {
     padding: 10px 0 22px;   

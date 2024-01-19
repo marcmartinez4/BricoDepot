@@ -1,10 +1,13 @@
 fetch("http://localhost/BricoDepot/?controlador=API&action=api")
     .then( data => data.json())
     .then(reseñas => {
-        let contenedornombre = document.getElementById("container-nombre");
+        let container = document.getElementById("container");
+        let numeroReseñas = document.getElementById("numeroReseñas");
+        numeroReseñas.textContent = reseñas.length;
+
         reseñas.forEach(reseña => {
-            let contenido = document.createElement("div");
-            contenido.innerHTML = `
+            let div = document.createElement("div");
+            div.innerHTML = `
                 <div class="col-sm-9 col-md-6 col-lg-12 reseña">
                     <div class="top">
                         <div class="foto-perfil">
@@ -27,7 +30,7 @@ fetch("http://localhost/BricoDepot/?controlador=API&action=api")
                 <hr>
             `;
 
-            let estrellas = contenido.querySelector('.estrellas');
+            let estrellas = div.querySelector('.estrellas');
             for (let i = 0; i < 5; i++) {
                 if (i < reseña.puntuacion) {
                     estrellas.innerHTML += `<img class="svg-estrella" src="img/estrella_llena.svg"></img>`;
@@ -35,6 +38,6 @@ fetch("http://localhost/BricoDepot/?controlador=API&action=api")
                     estrellas.innerHTML += `<img class="svg-estrella" src="img/estrella_vacia.svg"></img>`;
                 }
             }
-            contenedornombre.appendChild(contenido);
+            container.appendChild(div);
         })
     });

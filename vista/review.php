@@ -1,7 +1,3 @@
-<?php
-    include_once 'modelo/reviewDAO.php';
-    include_once 'controlador/APIControlador.php';
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +13,26 @@
         <div class="d-flex justify-content-center">
             <div class="row d-flex justify-content-center div-completo">
                 <div class="col-sm-9 col-md-6 col-lg-12">
-                    <div id="container-nombre">
+                    <h2>Filtrar reseñas</h2>
+                    <div class="filtro-top">
+                        <input type="text" placeholder="Buscar en reseñas de clientes">
+                        <select class="select">
+                            <option>5 estrellas</option>
+                            <option>4 estrellas</option>
+                            <option>3 estrellas</option>
+                            <option>2 estrellas</option>
+                            <option>1 estrellas</option>
+                        </select>
+                    </div>
+                    <hr>
+                    <div class="div-top-reseñas">
+                        <div id="cantidad-reseñas">
+                            <span id="numeroReseñas"></span> 
+                            Opiniones
+                        </div>
+                    </div>
+
+                    <div id="container">
                         
                     </div>          
                 </div>

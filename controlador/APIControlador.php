@@ -1,5 +1,6 @@
 <?php
-    include_once 'modelo/ReviewDAO.php';
+    include_once 'modelo/reviewDAO.php';
+    include_once 'controlador/APIControlador.php';
 
     class APIControlador {    
         public static function api() {
