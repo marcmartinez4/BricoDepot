@@ -39,12 +39,22 @@ h2 {
 }
 .div-top-reseñas {
     padding: 25px 0 22px;
+    display: flex;
+    justify-content: space-between;
 }
 .div-top-reseñas div {
     font-family: 'Goodhome', sans-serif;
     font-size: 16px;
     color: #6A6C77;
 }
+.div-top-reseñas select {
+    border: none;
+    outline: none;
+    font-family: 'Goodhome', sans-serif;
+    font-size: 12px;
+    font-weight: 900;
+}
+
 /* Reseñas */
 .reseña {
     padding: 10px 0 22px;   

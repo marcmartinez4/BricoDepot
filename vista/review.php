@@ -30,6 +30,10 @@
                             <span id="numeroReseñas"></span> 
                             Opiniones
                         </div>
+                        <select>
+                            <option>Calificación más alta</option>
+                            <option>Calificación más baja</option>
+                        </select>
                     </div>
 
                     <div id="container">
