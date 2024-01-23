@@ -26,7 +26,7 @@ h2 {
     padding: 0 15px;
     font-family: 'Goodhome', sans-serif;
 }
-.select {
+.select1 {
     width: 220px;
     height: 35px;
     border: 1px solid rgba(128, 128, 128, 0.342);
@@ -49,6 +49,10 @@ h2 {
 }
 .div-top-reseñas select {
     border: none;
+    border-radius: 4px;
+    border: #6A6C77;
+    background-color: #F7F7F7;
+    color: #6B6D76;
     outline: none;
     font-family: 'Goodhome', sans-serif;
     font-size: 12px;

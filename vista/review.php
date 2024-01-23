@@ -16,12 +16,12 @@
                     <h2>Filtrar reseñas</h2>
                     <div class="filtro-top">
                         <input type="text" placeholder="Buscar en reseñas de clientes">
-                        <select class="select">
-                            <option>5 estrellas</option>
-                            <option>4 estrellas</option>
-                            <option>3 estrellas</option>
-                            <option>2 estrellas</option>
-                            <option>1 estrellas</option>
+                        <select id="filtroEstrellas" class="select_option select1">
+                            <option value="5">5 estrellas</option>
+                            <option value="4">4 estrellas</option>
+                            <option value="3">3 estrellas</option>
+                            <option value="2">2 estrellas</option>
+                            <option value="1">1 estrellas</option>
                         </select>
                     </div>
                     <hr>
@@ -30,9 +30,9 @@
                             <span id="numeroReseñas"></span> 
                             Opiniones
                         </div>
-                        <select>
-                            <option>Calificación más alta</option>
-                            <option>Calificación más baja</option>
+                        <select id="filtroClasificacion" class="select_option">
+                            <option value="asc">Clasificación más alta</option>
+                            <option value="desc">Clasificación más baja</option>
                         </select>
                     </div>
 
