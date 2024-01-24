@@ -110,13 +110,21 @@
 
         // Método para finalizar el pedido
         public static function finalizarPedido() {
-            $precioConIVA = $_POST['precioConIVA'];
-            // Llama al método en la clase 'PedidoDAO' para finalizar el pedido
-            PedidoDAO::finalizarPedido($precioConIVA);
-            // Reinicia el carrito en la sesión
-            $_SESSION['carrito'] = [];
-            
-            header('Location:'.url.'?controlador=home');
+            // Verifica si existe la sesión 'Cliente'
+            if(isset($_SESSION['Cliente'])) {
+                $precioConIVA = $_POST['precioConIVA'];
+                // Llama al método en la clase 'PedidoDAO' para finalizar el pedido
+                PedidoDAO::finalizarPedido($precioConIVA);
+                // Reinicia el carrito en la sesión
+                $_SESSION['carrito'] = [];
+        
+                header('Location:'.url.'?controlador=review&action=QR');
+            } else {
+                // La sesión no existe por lo que se redirecciona al inicio de sesión
+                // Se redirecciona a la página de inicio de sesión
+                header('Location:'.url.'?controlador=cliente'); 
+            }
         }
+        
     }
 ?>

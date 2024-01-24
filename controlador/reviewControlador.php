@@ -30,7 +30,7 @@
                 include_once 'vista/home.php';
             } else {
                 $lista = headerControlador::mostrarHeader();
-
+                
                 include_once 'vista/header.php';
                 include_once 'vista/qr_review.php';
             }

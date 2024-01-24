@@ -10,5 +10,20 @@
             echo $reviews;
             return;
         }
+
+        public static function añadirReseña() {
+            $data = json_decode(file_get_contents('php://input'), true);
+
+            $cliente_id = $data['cliente_id'];
+            $pedido_id = $data['pedido_id'];
+            $nombre = $data['nombre'];
+            $apellido = $data['apellido'];
+            $titulo = $data['titulo'];
+            $review = $data['review'];
+            $fecha = $data['fecha'];
+            $puntuacion = $data['puntuacion'];
+
+            ReviewDAO::añadirReseña($cliente_id, $pedido_id, $nombre, $apellido, $titulo, $review, $fecha, $puntuacion);
+        }
     }
 ?>

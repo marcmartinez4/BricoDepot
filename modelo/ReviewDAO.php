@@ -11,5 +11,13 @@
                 return $reviews;
             }
         }
+
+        public static function añadirReseña($cliente_id, $pedido_id, $nombre, $apellido, $titulo, $review, $fecha, $puntuacion) {
+            $con = dataBase::connect();
+            $stmt = $con->prepare("INSERT INTO reviews (cliente_id, pedido_id, nombre, apellido, titulo, review, fecha, puntuacion) VALUES (?, ?, ?, ?, ?, ?, ?, ?);");
+            $stmt->bind_parameter("iissssii", $cliente_id, $pedido_id, $nombre, $apellido, $titulo, $review, $fecha, $puntuacion);
+            $stmt->execute();
+            $con->close();
+        }
     }
 ?>

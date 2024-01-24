@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="vista/css/reseñas.css">
-    <title>Información de la práctica</title>
+    <title>Feedback Post-Compra</title>
+    <script src="src/añadirReseña.js"></script>
     <script src="src/acciones.js"></script>
 </head>
 <body>
@@ -38,10 +39,32 @@
                         <div class="d-flex justify-content-center">
                             <div class="row d-flex justify-content-center">
                                 <div id="formulario" class="col-sm-12 col-md-12 col-lg-12">
-                                    <form>
+                                    <div class="col-sm-12 col-md-12 col-lg-12">
+                                        <h3 class="label-reseña">Nombre</h3>
+                                            <input class="campo-reseña" id="nombre" type="text" value="<?= $_SESSION['Cliente']->getNombre() ?>">
+                                            <input id="pedido_id" type="hidden" value="<?= $_SESSION['pedido_id']?>">
+                                            <input id="cliente_id" type="hidden" value="<?= $_SESSION['Cliente']->getCliente_id()?>">
+                                        </div>
+
+                                        <div class="col-sm-12 col-md-12 col-lg-12">
+                                            <h3 class="label-reseña">Apellido</h3>
+                                            <input class="campo-reseña" id="apellido" type="text" value="<?= $_SESSION['Cliente']->getApellido() ?>">
+                                        </div>
+
+                                        <div class="col-sm-12 col-md-12 col-lg-12">
+                                            <h3 class="label-reseña">Titulo</h3>
+                                            <input class="campo-reseña" id="titulo" type="text">
+                                        </div>
+                                        
+                                            
+                                        <div class="col-sm-12 col-md-12 col-lg-12">
+                                            <h3 class="label-reseña">Reseña</h3>
+                                            <input class="campo-reseña espacio-reseña" id="review" type="text">
+                                        </div>
+
                                         <div class="col-sm-12 col-md-12 col-lg-12">
                                             <h3 class="label-reseña">Puntuación</h3>
-                                            <select class="texto-reseña">
+                                            <select id="puntuacion" class="campo-reseña">
                                                 <option>5 estrellas</option>
                                                 <option>4 estrellas</option>
                                                 <option>3 estrellas</option>
@@ -51,20 +74,9 @@
                                         </div>
 
                                         <div class="col-sm-12 col-md-12 col-lg-12">
-                                            <h3 class="label-reseña">Titulo</h3>
-                                            <input class="texto-reseña" type="text">
+                                            <button class="submit-reseña" id="submit">Enviar reseña</button>
                                         </div>
-                                        
-                                            
-                                        <div class="col-sm-12 col-md-12 col-lg-12">
-                                            <h3 class="label-reseña">Reseña</h3>
-                                            <input class="texto-reseña" type="text">
-                                        </div>
-
-                                        <div class="col-sm-12 col-md-12 col-lg-12">
-                                            <input class="submit-reseña" type="submit">
-                                        </div>
-                                    </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>

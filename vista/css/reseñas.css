@@ -154,7 +154,7 @@ hr {
     transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
 #formulario.mostrar {
-    max-height: 300px;
+    max-height: 650px;
     opacity: 1;
 }
 .label-reseña {
@@ -164,19 +164,23 @@ hr {
     margin: 10px 0 0 0;
     padding: 0;
 }
-.texto-reseña {
+.campo-reseña {
     height: 44px;
     padding: 0 9px;
     background-color: white;
     border: 1px solid #ADB1B3;
     border-radius: 5px;
     width: 608px;
+    font-family: 'Goodhome', sans-serif;
 }
-.texto-reseña:hover {
+.campo-reseña:hover {
     border-color: red;
 }
-.texto-reseña:focus {
+.campo-reseña:focus {
     outline: none;
+}
+.espacio-reseña {
+    height: 200px;
 }
 .submit-reseña {
     width: 100%!important;
@@ -190,4 +194,13 @@ hr {
     font-weight: 900;
     padding: 0;
     margin: 20px 0 0 0;
+}
+.titulo {
+    text-align: center;
+    font-weight: 900;
+    font-family: 'Barlow';
+}
+.texto-info {
+    margin-top: 10px;
+    font-family: 'Goodhome', sans-serif;
 }
