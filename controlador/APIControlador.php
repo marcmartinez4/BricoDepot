@@ -1,6 +1,5 @@
 <?php
     include_once 'modelo/reviewDAO.php';
-    include_once 'controlador/APIControlador.php';
 
     class APIControlador {    
         public static function api() {
@@ -24,6 +23,11 @@
             $puntuacion = $data['puntuacion'];
 
             ReviewDAO::añadirReseña($cliente_id, $pedido_id, $nombre, $apellido, $titulo, $review, $fecha, $puntuacion);
+        }
+
+        public static function informacionPedido() {
+            $pedido_id = $_GET['pedido_id'];
+            $informacionPedido = 
         }
     }
 ?>

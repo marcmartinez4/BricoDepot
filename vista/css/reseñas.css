@@ -204,3 +204,11 @@ hr {
     margin-top: 10px;
     font-family: 'Goodhome', sans-serif;
 }
+
+/* QR */
+.div-QR {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+}

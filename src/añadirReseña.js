@@ -8,13 +8,12 @@ añadirReseña.addEventListener("click", () => {
     let titulo = document.getElementById("titulo").value;
     let review = document.getElementById("review").value;
     let puntuacion = document.getElementById("puntuacion").value;
-    console.log("Variables recogidas")
-
-    let fecha = new Date();
-    let año = fecha.getFullYear();
-    let mes = String(fecha.getMonth() + 1).padStart(2, '0');
-    let dia = String(fecha.getDate()).padStart(2, '0');
-    let fecha_final = año + "-" + mes + "-" + dia;
+    
+    let date = new Date();
+    let year = date.getFullYear();
+    let month = String(date.getMonth() + 1).padStart(2, '0');
+    let day = String(date.getDate()).padStart(2, '0');
+    let fecha = year + "-" + month + "-" + day;
 
     fetch("http://localhost/BricoDepot/?controlador=API&action=añadirReseña", {
         method: 'POST',
@@ -25,7 +24,7 @@ añadirReseña.addEventListener("click", () => {
             apellido: apellido,
             titulo: titulo,
             review: review,
-            fecha: fecha_final,
+            fecha: fecha,
             puntuacion: puntuacion
         }),
         headers: {

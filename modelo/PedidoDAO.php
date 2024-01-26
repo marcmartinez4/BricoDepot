@@ -93,6 +93,11 @@
 
                 setcookie('precioConIVA', $precioConIVA . ',' . $id_cliente, time() + 3600);
             }
-        }        
+        }
+        
+        public static function informacionPedido() {
+            $con = database::connect();
+            $stmt = $con->prepare("SELECT ")
+        }
     }
 ?>

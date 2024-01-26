@@ -6,7 +6,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="vista/css/reseñas.css">
     <title>Feedback Post-Compra</title>
-    <script src="src/añadirReseña.js"></script>
     <script src="src/acciones.js"></script>
 </head>
 <body>
@@ -21,6 +20,10 @@
                             Además, nos encantaría conocer tu opinión. Si tienes un momento, ¡deja una reseña! 
                             Tu feedback es valioso para nosotros.</p>
                         
+                        <div class="div-QR">
+                            <img id="QR">
+                        </div>
+                            
                         <div class="col-sm-12 col-md-12 col-lg-12">
                             <div class="d-flex justify-content-center">
                                 <div class="row d-flex justify-content-center">
@@ -65,11 +68,11 @@
                                         <div class="col-sm-12 col-md-12 col-lg-12">
                                             <h3 class="label-reseña">Puntuación</h3>
                                             <select id="puntuacion" class="campo-reseña">
-                                                <option>5 estrellas</option>
-                                                <option>4 estrellas</option>
-                                                <option>3 estrellas</option>
-                                                <option>2 estrellas</option>
-                                                <option>1 estrellas</option>
+                                                <option value="5">5 estrellas</option>
+                                                <option value="4">4 estrellas</option>
+                                                <option value="3">3 estrellas</option>
+                                                <option value="2">2 estrellas</option>
+                                                <option value="1">1 estrellas</option>
                                             </select>
                                         </div>
 
@@ -86,6 +89,8 @@
         </div>
     </div>
 
+    <script src="src/añadirReseña.js"></script>
+    <script src="src/QR.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
