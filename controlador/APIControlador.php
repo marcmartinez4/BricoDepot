@@ -27,7 +27,10 @@
 
         public static function informacionPedido() {
             $pedido_id = $_GET['pedido_id'];
-            $informacionPedido = 
+            $informacionPedido = pedidoDAO::informacionPedido($pedido_id);
+            $informacionPedido = json_encode($informacionPedido, JSON_UNESCAPED_UNICODE);
+            header('Content-Type: application/json');
+            return;
         }
     }
 ?>
