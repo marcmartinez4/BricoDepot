@@ -1,5 +1,6 @@
 <?php
     include_once 'modelo/reviewDAO.php';
+    include_once 'modelo/pedidoDAO.php';
 
     class APIControlador {    
         public static function api() {
@@ -26,10 +27,11 @@
         }
 
         public static function informacionPedido() {
-            $pedido_id = $_GET['pedido_id'];
-            $informacionPedido = pedidoDAO::informacionPedido($pedido_id);
-            $informacionPedido = json_encode($informacionPedido, JSON_UNESCAPED_UNICODE);
+            $id = $_GET['pedidoid'];
+            $infopedido = pedidoDAO::informacionPedido($id);
+            $infopedido = json_encode($infopedido, JSON_UNESCAPED_UNICODE);
             header('Content-Type: application/json');
+            echo $infopedido;
             return;
         }
     }

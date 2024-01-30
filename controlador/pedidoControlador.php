@@ -120,7 +120,6 @@
         
                 header('Location:'.url.'?controlador=review&action=QR');
             } else {
-                // La sesión no existe por lo que se redirecciona al inicio de sesión
                 // Se redirecciona a la página de inicio de sesión
                 header('Location:'.url.'?controlador=cliente'); 
             }

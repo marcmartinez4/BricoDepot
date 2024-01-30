@@ -15,9 +15,10 @@
                     <div class="col-sm-12 col-md-12 col-lg-12">
                         <h1 class="titulo">TU PEDIDO</h1>
                         <hr>
-                        <input type="hidden" id="pedido_id" value="<?= strval($_SESSION['pedido_id']) ?>">
-                        
-                        
+
+                        <div class="forms" id="div-informacion">
+
+                        </div>
 
                         <div class="col-sm-12 col-md-12 col-lg-12">
                             <div class="d-flex justify-content-center">
@@ -36,7 +37,7 @@
         </div>
     </div>
 
-    <script src="src/QR.js"></script>
+    <script src="src/informacionPedido.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>

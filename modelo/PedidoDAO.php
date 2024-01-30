@@ -95,28 +95,28 @@
             }
         }
         
-        public static function informacionPedido() {
+        public static function informacionPedido($id) {
             $con = database::connect();
-            $stmt = $con->prepare("SELECT pedidos.pedido_id, pedidos.estado, pedidos.fecha_pedido, pedidos.cliente_id, pedido_productos.pedido_id, pedido_productos.producto_id, pedido_productos.cantidad, PRODUCTOS.precio_unidad FROM pedidos JOIN pedido_productos ON pedidos.pedido_id = pedido_productos.pedido_id JOIN productos ON productos.producto_id = pedido_productos.producto_id WHERE pedidos.pedido_id = ?");
+            $stmt = $con->prepare("SELECT pedidos.pedido_id, pedidos.estado, pedidos.fecha_pedido, pedido_productos.producto_id, pedido_productos.pedido_id, pedido_productos.cantidad, pedido_productos.precio_unidad, productos.nombre_producto, productos.img FROM pedidos JOIN pedido_productos ON pedidos.pedido_id =pedido_productos.pedido_id JOIN PRODUCTOS ON productos.producto_id = pedido_productos.producto_id WHERE pedidos.pedido_id = ?");
             $stmt->bind_param("i", $id);
             $stmt->execute();
-
             $result = $stmt->get_result();
-            $informacion = array();
+            $info = array();
 
-            while ($row = $result->fetch_assoc()) {
-                $informacion[] = [
+            while($row = $result->fetch_assoc()) {
+                $info[] = [
                     'pedido_id' => $row['pedido_id'],
                     'estado' => $row['estado'],
                     'fecha_pedido' => $row['fecha_pedido'],
-                    'cliente_id' => $row['cliente_id'],
-                    'producto_id' => $row['producto_ud'],
+                    'producto_id' => $row['producto_id'],
                     'cantidad' => $row['cantidad'],
-                    'precio_unidad' => $row['precio_unidad']
+                    'precio_unidad' => $row['precio_unidad'],
+                    'nombre_producto' => $row['nombre_producto'],
+                    'img' => $row['img']
                 ];
             }
-
-            return $informacion;
+            
+            return $info;
         }
     }
 ?>

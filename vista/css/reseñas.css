@@ -1,6 +1,6 @@
 /* Cuerpo */
 body {
-    background-color: #F7F7F7;
+    background-color: #EFF0F0;
     overflow-y: none !important;
 }
 .div-completo {
@@ -211,4 +211,31 @@ hr {
     justify-content: center;
     align-items: center;
     margin: 10px 0;
+}
+
+/* Información Pedido */
+.top-pedido {
+    display: flex;
+    justify-content: space-between;
+    background-color: #FFFFFF;
+    padding: 5px 10px;
+    margin: 10px 0 0 0;
+    width: 100%;
+}
+.top-pedido p {
+    font-family: 'Goodhome', sans-serif;
+    
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #FFFFFF;
+}
+th, td {
+    padding: 8px;
+    text-align: left;
+    font-family: 'Goodhome', sans-serif;
+}
+img {
+    width: 200px;
 }

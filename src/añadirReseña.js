@@ -31,4 +31,5 @@ añadirReseña.addEventListener("click", () => {
             'Content-Type': 'application/json; charset=UTF-8',
         }
     });
+    window.location.href = '?controlador=home';
 });
