@@ -11,29 +11,34 @@
     </style>
 </head>
 <body>
-    <button class="btn btn-menu-lateral" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Filtrar</button>
-
-    <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
-    <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Filtrar productos</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button class="btn btn-menu-lateral" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Filtrar</button>
     </div>
-    <div class="offcanvas-body">
-        <div>
-            <input class="checkbox" type="checkbox">
-            <p>Hamburguesas</p>
+    
+    <div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Filtrar productos</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
-            
-        <div>
-            <input class="checkbox" type="checkbox">
-            <p>Complementos</p>
-        </div>
+        <hr class="hr-menu-lateral">
+        <div class="offcanvas-body">
+            <div>
+                <input class="checkbox" type="checkbox">
+                <p>Hamburguesas</p>
+            </div>
+                
+            <div>
+                <input class="checkbox" type="checkbox">
+                <p>Complementos</p>
+            </div>
 
-        <div>
-            <input class="checkbox" type="checkbox">
-            <p>Bebidas</p>
+            <div>
+                <input class="checkbox" type="checkbox">
+                <p>Bebidas</p>
+            </div>
+
+            <button class="del-filt-btn">Borrar filtros</button>
         </div>
-    </div>
     </div>
 
     <p class="h2-principal">LA CARTA</p>

@@ -92,3 +92,11 @@ body {
     margin: 0;
     font-family: 'Goodhome', sans-serif;
 }
+.hr-menu-lateral {
+    margin: 0 10px;
+}
+.del-filt-btn {
+    border: none;
+    font-family: 'Goodhome', sans-serif;
+    border-radius: 5px;
+}
