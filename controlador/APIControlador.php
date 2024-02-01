@@ -1,13 +1,22 @@
 <?php
     include_once 'modelo/reviewDAO.php';
     include_once 'modelo/pedidoDAO.php';
+    include_once 'modelo/ProductoDAO.php';
 
     class APIControlador {    
-        public static function api() {
+        public static function mostrarReseñas() {
             $reviews = ReviewDAO::getAllReviews();
             $reviews = json_encode($reviews, JSON_UNESCAPED_UNICODE);
             header('Content-Type: application/json');
             echo $reviews;
+            return;
+        }
+
+        public static function mostrarProductos() {
+            $productos = ProductoDAO::getAllProducts();
+            $productos = json_encode($productos, JSON_UNESCAPED_UNICODE);
+            header('Content-Type: application/json');
+            echo $productos;
             return;
         }
 
@@ -27,11 +36,11 @@
         }
 
         public static function informacionPedido() {
-            $id = $_GET['pedidoid'];
-            $infopedido = pedidoDAO::informacionPedido($id);
-            $infopedido = json_encode($infopedido, JSON_UNESCAPED_UNICODE);
+            $id = $_GET['pedido_id'];
+            $informacionPedido = pedidoDAO::informacionPedido($id);
+            $informacionPedido = json_encode($informacionPedido, JSON_UNESCAPED_UNICODE);
             header('Content-Type: application/json');
-            echo $infopedido;
+            echo $informacionPedido;
             return;
         }
     }

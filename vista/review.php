@@ -36,7 +36,7 @@
                         </select>
                     </div>
 
-                    <div id="container">
+                    <div id="div_reseñas">
                         
                     </div>          
                 </div>

@@ -11,7 +11,31 @@
     </style>
 </head>
 <body>
-    <!-- Titulo de la página -->
+    <button class="btn btn-menu-lateral" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Filtrar</button>
+
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Filtrar productos</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <div>
+            <input class="checkbox" type="checkbox">
+            <p>Hamburguesas</p>
+        </div>
+            
+        <div>
+            <input class="checkbox" type="checkbox">
+            <p>Complementos</p>
+        </div>
+
+        <div>
+            <input class="checkbox" type="checkbox">
+            <p>Bebidas</p>
+        </div>
+    </div>
+    </div>
+
     <p class="h2-principal">LA CARTA</p>
     
     <div class="container-fluid">
@@ -22,134 +46,13 @@
         </div>
     </div>
 
-    <!-- Nombre de la categoria de producto que se muestra -->
-    <p class="h2">DESTACADOS</p>
-    
-    <!-- Div que muestra los productos -->
     <div class="d-flex justify-content-center">
-        <div class="row justify-content-center">
-            <!-- Bucle que va por todos los productos -->
-            <?php
-                foreach ($productos as $producto) {
-                    if ($producto->getCategoria_ID() == 1) {
-            ?>
-            <div class="col-3 col-sm-3 col-md-3 col-lg-3 productos">
-                <!-- Es un href el cual lleva a la página de información cargando la info del producto seleccionado -->
-                <a class="form-productos" href="?controlador=info&producto_id=<?= $producto->getProducto_id(); ?>">
-                    <!-- Se muestra la imagen del producto -->
-                <img class="imagen-producto" src="<?= $producto->getImg() ?>" alt="Imagen producto">
-                    <!-- El nombre del producto -->
-                    <a><?= $producto->getNombre_producto(); ?></a>
-                    <!-- Y el precio por unidad del producto -->
-                    <div class="precio-añadir">
-                        <p><?= $producto->getPrecio_unidad(); ?><span>€</span></p>
-                    </div>
-                </a>
-            </div>
-            <?php
-                    }
-                }
-            ?>
+        <div class="row justify-content-center" id="div_productos">
+
         </div>
     </div>
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col col-hr">
-                <hr class="my-4">
-            </div>
-        </div>
-    </div>
-
-    <p class="h2">HAMBURGUESAS</p>
-
-    <div class="d-flex justify-content-center">
-        <div class="row justify-content-center">
-            <?php
-                foreach ($productos as $producto) {
-                    if ($producto->getCategoria_ID() == 5) {
-            ?>
-            <div class="col-3 col-sm-3 col-md-3 col-lg-3 productos">
-                <a class="form-productos" href="?controlador=info&producto_id=<?= $producto->getProducto_id(); ?>">
-                    <img class="imagen-producto" src="<?= $producto->getImg() ?>" alt="Imagen producto">
-                    <a><?= $producto->getNombre_producto(); ?></a>
-                    <div class="precio-añadir">
-                        <p><?= $producto->getPrecio_unidad(); ?><span>€</span></p>
-                    </div>
-                </a>
-            </div>
-            <?php
-                    }
-                }
-            ?>
-        </div>
-    </div>
-
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col col-hr">
-                <hr class="my-4">
-            </div>
-        </div>
-    </div>
-
-    <p class="h2">COMPLEMENTOS</p>
-    
-    <div class="d-flex justify-content-center">
-        <div class="row justify-content-center">
-            <?php
-                foreach ($productos as $producto) {
-                    if ($producto->getCategoria_ID() == 1) {
-            ?>
-            <div class="col-3 col-sm-3 col-md-3 col-lg-3 productos">
-                <a class="form-productos" href="?controlador=info&producto_id=<?= $producto->getProducto_id(); ?>">
-                    <img class="imagen-producto" src="<?= $producto->getImg() ?>" alt="Imagen producto">
-                    <a><?= $producto->getNombre_producto(); ?></a>
-                    <div class="precio-añadir">
-                        <p><?= $producto->getPrecio_unidad(); ?><span>€</span></p>
-                    </div>
-                </a>
-            </div>
-            <?php
-                    }
-                }
-            ?>
-        </div>
-    </div>
-
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col col-hr">
-                <hr class="my-4">
-            </div>
-        </div>
-    </div>
-
-    <p class="h2">BEBIDAS</p>
-
-    <div class="d-flex justify-content-center">
-        <div class="row justify-content-center">
-            <?php
-                foreach ($productos as $producto) {
-                    if ($producto->getCategoria_ID() == 3) {
-            ?>
-            <div class="col-3 col-sm-3 col-md-3 col-lg-3 productos">
-                <a class="form-productos" href="?controlador=info&producto_id=<?= $producto->getProducto_id(); ?>">
-                    <img class="imagen-producto" src="<?= $producto->getImg() ?>" alt="Imagen producto">
-                    <a><?= $producto->getNombre_producto(); ?></a>
-                    <div class="precio-añadir">
-                        <p><?= $producto->getPrecio_unidad(); ?><span>€</span></p>
-                    </div>
-                </a>
-            </div>
-            <?php
-                    }
-                }
-            ?>
-        </div>
-    </div>
-
-    
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="src/carta.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>

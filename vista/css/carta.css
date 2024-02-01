@@ -77,3 +77,18 @@ body {
     margin: 0!important;
     padding: 10px 12px 10px 12px;
 }
+
+/* Menu lateral */
+.btn-menu-lateral {
+    margin: 5px 0 0 5px;
+    font-family: 'Goodhome', sans-serif;
+}
+.offcanvas-body div {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+.offcanvas-body div p {
+    margin: 0;
+    font-family: 'Goodhome', sans-serif;
+}

@@ -1,7 +1,8 @@
-const url = new URLSearchParams(window.location.search);
-const pedidoid = url.get("pedidoid");
+let url = new URLSearchParams(window.location.search);
+let pedido_id = url.get("pedido_id");
+console.log(pedido_id);
 
-fetch(`http://localhost/BricoDepot/?controlador=API&action=informacionPedido&pedidoid=244`)
+fetch(`http://localhost/BricoDepot/?controlador=API&action=informacionPedido&pedido_id=${pedido_id}`)
         .then( data => data.json())
         .then( info => {
             let informacionPedido = document.getElementById("div-informacion");
@@ -30,7 +31,7 @@ fetch(`http://localhost/BricoDepot/?controlador=API&action=informacionPedido&ped
             info.forEach(informacionProductos => {
                 let fila = document.createElement("tr");
                 fila.innerHTML = `
-                    <td class="img-td"><img src="${informacionProductos.img}"></td>
+                    <td><img class="img-td" src="${informacionProductos.img}"></td>
                     <td>${informacionProductos.nombre_producto}</td>
                     <td>${informacionProductos.cantidad}</td>
                     <td>${informacionProductos.precio_unidad} €</td>
