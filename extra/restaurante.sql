@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Temps de generació: 12-01-2024 a les 17:54:50
+-- Temps de generació: 02-02-2024 a les 16:19:02
 -- Versió del servidor: 10.4.28-MariaDB
 -- Versió de PHP: 8.2.4
 
@@ -38,7 +38,6 @@ CREATE TABLE `categorias` (
 
 INSERT INTO `categorias` (`categoria_id`, `nombre_categoria`) VALUES
 (1, 'Complementos'),
-(2, 'Postres'),
 (3, 'Bebidas'),
 (5, 'Hamburguesas');
 
@@ -64,7 +63,21 @@ INSERT INTO `pedidos` (`pedido_id`, `estado`, `fecha_pedido`, `cliente_id`) VALU
 (229, 'Pendiente', '2024-01-11', 8),
 (230, 'Pendiente', '2024-01-11', 32),
 (231, 'Pendiente', '2024-01-11', 32),
-(232, 'Pendiente', '2024-01-12', 1);
+(232, 'Pendiente', '2024-01-12', 1),
+(233, 'Pendiente', '2024-01-24', 1),
+(234, 'Pendiente', '2024-01-24', 1),
+(235, 'Pendiente', '2024-01-24', 1),
+(236, 'Pendiente', '2024-01-24', 1),
+(237, 'Pendiente', '2024-01-24', 1),
+(238, 'Pendiente', '2024-01-25', 1),
+(239, 'Pendiente', '2024-01-26', 1),
+(240, 'Pendiente', '2024-01-26', 1),
+(241, 'Pendiente', '2024-01-29', 1),
+(242, 'Pendiente', '2024-01-29', 1),
+(243, 'Pendiente', '2024-01-30', 1),
+(244, 'Pendiente', '2024-01-30', 1),
+(245, 'Pendiente', '2024-01-30', 1),
+(246, 'Pendiente', '2024-02-01', 1);
 
 -- --------------------------------------------------------
 
@@ -92,7 +105,23 @@ INSERT INTO `pedido_productos` (`pedido_id`, `producto_id`, `cantidad`, `precio_
 (231, 5, 6, 6),
 (232, 5, 3, 6),
 (232, 32, 4, 6),
-(232, 27, 3, 15);
+(232, 27, 3, 15),
+(233, 29, 2, 6),
+(234, 29, 1, 6),
+(235, 29, 1, 6),
+(236, 29, 1, 6),
+(237, 29, 1, 6),
+(238, 29, 1, 6),
+(239, 29, 1, 6),
+(240, 29, 1, 6),
+(241, 29, 3, 6),
+(242, 29, 3, 6),
+(243, 5, 1, 6),
+(244, 29, 1, 6),
+(244, 22, 1, 14),
+(245, 29, 3, 6),
+(246, 29, 2, 6),
+(246, 30, 1, 6);
 
 -- --------------------------------------------------------
 
@@ -150,19 +179,23 @@ CREATE TABLE `reviews` (
   `titulo` text NOT NULL,
   `review` text NOT NULL,
   `fecha` date NOT NULL,
-  `puntuacion` int(11) NOT NULL
+  `puntuacion` int(11) NOT NULL,
+  `nombre` varchar(255) DEFAULT NULL,
+  `apellido` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Bolcament de dades per a la taula `reviews`
 --
 
-INSERT INTO `reviews` (`review_id`, `cliente_id`, `pedido_id`, `titulo`, `review`, `fecha`, `puntuacion`) VALUES
-(1, 1, 1, 'Una experiencia deliciosa y rápida', 'Visitamos este local de comida rápida en busca de una solución rápida para satisfacer nuestro apetito, y salimos muy satisfechos con la experiencia general. La comida era deliciosa y fresca, cumpliendo con nuestras expectativas de un lugar de comida rápida.\n\nEl menú ofrecía una variedad de opciones, desde opciones clásicas hasta algunas más innovadoras, lo que hizo que la elección fuera un tanto difícil, pero al final, nuestras elecciones fueron acertadas. La preparación fue rápida, y el personal mostró eficiencia y amabilidad en el servicio.\n\nEl ambiente era limpio y acogedor, y aunque el espacio para sentarse era limitado, pudimos disfrutar de nuestra comida sin sentirnos apretados. La relación calidad-precio era razonable para la calidad de la comida que recibimos.\n\nEn resumen, este local de comida rápida ofrece una experiencia agradable y deliciosa para aquellos que buscan una comida rápida de calidad. Con su servicio eficiente y opciones sabrosas en el menú, merece una sólida calificación de 4 estrellas.', '2024-01-11', 4),
-(2, 8, 229, 'Experiencia culinaria excepcional', '¡Este lugar de comida rápida ha superado todas mis expectativas! Desde la primera vez que entré, quedé impresionado por la atención al cliente, la calidad de los alimentos y la atmósfera acogedora.\n\nEl personal es extremadamente amable y siempre está dispuesto a ayudar a los clientes a tomar decisiones informadas sobre sus opciones de menú. La rapidez del servicio no compromete la frescura y el sabor de los alimentos. Además, me encanta que ofrezcan opciones saludables sin sacrificar el delicioso sabor que caracteriza a la comida rápida.\n\nEl menú es variado y ofrece una amplia gama de opciones, desde opciones clásicas hasta creaciones únicas que satisfacen todos los gustos. La presentación de los platos demuestra un cuidado especial por los detalles, lo que eleva la experiencia a otro nivel.\n\nEl ambiente del lugar es moderno y limpio, creando un espacio perfecto para disfrutar de una comida rápida de alta calidad. Además, la música ambiental crea una atmósfera agradable que complementa perfectamente la experiencia gastronómica.\n\nEn resumen, este local de comida rápida ha logrado combinar la conveniencia de un servicio rápido con la excelencia en calidad y sabor. Recomiendo encarecidamente este lugar a cualquier amante de la buena comida que busca una experiencia culinaria excepcional. ¡Sin duda, merece cada una de sus cinco estrellas!', '2024-01-11', 5),
-(3, 32, 230, 'Experiencia promedio, con margen de mejora', 'Mi visita a este local de comida rápida dejó una impresión mixta. En primer lugar, la ubicación es conveniente y el servicio fue rápido y eficiente. Sin embargo, la calidad de la comida no cumplió completamente con mis expectativas.\n\nOpté por uno de sus combos, y aunque la porción era adecuada, el sabor no fue excepcional. La hamburguesa estaba bien, pero no destacaba en comparación con otras opciones disponibles en la zona. Además, encontré que las papas fritas estaban un poco grasosas, lo que restó puntos a la experiencia general.\n\nEl ambiente del lugar era bastante estándar para un establecimiento de comida rápida, con un ambiente animado y limpio. El personal, aunque amable, parecía un poco apresurado, lo que podría explicar algunos de los detalles pasados por alto en la preparación de la comida.\n\nEn resumen, este local ofrece una comida rápida aceptable, pero hay margen para mejorar en términos de sabor y atención a los detalles. Con algunas mejoras en la calidad de los ingredientes y una mayor atención al servicio al cliente, podría elevarse a un nivel superior.', '2024-01-11', 3),
-(4, 35, 231, 'Experiencia mediocre, deja mucho que desear', 'Mi visita a este local de comida rápida fue bastante decepcionante. A pesar de las expectativas iniciales, la experiencia en general dejó mucho que desear. El servicio fue lento y poco atento, lo cual resultó frustrante, especialmente considerando la naturaleza de la comida rápida.\n\nLa calidad de la comida tampoco estuvo a la altura de mis expectativas. Los alimentos parecían carecer de frescura, y la presentación dejaba mucho que desear. Además, los precios no coincidían con la calidad ofrecida. Sentí que pagué demasiado por lo que obtuve.\n\nEl ambiente del local tampoco contribuyó positivamente a la experiencia. El lugar parecía descuidado, y las mesas no estaban limpias. La falta de atención a los detalles se hizo evidente, lo que afectó mi percepción general del establecimiento.\n\nEn resumen, mi visita a este local de comida rápida no cumplió con mis expectativas en términos de servicio, calidad de la comida y ambiente. Aunque no fue una experiencia totalmente negativa, definitivamente hay margen para mejorar en varios aspectos clave.', '2024-01-11', 2),
-(5, 36, 231, 'Una experiencia lamentable', 'Visité este local de comida rápida con grandes expectativas, pero mi experiencia fue decepcionante en todos los aspectos. Desde el momento en que entré, noté la falta de higiene en el lugar. Las mesas estaban sucias y parecía que no se habían limpiado en días.\n\nLa atención al cliente fue pésima. El personal parecía desinteresado y poco amable. Tuve que esperar mucho tiempo para realizar mi pedido, y cuando finalmente lo hice, mi comida tardó una eternidad en llegar. La falta de organización en la cocina era evidente, y el personal no mostraba ningún sentido de urgencia para atender a los clientes.\n\nCuando finalmente recibí mi pedido, quedé horrorizado al descubrir que la comida estaba fría y completamente insípida. Parecía como si hubiera sido recalentada una y otra vez. La presentación dejaba mucho que desear, y la calidad de los ingredientes era cuestionable.\n\nEn resumen, esta fue una experiencia culinaria lamentable. No puedo recomendar este lugar a nadie que busque una comida rápida y sabrosa. La falta de limpieza, la atención al cliente deficiente y la calidad de la comida hacen que este local merezca su baja calificación.', '2024-01-11', 1);
+INSERT INTO `reviews` (`review_id`, `cliente_id`, `pedido_id`, `titulo`, `review`, `fecha`, `puntuacion`, `nombre`, `apellido`) VALUES
+(1, 1, 1, 'Una experiencia deliciosa y rápida', 'Visitamos este local de comida rápida en busca de una solución rápida para satisfacer nuestro apetito, y salimos muy satisfechos con la experiencia general. La comida era deliciosa y fresca, cumpliendo con nuestras expectativas de un lugar de comida rápida.\n\nEl menú ofrecía una variedad de opciones, desde opciones clásicas hasta algunas más innovadoras, lo que hizo que la elección fuera un tanto difícil, pero al final, nuestras elecciones fueron acertadas. La preparación fue rápida, y el personal mostró eficiencia y amabilidad en el servicio.\n\nEl ambiente era limpio y acogedor, y aunque el espacio para sentarse era limitado, pudimos disfrutar de nuestra comida sin sentirnos apretados. La relación calidad-precio era razonable para la calidad de la comida que recibimos.\n\nEn resumen, este local de comida rápida ofrece una experiencia agradable y deliciosa para aquellos que buscan una comida rápida de calidad. Con su servicio eficiente y opciones sabrosas en el menú, merece una sólida calificación de 4 estrellas.', '2024-01-11', 4, 'Admin', 'BricoDepot'),
+(2, 8, 229, 'Experiencia culinaria excepcional', '¡Este lugar de comida rápida ha superado todas mis expectativas! Desde la primera vez que entré, quedé impresionado por la atención al cliente, la calidad de los alimentos y la atmósfera acogedora.\n\nEl personal es extremadamente amable y siempre está dispuesto a ayudar a los clientes a tomar decisiones informadas sobre sus opciones de menú. La rapidez del servicio no compromete la frescura y el sabor de los alimentos. Además, me encanta que ofrezcan opciones saludables sin sacrificar el delicioso sabor que caracteriza a la comida rápida.\n\nEl menú es variado y ofrece una amplia gama de opciones, desde opciones clásicas hasta creaciones únicas que satisfacen todos los gustos. La presentación de los platos demuestra un cuidado especial por los detalles, lo que eleva la experiencia a otro nivel.\n\nEl ambiente del lugar es moderno y limpio, creando un espacio perfecto para disfrutar de una comida rápida de alta calidad. Además, la música ambiental crea una atmósfera agradable que complementa perfectamente la experiencia gastronómica.\n\nEn resumen, este local de comida rápida ha logrado combinar la conveniencia de un servicio rápido con la excelencia en calidad y sabor. Recomiendo encarecidamente este lugar a cualquier amante de la buena comida que busca una experiencia culinaria excepcional. ¡Sin duda, merece cada una de sus cinco estrellas!', '2024-01-11', 5, 'Marc', 'Martínez'),
+(3, 32, 230, 'Experiencia promedio, con margen de mejora', 'Mi visita a este local de comida rápida dejó una impresión mixta. En primer lugar, la ubicación es conveniente y el servicio fue rápido y eficiente. Sin embargo, la calidad de la comida no cumplió completamente con mis expectativas.\n\nOpté por uno de sus combos, y aunque la porción era adecuada, el sabor no fue excepcional. La hamburguesa estaba bien, pero no destacaba en comparación con otras opciones disponibles en la zona. Además, encontré que las papas fritas estaban un poco grasosas, lo que restó puntos a la experiencia general.\n\nEl ambiente del lugar era bastante estándar para un establecimiento de comida rápida, con un ambiente animado y limpio. El personal, aunque amable, parecía un poco apresurado, lo que podría explicar algunos de los detalles pasados por alto en la preparación de la comida.\n\nEn resumen, este local ofrece una comida rápida aceptable, pero hay margen para mejorar en términos de sabor y atención a los detalles. Con algunas mejoras en la calidad de los ingredientes y una mayor atención al servicio al cliente, podría elevarse a un nivel superior.', '2024-01-11', 3, 'Alex', 'Martínez'),
+(4, 35, 231, 'Experiencia mediocre, deja mucho que desear', 'Mi visita a este local de comida rápida fue bastante decepcionante. A pesar de las expectativas iniciales, la experiencia en general dejó mucho que desear. El servicio fue lento y poco atento, lo cual resultó frustrante, especialmente considerando la naturaleza de la comida rápida.\n\nLa calidad de la comida tampoco estuvo a la altura de mis expectativas. Los alimentos parecían carecer de frescura, y la presentación dejaba mucho que desear. Además, los precios no coincidían con la calidad ofrecida. Sentí que pagué demasiado por lo que obtuve.\n\nEl ambiente del local tampoco contribuyó positivamente a la experiencia. El lugar parecía descuidado, y las mesas no estaban limpias. La falta de atención a los detalles se hizo evidente, lo que afectó mi percepción general del establecimiento.\n\nEn resumen, mi visita a este local de comida rápida no cumplió con mis expectativas en términos de servicio, calidad de la comida y ambiente. Aunque no fue una experiencia totalmente negativa, definitivamente hay margen para mejorar en varios aspectos clave.', '2024-01-11', 2, 'Paco', 'Galaxia'),
+(5, 36, 231, 'Una experiencia lamentable', 'Visité este local de comida rápida con grandes expectativas, pero mi experiencia fue decepcionante en todos los aspectos. Desde el momento en que entré, noté la falta de higiene en el lugar. Las mesas estaban sucias y parecía que no se habían limpiado en días.\n\nLa atención al cliente fue pésima. El personal parecía desinteresado y poco amable. Tuve que esperar mucho tiempo para realizar mi pedido, y cuando finalmente lo hice, mi comida tardó una eternidad en llegar. La falta de organización en la cocina era evidente, y el personal no mostraba ningún sentido de urgencia para atender a los clientes.\n\nCuando finalmente recibí mi pedido, quedé horrorizado al descubrir que la comida estaba fría y completamente insípida. Parecía como si hubiera sido recalentada una y otra vez. La presentación dejaba mucho que desear, y la calidad de los ingredientes era cuestionable.\n\nEn resumen, esta fue una experiencia culinaria lamentable. No puedo recomendar este lugar a nadie que busque una comida rápida y sabrosa. La falta de limpieza, la atención al cliente deficiente y la calidad de la comida hacen que este local merezca su baja calificación.', '2024-01-11', 1, 'Ernesto', 'Viyuela'),
+(15, 1, 239, 'Una Experiencia Notable', 'Mi experiencia en BricoDepot ha sido sumamente positiva, justificando sin duda las cuatro estrellas que le otorgo. Desde que entré, la rapidez y la satisfacción han sido las principales características que destacan en este restaurante de comida rápida.  Lo más destacado de BricoDepot es la frescura y autenticidad de sus ingredientes. La calidad de la comida es evidente en cada bocado, y la velocidad con la que se preparan y sirven los platillos añade un componente de eficiencia que se agradece, especialmente para aquellos con agendas apretadas.  Los combos y ofertas especiales son una verdadera fortaleza. La diversidad del menú y la capacidad de personalizar los pedidos hacen que BricoDepot sea una elección versátil y apetitosa. Además, el personal es amable y eficiente, lo que agrega un toque positivo a la experiencia culinaria.', '2024-01-26', 5, 'Admin', 'BricoDepot'),
+(16, 1, 242, 'Una Experiencia Notable', 'Mi experiencia en BricoDepot ha sido sumamente positiva, justificando sin duda las cuatro estrellas que le otorgo. Desde que entré, la rapidez y la satisfacción han sido las principales características que destacan en este restaurante de comida rápida.  Lo más destacado de BricoDepot es la frescura y autenticidad de sus ingredientes. La calidad de la comida es evidente en cada bocado, y la velocidad con la que se preparan y sirven los platillos añade un componente de eficiencia que se agradece, especialmente para aquellos con agendas apretadas.  Los combos y ofertas especiales son una verdadera fortaleza. La diversidad del menú y la capacidad de personalizar los pedidos hacen que BricoDepot sea una elección versátil y apetitosa. Además, el personal es amable y eficiente, lo que agrega un toque positivo a la experiencia culinaria.', '2024-01-29', 1, 'Admin', 'BricoDepott');
 
 -- --------------------------------------------------------
 
@@ -184,11 +217,84 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`cliente_id`, `nombre`, `apellido`, `mail`, `rol`, `contra`) VALUES
-(1, 'Admin', 'Admin', 'admin@restaurantebd.com', 'Administrador', '1234'),
+(1, 'Admin', 'BricoDepot', 'admin@restaurantebd.com', 'Administrador', '1234'),
 (8, 'Marc', 'Martínez', 'marcmartinezsotillo@gmail.com', 'Cliente', '1234'),
 (32, 'Alex', 'Martínez', 'alex@gmail.com', 'Cliente', '1234'),
 (35, 'Paco', 'Galaxia', 'pacogalaxia@mail.com', 'Cliente', '1234'),
 (36, 'Ernesto', 'Viyuela', 'ernestoviyuela@mail.com', 'Cliente', '1234');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de la taula `videojuegos`
+--
+
+CREATE TABLE `videojuegos` (
+  `videojuego_id` int(11) NOT NULL,
+  `nombre` text NOT NULL,
+  `descripcion` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Bolcament de dades per a la taula `videojuegos`
+--
+
+INSERT INTO `videojuegos` (`videojuego_id`, `nombre`, `descripcion`) VALUES
+(1, 'GeoGuessr', 'Juego de ubicación geográfica'),
+(2, 'Where in the World is Carmen Sandiego', 'Juego de búsqueda de criminales internacionales'),
+(3, 'Oregon Trail', 'Simulador de la ruta de migración histórica'),
+(4, 'Age of Empires', 'Juego de estrategia en tiempo real'),
+(5, 'CodeCombat', 'Plataforma para aprender programación jugando'),
+(6, 'LightBot', 'Juego de resolución de rompecabezas con programación'),
+(7, 'Zamzee', 'Juego que fomenta la actividad física'),
+(8, 'Sworkit Youth: Fitness for Kids', 'Aplicación de ejercicios físicos para niños'),
+(9, 'Eco', 'Juego de simulación de ecosistemas'),
+(10, 'Farming Simulator', 'Simulador de vida agrícola'),
+(11, 'Story Cubes', 'Juego de dados para fomentar la creatividad'),
+(12, 'Scrivener', 'Software de escritura y organización de proyectos'),
+(13, 'Monopoly', 'Juego de mesa de propiedad y negocios'),
+(14, 'Moneyville', 'Juego educativo sobre finanzas y dinero'),
+(15, 'Math Blaster', 'Juego educativo de matemáticas'),
+(16, 'DragonBox Algebra', 'Juego educativo de álgebra'),
+(17, 'Spore', 'Juego de simulación de evolución'),
+(18, 'Kerbal Space Program', 'Simulador de exploración espacial'),
+(19, 'Assassin\'s Creed: Discovery Tour', 'Modo educativo de la serie Assassin\'s Creed'),
+(20, 'Civilization VI', 'Juego de estrategia de construcción de civilizaciones'),
+(21, 'Duolingo', 'Plataforma de aprendizaje de idiomas'),
+(22, 'Rosetta Stone', 'Software de aprendizaje de idiomas'),
+(23, 'Lumosity', 'Juegos para el entrenamiento cerebral'),
+(24, 'Elevate', 'Aplicación para el desarrollo personal'),
+(25, 'Minecraft: Education Edition', 'Versión educativa de Minecraft'),
+(26, 'SimCity', 'Juego de simulación de construcción de ciudades'),
+(27, 'Artful Escape', 'Videojuego de aventuras y música'),
+(28, 'Kahoot!', 'Plataforma de aprendizaje basada en juegos'),
+(29, 'Coolmath Games', 'Juegos educativos de matemáticas'),
+(30, 'Prodigy', 'Plataforma de juego educativo de matemáticas'),
+(31, 'BioMan Biology', 'Juego educativo de biología'),
+(32, 'ChemCaper', 'Juego educativo de química'),
+(33, 'Valiant Hearts: The Great War', 'Juego de aventuras históricas'),
+(34, 'Age of Exploration', 'Juego educativo sobre la era de la exploración'),
+(35, 'Busuu', 'Plataforma de aprendizaje de idiomas'),
+(36, 'Influent', 'Juego para aprender vocabulario en varios idiomas'),
+(37, 'Brain Age', 'Juego de entrenamiento cerebral'),
+(38, 'CogniFit Brain Fitness', 'Plataforma para el entrenamiento cerebral'),
+(39, 'Toontown Online', 'Juego en línea de Disney con enfoque educativo'),
+(40, 'Life is Strange', 'Videojuego de aventuras con elementos narrativos'),
+(41, 'LittleBigPlanet', 'Juego de plataforma y creación'),
+(42, 'Art Academy', 'Software de creación artística'),
+(43, 'Seterra Online', 'Juego de geografía para aprender sobre lugares del mundo'),
+(44, 'Rome: Total War', 'Juego de estrategia en tiempo real ambientado en la antigua Roma'),
+(45, 'Crusader Kings III', 'Juego de estrategia de simulación de dinastías'),
+(46, 'Human Resource Machine', 'Juego de rompecabezas basado en programación'),
+(47, 'Cargo-Bot', 'Juego de rompecabezas de programación'),
+(48, 'Super Stretch Yoga', 'Aplicación de yoga para niños'),
+(49, 'Fitness Boxing', 'Juego de ejercicios de boxeo'),
+(50, 'SimEarth', 'Juego de simulación de desarrollo planetario'),
+(51, 'Cities Skylines', 'Juego de simulación de construcción y gestión de ciudades'),
+(52, 'Story Jumper', 'Plataforma para crear y compartir historias'),
+(53, 'The Typing of the Dead', 'Juego educativo de mecanografía'),
+(54, 'Stock Market Game', 'Juego educativo sobre el mercado de valores'),
+(55, 'Monopoly Tycoon', 'Versión de Monopoly centrada en la construcción de imperios comerciales');
 
 --
 -- Índexs per a les taules bolcades
@@ -234,6 +340,12 @@ ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`cliente_id`);
 
 --
+-- Índexs per a la taula `videojuegos`
+--
+ALTER TABLE `videojuegos`
+  ADD PRIMARY KEY (`videojuego_id`);
+
+--
 -- AUTO_INCREMENT per les taules bolcades
 --
 
@@ -247,7 +359,7 @@ ALTER TABLE `categorias`
 -- AUTO_INCREMENT per la taula `pedidos`
 --
 ALTER TABLE `pedidos`
-  MODIFY `pedido_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=233;
+  MODIFY `pedido_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=247;
 
 --
 -- AUTO_INCREMENT per la taula `productos`
@@ -259,13 +371,19 @@ ALTER TABLE `productos`
 -- AUTO_INCREMENT per la taula `reviews`
 --
 ALTER TABLE `reviews`
-  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT per la taula `usuarios`
 --
 ALTER TABLE `usuarios`
   MODIFY `cliente_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+
+--
+-- AUTO_INCREMENT per la taula `videojuegos`
+--
+ALTER TABLE `videojuegos`
+  MODIFY `videojuego_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- Restriccions per a les taules bolcades

@@ -83,6 +83,10 @@ body {
     margin: 5px 0 0 5px;
     font-family: 'Goodhome', sans-serif;
 }
+.offcanvas-title {
+    font-family: 'Barlow';
+    font-weight: 900;
+}
 .offcanvas-body div {
     display: flex;
     align-items: center;
@@ -95,8 +99,11 @@ body {
 .hr-menu-lateral {
     margin: 0 10px;
 }
-.del-filt-btn {
+#btnFiltrar, #btnMostrarTodos {
     border: none;
     font-family: 'Goodhome', sans-serif;
-    border-radius: 5px;
-}
+    font-weight: 900;
+    padding: 5px 20px;
+    background-color: #222221;
+    color: white;
+} 

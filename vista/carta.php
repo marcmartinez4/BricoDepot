@@ -17,19 +17,19 @@
     
     <div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
         <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Filtrar productos</h5>
+            <h5 class="offcanvas-title" id="offcanvasScrollingLabel">FILTRAR PRODUCTOS</h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <hr class="hr-menu-lateral">
         <div class="offcanvas-body">
             <div>
                 <input class="checkbox" type="checkbox">
-                <p>Hamburguesas</p>
+                <p>Complementos</p>
             </div>
                 
             <div>
                 <input class="checkbox" type="checkbox">
-                <p>Complementos</p>
+                <p>Hamburguesas</p>
             </div>
 
             <div>
@@ -37,7 +37,8 @@
                 <p>Bebidas</p>
             </div>
 
-            <button class="del-filt-btn">Borrar filtros</button>
+            <button id="btnFiltrar">Filtrar</button>
+            <button id="btnMostrarTodos">Borrar filtros</button>
         </div>
     </div>
 
