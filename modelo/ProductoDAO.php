@@ -8,9 +8,22 @@
     
     // Se define la clase
     class productoDAO {
-
         // Método para obtener todos los productos
         public static function getAllProducts() {
+            $con = dataBase::connect();
+                
+            if ($result = $con->query("SELECT * FROM productos")) {    
+                $productos = array();
+                    
+                while ($producto = $result->fetch_object('Producto')) {
+                    $productos[] = $producto;
+                }
+                return $productos;
+            }
+        }
+        
+        // Método para obtener todos los productos con js
+        public static function getAllProductsJS() {
             $con = dataBase::connect();
                 
             if ($result = $con->query("SELECT * FROM productos")) {    

@@ -13,7 +13,7 @@
         }
 
         public static function mostrarProductos() {
-            $productos = ProductoDAO::getAllProducts();
+            $productos = ProductoDAO::getAllProductsJS();
             $productos = json_encode($productos, JSON_UNESCAPED_UNICODE);
             header('Content-Type: application/json');
             echo $productos;

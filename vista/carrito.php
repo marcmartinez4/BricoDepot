@@ -112,6 +112,7 @@
                             
                             $precioConIVA = $preciototal + $montoIVA;                           
                         ?>
+                        <input type="hidden" id="precioConIva" value="<?= $precioConIVA ?>">
                         <div class="precios">
                             <p class="p-arriba">Subtotal</p>
                             <?= number_format($precioConIVA, 2, ',', '.').' €'; ?>
@@ -120,10 +121,17 @@
                             <p class="p-arriba">IVA</p>
                             <?= number_format($montoIVA, 2, ',', '.').' €';?>
                         </div>
+                        <div class="precios">
+                            <div class="div-btnPropina">
+                                <input type="checkbox" id="btnPropina">
+                                <p class="p-arriba">Propina</p>
+                            </div>
+                            <input readonly type="number" id="inputPropina" value="3" min="1" max="100">
+                        </div>
                         <hr>
                         <div class="precios-1">
                             <p class="total"><strong>Total</strong></p>
-                            <strong><?= number_format($precioConIVA, 2, ',', '.') ?> €</strong>
+                            <strong id="total"><?= number_format($precioConIVA, 2, ',', '.') ?> €</strong>
                         </div>
                         <div class="precios-2">
                             <p class="total-iva">Total sin IVA</p>
@@ -133,7 +141,7 @@
                     
                     <!-- Botón para finalizar el pedido -->
                     <form action="?controlador=pedido&action=finalizarPedido" method="post">
-                        <input type="hidden" name="precioConIVA" value="<?= $precioConIVA ?>">
+                        <input type="hidden" name="precioConIVA" id="inputPrecioConIva" value="<?= $precioConIVA ?>">
                         <input class="boton-carrito1" type="submit" name="finalizarPedido" value="Continuar con el pedido">
                     </form>
                 </div>
@@ -165,7 +173,8 @@
             }
         ?>
     </div>
-            
+    
+    <script src="src/propina.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
