@@ -122,8 +122,8 @@
                             <?= number_format($montoIVA, 2, ',', '.').' €';?>
                         </div>
                         <div class="precios">
-                            <div class="div-btnPropina">
-                                <input type="checkbox" id="btnPropina">
+                            <div class="div-propina-puntos">
+                                <input type="checkbox" id="btnPropina" checked>
                                 <p class="p-arriba">Propina</p>
                             </div>
                             <input readonly type="number" id="inputPropina" value="3" min="1" max="100">
@@ -136,6 +136,13 @@
                         <div class="precios-2">
                             <p class="total-iva">Total sin IVA</p>
                             <?= $preciototal.' €'?>
+                        </div>
+                        <div class="precios-2">
+                            <div class="div-propina-puntos">
+                                <input type="checkbox" id="btnPropina" checked>
+                                <p class="total-iva">Puntos</p>
+                            </div>
+                            <input readonly type="number" id="inputPuntos" value="100">
                         </div>
                     </div>
                     
