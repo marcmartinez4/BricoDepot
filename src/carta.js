@@ -6,6 +6,7 @@ fetch(`http://localhost/BricoDepot/?controlador=API&action=mostrarProductos`)
         let checkboxes = document.querySelectorAll("input[type='checkbox']");
         let btnFiltrar = document.getElementById("btnFiltrar");
         let btnMostrarTodos = document.getElementById("btnMostrarTodos");
+        let categorias = obtenerCategorias(productos);
 
         mostrarProductos(productos, div_productos);
 
@@ -17,7 +18,8 @@ fetch(`http://localhost/BricoDepot/?controlador=API&action=mostrarProductos`)
 
             if (arrayCategorias.includes(true)) {
                 productos = productos.filter(producto => {
-                    return arrayCategorias[producto.categoria_id - 1];
+                    let categoriaPosicion = buscarCategoria(categorias);
+                    return arrayCategorias[categoriaPosicion[producto.categoria_id]];
                 });
                 mostrarProductos(productos, div_productos);
             } else {
@@ -55,5 +57,21 @@ fetch(`http://localhost/BricoDepot/?controlador=API&action=mostrarProductos`)
             });
 
             div_productos.appendChild(row);
+        }
+
+        function obtenerCategorias(productos) {
+            let categorias = new Set();
+            productos.forEach(producto => {
+                categorias.add(producto.categoria_id);
+            });
+            return Array.from(categorias);
+        }
+
+        function buscarCategoria(categorias) {
+            let categoriaPosicion = {};
+            categorias.forEach((categoria, index) => {
+                categoriaPosicion[categoria] = index;
+            });
+            return categoriaPosicion;
         }
     });
