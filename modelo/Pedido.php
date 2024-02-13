@@ -4,6 +4,7 @@
         protected $estado;
         protected $fecha_pedido;
         protected $cliente_id;
+        protected $propina;
 
         /**
          * Get the value of pedido_id
@@ -81,6 +82,26 @@
         public function setCliente_id($cliente_id)
         {
                 $this->cliente_id = $cliente_id;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of propina
+         */ 
+        public function getPropina()
+        {
+                return $this->propina;
+        }
+
+        /**
+         * Set the value of propina
+         *
+         * @return  self
+         */ 
+        public function setPropina($propina)
+        {
+                $this->propina = $propina;
 
                 return $this;
         }

@@ -126,7 +126,14 @@
                                 <input type="checkbox" id="btnPropina" checked>
                                 <p class="p-arriba">Propina</p>
                             </div>
-                            <input readonly type="number" id="inputPropina" value="3" min="1" max="100">
+                            <input type="number" id="inputPropina" value="3" min="1" max="100">
+                        </div>
+                        <div class="precios">
+                            <div class="div-propina-puntos">
+                                <input type="checkbox" id="btnPuntos">
+                                <p class="p-arriba">Puntos</p>
+                            </div>
+                            <input readonly type="number" id="inputPuntos" value="0" step="100" min="0">
                         </div>
                         <hr>
                         <div class="precios-1">
@@ -137,18 +144,12 @@
                             <p class="total-iva">Total sin IVA</p>
                             <?= $preciototal.' €'?>
                         </div>
-                        <div class="precios-2">
-                            <div class="div-propina-puntos">
-                                <input type="checkbox" id="btnPropina" checked>
-                                <p class="total-iva">Puntos</p>
-                            </div>
-                            <input readonly type="number" id="inputPuntos" value="100">
-                        </div>
                     </div>
                     
                     <!-- Botón para finalizar el pedido -->
                     <form action="?controlador=pedido&action=finalizarPedido" method="post">
                         <input type="hidden" name="precioConIVA" id="inputPrecioConIva" value="<?= $precioConIVA ?>">
+                        <input type="hidden" name="inputPropinaFinalizar" id="inputPropinaFinalizar" value="">
                         <input class="boton-carrito1" type="submit" name="finalizarPedido" value="Continuar con el pedido">
                     </form>
                 </div>

@@ -256,11 +256,11 @@ hr {
     display: flex;
     gap: 2px;
 }
-#inputPropina {
+#inputPropina, #inputPuntos {
     border: none;
-    width: 47px;
+    width: 55px;
     outline: none;
 }
-#inputPropina[readonly] {
+#inputPropina[readonly], #inputPuntos[readonly] {
     cursor: not-allowed;
 }

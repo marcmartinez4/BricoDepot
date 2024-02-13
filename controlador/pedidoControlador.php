@@ -113,8 +113,10 @@
             // Verifica si existe la sesión 'Cliente'
             if(isset($_SESSION['Cliente'])) {
                 $precioConIVA = $_POST['precioConIVA'];
+                $inputPropinaFinalizar = $_POST['inputPropinaFinalizar'];
+
                 // Llama al método en la clase 'PedidoDAO' para finalizar el pedido
-                PedidoDAO::finalizarPedido($precioConIVA);
+                PedidoDAO::finalizarPedido($precioConIVA, $inputPropinaFinalizar);
                 // Reinicia el carrito en la sesión
                 $_SESSION['carrito'] = [];
         

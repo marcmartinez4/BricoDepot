@@ -14,8 +14,6 @@ fetch(`http://localhost/BricoDepot/?controlador=API&action=mostrarProductos`)
             productos = productosOriginal;
             let arrayCategorias = Array.from(checkboxes).map(checkbox => checkbox.checked);
 
-            console.log('Categorías seleccionadas:', arrayCategorias);
-
             if (arrayCategorias.includes(true)) {
                 productos = productos.filter(producto => {
                     let categoriaPosicion = buscarCategoria(categorias);

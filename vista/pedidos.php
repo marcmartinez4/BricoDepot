@@ -27,7 +27,7 @@
                 <th>Estado</th>
                 <th>Fecha Pedido</th>
                 <th>ID Cliente</th>
-                <!-- <th></th> -->
+                <th>Propina</th>
                 <th></th>
             </tr>
             <!-- Bucle tabla de productos -->
@@ -39,6 +39,7 @@
                 <td><?=$pedido->getEstado();?></td>
                 <td><?=$pedido->getFecha_pedido();?></td>
                 <td><?=$pedido->getCliente_id();?></td>
+                <td><?=$pedido->getPropina();?> %</td>
                 <!-- Boton de eliminar -->
                 <td>
                     <form action="?controlador=pedidosAdmin&action=eliminar" method="post">
@@ -69,7 +70,7 @@
                 <td><?=$pedido_producto->getPedido_id();?></td>
                 <td><?=$pedido_producto->getProducto_id();?></td>
                 <td><?=$pedido_producto->getCantidad();?></td>
-                <td><?=$pedido_producto->getPrecio_unidad();?></td>
+                <td><?=$pedido_producto->getPrecio_unidad();?> €</td>
             </tr>
             <?php 
                 } 
