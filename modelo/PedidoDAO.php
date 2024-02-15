@@ -65,7 +65,7 @@
         }
 
         // Método para finalizar un pedido
-        public static function finalizarPedido($precioConIVA, $inputPropinaFinalizar)  {
+        public static function finalizarPedido($precioConIVA, $inputPropinaFinalizar, $puntosUsuario)  {
             $con = database::connect();
             
             // Verifica si hay un cliente en sesión
@@ -73,8 +73,11 @@
                 $id_cliente = $_SESSION['Cliente']->getCliente_id();
                 $fecha = date('Y-m-d H:i:s');
                 
+                // Ajustamos el precioConIVA a dos cifras decimales
+                $precioConIVA = number_format($precioConIVA, 2);
+
                 // Inserta un nuevo pedido en la base de datos
-                $result = $con->query("INSERT INTO pedidos (estado, fecha_pedido, cliente_id, propina) VALUES ('Pendiente', '$fecha', '$id_cliente', '$inputPropinaFinalizar');");
+                $result = $con->query("INSERT INTO pedidos (estado, fecha_pedido, cliente_id, propina, precio_total, puntos_usados) VALUES ('Pendiente', '$fecha', '$id_cliente', '$inputPropinaFinalizar', '$precioConIVA', '$puntosUsuario');");
                 $pedido_id = mysqli_insert_id($con);
                 $_SESSION['pedido_id'] = $pedido_id;
                 // Itera sobre los productos en el carrito y los añade al pedido

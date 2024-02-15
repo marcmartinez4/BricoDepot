@@ -33,9 +33,10 @@
                             foreach($_SESSION['carrito'] as $productos) {
                                 $prodCarrito = productoDAO::getProductById($productos[0]);
                                 $cantidad = $productos[1];
-
+                                
                                 $precioTotalProducto = $prodCarrito->getPrecio_unidad() * $cantidad;
                                 $preciototal += $precioTotalProducto;
+                                
                     ?>
                     <div class="item-carrito">
                         <!-- Mostrar la imagen del producto que hay en el carrito -->
@@ -133,7 +134,7 @@
                                 <input type="checkbox" id="btnPuntos">
                                 <p class="p-arriba">Puntos</p>
                             </div>
-                            <input readonly type="number" id="inputPuntos" value="0" step="100" min="0">
+                            <input readonly type="number" id="inputPuntos" value="0" step="100" min="0" max="">
                         </div>
                         <hr>
                         <div class="precios-1">
@@ -149,6 +150,7 @@
                     <!-- Botón para finalizar el pedido -->
                     <form action="?controlador=pedido&action=finalizarPedido" method="post">
                         <input type="hidden" name="precioConIVA" id="inputPrecioConIva" value="<?= $precioConIVA ?>">
+                        <input type="hidden" name="puntosUsuario" id="puntosUsuario" value="<?= $_SESSION['Cliente']->getPuntos() ?>">
                         <input type="hidden" name="inputPropinaFinalizar" id="inputPropinaFinalizar" value="">
                         <input class="boton-carrito1" type="submit" name="finalizarPedido" value="Continuar con el pedido">
                     </form>

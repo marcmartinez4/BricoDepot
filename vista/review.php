@@ -15,7 +15,6 @@
                 <div class="col-sm-9 col-md-6 col-lg-12">
                     <h2>Filtrar reseñas</h2>
                     <div class="filtro-top">
-                        <input type="text" placeholder="Buscar en reseñas de clientes">
                         <select id="filtroEstrellas" class="select_option select1">
                             <option value="5">5 estrellas</option>
                             <option value="4">4 estrellas</option>

@@ -114,18 +114,18 @@
             if(isset($_SESSION['Cliente'])) {
                 $precioConIVA = $_POST['precioConIVA'];
                 $inputPropinaFinalizar = $_POST['inputPropinaFinalizar'];
+                $inputPuntos = $_POST['inputPuntos']; // Agregar esta línea
 
                 // Llama al método en la clase 'PedidoDAO' para finalizar el pedido
-                PedidoDAO::finalizarPedido($precioConIVA, $inputPropinaFinalizar);
+                PedidoDAO::finalizarPedido($precioConIVA, $inputPropinaFinalizar, $puntosUsuario);
                 // Reinicia el carrito en la sesión
                 $_SESSION['carrito'] = [];
-        
+
                 header('Location:'.url.'?controlador=review&action=QR');
             } else {
                 // Se redirecciona a la página de inicio de sesión
                 header('Location:'.url.'?controlador=cliente'); 
             }
-        }
-        
+        }        
     }
 ?>
