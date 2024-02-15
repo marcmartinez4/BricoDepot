@@ -93,7 +93,8 @@
                     // Inserta el producto en la tabla 'pedido_productos'
                     $result = $con->query("INSERT INTO `pedido_productos` (pedido_id, producto_id, cantidad, precio_unidad) VALUES ('$pedido_id', '$producto_id', '$cantidad','$precio_unidad');");
                 }
-
+                $con->query("UPDATE `usuarios` SET `puntos` = `puntos` - $puntosUsuario WHERE cliente_id = $id_cliente");
+                
                 setcookie('precioConIVA', $precioConIVA . ',' . $id_cliente, time() + 3600);
             }
         }

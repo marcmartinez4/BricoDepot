@@ -114,7 +114,7 @@
             if(isset($_SESSION['Cliente'])) {
                 $precioConIVA = $_POST['precioConIVA'];
                 $inputPropinaFinalizar = $_POST['inputPropinaFinalizar'];
-                $inputPuntos = $_POST['inputPuntos']; // Agregar esta línea
+                $puntosUsuario = $_POST['puntosUsuario'];
 
                 // Llama al método en la clase 'PedidoDAO' para finalizar el pedido
                 PedidoDAO::finalizarPedido($precioConIVA, $inputPropinaFinalizar, $puntosUsuario);

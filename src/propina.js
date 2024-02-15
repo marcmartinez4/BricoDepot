@@ -12,7 +12,6 @@ let inputPropinaFinalizar = document.getElementById("inputPropinaFinalizar");
 let puntosUsuario = parseFloat(document.getElementById("puntosUsuario").value);
 inputPuntos.max = puntosUsuario;
 
-// Calcula el precio total con propina y descuento por puntos
 function calcularPrecioConPropina() {
     let precioConIva = precioConIvaOriginal;
     let propina = parseFloat(inputPropina.value);
@@ -23,10 +22,10 @@ function calcularPrecioConPropina() {
     
     let puntos = parseFloat(inputPuntos.value);
     let eurosDescuento = Math.floor(puntos / 100);
-    let descuentoPorPuntos = eurosDescuento * 1; // Cada 100 puntos son 1€ de descuento
+    let descuentoPorPuntos = eurosDescuento * 1; 
     precioConIva -= descuentoPorPuntos; 
 
-    inputPrecioConIva.value = precioConIva; // Actualiza el valor del precio con descuentos
+    inputPrecioConIva.value = precioConIva; 
 
     total.innerHTML = precioConIva.toFixed(2) + " €";
 }
