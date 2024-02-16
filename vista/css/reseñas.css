@@ -6,12 +6,13 @@ body {
 .div-completo {
     margin: 30px 10px !important;
 }
-h2 {
+.h2-reseñas {
     font-family: 'Goodhome', sans-serif;
     font-size: 16px;
     font-weight: 700;
     color: #6B6D76;
     margin-bottom: 20px;
+    text-align: start;
 }
 .filtro-top {
     display: flex;
@@ -104,7 +105,7 @@ p {
 .bottom {
     margin: 10px 0 15px 53px;
 }
-.titulo {
+.titulo-reseña {
     font-size: 14px;
     font-family: 'Goodhome', sans-serif;
     padding: 0 0 5px;

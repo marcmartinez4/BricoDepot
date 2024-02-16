@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Temps de generació: 16-02-2024 a les 15:19:55
+-- Temps de generació: 16-02-2024 a les 17:32:36
 -- Versió del servidor: 10.4.28-MariaDB
 -- Versió de PHP: 8.2.4
 
@@ -62,20 +62,18 @@ CREATE TABLE `pedidos` (
 --
 
 INSERT INTO `pedidos` (`pedido_id`, `estado`, `fecha_pedido`, `cliente_id`, `propina`, `precio_total`, `puntos_usados`) VALUES
-(260, 'Pendiente', '2024-02-15', 1, 3, 12.46, 0),
-(261, 'Pendiente', '2024-02-15', 1, 3, 2.46, 0),
-(262, 'Pendiente', '2024-02-15', 1, 3, 2.46, 0),
-(263, 'Pendiente', '2024-02-15', 1, 3, 2.46, 0),
-(264, 'Pendiente', '2024-02-15', 1, 3, 12.46, 0),
-(265, 'Pendiente', '2024-02-15', 1, 3, 2.46, 0),
-(266, 'Pendiente', '2024-02-15', 1, 3, 2.46, 0),
-(267, 'Pendiente', '2024-02-15', 1, 3, 2.46, 0),
-(268, 'Pendiente', '2024-02-15', 1, 3, 2.46, 1000),
-(269, 'Pendiente', '2024-02-15', 1, 3, 2.46, 1000),
-(270, 'Pendiente', '2024-02-15', 1, 3, 2.46, 1000),
-(271, 'Pendiente', '2024-02-15', 1, 3, 2.46, 1000),
-(272, 'Pendiente', '2024-02-15', 1, 3, 2.46, 1100),
-(273, 'Pendiente', '2024-02-15', 1, 3, 2.46, 1100);
+(288, 'Pendiente', '2024-02-16', 1, 3, 7.46, 500),
+(289, 'Pendiente', '2024-02-16', 1, 3, 7.46, 500),
+(290, 'Pendiente', '2024-02-16', 1, 3, 5.46, 700),
+(291, 'Pendiente', '2024-02-16', 1, 7, 8.95, 400),
+(292, 'Pendiente', '2024-02-16', 1, 3, 7.46, 500),
+(293, 'Pendiente', '2024-02-16', 1, 3, 7.46, 500),
+(294, 'Pendiente', '2024-02-16', 1, 3, 24.93, 0),
+(295, 'Pendiente', '2024-02-16', 1, 3, 12.46, 0),
+(296, 'Pendiente', '2024-02-16', 1, 3, 12.46, 0),
+(297, 'Pendiente', '2024-02-16', 1, 3, 12.46, 0),
+(298, 'Pendiente', '2024-02-16', 1, 3, 12.46, 0),
+(299, 'Pendiente', '2024-02-16', 1, 3, 12.46, 0);
 
 -- --------------------------------------------------------
 
@@ -95,20 +93,18 @@ CREATE TABLE `pedido_productos` (
 --
 
 INSERT INTO `pedido_productos` (`pedido_id`, `producto_id`, `cantidad`, `precio_unidad`) VALUES
-(260, 19, 1, 11),
-(261, 19, 1, 11),
-(262, 19, 1, 11),
-(263, 19, 1, 11),
-(264, 19, 1, 11),
-(265, 19, 1, 11),
-(266, 19, 1, 11),
-(267, 19, 1, 11),
-(268, 19, 1, 11),
-(269, 19, 1, 11),
-(270, 19, 1, 11),
-(271, 19, 1, 11),
-(272, 19, 1, 11),
-(273, 19, 1, 11);
+(288, 19, 1, 11),
+(289, 19, 1, 11),
+(290, 19, 1, 11),
+(291, 19, 1, 11),
+(292, 19, 1, 11),
+(293, 19, 1, 11),
+(294, 19, 2, 11),
+(295, 19, 1, 11),
+(296, 19, 1, 11),
+(297, 19, 1, 11),
+(298, 19, 1, 11),
+(299, 19, 1, 11);
 
 -- --------------------------------------------------------
 
@@ -205,7 +201,7 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`cliente_id`, `nombre`, `apellido`, `mail`, `rol`, `contra`, `puntos`) VALUES
-(1, 'Admin', 'BricoDepot', 'admin@restaurantebd.com', 'Administrador', '1234', 0),
+(1, 'Admin', 'BricoDepot', 'admin@restaurantebd.com', 'Administrador', '1234', 6525),
 (8, 'Marc', 'Martínez', 'marcmartinezsotillo@gmail.com', 'Cliente', '1234', NULL),
 (32, 'Alex', 'Martínez', 'alex@gmail.com', 'Cliente', '1234', NULL),
 (35, 'Paco', 'Galaxia', 'pacogalaxia@mail.com', 'Cliente', '1234', NULL),
@@ -347,7 +343,7 @@ ALTER TABLE `categorias`
 -- AUTO_INCREMENT per la taula `pedidos`
 --
 ALTER TABLE `pedidos`
-  MODIFY `pedido_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=274;
+  MODIFY `pedido_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=300;
 
 --
 -- AUTO_INCREMENT per la taula `productos`
@@ -359,7 +355,7 @@ ALTER TABLE `productos`
 -- AUTO_INCREMENT per la taula `reviews`
 --
 ALTER TABLE `reviews`
-  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
 
 --
 -- AUTO_INCREMENT per la taula `usuarios`
