@@ -114,10 +114,10 @@
             if(isset($_SESSION['Cliente'])) {
                 $precioConIVA = $_POST['precioConIVA'];
                 $inputPropinaFinalizar = $_POST['inputPropinaFinalizar'];
-                $puntosUsuario = $_POST['puntosUsuario'];
+                $inputPuntosFinalizar = $_POST['inputPuntosFinalizar'];
 
                 // Llama al método en la clase 'PedidoDAO' para finalizar el pedido
-                PedidoDAO::finalizarPedido($precioConIVA, $inputPropinaFinalizar, $puntosUsuario);
+                PedidoDAO::finalizarPedido($precioConIVA, $inputPropinaFinalizar, $inputPuntosFinalizar);
                 // Reinicia el carrito en la sesión
                 $_SESSION['carrito'] = [];
 

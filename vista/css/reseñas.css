@@ -104,14 +104,16 @@ p {
 .bottom {
     margin: 10px 0 15px 53px;
 }
-h3 {
+.titulo {
     font-size: 14px;
     font-family: 'Goodhome', sans-serif;
     padding: 0 0 5px;
     color: #6B6D76;
     margin: 0;
+    font-weight: 600 !important;
+    text-align: start !important;
 }
-h4 {
+.reseña {
     font-size: 14px;
     font-family: 'Goodhome', sans-serif;
     color: #6b6d76a3;
@@ -196,9 +198,11 @@ hr {
     margin: 20px 0 0 0;
 }
 .titulo {
-    text-align: center;
-    font-weight: 900;
-    font-family: 'Barlow';
+    text-align: center !important;
+    font-weight: 900 !important;
+    font-family: 'Barlow' !important;
+    font-size: 38px;
+    color: black;
 }
 .texto-info {
     margin-top: 10px;

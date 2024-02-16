@@ -3,11 +3,13 @@ let inputPropina = document.getElementById("inputPropina");
 
 let btnPuntos = document.getElementById("btnPuntos");
 let inputPuntos = document.getElementById("inputPuntos");
+let puntosUsados = 0; // Inicializar en 0
 
 let total = document.getElementById("total");
 let inputPrecioConIva = document.getElementById("inputPrecioConIva");
 let precioConIvaOriginal = parseFloat(inputPrecioConIva.value);
 let inputPropinaFinalizar = document.getElementById("inputPropinaFinalizar");
+let inputPuntosFinalizar = document.getElementById("inputPuntosFinalizar");
 
 let puntosUsuario = parseFloat(document.getElementById("puntosUsuario").value);
 inputPuntos.max = puntosUsuario;
@@ -26,6 +28,8 @@ function calcularPrecioConPropina() {
     precioConIva -= descuentoPorPuntos; 
 
     inputPrecioConIva.value = precioConIva; 
+    puntosUsados = puntos; // Actualizar puntosUsados
+    inputPuntosFinalizar.value = puntosUsados; // Actualizar inputPuntosFinalizar
 
     total.innerHTML = precioConIva.toFixed(2) + " €";
 }

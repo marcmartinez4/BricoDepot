@@ -65,7 +65,7 @@
         }
 
         // Método para finalizar un pedido
-        public static function finalizarPedido($precioConIVA, $inputPropinaFinalizar, $puntosUsuario)  {
+        public static function finalizarPedido($precioConIVA, $inputPropinaFinalizar, $inputPuntosFinalizar)  {
             $con = database::connect();
             
             // Verifica si hay un cliente en sesión
@@ -77,7 +77,7 @@
                 $precioConIVA = number_format($precioConIVA, 2);
 
                 // Inserta un nuevo pedido en la base de datos
-                $result = $con->query("INSERT INTO pedidos (estado, fecha_pedido, cliente_id, propina, precio_total, puntos_usados) VALUES ('Pendiente', '$fecha', '$id_cliente', '$inputPropinaFinalizar', '$precioConIVA', '$puntosUsuario');");
+                $result = $con->query("INSERT INTO pedidos (estado, fecha_pedido, cliente_id, propina, precio_total, puntos_usados) VALUES ('Pendiente', '$fecha', '$id_cliente', '$inputPropinaFinalizar', '$precioConIVA', '$inputPuntosFinalizar');");
                 $pedido_id = mysqli_insert_id($con);
                 $_SESSION['pedido_id'] = $pedido_id;
                 // Itera sobre los productos en el carrito y los añade al pedido
@@ -93,7 +93,12 @@
                     // Inserta el producto en la tabla 'pedido_productos'
                     $result = $con->query("INSERT INTO `pedido_productos` (pedido_id, producto_id, cantidad, precio_unidad) VALUES ('$pedido_id', '$producto_id', '$cantidad','$precio_unidad');");
                 }
-                $con->query("UPDATE `usuarios` SET `puntos` = `puntos` - $puntosUsuario WHERE cliente_id = $id_cliente");
+                $con->query("UPDATE `usuarios` SET `puntos` = `puntos` - $inputPuntosFinalizar WHERE cliente_id = $id_cliente");
+                $con->query("UPDATE `usuarios` SET `puntos` = `puntos` + round($precioConIVA)*100 WHERE cliente_id = $id_cliente");
+                
+                $mail = $_SESSION['Cliente']->getMail();
+                $contra = $_SESSION['Cliente']->getContra();
+                ClienteDAO::iniciarSesion($mail, $contra);
                 
                 setcookie('precioConIVA', $precioConIVA . ',' . $id_cliente, time() + 3600);
             }

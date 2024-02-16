@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Temps de generació: 02-02-2024 a les 16:19:02
+-- Temps de generació: 16-02-2024 a les 15:19:55
 -- Versió del servidor: 10.4.28-MariaDB
 -- Versió de PHP: 8.2.4
 
@@ -51,33 +51,31 @@ CREATE TABLE `pedidos` (
   `pedido_id` int(11) NOT NULL,
   `estado` varchar(255) NOT NULL,
   `fecha_pedido` date NOT NULL,
-  `cliente_id` int(11) NOT NULL
+  `cliente_id` int(11) NOT NULL,
+  `propina` int(11) DEFAULT NULL,
+  `precio_total` double DEFAULT NULL,
+  `puntos_usados` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Bolcament de dades per a la taula `pedidos`
 --
 
-INSERT INTO `pedidos` (`pedido_id`, `estado`, `fecha_pedido`, `cliente_id`) VALUES
-(228, 'Pendiente', '2024-01-07', 1),
-(229, 'Pendiente', '2024-01-11', 8),
-(230, 'Pendiente', '2024-01-11', 32),
-(231, 'Pendiente', '2024-01-11', 32),
-(232, 'Pendiente', '2024-01-12', 1),
-(233, 'Pendiente', '2024-01-24', 1),
-(234, 'Pendiente', '2024-01-24', 1),
-(235, 'Pendiente', '2024-01-24', 1),
-(236, 'Pendiente', '2024-01-24', 1),
-(237, 'Pendiente', '2024-01-24', 1),
-(238, 'Pendiente', '2024-01-25', 1),
-(239, 'Pendiente', '2024-01-26', 1),
-(240, 'Pendiente', '2024-01-26', 1),
-(241, 'Pendiente', '2024-01-29', 1),
-(242, 'Pendiente', '2024-01-29', 1),
-(243, 'Pendiente', '2024-01-30', 1),
-(244, 'Pendiente', '2024-01-30', 1),
-(245, 'Pendiente', '2024-01-30', 1),
-(246, 'Pendiente', '2024-02-01', 1);
+INSERT INTO `pedidos` (`pedido_id`, `estado`, `fecha_pedido`, `cliente_id`, `propina`, `precio_total`, `puntos_usados`) VALUES
+(260, 'Pendiente', '2024-02-15', 1, 3, 12.46, 0),
+(261, 'Pendiente', '2024-02-15', 1, 3, 2.46, 0),
+(262, 'Pendiente', '2024-02-15', 1, 3, 2.46, 0),
+(263, 'Pendiente', '2024-02-15', 1, 3, 2.46, 0),
+(264, 'Pendiente', '2024-02-15', 1, 3, 12.46, 0),
+(265, 'Pendiente', '2024-02-15', 1, 3, 2.46, 0),
+(266, 'Pendiente', '2024-02-15', 1, 3, 2.46, 0),
+(267, 'Pendiente', '2024-02-15', 1, 3, 2.46, 0),
+(268, 'Pendiente', '2024-02-15', 1, 3, 2.46, 1000),
+(269, 'Pendiente', '2024-02-15', 1, 3, 2.46, 1000),
+(270, 'Pendiente', '2024-02-15', 1, 3, 2.46, 1000),
+(271, 'Pendiente', '2024-02-15', 1, 3, 2.46, 1000),
+(272, 'Pendiente', '2024-02-15', 1, 3, 2.46, 1100),
+(273, 'Pendiente', '2024-02-15', 1, 3, 2.46, 1100);
 
 -- --------------------------------------------------------
 
@@ -97,31 +95,20 @@ CREATE TABLE `pedido_productos` (
 --
 
 INSERT INTO `pedido_productos` (`pedido_id`, `producto_id`, `cantidad`, `precio_unidad`) VALUES
-(228, 29, 1, 6),
-(228, 30, 1, 6),
-(229, 21, 2, 13),
-(229, 38, 2, 7.5),
-(230, 29, 2, 6),
-(231, 5, 6, 6),
-(232, 5, 3, 6),
-(232, 32, 4, 6),
-(232, 27, 3, 15),
-(233, 29, 2, 6),
-(234, 29, 1, 6),
-(235, 29, 1, 6),
-(236, 29, 1, 6),
-(237, 29, 1, 6),
-(238, 29, 1, 6),
-(239, 29, 1, 6),
-(240, 29, 1, 6),
-(241, 29, 3, 6),
-(242, 29, 3, 6),
-(243, 5, 1, 6),
-(244, 29, 1, 6),
-(244, 22, 1, 14),
-(245, 29, 3, 6),
-(246, 29, 2, 6),
-(246, 30, 1, 6);
+(260, 19, 1, 11),
+(261, 19, 1, 11),
+(262, 19, 1, 11),
+(263, 19, 1, 11),
+(264, 19, 1, 11),
+(265, 19, 1, 11),
+(266, 19, 1, 11),
+(267, 19, 1, 11),
+(268, 19, 1, 11),
+(269, 19, 1, 11),
+(270, 19, 1, 11),
+(271, 19, 1, 11),
+(272, 19, 1, 11),
+(273, 19, 1, 11);
 
 -- --------------------------------------------------------
 
@@ -209,19 +196,20 @@ CREATE TABLE `usuarios` (
   `apellido` varchar(255) NOT NULL,
   `mail` varchar(255) NOT NULL,
   `rol` varchar(255) NOT NULL,
-  `contra` varchar(255) DEFAULT NULL
+  `contra` varchar(255) DEFAULT NULL,
+  `puntos` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Bolcament de dades per a la taula `usuarios`
 --
 
-INSERT INTO `usuarios` (`cliente_id`, `nombre`, `apellido`, `mail`, `rol`, `contra`) VALUES
-(1, 'Admin', 'BricoDepot', 'admin@restaurantebd.com', 'Administrador', '1234'),
-(8, 'Marc', 'Martínez', 'marcmartinezsotillo@gmail.com', 'Cliente', '1234'),
-(32, 'Alex', 'Martínez', 'alex@gmail.com', 'Cliente', '1234'),
-(35, 'Paco', 'Galaxia', 'pacogalaxia@mail.com', 'Cliente', '1234'),
-(36, 'Ernesto', 'Viyuela', 'ernestoviyuela@mail.com', 'Cliente', '1234');
+INSERT INTO `usuarios` (`cliente_id`, `nombre`, `apellido`, `mail`, `rol`, `contra`, `puntos`) VALUES
+(1, 'Admin', 'BricoDepot', 'admin@restaurantebd.com', 'Administrador', '1234', 0),
+(8, 'Marc', 'Martínez', 'marcmartinezsotillo@gmail.com', 'Cliente', '1234', NULL),
+(32, 'Alex', 'Martínez', 'alex@gmail.com', 'Cliente', '1234', NULL),
+(35, 'Paco', 'Galaxia', 'pacogalaxia@mail.com', 'Cliente', '1234', NULL),
+(36, 'Ernesto', 'Viyuela', 'ernestoviyuela@mail.com', 'Cliente', '1234', NULL);
 
 -- --------------------------------------------------------
 
@@ -359,7 +347,7 @@ ALTER TABLE `categorias`
 -- AUTO_INCREMENT per la taula `pedidos`
 --
 ALTER TABLE `pedidos`
-  MODIFY `pedido_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=247;
+  MODIFY `pedido_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=274;
 
 --
 -- AUTO_INCREMENT per la taula `productos`

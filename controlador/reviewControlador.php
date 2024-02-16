@@ -11,6 +11,7 @@
 
                 include_once 'vista/header.php';
                 include_once 'vista/review.php';
+                include_once 'vista/footer.html';
             }
         }
 
@@ -22,6 +23,7 @@
 
                 include_once 'vista/header.php';
                 include_once 'vista/informacionPagina.php';
+                include_once 'vista/footer.html';
             }
         }
 
@@ -33,6 +35,7 @@
                 
                 include_once 'vista/header.php';
                 include_once 'vista/qr_review.php';
+                include_once 'vista/footer.html';
             }
         }
 
@@ -44,6 +47,7 @@
                 
                 include_once 'vista/header.php';
                 include_once 'vista/QR_pedido.php';
+                include_once 'vista/footer.html';
             }
         }
     }

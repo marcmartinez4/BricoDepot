@@ -55,8 +55,8 @@ fetch (`http://localhost/BricoDepot/?controlador=API&action=mostrarReseñas`)
                             </div>
                         </div>
                         <div class="bottom">
-                            <h3>${reseña.titulo}</h3>
-                            <h4>${reseña.review}</h4>
+                            <h3 class="titulo">${reseña.titulo}</h3>
+                            <h4 class="reseña">${reseña.review}</h4>
                         </div>
                     </div>
                     <hr>

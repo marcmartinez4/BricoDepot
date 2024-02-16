@@ -61,7 +61,4 @@
             header("Location:" . url . "?controlador=home");
         }
     }
-
-    // Se incluye el footer
-    include_once 'vista/footer.html';
 ?>

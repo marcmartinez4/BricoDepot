@@ -19,6 +19,7 @@
                 // Incluye la vista carta.php y el header
                 include_once 'vista/header.php';
                 include_once 'vista/carta.php';
+                include_once 'vista/footer.html';
             }
         }
     }

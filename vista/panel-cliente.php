@@ -67,9 +67,9 @@
                         <!-- Se muestra el nombre y correo del usuario además de un botón el cual manda a la página de modificar datos -->
                         <div class="primer-panel">
                             <div class="informacion">
-                                <span>Información de contacto</span>
+                                <span>Información del usuario</span>
                                 <hr class="hr-info">
-                                <p><?=$cliente->getNombre().' '.$cliente->getApellido().'<br>'.$cliente->getMail();?></p>
+                                <p><?=''.$cliente->getNombre().' '.$cliente->getApellido().'<br>'.$cliente->getMail().'<br>Tienes un total de: '.$cliente->getPuntos().' puntos';?></p>
                                 
                                 <div class="div-acciones">
                                     <a href="?controlador=cliente&action=modificar">Editar</a>

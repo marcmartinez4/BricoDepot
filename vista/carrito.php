@@ -134,7 +134,7 @@
                                 <input type="checkbox" id="btnPuntos">
                                 <p class="p-arriba">Puntos</p>
                             </div>
-                            <input readonly type="number" id="inputPuntos" value="0" step="100" min="0" max="">
+                            <input readonly type="number" id="inputPuntos" name="inputPuntos" value="0" step="100" min="0" max="">
                         </div>
                         <hr>
                         <div class="precios-1">
@@ -152,6 +152,7 @@
                         <input type="hidden" name="precioConIVA" id="inputPrecioConIva" value="<?= $precioConIVA ?>">
                         <input type="hidden" name="puntosUsuario" id="puntosUsuario" value="<?= $_SESSION['Cliente']->getPuntos() ?>">
                         <input type="hidden" name="inputPropinaFinalizar" id="inputPropinaFinalizar" value="">
+                        <input type="hidden" name="inputPuntosFinalizar" id="inputPuntosFinalizar" value="">
                         <input class="boton-carrito1" type="submit" name="finalizarPedido" value="Continuar con el pedido">
                     </form>
                 </div>
