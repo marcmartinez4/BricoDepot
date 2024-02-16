@@ -7,13 +7,11 @@ body {
 .Hamburguesa {
     width: 100%;
     min-height: 500px;
-    padding: 10px 0 10px 12px;
 }
 .Bocata {
     width: 100%;
     min-height: 250px!important;
     max-height: 250px!important;
-    padding: 10px 12px 10px 0!important;
 }
 .col-hr {
     height: 70px;
@@ -60,9 +58,6 @@ body {
     font-weight: 900!important;
     margin: 0!important;
     padding: 10px 12px 10px 12px;
-}
-.imagenes-verticales {
-    padding: 10px;
 }
 .h3-paneles {
     padding: 20px 40px 20px 20px;

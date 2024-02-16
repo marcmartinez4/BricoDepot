@@ -94,17 +94,17 @@
             <div class="row justify-content-center">
                 <div class="col-12 col-md-6 col-lg-4 imagenes-verticales">
                     <a href="?controlador=producto">
-                        <img src="img/Hot Dog.png" class="img-fluid" alt="Hot Dog">
+                        <img src="img/Hot Dog.png" alt="Hot Dog">
                     </a>
                 </div>
                 <div class="col-12 col-md-6 col-lg-4 imagenes-verticales">
                     <a href="?controlador=producto">    
-                        <img src="img/Tacos.png" class="img-fluid" alt="Tacos">
+                        <img src="img/Tacos.png" alt="Tacos">
                     </a>
                 </div>
                 <div class="col-12 col-md-6 col-lg-4 imagenes-verticales">
                     <a href="?controlador=producto">
-                        <img src="img/Cola.png" class="img-fluid" alt="Cola">
+                        <img src="img/Cola.png" alt="Cola">
                     </a>
                 </div>
             </div> 
