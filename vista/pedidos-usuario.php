@@ -24,7 +24,7 @@
                     </div>
                 </div>
                 <!-- Panel de navegación con accceso a las diferentes partes de la página de cliente -->
-                <div class="col-12 col-md-6 col-lg-3 izquierda">
+                <div class="col-12 col-md-12 col-lg-3 izquierda">
                     <div class="saludo">
                         <h2>Hola <?=$cliente->getNombre();?></h2>
                     </div>
@@ -59,7 +59,7 @@
                         </a>
                     </ul>
                 </div>
-                <div class="col-12 col-md-6 col-lg-7 derecha">
+                <div class="col-12 col-md-12 col-lg-7 derecha">
                     <div class="panel">
                         <!-- Titulo del apartado -->
                         <h2 class="txt-info">Pedidos</h2>
