@@ -28,6 +28,8 @@
                 <th>Fecha Pedido</th>
                 <th>ID Cliente</th>
                 <th>Propina</th>
+                <th>Precio total</th>
+                <th>Puntos usados</th>
                 <th></th>
             </tr>
             <!-- Bucle tabla de productos -->
@@ -40,6 +42,8 @@
                 <td><?=$pedido->getFecha_pedido();?></td>
                 <td><?=$pedido->getCliente_id();?></td>
                 <td><?=$pedido->getPropina();?> %</td>
+                <td><?=$pedido->getPrecioTotal()?> €</td>
+                <td><?=$pedido->getPuntosUsados()?> puntos</td>
                 <!-- Boton de eliminar -->
                 <td>
                     <form action="?controlador=pedidosAdmin&action=eliminar" method="post">

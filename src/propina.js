@@ -33,6 +33,11 @@ function calcularPrecioConPropina() {
     let eurosDescuento = Math.floor(puntos / 100);
     let descuentoPorPuntos = eurosDescuento * 1; 
     precioConIva -= descuentoPorPuntos; 
+    
+    // Verificar que el precio con IVA no sea menor que 0
+    if (precioConIva < 0) {
+        precioConIva = 0;
+    }
 
     // Actualizar valores en el DOM
     inputPrecioConIva.value = precioConIva; 
@@ -43,6 +48,7 @@ function calcularPrecioConPropina() {
     localStorage.setItem('puntosUsados', puntosUsados);
     localStorage.setItem('precioConIva', precioConIva);
 }
+
 
 // Event listeners para cambios en los botones de propina y puntos
 btnPropina.addEventListener('change', function() {

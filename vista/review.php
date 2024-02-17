@@ -11,7 +11,7 @@
     <div class="container-fluid">
         <div class="d-flex justify-content-center">
             <div class="row d-flex justify-content-center div-completo">
-                <div class="col-sm-9 col-md-6 col-lg-12">
+                <div class="col-sm-12 col-md-12 col-lg-12">
                     <h2 class="h2-reseñas">Filtrar reseñas</h2>
                     <div class="filtro-top">
                         <select id="filtroEstrellas" class="select_option select1">

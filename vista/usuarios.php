@@ -29,6 +29,7 @@
                 <th>Correo</th>
                 <th>Rol</th>
                 <th>Contraseña</th>
+                <th>Puntos disponibles</th>
                 <th></th>
                 <th></th>
             </tr>
@@ -43,6 +44,7 @@
                 <td><?=$cliente->getMail();?></td>
                 <td><?=$cliente->getRol();?></td>
                 <td><?=$cliente->getContra();?></td>
+                <td><?=$cliente->getPuntos();?> puntos</td>
                 <!-- Botones modificar y eliminar -->
                 <td>
                     <form action="?controlador=usuariosAdmin&action=modificar" method="post">

@@ -5,6 +5,8 @@
         protected $fecha_pedido;
         protected $cliente_id;
         protected $propina;
+        protected $precio_total;
+        protected $puntos_usados;
 
         /**
          * Get the value of pedido_id
@@ -102,6 +104,42 @@
         public function setPropina($propina)
         {
                 $this->propina = $propina;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of precio_total
+         */
+        public function getPrecioTotal()
+        {
+                return $this->precio_total;
+        }
+
+        /**
+         * Set the value of precio_total
+         */
+        public function setPrecioTotal($precio_total): self
+        {
+                $this->precio_total = $precio_total;
+
+                return $this;
+        }
+
+        /**
+         * Get the value of puntos_usados
+         */
+        public function getPuntosUsados()
+        {
+                return $this->puntos_usados;
+        }
+
+        /**
+         * Set the value of puntos_usados
+         */
+        public function setPuntosUsados($puntos_usados): self
+        {
+                $this->puntos_usados = $puntos_usados;
 
                 return $this;
         }

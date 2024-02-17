@@ -61,7 +61,7 @@ fetch (`http://localhost/BricoDepot/?controlador=API&action=mostrarReseñas`)
             reseñas.forEach(reseña => {
                 let div = document.createElement("div");
                 div.innerHTML = `
-                    <div class="col-sm-9 col-md-6 col-lg-12 reseña">
+                    <div class="col-sm-12 col-md-12 col-lg-12 reseña">
                         <div class="top">
                             <div class="foto-perfil">
                                 <span>${reseña.nombre[0]}</span>

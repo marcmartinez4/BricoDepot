@@ -44,14 +44,6 @@
 
     <p class="h2-principal">LA CARTA</p>
     
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col col-hr">
-                <hr class="my-4 hr-carta">
-            </div>
-        </div>
-    </div>
-
     <div class="d-flex justify-content-center">
         <div class="row justify-content-center" id="div_productos">
 

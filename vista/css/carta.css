@@ -18,10 +18,8 @@ body {
     margin: 0;
     padding: 10px 12px 10px 12px;
 }    
-.col-hr {
-    max-width: 1488px!important;
-    height: 70px;
-    padding: 10px 90px!important;
+.hr-carta {
+    padding: 0 12px !important;
 }
 .productos {
     display: flex;
