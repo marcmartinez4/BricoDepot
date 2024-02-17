@@ -1,6 +1,9 @@
+// Obtener el botón de añadir reseña por su ID
 let añadirReseña = document.getElementById('submit');
 
+// Agregar un evento de escucha para el clic en el botón
 añadirReseña.addEventListener("click", () => {
+    // Obtener los valores de los campos del formulario
     let nombre = document.getElementById("nombre").value;
     let cliente_id = document.getElementById("cliente_id").value;
     let pedido_id = document.getElementById("pedido_id").value;
@@ -9,23 +12,27 @@ añadirReseña.addEventListener("click", () => {
     let review = document.getElementById("review").value;
     let puntuacion = document.getElementById("puntuacion").value;
 
+    // Verificar si algún campo está vacío
     if (nombre === '' || cliente_id === '' || pedido_id === '' || apellido === '' || titulo === '' || review === '' || puntuacion === '') {
+        // Mostrar una alerta de error si algún campo está vacío
         notie.alert({
-            type: 3, // optional, default = 4, enum: [1, 2, 3, 4, 5, 'success', 'warning', 'error', 'info', 'neutral']
+            type: 3,
             text: "Error al insertar la reseña.",
-            stay: false, // optional, default = false
-            time: 3, // optional, default = 3, minimum = 1,
-            position: "top" // optional, default = 'top', enum: ['top', 'bottom']
+            stay: false,
+            time: 3,
+            position: "top"
         });
-        return; // Si hay campos vacíos, se detiene la función
+        return;
     }
 
+    // Obtener la fecha actual
     let date = new Date();
     let year = date.getFullYear();
     let month = String(date.getMonth() + 1).padStart(2, '0');
     let day = String(date.getDate()).padStart(2, '0');
     let fecha = year + "-" + month + "-" + day;
 
+    // Enviar la solicitud de inserción de la reseña al servidor
     fetch("http://localhost/BricoDepot/?controlador=API&action=añadirReseña", {
         method: 'POST',
         body: JSON.stringify({
@@ -43,6 +50,7 @@ añadirReseña.addEventListener("click", () => {
         }
     })
     .then(response => {
+        // Mostrar una alerta de éxito si la solicitud es exitosa
         if (response.ok) {
             notie.alert({
                 type: 'success',
@@ -52,6 +60,7 @@ añadirReseña.addEventListener("click", () => {
                 position: "top"
             });
         } else {
+            // Mostrar una alerta de error si la solicitud falla
             notie.alert({
                 type: 'error',
                 text: "Error al insertar la reseña.",
@@ -62,6 +71,7 @@ añadirReseña.addEventListener("click", () => {
         }
     })
     .catch(error => {
-        console.error('Error al realizar la solicitud:', error);
+        // Mostrar un mensaje de error en la consola si hay algún error en la solicitud
+        console.error('Error al insertar la reseña:', error);
     });
 });

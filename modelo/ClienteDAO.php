@@ -95,5 +95,13 @@
             // Consulta SQL para eliminar el usuario
             $con->query("DELETE FROM `usuarios` WHERE cliente_id = '$id';");
         }
+
+        // Método para modificar los puntos de un cliente en la base de datos
+        public static function modificarPuntos($id_cliente, $puntosFinalizar) {
+            $con = dataBase::connect();
+
+            // Ejecutar una consulta SQL para actualizar los puntos del cliente
+            $con->query("UPDATE `usuarios` SET `puntos` = `puntos` - $puntosFinalizar WHERE cliente_id = $id_cliente");
+        }
     }
 ?>

@@ -153,7 +153,7 @@
                         <input type="hidden" name="puntosUsuario" id="puntosUsuario" value="<?= $_SESSION['Cliente']->getPuntos() ?>">
                         <input type="hidden" name="inputPropinaFinalizar" id="inputPropinaFinalizar" value="">
                         <input type="hidden" name="inputPuntosFinalizar" id="inputPuntosFinalizar" value="">
-                        <input class="boton-carrito1" type="submit" name="finalizarPedido" value="Continuar con el pedido">
+                        <input class="boton-carrito1" type="submit" id="finalizarPedido" name="finalizarPedido" value="Continuar con el pedido">
                     </form>
                 </div>
             </div> 

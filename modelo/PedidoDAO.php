@@ -93,9 +93,11 @@
                     // Inserta el producto en la tabla 'pedido_productos'
                     $result = $con->query("INSERT INTO `pedido_productos` (pedido_id, producto_id, cantidad, precio_unidad) VALUES ('$pedido_id', '$producto_id', '$cantidad','$precio_unidad');");
                 }
-                $con->query("UPDATE `usuarios` SET `puntos` = `puntos` - $inputPuntosFinalizar WHERE cliente_id = $id_cliente");
+                
+                // Ejecutar una consulta SQL para actualizar los puntos del cliente
                 $con->query("UPDATE `usuarios` SET `puntos` = `puntos` + round($precioConIVA)*100 WHERE cliente_id = $id_cliente");
                 
+                // Se vuelve a inicar sesión para actualizar los puntos disponibles del usuario
                 $mail = $_SESSION['Cliente']->getMail();
                 $contra = $_SESSION['Cliente']->getContra();
                 ClienteDAO::iniciarSesion($mail, $contra);
@@ -104,14 +106,23 @@
             }
         }
         
+        // Método para obtener información de un pedido desde la base de datos
         public static function informacionPedido($id) {
             $con = database::connect();
+
+            // Preparar la consulta SQL para obtener la información del pedido y sus productos
             $stmt = $con->prepare("SELECT pedidos.pedido_id, pedidos.estado, pedidos.fecha_pedido, pedido_productos.producto_id, pedido_productos.pedido_id, pedido_productos.cantidad, pedido_productos.precio_unidad, productos.nombre_producto, productos.img FROM pedidos JOIN pedido_productos ON pedidos.pedido_id =pedido_productos.pedido_id JOIN PRODUCTOS ON productos.producto_id = pedido_productos.producto_id WHERE pedidos.pedido_id = ?");
+            // Vincular el parámetro de ID del pedido a la consulta preparada
             $stmt->bind_param("i", $id);
+            // Ejecutar la consulta
             $stmt->execute();
+            // Obtener el resultado de la consulta
             $result = $stmt->get_result();
+
+            // Array para almacenar la información del pedido
             $info = array();
 
+            // Recorrer los resultados y guardar la información en el array
             while($row = $result->fetch_assoc()) {
                 $info[] = [
                     'pedido_id' => $row['pedido_id'],
@@ -125,6 +136,7 @@
                 ];
             }
             
+            // Devolver la información del pedido en formato de array
             return $info;
         }
     }
